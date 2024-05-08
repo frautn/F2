@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Types of Waves</title>
+<!-- <script src = "slider.js"></script> -->
+
+<script>
+    function Scrollbar(x,y,w,h,minV,maxV,initV){
+    this.x = x;
+	this.y = y;
+	this.w = w;
+	this.h= h;
+    this.hh=h/2;
+	this.minV = minV;
+	this.maxV = maxV;
+	this.initV = initV;
+    this.readyToChange=false;
+	this.isChanging=false;
+	this.canvasS = document.createElement("canvas");
+	this.canvasS.style.position = "absolute";
+	this.canvasS.width = this.w;
+	this.canvasS.height = this.h;
+
+    this.canvasS.style.zIndex="8";
+	this.div = document.createElement("div");
+    document.body.appendChild(this.div);
+    this.div.appendChild(this.canvasS);
+	this.canvasSPosition();
+    this.canvasS.addEventListener('mousedown',this.mouseDown.bind(this),false);
+    this.canvasS.addEventListener('mousemove',this.mouseMove.bind(this),false);
+    this.canvasS.addEventListener('mouseup',this.mouseUp.bind(this),false);
+	this.canvasS.addEventListener('mouseout',this.mouseOut.bind(this),false);
+
+	this.canvasS.addEventListener('touchstart', this.touchStart.bind(this), false);
+	this.canvasS.addEventListener('touchmove', this.touchMove.bind(this), false);
+	this.canvasS.addEventListener('touchend', this.touchEnd.bind(this), false);
+
+	this.cxtS = this.canvasS.getContext("2d");
+	this.getInitPointerX();
+	this.drawScrollbar();
+   }
+
+Scrollbar.prototype.canvasSPosition = function(){
+	this.canvasS.style.left = String(this.x + canvasLeft)+"px";
+    this.canvasS.style.top = String(this.y + canvasTop)+"px";
+}
+
+Scrollbar.prototype.getInitPointerX = function(){
+    this.pointerX = Math.round((this.initV-this.minV)*(this.w-12)/(this.maxV-this.minV))+6;
+};
+
+Scrollbar.prototype.value= function(){
+return Math.round((this.pointerX-6)*(this.maxV-this.minV)/(this.w-12) + this.minV);
+};
+
+Scrollbar.prototype.drawScrollbar=function(){
+	this.cxtS.fillStyle = "rgb(255, 228, 196)";
+	this.cxtS.fillRect(0,0,this.w,this.h);
+	this.cxtS.fillStyle = "lawngreen";
+	this.cxtS.fillRect(0+6,this.hh-3,this.w-12,6);
+	this.cxtS.fillStyle = "red";
+	this.cxtS.fillRect(this.pointerX-2,this.hh-10,4,20);
+	this.cxtS.fillStyle = "black";
+	this.cxtS.fillRect(this.pointerX-7,this.hh-10,6,20);
+	this.cxtS.fillRect(this.pointerX+1,this.hh-10,5,20);
+};
+
+// mouse events
+Scrollbar.prototype.mouseDown = function(evt){
+evt.preventDefault();
+var coord = this.getMousePointerCoord(evt);
+var mx = coord.x,my = coord.y;
+if (this.readyToChange ||(mx >= 0 && mx <= this.w-0 && my > this.hh-5 & my < this.hh+5)){
+
+this.isChanging=true;
+this.div.style.cursor = "ew-resize";
+this.pointerX = mx;
+	if (this.pointerX <= 6){
+		this.pointerX = 6;
+		}
+	else if(this.pointerX >= this.w-6){
+		this.pointerX = this.w-6;
+		}
+actionWhenSliderIsChanging();
+this.drawScrollbar();
+}
+};
+
+Scrollbar.prototype.mouseMove = function(evt){
+var coord = this.getMousePointerCoord(evt);
+var mx = coord.x,my = coord.y;
+evt.preventDefault();
+if (this.isChanging){
+	this.pointerX = mx;
+	if (this.pointerX <= 6){
+		this.pointerX = 6;
+		}
+	else if(this.pointerX >= this.w-6){
+		this.pointerX = this.w-6;
+		}
+	else{
+		}
+	actionWhenSliderIsChanging();
+	this.drawScrollbar();
+}
+
+else{
+   if (mx > this.pointerX-5 && mx < this.pointerX+5 && my > this.hh-10 && my < this.hh+10){
+	   this.readyToChange = true;
+	   this.div.style.cursor = "ew-resize";
+		}
+   else{
+	   this.readyToChange=false;
+	   this.div.style.cursor = "default";
+       }
+  }
+};
+
+Scrollbar.prototype.mouseUp = function(evt){
+ this.readyToChange = false;
+ this.isChanging=false;
+ this.div.style.cursor = "default";
+};
+
+Scrollbar.prototype.mouseOut = function(evt){
+ this.isChanging=false;
+ this.readyToChange = false;
+ this.div.style.cursor = "default";
+};
+
+Scrollbar.prototype.getMousePointerCoord=function(evt){
+   var rect = canvas.getBoundingClientRect();
+   var x =  evt.clientX-rect.left-parseInt(canvas.style.borderLeftWidth)-parseInt(canvas.style.paddingLeft)-this.x;
+   var y =  evt.clientY-rect.top-parseInt(canvas.style.borderTopWidth)-parseInt(canvas.style.paddingTop)-this.y;
+   return {x:x,y:y};
+};
+
+// touch events
+Scrollbar.prototype.touchStart = function(evt){
+var coord = this.getTouchCoord(evt);
+var mx = coord.x;
+evt.preventDefault();
+if (mx >= 0 && mx <= this.w-0){
+	this.isChanging=true;
+	this.pointerX = mx;
+		if (this.pointerX <= 6){
+			this.pointerX = 6;
+		}
+		else if(this.pointerX >= this.w-6){
+			this.pointerX = this.w-6;
+		}
+	actionWhenSliderIsChanging();
+	this.drawScrollbar();
+ }
+};
+
+Scrollbar.prototype.touchMove = function(evt){
+  if (this.isChanging){
+	evt.preventDefault();
+	var coord = this.getTouchCoord(evt);
+	this.pointerX = coord.x;
+		if (this.pointerX <= 6){
+			this.pointerX = 6;
+		}
+		else if(this.pointerX >= this.w-6){
+			this.pointerX = this.w-6;
+		}
+		else{
+		}
+	actionWhenSliderIsChanging();
+	this.drawScrollbar();
+  }
+};
+
+Scrollbar.prototype.touchEnd = function(evt){
+	this.isChanging=false;
+};
+
+Scrollbar.prototype.getTouchCoord=function(evt){
+	var rect = canvas.getBoundingClientRect();
+	var x =  evt.targetTouches[0].clientX-rect.left-parseInt(canvas.style.borderLeftWidth)-parseInt(canvas.style.paddingLeft)-this.x;
+	var y =  evt.targetTouches[0].clientY-rect.top-parseInt(canvas.style.borderTopWidth)-parseInt(canvas.style.paddingTop)-this.y;
+	return {x:x,y:y};
+};
+</script>
+
+<!-- <script src = "waves.js"></script>  -->
+
+<script>
+var waveLength;
+var vel= 75;
+var amplitude;
+var width;
+var height;
+var startX;
+var eqY;
+var pointY = new Array();
+var factor = new Array();
+var cbs = new Array();
+var then,now,delta,interval1=20;
+var myrequest=0;
+var canvas;
+var cxt;
+var phase0=0;
+var mode;
+var arg;
+var traveling=true;
+var sAmp,redDot;
+var redPointX;
+var t=0.0;
+var leftOut,leftIn,topOut,topIn,canvasLeft,canvasTop;
+
+window.onload = function(){
+canvas = document.getElementById("Twave");
+
+if (canvas && canvas.getContext){
+leftOut = parseInt(canvas.style.left)+parseInt(canvas.style.marginLeft);
+leftIn = parseInt(canvas.style.borderLeftWidth)+parseInt(canvas.style.paddingLeft);
+topOut = parseInt(canvas.style.top)+parseInt(canvas.style.marginTop);
+topIn = parseInt(canvas.style.borderTopWidth)+parseInt(canvas.style.paddingLeft);
+canvasLeft = leftOut+leftIn;
+canvasTop = topOut+topIn;
+
+var b1 = document.getElementById("bStart");
+	b1.style.left = String(80+canvasLeft)+"px";
+	b1.style.top = String(380+canvasTop)+"px";
+var b2 = document.getElementById("bStop");
+	b2.style.left = String(220+canvasLeft)+"px";
+	b2.style.top = String(380+canvasTop)+"px";
+var b3 = document.getElementById("bStat");
+	b3.style.left = String(350+canvasLeft)+"px";
+	b3.style.top = String(380+canvasTop)+"px";
+var b4 = document.getElementById("bTravel");
+	b4.style.left = String(550+canvasLeft)+"px";
+	b4.style.top = String(380+canvasTop)+"px";
+
+var b5 = document.getElementById("lb1");
+	b5.style.left = String(480+canvasLeft)+"px";
+	b5.style.top = String(445+canvasTop)+"px";
+
+    cbs[1] = document.getElementById("cb1");
+	cbs[1].style.left = String(500+canvasLeft)+"px";
+	cbs[1].style.top = String(445+canvasTop)+"px";
+
+var b6 = document.getElementById("lb2");
+	b6.style.left = String(530+canvasLeft)+"px";
+	b6.style.top = String(445+canvasTop)+"px";
+
+    cbs[2] = document.getElementById("cb2");
+	cbs[2].style.left = String(550+canvasLeft)+"px";
+	cbs[2].style.top = String(445+canvasTop)+"px";
+
+var b7 = document.getElementById("lb3");
+	b7.style.left = String(580+canvasLeft)+"px";
+	b7.style.top = String(445+canvasTop)+"px";
+
+    cbs[3] = document.getElementById("cb3");
+	cbs[3].style.left = String(600+canvasLeft)+"px";
+	cbs[3].style.top = String(445+canvasTop)+"px";
+
+var b8 = document.getElementById("lb4");
+	b8.style.left = String(630+canvasLeft)+"px";
+	b8.style.top = String(445+canvasTop)+"px";
+
+    cbs[4] = document.getElementById("cb4");
+	cbs[4].style.left = String(650+canvasLeft)+"px";
+	cbs[4].style.top = String(445+canvasTop)+"px";
+
+var b9 = document.getElementById("lb5");
+	b9.style.left = String(680+canvasLeft)+"px";
+	b9.style.top = String(445+canvasTop)+"px";
+
+    cbs[5] = document.getElementById("cb5");
+	cbs[5].style.left = String(700+canvasLeft)+"px";
+	cbs[5].style.top = String(445+canvasTop)+"px";
+
+var b10 = document.getElementById("lb6");
+	b10.style.left = String(730+canvasLeft)+"px";
+	b10.style.top = String(445+canvasTop)+"px";
+
+    cbs[6] = document.getElementById("cb6");
+	cbs[6].style.left = String(750+canvasLeft)+"px";
+	cbs[6].style.top = String(445+canvasTop)+"px";
+
+sAmp = new Scrollbar(50,450,150,50,0,70,50);
+redDot = new Scrollbar(220,450,150,50,0,70,35);
+
+cxt = canvas.getContext("2d");
+width = canvas.width;
+height = canvas.height;
+startX = 50;
+eqY = 134;
+mode = 3;
+cbs[mode].checked=true;
+amplitude = sAmp.value();
+redPointX=redDot.value()*10;
+waveLength = 2*(width-2*startX)/mode;
+factor[1]=1.0;
+factor[2]=1.2;
+factor[3]=1.5;
+factor[4]=2.0;
+factor[5]=2.5;
+factor[6]=3.0;
+wave();
+start();
+}
+}
+
+
+window.onunload = function(){
+stop();
+}
+window.onfocus = function(){
+}
+
+function startv(){
+	start();
+}
+
+function start(){
+  if (!myrequest){
+     then = Date.now();
+	 t= 0.0;
+     myrequest = window.requestAnimationFrame(animate);
+  }
+}
+
+function stop(){
+  if (myrequest){
+    phase0+=arg;
+    window.cancelAnimationFrame(myrequest);
+    myrequest = 0;
+	}
+}
+
+function animate(time){
+if (canvas && canvas.getContext){
+    now =  Date.now();
+	myrequest = window.requestAnimationFrame(animate);
+	delta = now - then;
+	if (delta > interval1){
+		  t+=0.04;
+		  wave();
+		  then = now-(delta%interval1);
+	}
+}
+}
+
+function wave(){
+
+  cxt.clearRect(0,0,width,height);
+  cxt.fillStyle="rgb(255, 228, 196)";
+  cxt.fillRect(0,0,width,height);
+  cxt.fill();
+
+  cxt.strokeStyle = "rgb(255, 248, 216)";
+  cxt.lineWidth = 0.5;
+  cxt.beginPath();
+  for (var i = 0; i <= width-2*startX; i+=100){
+  cxt.moveTo(startX+i,0);
+  cxt.lineTo(startX+i,400);
+  cxt.closePath();
+  cxt.stroke();
+  }
+
+  cxt.strokeStyle = "blue";
+  cxt.lineWidth = 2;
+  var k = 2*Math.PI/waveLength;
+
+ for (var x=0; x<=width-2*startX; x+=2){
+
+  arg = -k*vel*t;
+  var y;
+  if (traveling)
+    y = amplitude*Math.sin(k*x+arg+phase0);
+  else
+    y = amplitude*Math.sin(k*x)*Math.sin(arg+phase0);
+
+  pointY[x]= y;
+  }
+
+
+  cxt.beginPath();
+  cxt.moveTo(startX,eqY+pointY[0]);
+  for (var x=2; x<=width-2*startX; x+=2){
+      cxt.lineTo(startX+x,eqY+pointY[x]);
+  }
+  //cxt.endPath();
+  cxt.stroke();
+
+  cxt.fillStyle = "red";
+  cxt.beginPath();
+  cxt.arc(startX+redPointX,eqY+pointY[redPointX],4,0,Math.PI*2,true);
+  cxt.fill();
+
+  cxt.strokeStyle = "darkgreen";
+
+  for (var x=0; x<=width-2*startX; x+=10){
+		  cxt.beginPath();
+		  var xx = startX+x+pointY[x]/factor[mode];
+		  cxt.moveTo(xx,280);
+		  cxt.lineTo(xx,360);
+		  cxt.closePath();
+		  cxt.stroke();
+  }
+
+  cxt.strokeStyle = "red";
+  cxt.beginPath();
+  cxt.moveTo(startX+redPointX+pointY[redPointX]/factor[mode],280);
+  cxt.lineTo(startX+redPointX+pointY[redPointX]/factor[mode],360);
+  cxt.closePath();
+  cxt.stroke();
+  pointY = [];
+
+cxt.font = '12pt Arial,Helvetica,"Times New Roman","Noto Sans Condensed","DejaVu Sans Condensed",sans-serif';
+
+cxt.textAlign = "left";
+cxt.textBaseline = "middle";
+cxt.fillStyle = "black";
+cxt.fillText("Amplitud",90,440);
+cxt.fillText("Posición del marcador",210,440);
+if (traveling)
+     cxt.fillText("Wavelength:",390,452);
+else
+cxt.fillText("Harmonics:",390,452);
+
+if (traveling){
+  cxt.fillStyle = "blue";
+  cxt.fillText("f(x,t) = desplazamiento respecto de la posición de equilibrio",50,30);
+  cxt.fillStyle = "darkgreen";
+  cxt.fillText("Onda propagante longitudinal",50,250);
+}
+else{
+  cxt.fillStyle = "blue";
+  cxt.fillText("Transverse standing wave (both ends fixed)",50,30);
+  cxt.fillStyle = "darkgreen";
+  cxt.fillText("Longitudinal standing wave (both ends fixed)",50,250);
+ }
+}
+
+function ChangetoTraveling(){
+  if (traveling){}
+  else{traveling = true;}
+}
+
+function ChangetoStationary(){
+  if (traveling){traveling = false;}
+  else{}
+}
+
+function waveL(n){
+waveLength = 2*(width-2*startX)/n;
+mode=n;
+for (var i = 1; i<=6;i++){
+ if (i !=n)
+   cbs[i].checked=false;
+}
+
+cbs[n].checked=true;
+}
+
+
+function actionWhenSliderIsChanging(){
+if(sAmp.isChanging)
+   amplitude = sAmp.value();
+if(redDot.isChanging)
+   redPointX=redDot.value()*10;
+if (!myrequest){
+t = 0;
+wave();
+}
+
+}
+
+</script>
+<style>
+	   body {background:white;color:black;font-weight:normal;}
+	    .ff{font-weight:normal;font-family:Arial,Helvetica,"Times New Roman","Noto Sans Condensed",
+           "DejaVu Sans Condensed",sans-serif;}
+	  td{height:16px;}
+      a:link{color:blue;} a:visited{color:CadetBlue;} a:hover{color:red;}
+	  p.ps{margin:0px;padding:0px;font-size:14px;color:DarkSlateGray;}
+	  nav{font-size:16px;}
+
+</style>
+</head>
+
+<body class="ff">
+<input type="button" id = "bStart" class="ff" style="font-size:16px;color:red;z-index:5; position:absolute;background:#F8E0E6;" onclick="startv()" value="Start">
+<input type="button" id = "bStop" class="ff" style="font-size:16px;color:blue;z-index:5; position:absolute;background:#F8E0E6;" onclick="stop()" value="Stop">
+<input type="button" id = "bTravel" class="ff" style="font-size:16px;color:green;z-index:5; position:absolute;background:#F8E0E6;" onclick="ChangetoTraveling()" value="Traveling Waves">
+<input type="button" id = "bStat" class="ff" style="font-size:16px;color:green;z-index:5; position:absolute;background:#F8E0E6;" onclick="ChangetoStationary()" value="Standing Waves">
+
+<div style="font-weight:normal;font-size:11px;color:red;">
+<label for="cb1" id="lb1" style="width:30px;display:inline-block;z-index:5; position:absolute;">1st</label>
+<input type="checkbox" id="cb1" style="z-index:5; position:absolute;" onclick="waveL(1)">
+
+<label for="cb2" id="lb2" style="width:30px;display:inline-block;z-index:5; position:absolute;">2nd</label>
+<input type="checkbox" id="cb2" style="z-index:5; position:absolute;" onclick="waveL(2)">
+
+<label for="cb3" id="lb3" style="width:30px;display:inline-block;z-index:5; position:absolute;">3rd</label>
+<input type="checkbox" id="cb3" style="z-index:5; position:absolute;" onclick="waveL(3)">
+
+<label for="cb4" id="lb4" style="width:30px;display:inline-block;z-index:5; position:absolute;">4th</label>
+<input type="checkbox" id="cb4" style="z-index:5; position:absolute;" onclick="waveL(4)">
+
+<label for="cb5" id="lb5" style="width:30px;display:inline-block;z-index:5; position:absolute;">5th</label>
+<input type="checkbox" id="cb5" style="z-index:5; position:absolute;" onclick="waveL(5)">
+
+<label for="cb6" id="lb6" style="width:30px;display:inline-block;z-index:5; position:absolute;">6th</label>
+<input type="checkbox" id="cb6" style="z-index:5; position:absolute;" onclick="waveL(6)">
+
+</div>
+
+<div style = "width:800px; height:500px;margin:0px">
+<canvas id = "Twave" width = "800" height = "500" style="z-index:1;position:absolute;left:50px;top:45px;margin:0px;border:5px solid firebrick;padding:1px;">
+Your browser does not support the canvas tag.
+</canvas>
+
+
+<table style="text-align:center;z-index:1;position:absolute;left:132px;top:560px;width: 637px; height: 312px;" >
+    <tr>
+      <td>
+        <p style = "font-size:medium;">Types of Waves Html5 Simulation<br>
+		(Transverse vs Longitudinal, Traveling vs Standing) </p>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+        <div style = "text-align:left;">
+          <table style = "width:645px;text-align:left;">
+            <tr>
+              <td><p class = "ps">Author and copyright holder: </p></td>
+              <td><p class = "ps">Chiu-king Ng </p></td>
+            </tr>
+            <tr>
+              <td><p class = "ps">Feedback/Contact:</p>
+              </td>
+              <td><p class = "ps">phyAA@phy.hk
+                where AA is the prime number following 7 </p></td>
+            </tr>
+            <tr>
+              <td><p class = "ps"> Mirror Site:</p></td>
+              <td><p class = "ps"> <a href="https://ngsir.netfirms.com">
+                https://ngsir.netfirms.com</a></p></td>
+            </tr>
+            <tr>
+              <td><p class = "ps">Last Update:</p></td>
+              <td><p class = "ps">5-June-2017</p></td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+       <tr> <td>&nbsp;</td></tr>
+       <tr> <td>&nbsp;</td></tr>
+        <tr>
+           <td>
+		    <div style = "text-align:center;"><img src="../../../../images/separator1.jpg" alt="separator" width="600" height="15"></div>
+		   </td>
+        </tr>
+
+       <tr> <td>&nbsp;</td></tr>
+       <tr> <td>&nbsp;</td></tr>
+	<tr>
+      <td>
+            <nav>
+		          <a href="../../../../index.htm"> Front Page</a> ○○○
+				  <a href="../../../index.htm"> Java Simulations</a> ○○○
+                  <a href="../../../../index.htm#HS"> Html5 Simulations </a>
+            </nav>
+	  </td>
+	</tr>
+	   <tr> <td>&nbsp;</td></tr>
+       <tr> <td>&nbsp;</td></tr>
+  </table>
+
+</div>
+
+ </body>
+</html>

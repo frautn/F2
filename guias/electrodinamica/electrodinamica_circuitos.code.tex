@@ -1,0 +1,315 @@
+\twocolumn[\colorsection{Circuitos de corriente contínua}]
+\setcounter{figure}{0}
+%
+\begin{Exercise}
+  Un alambre de longitud $L$ y resistencia $R = \SI{6}{\ohm}$ se estira hasta una longitud $3L$, conservando invariante su masa. Calcule la resistencia del alambre una vez estirado.
+\end{Exercise}
+\begin{Answer}
+  $\SI{54}{\ohm}$
+\end{Answer}
+%
+\begin{Exercise}
+  La especificación de la potencia de una bombilla eléctrica en Argentina (como las comunes de $\SI{40}{\watt}$) es la potencia que disipa cuando se conecta a través de una diferencia de potencial de $\SI{220}{\volt}$.\par
+  \textit{a}) ¿Cuál es la resistencia de una bombilla de $\SI{40}{\watt}$?\par
+  \textit{b}) Cuando se mide su resistencia con un multímetro (mientras la bombilla está desconectada de la fuente de $\SI{220}{\volt}$), la lectura es de unos $\SI{100}{\ohm}$. ¿A qué se debe la diferencia de este valor con el resultado obtenido para el ítem \textit{a}?\par
+  \textit{c}) ¿Se cumple la ley de Ohm en estas bombillas?\par
+  \textit{d}) Si se lleva esta bombilla a Estados Unidos, donde el voltaje estándar doméstico es $\SI{120}{\volt}$, ¿cuál debería ser su especificación de potencia para ese país?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{1210}{\ohm}$\\ \textit{d}) $\SI{11.9}{\watt}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  La diferencia de potencial a través de las terminales de una batería es $\SI{8.40}{\volt}$ cuando en esta hay una corriente de $\SI{1.50}{\ampere}$ circulando desde la terminal negativa hacia la positiva. Cuando la corriente es $\SI{3.50}{\ampere}$ en el sentido inverso, la diferencia de potencial es $\SI{10.20}{\volt}$.\par
+  \textit{a}) ¿Cuánto vale la resistencia interna de la batería?\par
+  \textit{b}) ¿Cuál es la \textrm{fem} de la batería?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{0.36}{\ohm}$\\ \textit{b}) $\SI{8.94}{\volt}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  La batería de $\SI{12.6}{\volt}$ de un automóvil tiene una resistencia interna despreciable y se conecta a una combinación en serie de un resistor de $\SI{3.2}{\ohm}$ que cumple la ley de Ohm, y a un termistor que no cumple la ley de Ohm, sino que sigue la relación $V = \alpha i + \beta i^2$ entre la corriente y el voltaje, con $\alpha = \SI{3.8}{\ohm}$ y $\beta = \SI{1.3}{\ohm/\ampere}$. ¿Cuál es la corriente a través del resistor de $\SI{3.2}{\ohm}$?
+\end{Exercise}
+\begin{Answer}
+  $\SI{1.42}{\ampere}$
+\end{Answer}
+%
+\begin{Exercise}\label{p:circuitos01}
+  Cuatro bombillas se encuentran conectadas a una batería como muestra el circuito de la figura \ref{f:circuitos01}. La batería $\varepsilon$ es de $\SI{9.0}{\volt}$ y las resistencias de las bombillas valen: $R_1 = \SI{2.0}{\ohm}$, $R_2 = \SI{18}{\ohm}$, $R_3 = \SI{24}{\ohm}$ y $R_4 = \SI{36}{\ohm}$.\par
+  \textit{a}) Calcule la corriente en cada bombilla.\par
+  \textit{b}) ¿Cuál es la bombilla más brillante?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $i_1 = \SI{0.90}{\ampere}$; $i_2 = \SI{0.40}{\ampere}$; $i_3 = \SI{0.30}{\ampere}$; $i_4 = \SI{0.20}{\ampere}$\\ \textit{b}) La bombilla 2.
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,2) to[battery2, l=$\varepsilon$, color=cyan] (0,0) -- (5.5,0) to[lamp, l_=$4$] (5.5,2) -- (2,2) to[lamp, l_=$1$] (0,2) (2.5,2) to[lamp, l_=$2$] (2.5,0) (4,2) to[lamp, l_=$3$] (4,0);
+    % \draw (0,0) node[below]{$a$};
+    % \draw (7.5,0) node[below]{$b$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos01}\label{f:circuitos01}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos02}
+  Considere el circuito mostrado en la figura \ref{f:circuitos02}.\par
+  \textit{a}) ¿Cuál es la lectura en cada instrumento si se consideran ideales?\par
+  \textit{b}) ¿Cuál es la lectura si la resistencia interna de cada amperímetro vale $\SI{10}{\ohm}$ y la resistencia interna del voltímetro vale $\SI{100}{\kilo\ohm}$?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $i_1 = \SI{0.200}{\milli\ampere}$; $i_2 = \SI{0.0800}{\milli\ampere}$; $V = \SI{1.20}{\volt}$\\ \textit{b}) $i_1 = \SI{0.202}{\milli\ampere}$; $i_2 = \SI{0.076}{\milli\ampere}$; $V = \SI{1.14}{\volt}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,2.5) to[R=$\SI{24.0}{\kilo\ohm}$, color=red] (2,2.5) to[ammeter, l_=$1$]  (3.5,2.5)
+    (0,2.5) to[battery2, l=$\SI{6.00}{\volt}$, color=cyan] (0,0) -- (7.5,0) -- (7.5,2.5) -- (7,2.5)
+    (3.5,3.25) to[R=$\SI{15.0}{\kilo\ohm}$, color=red] (5.5,3.25) to[ammeter, l_=$2$]  (7,3.25)
+    (3.5,1.75) to[R=$\SI{10.0}{\kilo\ohm}$, color=red] (7,1.75)
+    (3.5, 0.75) to[voltmeter] (7,0.75)
+    (3.5,3.25) -- (3.5,0.75)
+    (7,3.25) -- (7,0.75);
+    % \draw (0,0) node[below]{$a$};
+    % \draw (7.5,0) node[below]{$b$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos02}\label{f:circuitos02}}
+\end{center}
+%
+\begin{Exercise}
+  Usted está trabajando y necesita varios resistores para un proyecto. Lamentablemente, todo lo que tiene es una caja grande con resistores de $\SI{10}{\kilo\ohm}$. Muestre cómo puede conseguir cada una de las siguientes resistencias equivalentes con una combinación de resistores de $\SI{10}{\kilo\ohm}$:\par
+  \textit{i}) $\SI{42}{\kilo\ohm}$\par
+  \textit{ii}) $\SI{3.33}{\kilo\ohm}$\par
+  \textit{iii}) $\SI{8}{\kilo\ohm}$\par
+  \textit{iv}) $\SI{12.5}{\kilo\ohm}$
+\end{Exercise}
+%
+\begin{Exercise}\label{p:circuitos03}
+  En el circuito de la figura \ref{f:circuitos03}, calcule:\par
+  \textit{a}) La corriente que circula a través del resistor de $\SI{8.0}{\ohm}$.\par
+  \textit{b}) La potencia disipada en el resistor de $\SI{8.0}{\ohm}$ y en las resistencias internas de las baterías.\par
+  \textit{c}) En una de las baterías, la energía química se convierte en energía eléctrica. ¿En cuál sucede esto y con qué rapidez?\par
+  \textit{d}) En una de las baterías la energía eléctrica se convierte en energía química. ¿En cuál ocurre esto y con qué rapidez?\par
+  \textit{e}) Demuestre que la potencia total entregada por las baterías es igual a la potencia total disipada por las resistencias.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{0.4}{\ampere}$\\ \textit{b}) $\SI{1.6}{\watt}$\\ \textit{c}) $\SI{4.8}{\watt}$ en la batería de $\SI{12}{\volt}$\\ \textit{c}) $\SI{3.2}{\watt}$ en la batería de $\SI{8}{\volt}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \fill[green!50!black!15] (2,-0.5) rectangle (3.5,0.5);
+    \fill[green!50!black!15] (2,1.5) rectangle (3.5,2.5);
+    \draw (0,0) -- (2,0) to[battery2, l=$\SI{8.0}{\volt}$, color=cyan] (2.5,0) -- (2.55,0)  to[R=$\SI{1.0}{\ohm}$, resistors/scale=0.5, color=red] (3.5,0) -- (5,0)
+    (0,2) -- (2,2) to[battery2, l=$\SI{12.0}{\volt}$, color=cyan] (2.5,2) -- (2.55,2)  to[R=$\SI{1.0}{\ohm}$, resistors/scale=0.5, color=red] (3.5,2) -- (5,2)
+    (5,2) -- (5,0)
+    (0,0)  to[R=$\SI{8.0}{\ohm}$, color=red] (0,2);
+    % \draw (0,0) node[below]{$a$};
+    % \draw (7.5,0) node[below]{$b$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos03}\label{f:circuitos03}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos04}
+  En el circuito que se ilustra en la figura \ref{f:circuitos04}, encuentre:\par
+  \textit{a}) El valor de la corriente en el resistor de $\SI{3.00}{\ohm}$\par
+  \textit{b}) Los valores de las $fem$ desconocidas $\varepsilon_1$ y $\varepsilon_2$\par
+  \textit{c}) El valor de la resistencia $R$.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{8}{\ampere}$\\ \textit{b}) $\varepsilon_1 = \SI{36}{\volt}$ y $\varepsilon_2 = \SI{54}{\volt}$\\ \textit{c}) $R = \SI{9}{\ohm}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,0) to[R=$\SI{4.00}{\ohm}$, color=red] (0,2) -- (0,3) to[R=$R$, color=red] (4,3) -- (4,2) to[R=$\SI{6.00}{\ohm}$, color=red] (4,0) -- (0,0)
+    (0,2) to[battery2, l=$\varepsilon_1$, color=cyan] (2,2)
+    (4,2) to[battery2, l=$\varepsilon_2$, color=cyan] (2,2)
+    (2,0) to[R=$\SI{3.00}{\ohm}$, color=red] (2,2);
+    \draw[<-,blue!50!black] (0.2,3.2) -- (1.2,3.2) node[midway,above=1] {$\SI{2.00}{\ampere}$};
+    \draw[<-,blue!50!black] (-0.2,0) -- (-0.2,0.3) node[midway,left=1] {$\SI{3.00}{\ampere}$};
+    \draw[<-,blue!50!black] (4.2,0) -- (4.2,0.3) node[midway,right=1] {$\SI{5.00}{\ampere}$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos04}\label{f:circuitos04}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos05}
+  Para el circuito de la figura \ref{f:circuitos05}, calcular:\par
+  \textit{a}) La corriente en la resistencia de $\SI{2.0}{\ohm}$.\par
+  \textit{b}) La diferencia de potencial entre los puntos $a$ y $b$, calculada como $V_a$ - $V_b$.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{0.90}{\ampere}$\\ \textit{b}) $\SI{1.80}{\volt}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (3.5,1.2) -- (3.5,0) to[R=$\SI{6.0}{\ohm}$, color=red] (1.5,0) to[battery2, l=$\SI{8.0}{\volt}$, color=cyan] (0,0) -- (0,1.7) -- (1,1.7)
+    (1,2.2) to[battery2, l=$\SI{12.0}{\volt}$, color=cyan] (2.5,2.2) to[R=$\SI{4.0}{\ohm}$, color=red] (4,2.2) -- (4, 1.2) to[R=$\SI{2.0}{\ohm}$, color=red] (1, 1.2) -- (1,2.2);
+    \draw (0,0.75) node[left]{$a$};
+    \draw (4,1.7) node[right]{$b$};
+    \fill (0,0.75) circle (3pt);
+    \fill (4,1.7) circle (3pt);
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos05}\label{f:circuitos05}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos06}
+  La figura \ref{f:circuitos06} emplea una convención utilizada con frecuencia en diagramas de circuitos, donde la batería no se muestra de manera explícita. Se entiende que el punto superior, con la leyenda $\SI{36}{\volt}$, está conectado a la terminal positiva de una batería de $\SI{36}{\volt}$, que tiene resistencia despreciable y que el símbolo tierra en la parte inferior está conectado a la terminal negativa de la batería. El circuito se completa a través de la batería, aún cuando esta no aparezca en el diagrama.\par
+  \textit{a}) ¿Cuánto vale la diferencia de potencial $V_a - V_b$ cuando el interruptor $S$ se encuentra abierto?\par
+  \textit{b}) ¿Cuánto vale la corriente que pasa a través del interruptor $S$ cuando está cerrado?\par
+  \textit{c}) ¿Cuál es la resistencia equivalente cuando el interruptor $S$ está cerrado?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{-12}{\volt}$\\ \textit{b}) $\SI{1.71}{\ampere}$\\ \textit{c}) $\SI{4.20}{\ohm}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,0) to[R=$\SI{3.00}{\ohm}$, color=red] (0,2) to[R=$\SI{6.00}{\ohm}$, color=red] (0,4) -- (3,4) to[R=$\SI{3.00}{\ohm}$, color=red] (3,2) to[R=$\SI{6.00}{\ohm}$, color=red] (3,0) -- (0,0)
+    (0,2) -- (0.4,2) to[R=$\SI{3.00}{\ohm}$, color=red] (1.7,2) to[switch=$S$] (3,2);
+    \draw (1.5,-0.2) node[ground]{} -- (1.5,0);
+    \draw (1.5, 4) -- (1.5,4.4);
+    \draw (0,2) node[left]{$a$};
+    \draw (3,2) node[right]{$b$};
+    \draw (1.5,4.4) node[above]{$\SI{36}{\volt}$};
+    \fill (0,2) circle (3pt);
+    \fill (3,2) circle (3pt);
+    \fill (1.5,4.4) circle (3pt);
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos06}\label{f:circuitos06}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos07}
+  Calcule las corrientes $I_1$, $I_2$ e $I_3$ que se indican en el circuito de la figura \ref{f:circuitos07}.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    $I_1 = \SI{0.85}{\ampere}$; $I_2 = \SI{2.14}{\ampere}$; $I_3 = \SI{0.171}{\ampere}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \def\sep{1.3}
+    \draw (0,0) to[R=$\SI{10.00}{\ohm}$, color=red] (7,0)
+    (0,\sep) to[battery2, l=$\SI{12.00}{\volt}$, color=cyan] (1.5,\sep) to[R=$\SI{1.00}{\ohm}$, color=red] (3.5,\sep) to[R=$\SI{1.00}{\ohm}$, color=red] (5.5,\sep) to[battery2, invert, l=$\SI{9.00}{\volt}$, color=cyan] (7,\sep)
+    (0,2*\sep) to[R=$\SI{5.00}{\ohm}$, color=red] (3.5,2*\sep) to[R=$\SI{8.00}{\ohm}$, color=red] (7,2*\sep)
+    (0,0) -- (0,2*\sep)
+    (7,0) -- (7,2*\sep)
+    (3.5,\sep) -- (3.5,2*\sep);
+    \draw[<-,blue!50!black, thick] (4,-0.4) -- (3,-0.4) node[midway,below=1] {$I_3$};
+    \draw[<-,blue!50!black, thick] (5.5,\sep-0.4) -- (4.5,\sep-0.4) node[midway,below=1] {$I_1$};
+    \draw[<-,blue!50!black, thick] (1.5,\sep-0.4) -- (2.5,\sep-0.4) node[midway,below=1] {$I_2$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos07}\label{f:circuitos07}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos08}
+  Los valores en el circuito de la figura \ref{f:circuitos08} son: $R = \SI{2}{\ohm}$ y $\varepsilon = \SI{10}{\volt}$.\par
+  \textit{a}) Calcule la diferencia de potencial $V_B-V_A$.\par
+  \textit{b}) ¿En qué sentido circularía la corriente si los terminales $A$ y $B$ se cortocircuitaran?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{8}{\volt}$\\ \textit{b}) Desde $B$ hacia $A$.
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,0) to[battery2, invert, l=$\varepsilon$, color=cyan] (0,2.5)
+    (2.5,2.5) to[R=$R$, color=red] (2.5,0)
+    (5,0) to[battery2, invert, l=$\varepsilon$, color=cyan] (5,2.5)
+    (0,2.5) to[R=$R$, color=red] (2.5,2.5) to[R=$R$, color=red] (5,2.5)
+    (5,0) -- (2.5,0) to[R=$R$, color=red] (0,0)
+    (0,0) -- (1,1)
+    (1.5,1.5) -- (2.5,2.5);
+    \fill (1,1) circle (3pt);
+    \fill (1.5,1.5) circle (3pt);
+    \draw (1,1) node[right]{$A$};
+    \draw (1.5,1.5) node[right]{$B$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos08}\label{f:circuitos08}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos09}
+  Calcule la corriente que circula por el cortocircuito de la figura \ref{f:circuitos09}.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    $\SI{0.75}{\ampere}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,0) to[R=$\SI{30.00}{\ohm}$, color=red] (0,2)
+    (2,0) to[R=$\SI{20.00}{\ohm}$, color=red] (2,2)
+    (0,2) to[R=$\SI{20.00}{\ohm}$, color=red] (2,2) to[R=$\SI{20.00}{\ohm}$, color=red] (4,2)
+    (4,2) to[battery2, l=$\SI{15.00}{\volt}$, color=cyan] (4,0)
+    (0,0) -- (4,0)
+    (0,2) -- (0,3) -- (4,3) -- (4,2);
+    \draw (2,3.1) node[above]{$i_\text{cc}$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos09}\label{f:circuitos09}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos10}
+  Como se muestra en la figura \ref{f:circuitos10}, una red de resistores de  resistencias $R_1$ y $R_2$ se extiende infinitamente hacia la derecha. Demuestre que la resistencia total $R_T$ de la red infinita es igual a
+  \[ R_T = R_1 + \sqrt{R_1^2+2R_1R_2}
+    \]
+\end{Exercise}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,0) to[R=$R_1$, color=red] (2,0) to[R=$R_1$, color=red] (4,0) to[R=$R_1$, color=red] (6,0) -- (6.2,0)
+    (0,2) to[R=$R_1$, color=red] (2,2) to[R=$R_1$, color=red] (4,2) to[R=$R_1$, color=red] (6,2) -- (6.2,2)
+    (2,2) to[R=$R_2$, color=red] (2,0)
+    (4,2) to[R=$R_2$, color=red] (4,0)
+    (6,2) to[R=$R_2$, color=red] (6,0);
+    \draw [dashed] (6.2,0) -- (7.2,0);
+    \draw [dashed] (6.2,2) -- (7.2,2);
+    \fill (0,0) circle (3pt);
+    \fill (0,2) circle (3pt);
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos10}\label{f:circuitos10}}
+\end{center}
+%
+\begin{Exercise}
+  Un resistor $R_1$ consume una potencia eléctrica $P_1$ cuando se conecta a una fem $\varepsilon$. Cuando el resistor $R_2$ se conecta a la misma fem, consume una potencia eléctrica $P_2$. En términos de $P_1$ y $P_2$:\par
+  \textit{a}) ¿Cuál es la potencia eléctrica total consumida cuando los dos están conectados a esta fuente fem en paralelo?\par
+  \textit{b}) ¿Y cuándo están conectados en serie?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $P_1+P_2$\\ \textit{b}) $P_1P_2/(P_1+P_2)$
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  Se tienen una cafetera de $\SI{1200}{\watt}$, un tostador de $\SI{1100}{\watt}$ y una wafflera de $\SI{1400}{\watt}$ de potencia. Los tres aparatos se conectan en paralelo a un circuito doméstico común de $\SI{220}{\volt}$. ¿Qué corriente total se entrega a los electrodomésticos cuando todos operan simultáneamente?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    $\SI{16.8}{\ampere}$
+  \end{minipage}
+\end{Answer}
+%

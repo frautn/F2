@@ -1,0 +1,313 @@
+\colorsection{Ley de Biot-Savart y Ley de Amp\`ere}
+\setcounter{figure}{0}
+
+\begin{Exercise}\label{p:magnetico01}
+    Calcular el módulo del campo magnético en el punto $P$, ubicado en el punto medio entre los dos cables paralelos mostrados en la figura \ref{f:magnetico01}. Los cables pueden considerarse rectos e infinitos.
+\end{Exercise}
+\begin{Answer}
+    $\SI{5E-6}{\tesla}$
+\end{Answer}
+%
+\begin{Exercise}\label{p:magnetico02}
+    La figura \ref{f:magnetico02} muestra las corrientes transportadas por tres cables infinitos y paralelos al eje $x$. \textit{a}) Determinar el vector campo magnético resultante en el punto $P$, ubicado sobre el eje $z$ a $\SI{3}{\centi\metre}$ arriba del cable central. \textit{b}) Calcular la fuerza neta por unidad de longitud ejercida sobre el cable central.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\va*{B} = (1.03\vu{y}-1.12\vu{z})\SI{E-4}{\tesla}$\\ \textit{b}) $\va*{F}/l = \SI{4.55E-3}{\newton/\metre}\vu{y}$
+    \end{minipage}
+\end{Answer}
+%
+\noindent
+\begin{minipage}[c]{0.5\textwidth}
+\begin{center}
+    \begin{tikzpicture}[scale=0.5]
+        \draw (6,0) ellipse (0.1 and 0.2);
+        \draw (-5,0) +(90:0.1 and 0.2) arc (90:270:0.1 and 0.2);
+        \draw [black] (-5,0.2)--(6,0.2);
+        \draw [black] (-5,-0.2)--(6,-0.2);
+        \draw [red, -{Stealth}, thick] (-4,0)--(-1,0) node[midway,above] {$\SI{1}{\ampere}$};
+        \draw (6,3) ellipse (0.1 and 0.2);
+        \draw (-5,3) +(90:0.1 and 0.2) arc (90:270:0.1 and 0.2);
+        \draw [black] (-5,3.2)--(6,3.2);
+        \draw [black] (-5,2.8)--(6,2.8);
+        \draw [red, -{Stealth}, thick] (-4,3)--(-1,3) node[midway,above] {$\SI{2}{\ampere}$};
+        \fill [blue] (0,1.5) circle (0.15) node[right] {$P$};
+        \draw [{Stealth}-{Stealth}] (-5.5,0) -- (-5.5,3) node[midway, left] {$\SI{8}{\centi\metre}$};
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:magnetico01}\label{f:magnetico01}}
+\end{center}
+\end{minipage}
+%
+\begin{minipage}[c]{0.5\textwidth}
+\begin{center}
+    \def\alfa{70}
+    \def\beta{110}
+    \def\radio{0.15}
+    \def\d{2}
+    \tdplotsetmaincoords{\alfa}{\beta}
+    \begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+        \draw[axis] (6,0,0) -- (10,0,0) node [pos=1.1] {$x$};
+        \draw[blue, dotted] (6,0,0) -- (-4,0,0);
+        \draw[blue, dotted] (0,0,0) -- (0,\radio,0);
+
+        \draw[blue, thick] (0,-\d,0) -- (0,-\d-2,0);
+        \fill [white] (6,{-\d-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-4,{-\d-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-4,{-\d+\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- (6,{-\d+\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- cycle;
+        \draw[blue, thick] (0,\radio,0) -- (0,-\d+\radio,0);
+        \fill [white] (6,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-4,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-4,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- (6,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- cycle;
+        \draw[blue, thick] (0,\radio,0) -- (0,\d,0);
+
+        \draw[axis] (0,0,\radio) -- (0,0,4)  node [left] {$z$};
+        \draw[blue, dotted] (0,0,0) -- (0,0,\radio);
+        \fill [white] (6,{\d+-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-4,{\d+-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-4,{\d+\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- (6,{\d+\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- cycle;
+        \draw[axis] (0,\d+\radio,0) -- (0,4,0) node [pos=1.05] {$y$};
+
+        \draw [] (6,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-4,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)});
+        \draw [] (6,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- (-4,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)});
+        \draw[] plot[domain=0:6.2831853,smooth,variable=\t] (6, {\radio*cos(\t r)},{\radio*sin(\t r)});
+
+        \draw [] (6,{\d+-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-4,{\d+-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)});
+        \draw [] (6,{\d+\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- (-4,{\d+\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)});
+        \draw[] plot[domain=0:6.2831853,smooth,variable=\t] (6, {\d+\radio*cos(\t r)},{\radio*sin(\t r)});
+
+        \draw [] (6,{-\d+-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-4,{-\d+-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)});
+        \draw [] (6,{-\d+\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- (-4,{-\d+\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)});
+        \draw[] plot[domain=0:6.2831853,smooth,variable=\t] (6, {-\d+\radio*cos(\t r)},{\radio*sin(\t r)});
+
+        \draw[dotted] (6,-\d,0) -- (8,-\d,0);
+        \draw[dotted] (6,\d,0) -- (8,\d,0);
+        \draw [{Stealth[slant={0.5}]}-{Stealth[slant={0.5}]}] (7.5,-\d,0) -- (7.5,0,0) node [midway,below, sloped, xslant=0.5] {$\SI{4}{\centi\metre}$};
+        \draw [{Stealth[slant={0.5}]}-{Stealth[slant={0.5}]}] (7.5,\d,0) -- (7.5,0,0) node [midway,below, sloped, xslant=0.5] {$\SI{4}{\centi\metre}$};
+
+        \draw [red, -{Stealth}, thick] (1,-\d, 0) -- (-2,-\d,0) node[midway,above, sloped, xslant=0.5] {$\SI{75}{\ampere}$};
+        \draw [red, -{Stealth}, thick] (1,\d, 0) -- (-2,\d,0) node[midway,above, sloped, xslant=0.5] {$\SI{40}{\ampere}$};
+        \draw [red, -{Stealth}, thick] (2,0,0) -- (5,0,0) node[midway,above, sloped, xslant=0.5] {$\SI{26}{\ampere}$};
+
+        \fill [red] (0,0,2) circle (0.15) node [above right] {$P$};
+
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:magnetico02}\label{f:magnetico02}}
+\end{center}
+\end{minipage}
+%
+\begin{Exercise}\label{p:magnetico03}
+    La figura \ref{f:magnetico03} muestra tres cables infinitos, paralelos entre sí, que pasan perpendicularmente a la página por los vértices del triángulo mostrado. Las corrientes $i_1$ e $i_3$ salen de la página y valen $\SI{20}{\ampere}$ y $\SI{32}{\ampere}$ respectivamente, y la corriente $i_2$ entra a la página y vale $\SI{20}{\ampere}$. Calcular el módulo de la fuerza neta por unidad de longitud que las corrientes $i_1$ e $i_2$ ejercen sobre el conductor que transporta a $i_3$.
+\end{Exercise}
+\begin{Answer}
+    $\SI{3.0E-3}{\newton/\metre}$
+\end{Answer}
+%
+\begin{Exercise}\label{p:magnetico04}
+    Calcular el módulo del campo magnético producido por la corriente $i = \SI{15}{\ampere}$ que circula por un segmento de cable de longitud $L = \SI{0.20}{\metre}$, en el punto $P$ ubicado a una distancia $L/2$ del centro del cable, como se muestra en la figura \ref{f:magnetico04}.
+\end{Exercise}
+\begin{Answer}
+    $\SI{2.12E-5}{\tesla}$
+\end{Answer}
+%
+\noindent
+\begin{minipage}[c]{0.5\textwidth}
+\begin{center}
+    \begin{tikzpicture}[scale=0.5]
+      \draw [blue!100!black!50] (5-0.2828,-0.2828) -- (5+0.2828,0.2828);
+      \draw [blue!100!black!50] (5+0.2828,-0.2828) -- (5-0.2828,0.2828);
+      \draw [blue!100!black!50] (5,0) circle (0.4);
+      \fill [blue!100!black!50] (0,0) circle (0.2);
+      \draw [blue!100!black!50] (0,0) circle (0.4);
+      \fill [blue!100!black!50] (0,5) circle (0.2);
+      \draw [blue!100!black!50] (0,5) circle (0.4);
+      \draw [dotted] (0,0) -- (5,0) -- (0,5) -- (0,0);
+      \draw [] (-.8,0) node [] {$i_1$};
+      \draw [] (-.8,5) node [] {$i_3$};
+      \draw [] (5.8,0) node [] {$i_2$};
+      \draw [] (-1.5,5) -- (-2.5,5);
+      \draw [] (-1.5,0) -- (-2.5,0);
+      \draw [{Stealth}-{Stealth}] (-2.2,0) -- (-2.2,5) node [midway,left] {$\SI{3}{\centi\metre}$};
+      \draw [] (0,-1) -- (0,-2);
+      \draw [] (5,-1) -- (5,-2);
+      \draw [{Stealth}-{Stealth}] (0,-1.7) -- (5,-1.7) node [midway,below] {$\SI{3}{\centi\metre}$};
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:magnetico03}\label{f:magnetico03}}
+\end{center}
+\end{minipage}
+%
+\begin{minipage}[c]{0.5\textwidth}
+\begin{center}
+    \begin{tikzpicture}[scale=0.5]
+        \draw (5,0) ellipse (0.1 and 0.2);
+        \draw (-5,0) +(90:0.1 and 0.2) arc (90:270:0.1 and 0.2);
+        \draw [black] (-5,0.2)--(5,0.2);
+        \draw [black] (-5,-0.2)--(5,-0.2);
+        \draw [red, -{Stealth}, thick] (-4,0)--(-1,0) node[midway,above] {$i$};
+        \fill [blue] (0,5) circle (0.15) node[right] {$P$};
+        \draw [{Stealth}-{Stealth}] (0,0.3) -- (0,4.7) node[midway, right] {$L/2$};
+        \draw [{Stealth}-{Stealth}] (-5,-0.8) -- (5,-0.8) node[midway, below] {$L$};
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:magnetico04}\label{f:magnetico04}}
+\end{center}
+\end{minipage}
+%
+\begin{Exercise}
+    Determinar el módulo del campo magnético en el centro de una espira cuadrada de $\SI{4}{\centi\metre}$ de lado, que transporta una corriente de $\SI{28}{\ampere}$.
+\end{Exercise}
+\begin{Answer}
+    $\SI{7.92E-4}{\tesla}$
+\end{Answer}
+%
+\begin{Exercise}\label{p:magnetico05}
+    Un alambre recto que transporta una corriente $i_1$ está colocado sobre el eje de una espira circular por la que corre una corriente $i_2$, como se muestra en la figura \ref{f:magnetico05}. Demostrar que la fuerza ejercida por la espira sobre el alambre es nula.
+\end{Exercise}
+%
+\begin{Exercise}\label{p:magnetico06}
+    Un hilo muy largo tiene un bucle semicircular de radio $R$ como indica la figura \ref{f:magnetico06}. Si por el hilo circula una corriente $i$, verificar que el campo magnético en el centro $P$ es:
+    \begin{align*}
+        B &= \dfrac{\mu_0 i}{4R} \quad \text{entrando a la página}
+    \end{align*}
+\end{Exercise}
+%
+\begin{Exercise}\label{p:magnetico07}
+    Calcular el campo magnético (módulo y sentido) en el punto $P$ producido por la corriente que circula en el conductor mostrado en la figura \ref{f:magnetico07}. Datos: $i = \SI{20}{\ampere}$; $a = \SI{5}{\centi\metre}$; $b = \SI{10}{\centi\metre}$.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[c]{0.4\textwidth}
+        $\SI{6.28E-5}{\tesla}$, saliendo de la página.
+    \end{minipage}
+\end{Answer}
+%
+\noindent
+\begin{minipage}[c]{0.5\textwidth}
+\begin{center}
+    \def\alfa{70}
+    \def\beta{140}
+    \def\radio{0.15}
+    \def\radiob{2.2}
+    \def\d{0.3}
+    \tdplotsetmaincoords{\alfa}{\beta}
+    \begin{tikzpicture}[tdplot_main_coords, scale=0.6]
+        \draw[] plot[domain=0:6.2831853,smooth,variable=\t] (0, {\radiob*cos(\t r)},{\radiob*sin(\t r)});
+        \draw[] plot[domain=0:6.2831853,smooth,variable=\t] (0, {(\radiob+\d)*cos(\t r)},{(\radiob+\d)*sin(\t r)});
+        \draw[red, -{Stealth[reversed]}, thick] plot[domain=0.3:1.2,smooth,variable=\t] (0, {(\radiob+\d/2)*cos(\t r)},{(\radiob+\d/2)*sin(\t r)});
+        \draw (0,{(\radiob+\d+0.5)*0.71},{(\radiob+\d+0.5)*0.71}) node [red] {$i_2$};
+
+        \fill [white] (6,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-1,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-1,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- (6,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- cycle;
+
+        \draw [] (6,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-1,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)});
+        \draw [] (6,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- (-1,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)});
+        \draw[] plot[domain=0:6.2831853,smooth,variable=\t] (6, {\radio*cos(\t r)},{\radio*sin(\t r)});
+        \draw [] (-2,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)}) -- (-5,{-\radio*cos(-2*\alfa)},{\radio*sin(-2*\alfa)});
+        \draw [] (-2,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)}) -- (-5,{\radio*cos(-2*\alfa)},{-\radio*sin(-2*\alfa)});
+
+        \draw [red, -{Stealth}, thick] (5,0,0) -- (2,0,0) node[midway,above] {$i_1$};
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:magnetico05}\label{f:magnetico05}}
+\end{center}
+\end{minipage}
+%
+\begin{minipage}[c]{0.5\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+            \draw (7,0) ellipse (0.1 and 0.2);
+            \draw (4.2,-0.2) arc (0:180:4);
+            \fill [white] (4.3,0.2) -- (-4.3,0.2) -- (-4.3,-0.2) -- (4.3,-0.2) -- cycle;
+            \draw (7,-0.2) -- (3.8,-0.2) arc (0:180:3.6) -- (-7,-0.2);
+            \draw [black] (-7,0.2)--(-3.8,0.2);
+            \draw [black] (7,0.2)--(4.2,0.2);
+            \draw (-7,0) +(90:0.1 and 0.2) arc (90:270:0.1 and 0.2);
+            \draw [red, -{Stealth}, thick] (-6,0)--(-4,0) node[midway,above] {$i$};
+            \fill [blue] (0,0) circle (0.15) node[left] {$P$};
+            \draw [-{Stealth}] (0,0) -- (3.6*0.71,3.6*0.71) node[midway, above left] {$R$};
+        \end{tikzpicture}
+        \captionof{figure}{Problema \ref{p:magnetico06}\label{f:magnetico06}}
+    \end{center}
+\end{minipage}
+%
+\noindent
+\begin{minipage}[c]{0.5\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+            % \draw (7,0) ellipse (0.1 and 0.2);
+            \draw (5.6,-0.2) arc (0:180:5.6);
+            \draw (2.5,-0.2) arc (0:180:2.5);
+            \fill [white] (6,0.2) -- (-6,0.2) -- (-6,-0.2) -- (6,-0.2) -- cycle;
+            \draw (2.1,-0.2) arc (0:180:2.1);
+            \draw (6,-0.2) arc (0:180:6);
+            \draw [black] (5.6,0.2)--(2.5,0.2);
+            \draw [black] (-5.6,0.2)--(-2.5,0.2);
+            \draw [black] (6,-0.2)--(2.1,-0.2);
+            \draw [black] (-6,-0.2)--(-2.1,-0.2);
+            \draw [red, -{Stealth}, thick] (-3,0)--(-5,0) node[midway,above] {$i$};
+            \draw [red, -{Stealth}, thick] (5,0)--(3,0);
+            \draw [red, -{Stealth}, thick] (-5.8*0.71,-0.2+5.8*0.71) arc (135:110:5.8);
+            \draw [red, -{Stealth}, thick] (0,-0.2+2.3) arc (90:135:2.3);
+            \fill [blue] (0,0) circle (0.15) node[left] {$P$};
+            \draw [-{Stealth}] (0,0) -- (2.3*0.866,2.3*0.5) node[pos=0.5, below] {$a$};
+            \draw [-{Stealth}] (0,0) -- (5.8*0.71,5.8*0.71) node[pos=0.5, above] {$b$};
+        \end{tikzpicture}
+        \captionof{figure}{Problema \ref{p:magnetico07}\label{f:magnetico07}}
+    \end{center}
+\end{minipage}
+%
+\begin{minipage}[c]{0.5\textwidth}
+    \begin{center}
+        \begin{tikzpicture}[scale=0.6]
+            \draw (7,0) ellipse (0.1 and 0.2);
+            \draw (7,7.6) ellipse (0.1 and 0.2);
+            \draw (7,-0.2) -- (0,-0.2) arc (270:90:4) -- (7,7.8);
+            \draw (7,0.2) -- (0,0.2) arc (270:90:3.6) -- (7,7.4);
+            \fill [blue] (0,4) circle (0.15) node[below left] {$P$};
+            \draw [-{Stealth}] (0,4) -- (-3.7*0.71,4+3.7*0.71) node[midway, right] {$R$};
+            \draw[axis] (3,4) -- (6,4) node [pos=1.1] {$x$};
+            \draw[axis] (3.4,3.6) -- (3.4,6.6) node [left] {$y$};
+            \draw [red, -{Stealth}, thick] (6,7.6)--(3,7.6) node[midway,above] {$i$};
+            \draw [red, -{Stealth}, thick] (3,0)--(6,0) node[midway,above] {$i$};
+            \draw [red, -{Stealth}, thick] (-3.8,3.8) arc (180:210:3.8);
+        \end{tikzpicture}
+        \captionof{figure}{Problema \ref{p:magnetico08}\label{f:magnetico08}}
+    \end{center}
+\end{minipage}
+%
+\begin{Exercise}\label{p:magnetico08}
+    Un hilo largo que transporta una corriente $i$ se curva en forma de horquilla como muestra la figura \ref{f:magnetico08}. Demostrar que el campo magnético en $P$, situado en el centro de la semicircunferencia, vale:
+    \begin{align*}
+        \va*{B} &= \dfrac{\mu_0 i}{2R} \left ( \dfrac{1}{2} + \dfrac{1}{\pi} \right ) \vu{z}
+    \end{align*}
+\end{Exercise}
+%
+\noindent
+\begin{minipage}[c]{0.5\textwidth}
+\begin{Exercise}\label{p:magnetico09}
+    Dos conductores coplanares se disponen como indica la figura \ref{f:magnetico09}. Considere a los conductores lineales e infinitos. Obtener la siguiente expresión para el módulo de la fuerza que ejercida sobre el segmento de longitud $b$ del conductor que transporta a $i_2$ como consecuencia del campo generado por la corriente $i_1$:
+    \begin{align*}
+        F &= \dfrac{\mu_0 i_1 i_2}{2\pi \sin\alpha} \ln \left ( \dfrac{a+b}{a}\right )
+    \end{align*}
+\end{Exercise}
+\end{minipage}
+%
+\begin{minipage}[c]{0.5\textwidth}
+    \begin{center}
+        \def\alfa{45}
+        \def\dx{3}
+        \def\dy{0}
+        \begin{tikzpicture}[scale=0.5]
+            \draw (0,7) ellipse (0.2 and 0.1);
+            \draw [] (-0.2,7) -- (-.2,0.5);
+            \draw [] (0.2,7) -- (.2,0.5);
+
+            \draw [cm={cos(\alfa) ,-sin(\alfa) ,sin(\alfa) ,cos(\alfa) ,(\dx,\dy)}] (0,8) ellipse (0.2 and 0.1);
+            \draw [cm={cos(\alfa) ,-sin(\alfa) ,sin(\alfa) ,cos(\alfa) ,(\dx,\dy)}] (-0.2,8) -- (-.2,0);
+            \draw [cm={cos(\alfa) ,-sin(\alfa) ,sin(\alfa) ,cos(\alfa) ,(\dx,\dy)}] (0.2,8) -- (.2,0);
+
+            \draw [dotted] (0,0) -- (0,-3.5);
+            \draw [dotted, cm={cos(\alfa) ,-sin(\alfa) ,sin(\alfa) ,cos(\alfa) ,(\dx,\dy)}] (0,-0.4) -- (0,-5);
+            \draw (0,-2) arc (90:45:1) node [midway, above] {$\alpha$};
+            \draw [red, -{Stealth}, thick] (0,6)--(0,4) node[midway,left] {$i_1$};
+            \draw [red, -{Stealth}, thick,cm={cos(\alfa) ,-sin(\alfa) ,sin(\alfa) ,cos(\alfa) ,(\dx,\dy)} ] (0,5)--(0,7) node[midway,above left] {$i_2$};
+
+            \fill [blue, fill opacity=0.4, cm={cos(\alfa) ,-sin(\alfa) ,sin(\alfa) ,cos(\alfa) ,(\dx,\dy)}] (-0.2,1.5) -- (-0.2,3.5) -- (0.2, 3.5) -- (0.2, 1.5) -- cycle;
+            \draw [|-|, cm={cos(\alfa) ,-sin(\alfa) ,sin(\alfa) ,cos(\alfa) ,(\dx,\dy)}] (0.8,1.5) -- (0.8,-4.2) node [pos=0.4, below] {$a$};
+            \draw [|-|, cm={cos(\alfa) ,-sin(\alfa) ,sin(\alfa) ,cos(\alfa) ,(\dx,\dy)}] (0.8,1.5) -- (0.8,3.5) node [pos=0.6, below] {$b$};
+        \end{tikzpicture}
+        \captionof{figure}{Problema \ref{p:magnetico09}\label{f:magnetico09}}
+    \end{center}
+\end{minipage}
+%
+
+

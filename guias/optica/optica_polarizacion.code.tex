@@ -1,0 +1,89 @@
+\section{Polarización}
+\rfigure
+%
+\pma{\label{p:P174}
+Una onda luminosa que se propaga a lo largo del eje $z$ incide sobre un polarizador lineal, contenido siempre en el plano $xy$. Si la intensidad de la luz que llega al polarizador es $I_0$, discuta cómo varía (o no) la intensidad luminosa transmitida al girar el eje de transmisión, en los casos en que la luz incidente sea:
+\bemca
+ \item circularmente polarizada dextrógira; %a
+ \item circularmente polarizada levógira;  %b
+ \item elípticamente polarizada dextrógira; %c
+ \item elípticamente polarizada levógira; %d
+ \item linealmente polarizada; %e
+ \item luz natural. %f
+\eemca
+\noindent
+\rta{.95}{\textit{a}),\textit{ b}),\textit{ f}) La intensidad no varía y vale $\frac12 I_0$; \textit{c}),\textit{ d}) la intensidad varía entre $I_{min}\neq 0$ e $I_{max}$ (con $I_{max} + I_{min} = I_0$); \textit{e}) la intensidad varía entre 0 e $I_0$}
+}
+%
+\pma{\label{p:P175}
+Un haz de luz no polarizada de irradiancia $I_0$ pasa a través de una secuencia de dos polarizadores lineales ideales. ¿Cuál debe ser la orientación relativa entre sus ejes de transmisión, si el haz emergente tiene una irradiancia de \textit{a}) $I_0/2$; \textit{b}) $I_0/4$?\\
+\rta{.95}{Sus ejes de transmisión deben estar \textit{a}) paralelos; \textit{b}) a 45º}}
+%
+\pma{\label{p:PO176}
+Dos láminas polarizadoras tienen sus ejes de transmisión cruzados perpendicularmente con $\theta_1=0$ y $\theta_3=\frac{\pi}{2}$ (ver figura \ref{f:PO176}). Entre ellas se inserta una tercera lámina de modo que su eje de transmisión forme un ángulo $\theta_2$ con el de la primera lámina. Si sobre la primer lámina incide luz natural, demuestre que la intensidad transmitida a través de las tres láminas es máxima cuando $\theta_2=45$º.}
+%
+\pma{\label{p:PO177}
+La lámina polarizadora intermedia del problema \ref{p:PO176} está girando alrededor del eje $z$ con velocidad angular $\omega=4\pi$~rad/s. Si sobre la primera incide luz natural de intensidad 8~W/m$^2$, determine los valores máximo y mínimo de la intensidad luminosa transmitida a través de las tres láminas y cada cuánto tiempo se observarán los máximos de intensidad. \\
+\rta{.95}{$I_{max}=1$~W/m$^2$, $I_{min}=0$~W/m$^2$; los máximos en la irradiancia se observan cada $0.125$~s}}
+%
+\pma{\label{p:PO178}
+Un haz de luz no polarizada se envía a través del sistema de tres láminas polarizadoras del problema \ref{p:PO176}, cuyos ejes de transmisión forman ángulos $\theta_1=40$º, $\theta_2=20$º, $\theta_3=40$º. ¿Qué porcentaje de la luz que llega al primer polarizador sale por el tercero?\\
+\rta{.75}{$3.125$~\%}}
+
+\pgfdeclarelayer{layer1}
+\pgfdeclarelayer{layer2}
+\pgfdeclarelayer{layer3}
+\pgfsetlayers{main, layer3, layer2, layer1}
+
+\begin{center}
+\begin{tikzpicture}[x={(1cm,0.4cm)}, y={(8mm, -3mm)}, z={(0cm,1cm)}, line cap=round, line join=round, scale=0.75]
+  % \begin{pgfonlayer}{layer1}
+  %   \object{3}
+  %   \ray(0,-1,0)(2.5,-1,0)(0.5)(1);
+  %   \ray(0,1,0)(2.5,1,0)(0.5)(1);
+  % \end{pgfonlayer}
+  % \begin{pgfonlayer}{layer3}
+  %   \image{8}
+  % \end{pgfonlayer}
+  \begin{pgfonlayer}{layer1}
+    \lens{2}
+    \begin{scope}[canvas is yz plane at x=2]
+      \draw[dashed] (0.7,-0.8) -- (-1.4,1.6);
+      \draw (0,1.2) -- (0,1.8);
+      \draw[-latex] (0,1.4) arc (90:133:1.4) node[above, pos=0.5] {$\theta_3$};
+    \end{scope}
+    \ray(0,0,0)(2,0,0)(0.5)(-1);
+
+  \end{pgfonlayer}
+
+  \begin{pgfonlayer}{layer2}
+    \lens{5}
+    \begin{scope}[canvas is yz plane at x=5]
+      \draw[dashed] (0.7,0.8) -- (-1.4,-1.6);
+      \draw (0,-1.2) -- (0,-1.8);
+      \draw[-latex] (0,-1.4) arc (270:227:1.4) node[below, pos=0.5] {$\theta_2$};
+    \end{scope}
+    \ray(5,0,0)(2,0,0)(0.5)(-1);
+  \end{pgfonlayer}
+
+  \begin{pgfonlayer}{layer3}
+    \ray(11,0,0)(8,0,0)(0.5)(-1);
+    \lens{8}
+    \begin{scope}[canvas is yz plane at x=8]
+      \draw[dashed] (0.7,-0.8) -- (-1.4,1.6);
+      \draw (0,1.2) -- (0,1.8);
+      \draw[-latex] (0,1.4) arc (90:133:1.4) node[above, pos=0.5] {$\theta_1$};
+    \end{scope}
+    \ray(8,0,0)(5,0,0)(0.5)(-1);
+  \end{pgfonlayer}
+
+  \draw[-latex] (10,0,0) -- (10,0,1) node[right] {$y$};
+  \draw[-latex] (10,0,0) -- (10,1,0) node[right] {$x$};
+  
+\end{tikzpicture}
+\captionof{figure}{Problemas \ref{p:PO176}, \ref{p:PO177}, \ref{p:PO178}.}\label{f:PO176}
+\end{center}
+%
+\pma{\label{p:P179}
+Se desea girar 90º el plano de polarización de un haz de luz polarizado linealmente de intensidad $I_0$. ¿Cómo podría hacerse usando únicamente polarizadores lineales? Diseñe un experimento donde la pérdida de la intensidad total sea menor al 40\%. Justifique analíticamente su respuesta.\\
+\rta{.95}{Usando $N$ polarizadores, de manera tal que cada uno tenga su eje de transmisión rotado $\pi/2N$ respecto del anterior. A la salida se obtiene un haz de intensidad $I=I_0\cos^{2N}\left(\frac{\pi}{2N}\right)$ y una rotación total de $\pi/2$ respecto del haz inicial. Se verifica que $I/I_0>0.6$ para $N\geq5$}}

@@ -1,0 +1,38 @@
+\begin{tikzpicture}[scale=1, every node/.style={scale=1}]
+    \definecolor{topcolor}{RGB}{255,128,0};
+    \definecolor{botcolor}{RGB}{255,128,0};
+
+    \fill[color=topcolor] (1.8273,1.065) arc (30.235:149.765:2.115) -- cycle;
+    \fill[color=botcolor] (1.8273,-1.065) arc (-30.235:-149.765:2.115) -- cycle;
+
+    \draw[color=botcolor, thick] (-1.755,-0.625) -- (1.755, -0.625);
+    \fill[color=botcolor] (-1.755,-0.0929) -- (1.755, -0.0929) -- (1.755, -0.5405) -- (-1.755,-0.5405) -- cycle;
+
+    % \fill [black](0,-0.7) circle(2pt);
+
+    % \draw (-1.7539,0.93) rectangle (-0.9592,0);
+    \fill[] (-1.7539,0.93) arc (180:360:0.39735) -- (-1.1178,0.93) arc (360:180:0.23875) -- cycle;
+    \fill[] (-1.7539,0) arc (180:0:0.39735) -- (-1.1178,0) arc (0:180:0.23875) -- cycle;
+    \fill (-1.7539,0.3866) rectangle (-0.9592,0.5434);
+    \fill (-1.43495,0.93) rectangle (-1.27815,0);
+
+    \fill[color=topcolor] (-0.7795,0.3275) arc[start angle=180, end angle=360,x radius=0.40585, y radius=0.3275] -- (0.0322,0.8506) arc[start angle=0, end angle=180,x radius=0.08925, y radius=0.0794] -- (-0.1463,0.3275) arc[start angle=0, end angle=-180,x radius=0.22735, y radius=0.1604] -- (-0.603, 0.8506) arc[start angle=0, end angle=180,x radius=0.08925, y radius=0.0794] -- cycle;
+
+    \fill[color=topcolor] (0.4003,0.0794) arc[start angle=180, end angle=360,x radius=0.08925, y radius=0.0794] -- (0.5788,0.7515) -- (0.7986,0.7515) arc[start angle=-90, end angle=90,x radius=0.0794, y radius=0.08925] -- (0.1805,0.93) arc[start angle=90, end angle=270,x radius=0.0794, y radius=0.08925] -- (0.4003, 0.7515) -- cycle;
+
+    \fill[color=topcolor] (0.9455,0.0794) arc[start angle=180, end angle=360,x radius=0.08925, y radius=0.0794] -- (1.124,0.608) -- (1.57,0.0267) arc[start angle=-153.217, end angle=0,x radius=0.09411, y radius=0.07059] -- (1.755,0.8506) arc[start angle=0, end angle=180,x radius=0.08925, y radius=0.0794] -- (1.5765,0.3191) -- (1.124,0.9004) arc[start angle=26.783, end angle=180,x radius=0.09411, y radius=0.07059] -- cycle;
+
+    \node [scale=0.8,color=white] at (-1.3822,-0.31) {{\fontfamily{cmss}\selectfont \textbf{A}}};
+    \node [scale=0.8,color=white] at (-1.0751,-0.31) {{\fontfamily{cmss}\selectfont \textbf{V}}};
+    \node [scale=0.8,color=white] at (-0.768,-0.31) {{\fontfamily{cmss}\selectfont \textbf{E}}};
+    \node [scale=0.8,color=white] at (-0.4609,-0.31) {{\fontfamily{cmss}\selectfont \textbf{L}}};
+    \node [scale=0.8,color=white] at (-0.1536,-0.31) {{\fontfamily{cmss}\selectfont \textbf{L}}};
+    \node [scale=0.8,color=white] at (0.1536,-0.31) {{\fontfamily{cmss}\selectfont \textbf{A}}};
+    \node [scale=0.8,color=white] at (0.4605,-0.31) {{\fontfamily{cmss}\selectfont \textbf{N}}};
+    \node [scale=0.8,color=white] at (0.7676,-0.31) {{\fontfamily{cmss}\selectfont \textbf{E}}};
+    \node [scale=0.8,color=white] at (1.0749,-0.31) {{\fontfamily{cmss}\selectfont \textbf{D}}};
+    \node [scale=0.8,color=white] at (1.3822,-0.31) {{\fontfamily{cmss}\selectfont \textbf{A}}};
+
+    \node [scale=1] at (0,-0.845) {{\fontfamily{cmss}\selectfont UDB Física}};
+
+\end{tikzpicture}

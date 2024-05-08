@@ -1,0 +1,166 @@
+\twocolumn[\colorsection{Transitorios en circuitos}]
+\setcounter{figure}{0}
+%
+\begin{Exercise}\label{p:transitorios01}
+    Considere el circuito mostrado en la figura \ref{f:transitorios01}. Los resistores tienen resistencias $R_1 = \SI{6.00}{\ohm}$ y $R_2 = \SI{4.00}{\ohm}$, y el capacitor una capacidad $C = \SI{9.00}{\micro\farad}$. Cuando el circuito se encuentra en régimen estacionario, la magnitud de la carga sobre las placas del capacitor es $\SI{36.00}{\micro\coulomb}$. Calcular el valor de la fem $\varepsilon$.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        $\SI{6.67}{\volt}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \begin{circuitikz}[scale=1]
+        \draw (0,2.5) to[R=$R_2$, color=red] (2.5,2.5) -- (5,2.5)
+        (0,2.5) to[battery2, l=$\varepsilon$, color=cyan] (0,0) -- (5,0) to[C, l=$C$] (5,2.5)
+        (2.5,2.5) to[R=$R_1$, color=red] (2.5,0);
+    \end{circuitikz}
+    \captionof{figure}{Problema \ref{p:transitorios01}\label{f:transitorios01}}
+\end{center}
+%
+\begin{Exercise}\label{p:transitorios02}
+    En el circuito de la figura \ref{f:transitorios02}, los dos capacitores están inicialmente cargados a $\SI{45}{\volt}$.\par
+    \textit{a}) ¿Cuánto tiempo después de cerrar el interruptor el voltaje de cada capacitor se reducirá a $\SI{10}{\volt}$?\par
+    \textit{b}) ¿Cuánto vale la corriente en el circuito, en el instante calculado en el ítem anterior?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{4.22}{\milli\second}$\\ \textit{b}) $\SI{125}{\milli\ampere}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+\begin{circuitikz}[scale=1]
+    \draw (0,0.5) to[C, l=$\SI{15}{\micro\farad}$] (0,2.5) -- (1.5,2.5) to[C, l=$\SI{20}{\micro\farad}$] (1.5,0.5) -- (0,0.5)
+    (0.75,2.5) -- (0.75,3) to[switch] (4,3) to[R=$\SI{50}{\ohm}$, color=red] (4,0) to[R=$\SI{30}{\ohm}$, color=red] (1.25,0) -- (0.75,0) -- (0.75,0.5);
+\end{circuitikz}
+\captionof{figure}{Problema \ref{p:transitorios02}\label{f:transitorios02}}
+\end{center}
+%
+\begin{Exercise}\label{p:transitorios03}
+    El capacitor de la figura \ref{f:transitorios03} tiene una capacidad $C = \SI{15}{\micro\farad}$, el valor de la resistencia es $R = \SI{980}{\ohm}$ y la fuente de tensión es $\varepsilon = \SI{18}{\volt}$. Inicialmente, el capacitor está descargado y el interruptor se encuentra en la posición 1. Luego el interruptor se mueve a la posición 2, por lo que el capacitor comienza a cargarse. Después de que el interruptor ha estado en la posición 2 durante $\SI{10}{\milli\second}$, el interruptor se lleva de regreso a la posición 1. \textit{a}) Calcular la carga en el capacitor justo antes de que el interruptor se lleve desde la posición 2 hasta la 1. \textit{b}) Calcular las caídas de potencial a través de la resistencia y el capacitor en el  instante del ítem anterior. \textit{c}) Calcular las caídas de potencial a través de la resistencia y del capacitor justo después de que el interruptor se llevó dede la posición 2 hasta la 1. \textit{d}) Calcular la carga en el capacitor $\SI{10}{\milli\second}$ después de haber llevado el interruptor desde la posición 2 hasta la posición 1.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{133}{\micro\coulomb}$\\ \textit{b}) $V_R = \SI{9.13}{\volt}$; $V_C = \SI{8.87}{\volt}$\\ \textit{c}) $V_R = V_C = \SI{8.87}{\volt}$\\ \textit{d}) $\SI{67.4}{\micro\coulomb}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \begin{circuitikz}[scale=1]
+        \draw (0,3.5) node[spdt, rotate=90] (Sw) {} (Sw.in) node[left] {} (Sw.out 1) node[below left] {2} (Sw.out 2) node[below right] {1};
+        \draw [] (0,0) to[R=$R$, color=red] (0,2) to[C, l=$C$] (Sw.in) ;
+        \draw [] (Sw.out 1) -| (-2,3) to[battery2, l=$\varepsilon$, color=cyan] (-2,1) -- (-2,0) -- (2,0) |- (Sw.out 2);
+    \end{circuitikz}
+    \captionof{figure}{Problema \ref{p:transitorios03}\label{f:transitorios03}}
+\end{center}
+%
+\begin{Exercise}\label{p:transitorios04}
+    En el circuito que se ilustra en la figura \ref{f:transitorios04}, cada capacitor tiene inicialmente una carga de $\SI{3.5}{\nano\coulomb}$. Después de que el interruptor se cierra, ¿cuál será la corriente en el circuito en el instante en que los capacitores hayan perdido el 80\% de su energía almacenada inicialmente?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        $\SI{13.6}{\ampere}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+\begin{circuitikz}[scale=1]
+    \draw (0,0) to[C, l=$\SI{20}{\pico\farad}$] (0,2.5) to[C, l=$\SI{10}{\pico\farad}$] (1.5,2.5) to[switch] (3,2.5) to[R=$\SI{25}{\ohm}$, color=red] (3,0) -- (1.5,0) to[C, l=$\SI{15}{\pico\farad}$] (0,0);
+\end{circuitikz}
+\captionof{figure}{Problema \ref{p:transitorios04}\label{f:transitorios04}}
+\end{center}
+%
+\begin{Exercise}
+    Un capacitor de $\SI{2.00}{\micro\farad}$ inicialmente descargado se conecta en serie con una resistencia de $\SI{6.00}{\kilo\ohm}$ y una fuente de $\SI{90.0}{\volt}$. El circuito se cierra en $t = 0$.\par
+    \textit{a}) Inmediatamente después de cerrado el circuito, ¿cuál es la tasa a la que se disipa la energía eléctrica en la resistencia?\par
+    \textit{b}) ¿En qué instante la tasa a la que la energía eléctrica se disipa en la resistencia es igual a la tasa a la que la energía eléctrica se almacena en el capacitor?\par
+    \textit{c}) En el instante calculado en el ítem \textit{b}, ¿cuál es la tasa a la que se disipa la energía eléctrica en la resistencia?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{1.35}{\watt}$\\ \textit{b}) $t = \SI{8.3}{\milli\second}$\\ \textit{c}) $\SI{0.339}{\watt}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}\label{p:transitorios05}
+    En el circuito de la figura \ref{f:transitorios05}, el capacitor se encuentra inicialmente descargado. \textit{a}) Calcular la corriente en cada resistencia inmediatamente después de cerrar el interruptor. \textit{b}) Calcular la carga en el capacitor luego de que el interruptor se ha mantenido cerrado mucho tiempo.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $i_{\SI{5}{\ohm}} = \SI{1.15}{\ampere}$; $i_{\SI{6}{\ohm}} = \SI{1.55}{\ampere}$; $i_{\SI{6.8}{\ohm}} = \SI{0.40}{\ampere}$\\ \textit{b}) $\SI{2.1E-5}{\coulomb}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \begin{circuitikz}[scale=1]
+        \draw (0,0) to[battery2, l=$\SI{10}{\volt}$, invert, color=cyan] (0,2.5) to[switch] (1.5,2.5) to[R=$\SI{5}{\ohm}$, color=red] (3.5,2.5) to[R=$\SI{6}{\ohm}$, color=red] (3.5,0) to[battery2, l=$\SI{5}{\volt}$, invert, color=cyan] (1.75,0) to[C, l=$\SI{2.2}{\micro\farad}$] (0,0)
+        (3.5,2.5) to[battery2, l=$\SI{8}{\volt}$, color=cyan] (5.5,2.5) to[battery2, l=$\SI{4}{\volt}$, color=cyan] (5.5,0) to[R=$\SI{6.8}{\ohm}$, color=red] (3.5,0);
+    \end{circuitikz}
+    \captionof{figure}{Problema \ref{p:transitorios05}\label{f:transitorios05}}
+\end{center}
+%
+\begin{Exercise}\label{p:transitorios06}
+    Cuando la llave recién se cierra, los capacitores de la figura \ref{f:transitorios06} están descargados, y se observa que por la fuente circula una corriente de $\SI{4}{\milli\ampere}$. \textit{a}) ¿Qué corriente circulará por la fuente después de mantener la llave cerrada mucho tiempo? \textit{b}) ¿Qué energía acumula cada capacitor en esas condiciones? Datos: $R = \SI{1.5}{\kilo\ohm}$; $r = \SI{2.0}{\kilo\ohm}$; $C = \SI{6.0}{\micro\farad}$
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{1.6}{\milli\ampere}$\\ \textit{b}) $\SI{1.73E-5}{\joule}$, la misma en ambos capacitores.
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+\begin{circuitikz}[scale=1]
+    \draw (-1,0) to[R=$r$, color=red] (1,0)
+    (-3,0.5) to[R=$R$, color=red] (-1,0.5) -- (-1,-0.5) to[C, l=$C$] (-3,-0.5) -- (-3,0.5)
+    (1,0.5) to[C, l=$C$] (3,0.5) -- (3,-0.5) to[R=$R$, color=red] (1,-0.5) -- (1,0.5)
+    (-3,0) -| (-3.5,-2) -- (-2,-2) to[switch] (0,-2) to[battery2, color=cyan] (2,-2) -- (3.5,-2) |- (3,0);
+\end{circuitikz}
+\captionof{figure}{Problema \ref{p:transitorios06}\label{f:transitorios06}}
+\end{center}
+%
+\begin{Exercise}
+    Un inductor con inductancia de $\SI{2.50}{\henry}$ y resistencia de $\SI{8.00}{\ohm}$ está conectado a las terminales de una batería con una fem de $\SI{6.00}{\volt}$ y resistencia interna despreciable. Determinar:\par
+    \textit{a}) La razón inicial de incremento de la corriente en el circuito.\par
+    \textit{b}) La razón de aumento de la corriente en el instante en que esta última es igual a $\SI{0.500}{\ampere}$.\par
+    \textit{c}) La corriente $\SI{0.250}{\second}$ después de haber cerrado el circuito.\par
+    \textit{d}) La corriente en el régimen estacionario final.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{2.4}{\ampere/\second}$\\ \textit{b}) $\SI{0.8}{\ampere/\second}$\\ \textit{c}) $\SI{0.413}{\ampere}$\\ \textit{d}) $\SI{0.75}{\ampere}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+    Una batería de $\SI{35.0}{\volt}$ con resistencia interna insignificante, un resistor de $\SI{50.0}{\ohm}$ y un inductor de $\SI{1.25}{\milli\henry}$ con resistencia despreciable están conectados en serie con un interruptor abierto, y el interruptor se cierra de forma súbita.\par
+    \textit{a}) ¿Cuánto tiempo después de cerrar el interruptor la corriente a través del inductor alcanzará la mitad de su valor máximo?\par
+    \textit{b}) ¿Cuánto tiempo después de cerrar el interruptor la energía almacenada en el inductor será la mitad de su máximo valor?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{17.3}{\micro\second}$\\ \textit{b}) $\SI{30.7}{\micro\second}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}\label{p:transitorios07}
+    En la figura \ref{f:transitorios07}, el valor de $R$ es $\SI{15.0}{\ohm}$ y la \textit{fem} de la batería es $\SI{6.30}{\volt}$. Inicialmente, el interruptor $S_1$ se encuentra cerrado y el interruptor $S_2$ abierto. Después de varios minutos se abre $S_1$ y simultáneamente se cierra $S_2$. Se observa que $\SI{2.00}{\milli\second}$ luego del cambio, la corriente ha disminuido a $\SI{0.320}{\ampere}$.\par
+    \textit{a}) Calcular la inductancia de la bobina.\par
+    \textit{b}) ¿Cuánto tiempo después del cambio la corriente se reduce en un 90\%?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{0.110}{\henry}$\\ \textit{b}) $\SI{0.77}{\milli\second}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+\begin{circuitikz}[scale=1]
+    \draw (0,0) to[switch, l=$S_2$] (4,0) -- (4,3)
+    (0,1.5) to[R=$R$, color=red] (2,1.5) to[L, l=$L$, color=green!80!black] (4,1.5)
+    (0,0) -- (0,3) to[battery2, color=cyan] (2,3) to[switch, l=$S_1$] (4,3);
+\end{circuitikz}
+\captionof{figure}{Problema \ref{p:transitorios07}\label{f:transitorios07}}
+\end{center}
+%

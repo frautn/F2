@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es" data-bs-theme="auto">
+<head>
+    <script src="../../../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>F2 - Termodinámica</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
+
+
+
+    <link href="../../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+    </style>
+
+<!-- Con este link no hay necesidad de cambiar la versión -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+    <!-- <div class="col-lg-8 mx-auto p-4 py-md-5"> -->
+<header class="d-flex align-items-center pt-3 pb-1 mb-3 border-bottom">
+    <div class="container-fluid row mb-1">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-2">
+            <a href="/UTN/">
+            <img src="../../../assets/img/logoUTN-sm.png" alt="Logo UTN" width="80" loading="lazy">
+            </a>
+        </div>
+        <div class="col-md-6 text-center">
+            <p class="lead">Segunda ley de la Termodinámica</p>
+        </div>
+
+        <div class="col-md-2 text-end">
+            <p class="lead">Física 2</p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</header>
+
+<main>
+  <div class="container-fluid pt-4 pb-4 themed-container text-center">
+    <h1 class="display-4 lh-1 text-body-emphasis mb-3">
+      Pero...¿qué es entropía?</h1>
+  </div>
+
+  <div class="container my-3 pb-4">
+    <div class="pt-2 text-center bg-body-tertiary border rounded-3 align-content-center">
+      <p>
+          <a class="btn btn-primary fs-4" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+            ¿Desorden?
+            </a>
+        </p>
+        <div class="collapse" id="collapseExample1">
+          <img src="img/esto-no-es-entropia.png" alt="olla" width="1200" loading="lazy">
+        </div>
+    </div>
+  </div>
+
+  <div class="container my-3 p-5">
+    <div class="pt-2 text-center bg-body-tertiary border rounded-3 align-content-center">
+      <p>
+        <a class="btn btn-primary fs-4" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+          Expansión libre de Joule
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample3">
+        <p class="fs-4">
+          Gas ideal en un recipiente aislado, que se expande contra vacío
+        </p>
+
+        <img src="img/joule-expansion.svg" alt="joule-expansion" width="800" loading="lazy">
+        <!-- <div class="card card-body lead"> -->
+          <!-- Los estados inicial y final son estados de equilibrio, las presiones y los volúmenes están bien definidos. Pero durante la expansión, el gas no está en equilibrio, entonces es un proceso irreversible. -->
+        <!-- </div> -->
+        <p>
+          <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4">
+            ¿Cambia la entropía del gas o permanece igual?
+          </a>
+        </p>
+        <div class="collapse" id="collapseExample4">
+          <p class="fs-4">
+            El proceso es irreversible, y es un sistema aislado, entonces su entropía debe aumentar.
+          </p>
+          <!-- <div class="card card-body lead"> -->
+            <!-- Los estados inicial y final son estados de equilibrio, las presiones y los volúmenes están bien definidos. Pero durante la expansión, el gas no está en equilibrio, entonces es un proceso irreversible. -->
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</main>
+
+<footer class="pt-5 my-4 text-body-secondary">
+    <div class="container-fluid row text-center">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <nav aria-label="Botones de navegación">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item">
+                        <a class="page-link" href="2da-ley.html">Anterior</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="../../tm.html">Inicio</a></li>
+                    <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+                    <li class="page-item">
+                        <a class="page-link" href="2da-ley-maquinas.html">Siguiente</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</footer>
+
+<script src="../../../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

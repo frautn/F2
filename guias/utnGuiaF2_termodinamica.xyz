@@ -1,0 +1,3 @@
+\csname xyzline\endcsname {begin}{itemize}
+\csname xyzline\endcsname {item}{First item on my list.}
+\csname xyzline\endcsname {item}{Calcular la temperatura. 1.2}

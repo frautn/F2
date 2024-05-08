@@ -1,0 +1,73 @@
+<head>
+    
+</head>
+
+<body>
+
+<h3>Una onda propagante: y(x,t) = f(x-vt)<br></h3>
+<!-- <link rel="stylesheet" type="text/css" href="jsxgraph.css" /> -->
+<!-- <script type="text/javascript" src="jsxgraphcore.js"></script> -->
+<link rel="stylesheet" type="text/css" href="https://jsxgraph.org/distrib/jsxgraph.css" />
+<script type="text/javascript" src="https://jsxgraph.org/distrib/jsxgraphcore.js"></script>
+
+<div id="box" class="jxgbox" style="width:800px; height:500px;"></div>
+<script type="text/javascript">
+var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.5, 11, 20, -11],axis:true,showNavigation:false,showCopyright:false});
+
+var x1 = 5;
+var x2 = 10;
+// var l1 = board.create('line',[[-8,y1],[8,y1]],{visible:false});
+
+
+
+
+var A = 9;
+var sigma = 0.5;
+var v = 1;
+var t = 0;
+
+var f = function(x) {
+    return A*Math.exp(-sigma*(x-v*t)*(x-v*t));
+};
+
+var p1 = board.create('point',[x1,function(){return A*Math.exp(-sigma*(x1-v*t)*(x1-v*t));}],{withLabel:false,fixed:true,size:5,fillcolor:"green",strokeColor:"green"});
+var p2 = board.create('point',[x2,function(){return A*Math.exp(-sigma*(x2-v*t)*(x2-v*t));}],{withLabel:false,fixed:true,size:5,fillcolor:"red",strokeColor:"red"});
+
+var tx = board.create('text',[19.5, -0.5,"x"], {fontSize:16, fixed:true});
+var ty = board.create('text',[0.2, 10,"y"], {fontSize:16, fixed:true});
+
+
+
+pwgraph = board.create('functiongraph', [f, -3, 20], {
+  strokeColor: 'blue',strokeWidth:3});
+
+var t1 = board.create('text',
+                    [5, -7,
+                    function(){return "t = " + t.toFixed(2)+" s";}
+                    ], {fontSize:16, fixed:true}
+                );
+
+var button1 = board.create('button', [1, -7, 'Comenzar',function(){
+        // p1.setAttribute({fixed:true});
+        // curve.setAttribute({trace:true});
+    
+        myinterval = setInterval(function(){
+            t=t+0.05;
+            // p1.moveTo([despl(t),p1.Y()],0);
+            
+            board.update();
+            // board2.update();
+        },50);
+    
+    }], {fontSize:16, disabled:false});
+
+var button2 = board.create('button', [1, -9, 'Detener',function(){
+        clearInterval(myinterval);
+        t = 0;
+        board.update();
+    }], {fontSize:16, disabled:false});
+
+</script>
+
+
+</body>

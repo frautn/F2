@@ -1,0 +1,157 @@
+\newcommand{\anio}{2024}
+\newcommand{\comision}{2\textsuperscript{do} 31}
+
+% Imprimir lista de ejercicios seleccionados para hacer en clase.
+\newcommand{\seleccionados}{false}
+
+
+\renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+\renewcommand\spanishtablename{Tabla}
+
+
+%---------------------------
+%
+% Section headers with colors.
+%
+%---------------------------
+% \usepackage{stackengine}
+% \usepackage[most]{tcolorbox}
+
+\definecolor{topcolor}{RGB}{0,121,138}
+
+
+% \newcommand{\colorofsection}{cyan!90!white}
+\newcommand{\colorofsection}{topcolor}
+\newcommand{\colorsection}[1]{
+    \tcbset{on line,
+        boxsep=5pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+        colframe=white, colback=\colorofsection, sharp corners=southwest,
+        leftrule=0pt, highlight math style={enhanced}
+        }
+
+    \refstepcounter{section}%
+    \bigskip\bigskip
+    {\noindent\def\stackalignment{l}%
+    \stackunder[-2pt]{\tcbox{\textcolor{white}{\textbf{\Large\thesection.\hspace{5pt}#1}}}}{\textcolor{\colorofsection}{\rule{\linewidth}{1pt}}}\medskip}
+    \addcontentsline{toc}{section}{\thesection\hspace{5pt}#1}
+}
+
+%---------------------------
+%
+% Exercises and answers.
+%
+%---------------------------
+% \usepackage[lastexercise,answerdelayed]{exercise}
+% \usepackage{multicol}
+\counterwithin{Exercise}{section}
+\renewcommand{\ExerciseHeader}{
+    \noindent\textbf{\large
+    \ExerciseHeaderNB\ExerciseHeaderTitle
+    \ExerciseHeaderOrigin}}
+\renewcommand{\AnswerHeader}{\noindent\medskip{\textbf{\ExerciseHeaderNB\hspace{5pt}}}}
+
+%---------------------------
+%
+% Tikz
+%
+%---------------------------
+
+\tikzset{axis/.style={blue, thick,-latex}}
+
+% Optica:
+% \newcommand\planemirror{} % just for safety
+\def\planemirror[#1](#2)(#3)(#4)(#5){%
+  % Synopsis
+  % \planemirror[fill options](center)(length)(angle)(thickness)
+  \fill[#1]   (#2) + ({-0.5*#3*cos(#4)},{-0.5*#3*sin(#4)})
+  --++ ({0.5*#3*cos(#4)},{0.5*#3*sin(#4)})
+  --++ ({#5*sin(#4)},{-#5*cos(#4)}) --++ ({-#3*cos(#4)},{-#3*sin(#4)}) -- cycle;
+  \draw (#2) + ({-#3*cos(#4)/2},{-#3*sin(#4)/2}) --++ ({0.5*#3*cos(#4)},{0.5*#3*sin(#4)});
+}
+% \newcommand\ray{} % just for safety
+\def\ray(#1)(#2)(#3)(#4){%
+  % Synopsis
+  % \ray[](starting point)(end point)(position of arrow)(xscale)
+  \draw[red, thick] (#1) -- (#2) node[color=red, currarrow, pos=#3, xscale=#4, sloped] {};
+}
+
+%---------------------------
+%
+% Babinet
+%
+%---------------------------
+
+\newcommand{\object}[1]{%
+	\begin{scope}[canvas is xz plane at y=1.2]
+		\draw[line join=round, thick, fill=black!40] (#1,-1.2) rectangle (#1+0.1,1.2);
+	\end{scope}
+	%
+	\begin{scope}[canvas is xy plane at z=1.2]
+		\draw[line join=round, thick, fill=black!25](#1,-1.2) rectangle (#1+0.1,1.2);
+	\end{scope}
+	%
+	\begin{scope}[canvas is yz plane at x=#1]
+		\draw[line join=round, thick, fill=black] (-1.2,-1.2) rectangle (1.2,1.2);
+		\draw[line join=round, thick, fill=white] (0,0.3) -- (0.3,-0.15) -- (-0.3,-0.15) -- cycle;
+		\draw[line join=round, thick, fill=black!40] (0.04,0.24) -- (-0.1667,-0.07) -- (0.2467,-0.07) -- (0.3,-0.15) -- (-0.3,-0.15) -- (0,0.3) -- cycle;
+		\draw[thick] (-0.3,-0.15) -- (-0.1667, -0.07);
+	\end{scope}
+}
+\newcommand{\objecttriangle}[1]{%
+	\begin{scope}[canvas is yz plane at x=#1]
+		\draw[line join=round, thick, fill=black] (0,0.3) -- (0.3,-0.15) -- (-0.3,-0.15) -- cycle;
+		\draw[line join=round, thick, fill=black!40] (0,0.3) -- (0.1333, 0.38) -- (0.4333,-0.07)
+		-- (0.3,-0.15) -- cycle;
+	\end{scope}
+}
+\newcommand{\image}[1]{%
+	\def\point{0.3}
+	\def\inside{0.15}
+	\begin{scope}[canvas is yz plane at x=#1]
+		\draw[line join=round, thick, fill=black] (-1.2,-1.2) rectangle (1.2,1.2);
+		\draw[line join=round, thick, fill=red] (0,\point) -- (\inside*0.5,\inside*0.707) -- (\point*0.707,\point*0.5) -- (\inside,0) -- (\point*0.707, -\point*0.5) -- (\inside*0.5, -\inside*0.707) -- (0,-\point) -- (-\inside*0.5, -\inside*0.707) -- (-\point*0.707, -\point*0.5) -- (-\inside,0) -- (-\point*0.707,\point*0.5) -- (-\inside*0.5,\inside*0.707) -- cycle;
+	\end{scope}
+}
+\newcommand{\lens}[1]{%
+	\begin{scope}[canvas is yz plane at x=#1+0.1]
+		\draw[cyan!30] (0,0) circle (30pt);
+	\end{scope}
+	\begin{scope}[canvas is yz plane at x=#1]
+		\shade[left color=cyan!0,right color=cyan!30]
+		(0,0) circle (30pt);
+		\draw[cyan!30] (0,0) circle (30pt);
+	\end{scope}
+}
+%---------------------------
+
+
+%---------------------------
+%
+% Genera una lista dinámica con
+% ejercicios seleccionados.
+%
+%---------------------------
+
+\let\svaddtocontents\addtocontents
+\makeatletter
+\newcommand\defineList[1]{%
+ \expandafter\def\csname add#1line\endcsname##1##2##3{\addtocontents {##1}{%
+  \protect \csname #1line\endcsname {##2}{##3}}}
+ \expandafter\def\csname write#1\endcsname{%
+  \renewcommand\addtocontents[2]{\relax}%
+  \setcounter{section}{0}\noindent%
+  \expandafter\def\csname #1line\endcsname####1####2{\expandafter\csname####1\endcsname{####2}}%
+  \@starttoc{#1}%
+  \setcounter{section}{0}%
+  \let\addtocontents\svaddtocontents%
+ }%
+ \csname add#1line\endcsname{#1}{begin}{itemize}%
+ \AtEndDocument{\csname add#1line\endcsname{#1}{end}{itemize}}
+}
+\newcommand\addToList[2]{\csname add#1line\endcsname{#1}{item}{#2}}
+\newcommand\printList[1]{\csname write#1\endcsname}
+\makeatother
+
+%---------------------------

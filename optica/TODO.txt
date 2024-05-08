@@ -1,0 +1,9 @@
+
+1. Licencia:
+https://www.pythonguis.com/faq/gpl-and-copyleft-pyqt-pyside/
+
+2. Agregar títulos a las figuras.
+
+Html:
+1. Corregir links de retorno, armar una fila con dos columnas.
+

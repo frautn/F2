@@ -1,0 +1,19 @@
+
+- ¿Fuentes de campo magnético?
+- Agregar ejercicios para no tener que integrar, buscar solo la dirección con biot savart o modulo con ampere.
+- Preguntas para el análisis estatica: Faltan preguntas sobre campo magnético estático
+
+
+Cosas posibles para una guía con temas extra:
+*) Ondas: preguntas con función de onda.
+*) Interferómetros. Medir espesores, índices de refracción.
+*) ángulo de brewster
+*) láminas birrefringentes
+
+
+
+Ej 9.4)
+"Para qué ángulo aparecerá la décima franja oscura si todo el arreglo se sumerge en agua..."
+
+Cambiar lo de franja oscura por algo como "el décimo mínimo".
+

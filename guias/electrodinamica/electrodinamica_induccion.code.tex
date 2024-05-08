@@ -1,0 +1,428 @@
+\twocolumn[\colorsection{Ley de Faraday - Lenz}]
+\setcounter{figure}{0}
+%
+\begin{Exercise}
+    Una espira de alambre con un área de $\SI{9E-2}{\metre\squared}$ se encuentra en un campo magnético uniforme que tiene un valor inicial de $\SI{3.80}{\tesla}$, es perpendicular al plano de la espira y está disminuyendo a una razón constante de $\SI{0.190}{\tesla/\second}$.\par
+    \textit{a}) ¿Cuál es la fem que se induce en esta espira?\par
+    \textit{b}) Si la espira tiene una resistencia de $\SI{0.600}{\ohm}$, calcular la corriente inducida en la espira.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{17.1}{\milli\volt}$\\ \textit{b}) $\SI{28.5}{\milli\ampere}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+    En un experimento en un laboratorio de física, una bobina con 200 espiras que encierra un área de $\SI{12}{\centi\metre\squared}$ se hace girar en $\SI{0.040}{\second}$, desde una posición donde su plano es perpendicular al campo magnético de la Tierra, hasta otra donde el plano queda paralelo al campo. El campo magnético terrestre en la ubicación del laboratorio es $\SI{6.0E-5}{\tesla}$.\par
+    \textit{a}) ¿Cuál es el flujo magnético total a través de la bobina antes de hacerla girar?\par
+    \textit{b}) ¿Y después del giro?\par
+    \textit{c}) ¿Cuál es la fem inducida media en la bobina?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{1.44E-5}{\weber}$\\ \textit{b}) $0$\\ \textit{c}) $\SI{3.6E-4}{\volt}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+    Una bobina circular, que está formada por 100 espiras de $\SI{2}{\centi\metre}$  de radio y $\SI{10}{\ohm}$ de resistencia eléctrica cada una, se encuentra colocada perpendicularmente a un campo magnético de $\SI{0.8}{\tesla}$.\par
+    \textit{a}) Si el campo magnético se anula variando uniformemente al cabo de $\SI{0.1}{\second}$, determinar la fuerza electromotriz inducida y la intensidad de la corriente que recorre el circuito.\par
+    \textit{b}) ¿Cómo se modifican las  magnitudes anteriores si el campo magnético tarda el doble de tiempo en anularse?\par
+    \textit{c}) Indicar en un esquema el sentido del campo magnético y el de la corriente eléctrica inducida en la espira.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\varepsilon = \SI{1}{\volt}$, $i = \SI{1}{\milli\ampere}$\\ \textit{b}) Ambos valores se reducen a la mitad.
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+    Un solenoide de 200 vueltas y de sección circular de diámetro $\SI{8}{\centi\metre}$ está situado en un campo magnético uniforme de valor $\SI{0.5}{\tesla}$ cuya dirección forma un ángulo de $\SI{60}{\degree}$ con el eje del solenoide. Si en un tiempo de $\SI{100}{\milli\second}$ disminuye el valor del campo magnético uniformemente a cero, determinar:\par
+    \textit{a}) El flujo magnético que atraviesa inicialmente el solenoide.\par
+    \textit{b}) La fuerza electromotriz inducida en dicho solenoide.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{0.251}{\weber}$\\ \textit{b}) $\SI{2.51}{\volt}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}\label{p:induccion01}
+    Una bobina de 50 espiras se halla próxima a dos conductores infinitos por los que circulan corrientes de intensidades $i_1=\SI{50}{\ampere}$ e $i_2=\SI{200}{\ampere}$, respectivamente. La bobina y los conductores son coplanares y están ubicados como se muestra en la figura \ref{f:induccion01}. Calcular:\par
+    \textit{a}) El flujo magnético que atraviesa la bobina.\par
+    \textit{b}) El valor que debería tener $i_2$ para que el flujo sea nulo.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{6.44E-4}{\weber}$\\ \textit{b}) $\SI{100}{\ampere}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \begin{tikzpicture}[scale=0.5]
+        \draw (10,0) ellipse (0.2 and 0.1);
+        \draw [] (-0.2+10,0) -- (-.2+10,7);
+        \draw [] (0.2+10,0) -- (.2+10,7);
+        \draw [red, -{Stealth}, thick] (10,1)--(10,4) node[midway,right] {$i_2$};
+
+        \draw (-1,6) ellipse (0.1 and 0.2);
+        \draw [] (-1,6-0.2) -- (9,6-.2);
+        \draw [] (-1,6+0.2) -- (9,6+.2);
+        \draw [red, -{Stealth}, thick] (0,6)--(4,6) node[midway,above] {$i_1$};
+
+        \draw [] (0,1) rectangle (8,5);
+        \draw [] (-0.1,0.9) rectangle (7.9,4.9);
+        \draw [] (-0.2,0.8) rectangle (7.8,4.8);
+
+        \draw [dotted] (0,1) -- (0,-2);
+        \draw [dotted] (8,1) -- (8,-2);
+        \draw [dotted] (10,0) -- (10,-2);
+        \draw [dotted] (-3,1) -- (0,1);
+        \draw [dotted] (-3,5) -- (0,5);
+        \draw [dotted] (-3,6) -- (-1,6);
+        \draw [|-|] (0,-1) -- (8,-1) node [midway, below] {$\SI{80}{\centi\metre}$};
+        \draw [|-|] (8,-1) -- (10,-1) node [midway, below] {$\SI{20}{\centi\metre}$};
+        \draw [|-|] (-2,1) -- (-2,5) node [midway, left] {$\SI{40}{\centi\metre}$};
+        \draw [|-|] (-2,5) -- (-2,6) node [midway, left] {$\SI{10}{\centi\metre}$};
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion01}\label{f:induccion01}}
+\end{center}
+%
+\begin{Exercise}\label{p:induccion02}
+    \textbf{Fem de movimiento:} Una varilla conductora, de $\SI{20}{\centi\metre}$ de longitud y $\SI{100}{\ohm}$ de resistencia eléctrica, se desplaza paralelamente a si misma y sin rozamiento, con una velocidad de $v = \SI{5}{\centi\metre/\second}$, sobre un conductor en forma de U de resistencia despreciable. El sistema se encuentra en el interior de un campo magnético cuyo módulo es $\SI{0.1}{\tesla}$, en el sentido que se muestra en la figura \ref{f:induccion02}.\par
+    \textit{a}) Hallar la fuerza electromotriz inducida, la intensidad de la corriente eléctrica que recorre el circuito y su sentido.\par
+    \textit{b}) Calcular el campo eléctrico en el interior de la varilla.\par
+    \textit{c}) Calcular la fuerza magnética que actúa sobre la barra.\par
+    \textit{d}) ¿Qué fuerza externa hay que aplicar para mantener el movimiento de la varilla?\par
+    \textit{e}) Calcular la potencia necesaria para mantener el movimiento de la varilla.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $|\varepsilon| = \SI{1}{\milli\volt}$, $|i| = \SI{10}{\micro\ampere}$ en sentido horario.\\ \textit{b}) $E = \SI{5E-3}{\volt/\metre}$\\ \textit{c}) $F = \SI{2E-7}{\newton}$ hacia la izquierda.\\ \textit{d}) De igual módulo y sentido opuesto a la fuerza magnética.\\ \textit{e}) $\SI{1E-8}{\watt}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \begin{tikzpicture}[scale=0.5]
+        \draw [] (5,5.7) -- (-3.3,5.7) -- (-3.3,1.1) -- (5.2,1.1);
+        \draw [] (5.2,5.4) -- (-3.0,5.4) -- (-3.0,1.4) -- (5,1.4);
+        \filldraw [draw=black, fill=green!80!black] (1,1) rectangle (1.5,5.8);
+      \draw [red, -Stealth] (1.25,3.4) -- (3,3.4) node [red, right] {$v$};
+      \def\a{-4};
+      \def\b{0.4};
+      \def\d{2};
+      \foreach \x in {0,...,4}
+      \foreach \y [count=\yi] in {0,...,3}
+      {
+        \fill [blue!100!black!50] (\a+\d*\x,\b+\d*\y) circle (3pt);
+        \draw [blue!100!black!50] (\a+\d*\x,\b+\d*\y) circle (7pt);
+      }
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion02}\label{f:induccion02}}
+\end{center}
+%
+\begin{Exercise}\label{p:induccion03}
+    Una espira cuadrada de lado $a$ y resistencia eléctrica $R$ que se mueve con velocidad constante $v$ hacia la derecha como se muestra en la figura \ref{f:induccion03}, penetra en una región de ancho $b > a$ donde hay un campo magnético uniforme perpendicular al plano del papel y dirigido hacia fuera de módulo $B$. Calcular en los tres casos siguientes: cuando la espira está ingresando, cuando está dentro, y cuando está saliendo de la región que contiene al campo magnético:\par
+    \textit{a}) El flujo en función de la posición $x$ del centro de la espira.\par
+    \textit{b}) La fem y el sentido de la corriente inducida, justificando la respuesta en términos de la ley de Lenz.\par
+    \textit{c}) La fuerza que ejerce el campo magnético sobre la corriente inducida en los tres casos.\par
+    \textit{d}) ¿Qué fuerza es necesario ejercer para que la espira se mueva con velocidad constante?\par
+    \textit{e}) La potencia mecánica entregada por esa fuerza y la disipada en la resistencia. ¿Coinciden?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        Considerando que la normal a la superficie sale de la pantalla:\\ \textit{a}) Entrando: $\Phi = Ba(x+a/2)$; adentro: $\Phi = Ba^2$; saliendo: $\Phi = Ba(b+a/2-x)$.\\ \textit{b}) Entrando: $\varepsilon = -Bav$ y la corriente circula en sentido horario; adentro: $\varepsilon = 0$; saliendo: $\varepsilon = Bav$ y la corriente circula en sentido antihorario. En ambos casos ese sentido de la corriente es el que provoca una fuerza magnética hacia la izquierda, que se opone al movimiento que está provocando el cambio de flujo.\\ \textit{c}) Entrando y saliendo: $F = B^2a^2v/R$ hacia la izquierda; adentro: $F=0$.\\ \textit{d}) Entrando y saliendo: $F = B^2a^2v/R$ hacia la derecha; adentro: $F=0$.\\ \textit{e}) Entrando y saliendo: la potencia mecánica es $P = Fv = B^2a^2v^2/R$ y la potencia disipada por R es $P = i^2R = B^2a^2v^2/R$. Adentro: ambos valen $P=0$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \begin{tikzpicture}[scale=0.5]
+        \draw [] (-5,1.4) rectangle (-1,5.4);
+      \draw [red, -Stealth] (-1.2,3.4) -- (0,3.4) node [red, right] {$v$};
+      \draw [blue, -latex] (-6,-0.5) -- (6,-0.5) node [blue,right] {$x$};
+      \draw [blue] (-4,-0.2) -- (-4,-0.8) node [blue,below] {$0$};
+      \draw [blue] (4,-0.2) -- (4,-0.8) node [blue,below] {$b$};
+      \def\a{-4};
+      \def\b{0.4};
+      \def\d{2};
+      % \draw (-4.3,0) \node[left] {$\vec{B}$};
+      \foreach \x in {0,...,4}
+      \foreach \y [count=\yi] in {0,...,3}
+      {
+        \fill [blue!100!black!50] (\a+\d*\x,\b+\d*\y) circle (3pt);
+        \draw [blue!100!black!50] (\a+\d*\x,\b+\d*\y) circle (7pt);
+      }
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion03}\label{f:induccion03}}
+\end{center}
+%
+\begin{Exercise}\label{p:induccion04}
+    Una bobina de sección cuadrada gira en un campo magnético uniforme perpendicular al eje de giro, como se puede observar en la figura \ref{f:induccion04}. Obtener una expresión para la fem inducida en función del tiempo si el lado de la espira es $a = \SI{3}{\centi\metre}$ y la espira gira a razón de $\SI{500}{rpm}$ en un campo uniforme de $\SI{10}{\tesla}$.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        $\varepsilon = \SI{0.471}{\volt}\,\sin(\frac{50}{3}\pi\,\si{s^{-1}}\,t+\phi_0)$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \tdplotsetmaincoords{40}{100}
+    \begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+      \draw[axis] (0,0,-3) -- (0,0,5);
+      \draw[red, -Stealth] (0,0.5,0) -- (0,3,0) node[red,right] {$\vec{B}$};
+    \tdplotsetrotatedcoords{-40}{0}{0} %
+    \draw[tdplot_rotated_coords] (-2,0,-2) -- (2,0,-2) -- (2,0,2) -- (-2,0,2) -- cycle;
+    \draw[tdplot_rotated_coords, blue, dotted] (-2,0,0) -- (2,0,0);
+    \draw[-latex] (0,-0.5,3.5) arc (-90:170:0.5);
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion04}\label{f:induccion04}}
+\end{center}
+%
+\begin{Exercise}
+    Por un hilo rectilíneo de gran longitud circula una corriente variable en el tiempo, tal que su valor es:
+    \begin{align*}
+        I(t) &=
+        \begin{cases}
+            0 & \text{si } t < 0\\
+            \dfrac{i_ot(T-t)}{T^2} & \text{si } 0 \leq t \leq T\\
+            0 & \text{si } T < t\\
+        \end{cases}
+    \end{align*}
+    Junto al cable y coplanaria con él se encuentra una pequeña espira cuadrada de lado $a$ con su centro situado a una distancia $b$ ($b \gg a$) del hilo. Esta espira posee una resistencia eléctrica $R$ y autoinducción despreciable. Calcular la corriente inducida en esta espira como función del tiempo.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        $i = 0$ si $t<0$;\\ $i = \frac{\mu_0a^2i_0}{2\pi b R T^2}(2t-T)$ si $0 \leq t \leq T$;\\ $i=0$ si $T<t$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}\label{p:induccion05}
+    Una espira rectangular se encuentra sumergida en un campo magnético uniforme que puede variar con el tiempo de tres formas distintas, como se indican en las gráficos de las figuras \ref{f:induccion05a}, \ref{f:induccion05b} y \ref{f:induccion05c}. Para cada una las tres situaciones, grafique la \textit{fem} inducida en la espira en función del tiempo y analice el sentido de circulación de la corriente.
+\end{Exercise}
+%
+% \begin{figure}[!h]
+% \centering
+\begin{center}
+%         % \subfigure[]{
+    \newcommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} % Gauss function, parameters mu and sigma
+    \begin{tikzpicture}[scale=0.6]
+        \begin{axis}[
+            every axis plot post/.append style={ mark=none,samples=50,smooth},
+            ticks=none,
+            axis x line=bottom,
+            axis y line=left,
+            xmin=-2, xmax=2,           %min y max para los ejes, NO PARA EL DOMINIO
+            ymin=0, ymax=1,
+            xlabel={$t$},
+            ylabel={$B$}] % extend the axes a bit to the right and top
+            \addplot {\gauss{0}{0.5}};
+        \end{axis}
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion05}\label{f:induccion05a}}
+\end{center}
+\begin{center}
+% % \subfigure[]{
+    \begin{tikzpicture}[scale=0.6]
+        \begin{axis}[
+            every axis plot post/.append style={ mark=none,samples=50,smooth},
+            ticks=none,
+            axis x line=bottom,
+            axis y line=left,
+            xmin=0, xmax=2.5,
+            ymin=-0.7, ymax=0.7,
+            xlabel={$t$},
+            ylabel={$B$}]
+            \addplot [blue, domain=0:0.5, samples=100] {x};
+            \addplot [blue, domain=0.5:1.5, samples=100] {0.5-(x-0.5)};
+            \addplot [blue, domain=1.5:2, samples=100] {-0.5+(x-1.5)};
+        \end{axis}
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion05}\label{f:induccion05b}}
+\end{center}
+\begin{center}
+%     % \subfigure[]{
+    \begin{tikzpicture}[scale=0.6]
+        \begin{axis}[
+            every axis plot post/.append style={ mark=none,samples=50,smooth},
+            ticks=none,
+            axis x line=bottom,
+            axis y line=left,
+            xmin=0, xmax=2.5,
+            ymin=-0.2, ymax=0.7,
+            xlabel={$t$},
+            ylabel={$B$}]
+            \addplot [blue, domain=0:1, samples=100] {0.5};
+            \addplot [blue, domain=1:2, samples=100] {0};
+            \draw [blue, dotted] (1,0.5) -- (1,0);
+            % \addplot [blue, domain=1.5:2, samples=100] {-0.5+(x-1.5)};
+        \end{axis}
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion05}\label{f:induccion05c}}
+\end{center}
+%
+\begin{Exercise}\label{p:induccion06}
+    En la figura \ref{f:induccion06} se muestra una bobina cuadrada de 500 vueltas, cuyos lados miden $\SI{20}{\centi\metre}$, ubicada sobre el mismo plano que un cable infinito a una distancia $d = \SI{2}{\centi\metre}$.\par
+    \textit{a}) Calcular la fem inducida en la bobina cuando la corriente que circula por el cable es $i(t) = \SI{0.5}{\ampere} + \SI{0.1}{\ampere/\second}\,t$.\par
+    \textit{b}) Encontrar una expresión para la fem inducida en la bobina en función del tiempo cuando la corriente que circula por el cable es $i(t) = i_o \text{e}^{-t/\tau}$, siendo $i_o = \SI{25}{\ampere}$ y $\tau = \SI{1}{\second}$.\par
+    \textit{c}) ¿En qué sentido circula la corriente inducida en la bobina en cada caso?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $|\varepsilon| = \SI{4.8}{\micro\volt}$\\ \textit{b}) $|\varepsilon| = \SI{1.2}{\milli\volt}\,\text{e}^{-t/\SI{1}{\second}}$\\ \textit{c}) Sentido antihorario en el caso \textit{a} y sentido horario en el caso \textit{b}
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \begin{tikzpicture}[scale=0.6]
+        \draw (10,0) ellipse (0.2 and 0.1);
+        \draw [] (-0.2+10,0) -- (-.2+10,7);
+        \draw [] (0.2+10,0) -- (.2+10,7);
+        \draw [red, -{Stealth}, thick] (10,1)--(10,4) node[midway,right] {$i(t)$};
+
+        \draw [] (4,1) rectangle (8,5);
+        \draw [] (3.9,0.9) rectangle (7.9,4.9);
+        \draw [] (3.8,0.8) rectangle (7.8,4.8);
+
+        \draw [dotted] (8,1) -- (8,-2);
+        \draw [dotted] (10,0) -- (10,-2);
+        \draw [|-|] (8,-1) -- (10,-1) node [midway, below] {$d$};
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion06}\label{f:induccion06}}
+\end{center}
+%
+\begin{Exercise}\label{p:induccion07}
+    Una barra metálica con longitud $L$, masa $m$ y resistencia $R$, está colocada sobre rieles metálicos sin fricción, que están inclinados a un ángulo $\alpha$ por encima de la horizontal. Los rieles tienen una resistencia eléctrica despreciable. Existe un campo magnético uniforme de módulo $B$ dirigido verticalmente hacia abajo como se muestra en la figura \ref{f:induccion07}. La barra se libera desde el reposo y comienza a deslizar sobre los rieles.\par
+    \textit{a}) ¿El sentido de la corriente inducida en la barra es desde $a$ hacia $b$, o desde $b$ hacia $a$?\par
+    \textit{b}) ¿Cuál es la rapidez terminal de la barra?\par
+    \textit{c}) ¿Cuál es la corriente inducida en la barra cuando se ha alcanzado la rapidez terminal?\par
+    \textit{d}) Después de haber alcanzado la rapidez terminal, ¿a qué razón la energía eléctrica se convierte en energía térmica en la resistencia de la barra?\par
+    \textit{e}) Una vez que se llegó a la rapidez terminal, ¿a qué razón la fuerza gravitatoria realiza trabajo sobre la barra? Compare su respuesta con la del inciso \textit{d}.
+\end{Exercise}
+%
+\begin{center}
+    \tdplotsetmaincoords{50}{110}
+    \begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+    %   \draw[axis] (0,0,0) -- (4.5,0,0) node [pos=1.1] {$z$};
+    %   \draw[axis] (0,0,0) -- (0,7,0) node [pos=1.05] {$x$};
+    %   \draw[axis] (0,0,0) -- (0,0,3)  node [left] {$y$};
+        \filldraw[draw=black,fill=black!50!green!50] (0,0,0) -- (0,6,3) -- (0.2,6,3) -- (0.2,0,0) -- cycle;
+        \filldraw[draw=black, fill=black!50!green!50] (3,0,0) -- (3,6,3) -- (3.2,6,3) -- (3.2,0,0) -- cycle;
+        \filldraw[draw=black, fill=black!50!green!50] (0,0,0) -- (3.2,0,0) -- (3.2,-0.2,0) -- (0,-0.2,0) -- cycle;
+        \filldraw[draw=black, fill=red!30] (3.2,4,2) -- (3.2,4.402,2.201) -- (3.2,4.301, 2.402) -- (3.2, 3.9, 2.201) -- cycle;
+        \filldraw[draw=black, fill=red!40] (3.2,3.9,2.201) -- (3.2,4.301,2.402) -- (0,4.301,2.403) -- (0,3.9,2.201) -- cycle;
+        \filldraw[draw=black, fill=red!60] (3.2,4.301,2.402) -- (0,4.301,2.402) -- (0,4.402,2.201,2.402) -- (3.2,4.402,2.201,2.402) -- cycle;
+        \draw[dotted] (3.1,0,0) -- (3.1,6,0);
+        \draw[dotted] (0,6,0) -- (0,6,3) -- (3.1,6,3) -- (3.1,6,0) -- cycle;
+        \draw [red, -Stealth] (1.5,1.5,3) -- (1.5,1.5,0.5) node [pos=0.1,red, left] {$\vec{B}$};
+        \draw [] (3.2,3.5,2.5) node [blue] {$a$};
+        \draw [] (0,3.5,2.5) node [blue] {$b$};
+    %   \draw[red, -{latex}, thick] (2.5,-0.3,0) -- (0.5,-0.3,0) node [midway, left] {$i$};
+    %   \draw[red, -{latex}, thick] (-0.2,1,0.5) -- (-0.2,3,1.5) node [midway, above] {$i$};
+    %   \draw[red, -{latex}, thick] (3.4,3,1.5) -- (3.4,1,0.5) node [midway, below] {$i$};
+        \tdplotdrawarc{(3.1,1,0)}{2.5}{90}{136}{right}{$\alpha$}
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion07}\label{f:induccion07}}
+\end{center}
+% \\ \rta{0.95}{\textit{a}) Desde $b$ hacia $a$. \textit{b}) $v = \frac{MgR\tan\alpha}{B^2L^2}$. \textit{c}) $i = \frac{Mg\sin\alpha}{BL}$. \textit{d}) $P = i^2R = \left (\frac{Mg\sin\alpha}{BL} \right )^2 R$. \textit{e}) $P = Fv = \left (\frac{Mg\sin\alpha}{BL} \right )^2 \frac{R}{\cos\alpha}$}
+%
+\begin{Exercise}\label{p:induccion08}
+    Una varilla conductora cuya masa es $\SI{10}{\gram}$ se de deja caer en contacto con dos carriles paralelos verticales distantes $\SI{20}{\centi\metre}$ entre sí. Los carriles, muy largos, se cierran por la parte inferior tal como se muestra en la figura \ref{f:induccion08}. En la región existe un campo magnético uniforme y perpendicular al plano formado por los carriles y la varilla, de módulo igual a $\SI{1.5}{\tesla}$. La resistencia de la varilla es de $\SI{10}{\ohm}$ y los carriles se suponen superconductores.\par
+    \textit{a}) Determinar el sentido de la corriente inducida aplicando la ley de Lenz.\par
+    \textit{b}) Si la varilla parte del reposo, su velocidad no se incrementa indefinidamente sino que alcanza un valor límite constante. ¿Cuánto vale esta velocidad?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) Mirando de frente a la espira, con el campo magnético saliendo de la página: sentido antihorario.\\ \textit{b}) $\SI{10.9}{\metre/\second}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \tdplotsetmaincoords{70}{140}
+    \begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+    %   \draw[axis] (0,0,-3) -- (0,0,5);
+    \draw[] (0,0,7) -- (0,0,0) -- (0,3,0) -- (0,3,7);
+    \draw[] (0,0.1,7) -- (0,0.1,0.1) -- (0,2.9,0.1) -- (0,2.9,7);
+    \filldraw [draw=black, fill=green!80!black] (0,-0.1,5) -- (0,-0.1,4.5) -- (0,3.1,4.5) -- (0,3.1,5) -- cycle;
+    \draw [red, -Stealth] (0,1.5,3) -- (2.5,1.5,3) node [red, above] {$\vec{B}$};
+    \draw [-Stealth] (0,3.6,3.5) -- (0,3.6,2.5) node [below] {$\vec{g}$};
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion08}\label{f:induccion08}}
+\end{center}
+%
+\begin{Exercise}
+    Una bobina de sección circular ($\SI{3}{\centi\metre\squared}$) gira en un campo magnético uniforme perpendicular al eje de giro. El valor máximo de la fem inducida es $\SI{50}{\volt}$ cuando la frecuencia de giro es $\SI{60}{\hertz}$. Determinar el nuevo valor máximo de la fem inducida si:\par
+    \textit{a}) La frecuencia se modifica a $\SI{180}{\hertz}$ en presencia del mismo campo magnético.\par
+    \textit{b}) La frecuencia se modifica a $\SI{120}{\hertz}$ y el módulo del campo magnético se duplica.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{150}{\volt}$\\ \textit{b}) $\SI{200}{\volt}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}\label{p:induccion09}
+    Una espira cuadrada de 100 vueltas de $\SI{1.5}{\ohm}$ de resistencia cada una está inmersa en un campo magnético uniforme $\vec{B} = \SI{0.03}{\tesla}\,\hat{j}$. La espira tiene $\SI{2}{\centi\metre}$ de lado y forma un ángulo $\alpha$ variable con el plano $ik$ como se muestra en la figura \ref{f:induccion09}.\par
+    \textit{a}) Si se hace girar la espira alrededor del eje $k$ con una frecuencia de rotación de $\SI{60}{\hertz}$, siendo $\alpha = \pi/2$ en el instante $t = 0$, obtenga una expresión para la fuerza electromotriz inducida en la espira en función del tiempo.\par
+    \textit{b}) ¿Cuál debería ser la velocidad angular de la espira para que la corriente máxima que circule por ella sea de $\SI{2}{\milli\ampere}$?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\varepsilon = \SI{0.452}{\volt}\,\sin(120\pi\,\si{s^{-1}}\, t + \pi/2)$\\ \textit{b}) $\SI{250}{\second^{-1}}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \tdplotsetmaincoords{70}{120}
+    \begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+        \draw[axis] (0,0,0) -- (4,0,0) node [pos=1.1] {$i$};
+        \draw[axis] (0,0,0) -- (0,4,0) node [pos=1.05] {$j$};
+        \draw[axis] (0,0,0) -- (0,0,4)  node [left] {$k$};
+        \draw[] (0,0,0) -- (2,3,0) -- (2,3,3) -- (0,0,3) -- cycle;
+        \draw[] (0.1,-0.05,0) -- (2.1,2.95,0) -- (2.1,2.95,3) -- (0.1,-0.05,3) -- cycle;
+        \draw[] (-0.1,0.05,0) -- (1.9,3.05,0) -- (1.9,3.05,3) -- (-0.1,0.05,3) -- cycle;
+        \draw[red, -{latex}, very thick] (0.2,0,1) -- (0.2,0,2.5) node [midway, left] {$i$};
+        \draw[red, -{latex}, thick] (0.9,-2.5,1.25) -- (0.9,-0.5,1.25);
+        \draw[red, -{latex}, thick] (0.9,3,1.25) -- (0.9,5,1.25) node [midway, above] {$\vec{B}$};
+        \draw[red, -{latex}, thick] (0.9,-2.5,2.5) -- (0.9,-0.5,2.5);
+        \draw[red, -{latex}, thick] (0.9,3,2.5) -- (0.9,5,2.5);
+        \draw[red, -{latex}, thick] (0.9,-2.5,0) -- (0.9,-0.5,0);
+        \draw[red, -{latex}, thick] (0.9,3,0) -- (0.9,5,0);
+        \draw[-latex] (0:2.5) arc (0:53:2.5) node[black,midway,below] {$\alpha$};
+    \end{tikzpicture}
+    \captionof{figure}{Problema \ref{p:induccion09}\label{f:induccion09}}
+\end{center}
+%
+\begin{Exercise}\label{p:induccion10}
+    El inductor de la figura \ref{f:induccion10} tiene una inductancia de $\SI{0.260}{\henry}$ y conduce una corriente en el sentido que se ilustra, que disminuye a una razón uniforme $di/dt = \SI{-0.0180}{\ampere/\second}$.\par
+    \textit{a}) Calcular la fem autoinducida.\par
+    \textit{b}) ¿Cuál extremo del inductor, $a$ o $b$, está a un mayor potencial?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{4.68}{\milli\volt}$\\ \textit{b}) $V_a > V_b$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+    \begin{circuitikz}[scale=1]
+        \draw (0,0) to[L] ++ (4,0);
+        \draw[red,-Stealth] (2.7,0.5) -- (1.3,0.5) node [red,midway, above] {$i$};
+        \fill[] (0.5,0) circle (0.1) node[above] {$a$};
+        \fill[] (3.5,0) circle (0.1) node[above] {$b$};
+    \end{circuitikz}
+    \captionof{figure}{Problema \ref{p:induccion10}\label{f:induccion10}}
+\end{center}
+%
+\begin{Exercise}
+    Obtener el coeficiente de inducción mutua de dos solenoides rectos, largos y concéntricos de $N_1$ y $N_2$ espiras, longitudes $L_1$ y $L_2$, y áreas de secciones transversales $S_1$ y $S_2$ respectivamente. Datos: $n_1 = \SI{100}{\centi\metre^{-1}}$ (espiras por centímetro), $n_2 = \SI{150}{\centi\metre^{-1}}$; $S_1= \SI{2.87}{\centi\metre\squared}$; $S_2 = S_1/3$; $L_1= \SI{20}{\centi\metre}$ y $L_2 = \SI{30}{\centi\metre}$.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        $\SI{3.61}{\milli\henry}$
+    \end{minipage}
+\end{Answer}
+% %
+% \pma{
+%     Un solenoide de radio $r_1 = \SI{10}{\centi\metre}$, longitud $l_1$ y $n_1$ vueltas por centímetro, se halla en el interior de otro solenoide, de radio $r_2 = 50r_1$, $n_2 = \SI{1000}{vueltas/cm}$ y longitud $l_2 = \SI{40}{\centi\metre}$ ($l_2 \gg l_1$). Los solenoides son coaxiales y por el externo circula una corriente variable de la forma $i_2(t) = 2 \sin(\SI{10}{\second^{-1}}\, t)$ \textit{a}) Calcular a primer orden el coeficiente de inducción mutua del sistema; \textit{b}) Calcular el valor máximo de la fem inducida en la bobina exterior.
+% \\ \rta{0.95}{}
+% }

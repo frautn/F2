@@ -1,0 +1,98 @@
+\documentclass[a4paper,11pt,dvipsnames,twocolumn]{article}
+\usepackage[a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+\setlength{\columnseprule}{0.4pt}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+
+\usepackage{stackengine}  % Needed for colorsection.
+\usepackage[most]{tcolorbox}  % Needed for colorsection.
+\usepackage[lastexercise,answerdelayed]{exercise}
+\usepackage{multicol}  % Respuestas en dos columnas.
+
+\usepackage{circuitikz,pgfplots}  %pgfplots needed for axis environment.
+\usepackage{tikz-3dplot}
+\usetikzlibrary{babel}  % Solves the problems produced by changes to category codes made by some babel modules.
+\usetikzlibrary{decorations, decorations.pathmorphing}
+
+% Tikzset needed for the two loops graph in preguntas.
+\usetikzlibrary{decorations.markings}
+\tikzset{
+    set arrow inside/.code={\pgfqkeys{/tikz/arrow inside}{#1}},
+    set arrow inside={end/.initial=>, opt/.initial=},
+    /pgf/decoration/Mark/.style={
+        mark/.expanded=at position #1 with
+        {
+            \noexpand\arrow[\pgfkeysvalueof{/tikz/arrow inside/opt}]{\pgfkeysvalueof{/tikz/arrow inside/end}}
+        }
+    },
+    arrow inside/.style 2 args={
+        set arrow inside={#1},
+        postaction={
+            decorate,decoration={
+                markings,Mark/.list={#2}
+            }
+        }
+    },
+}
+
+
+
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows, arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{3d}  % Babinet.
+
+\input{./guias_newcommands.code}
+
+% \includeonly{termo_portada.code, termo_calorimetria.code,
+%   termo_preguntas_calorimetria.code,
+%   termo_transmision.code,
+%   termo_preguntas_transmision.code, termo_primerppio.code,
+%   termo_segundoppio.code, termo_preguntas_principios.code,
+%   termo_adicionales.code}
+
+\graphicspath{{./termodinamica/img/}}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+% \addcontentsline{toc}{section}{Unnumbered Section}
+
+  \input{termodinamica/termo_portada.code}
+  \ifthenelse{\equal{\seleccionados}{true}}
+    {%Imprime una lista de ejercicios seleccionados
+        \input{termodinamica/termo_seleccionados.code}
+    }{}
+
+  \input{termodinamica/termo_calorimetria.code}
+  \input{termodinamica/termo_transmision.code}
+  \input{termodinamica/termo_primerppio.code}
+  \input{termodinamica/termo_segundoppio.code}
+%   \input{termodinamica/termo_adicionales.code}
+  \input{termodinamica/termo_preguntas.code}
+
+  % \include{termodinamica/termo_calorimetria.code}
+  % \include{termodinamica/termo_transmision.code}
+  % \include{termodinamica/termo_primerppio.code}
+  % \include{termodinamica/termo_segundoppio.code}
+  % \include{termodinamica/termo_preguntas.code}
+
+  \twocolumn[\colorsection{Respuestas de la unidad I}]
+  %   \begin{multicols*}{2}
+      \shipoutAnswer
+  %   \end{multicols*}
+
+\end{document}

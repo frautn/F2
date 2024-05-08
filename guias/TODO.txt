@@ -1,0 +1,54 @@
+
+
+----------------------------------
+
+Termodinamica:
+
+
+Agregar algo de entropia referido a transmision.
+
+5.16) Revisar esta afirmación: Cuando se derrite hielo a 0 C su volumen disminuye
+
+5.24) Reescribir: la expansión libre dentro de un recinto aislado es un proceso adiabático, porque no intercambia calor con el entorno, y por lo tanto, Q/T = 0. Sin embargo, la entropía del gas es mayor al final del proceso, ¿porqué? ¿cómo calcularía esta variación?
+
+Preguntas:
+- Intercámara
+- Radiación, cambio de área.
+
+---------------------
+
+Unidades 1,2 y 4:
+
+1. Cambiar \hat por \vu y cambiar \vec por \va*.
+2. Eliminar espacios antes de vectores unitarios: \, o ~
+
+Unidad 3:
+
+1. Mejorar las figuras:
+Hacer más lindas las cargas puntuales
+
+2. Figuras a y b en problema 3.9
+
+3. problema 3.16 (cilindros coaxiales) mover un poco el label r_a.
+
+4. Figura 2.1 (gauss sobre un disco). Agregar arco con el ángulo de E.
+
+5. Agregar algún/os problemas numéricos de potencial con aro, disco y segmento.
+
+6. Revisar los \vspace{1cm} después de las figuras, ya eliminé uno. Quizás sea mejor quitarlos todos.
+
+
+8. Las primeras dos respuestas aparecen mal ubicadas, revisar porqué.
+
+
+Unidad 4
+
+- Agregar circuitos con inductancias.
+- Agregar referencia de las figuras robadas del Sears, en las preguntas.
+- Caption: que no se corra a una nueva página.
+- Revisar img, borrar las que no se usan.
+
+
+Capacitores:
+1.8 capacitor con líquido: cambiar un poco el texto:
+encontrar x para que la capacidad sea....

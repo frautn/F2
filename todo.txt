@@ -1,0 +1,46 @@
+Licencia:
+¿CC o GPL?
+¿incluir archivo en el raiz del repositorio, además de los links en los archivos?
+¿Qué otro procedimiento es requerido?
+¿La licencia del repositorio vale para todo el contenido?
+¿Se puede usar las dos dentro de un mismo repositorio? (CC para algunas cosas, GPL para otras)
+
+
+Matplotlib:
+- %matplotlib widgets works best for interactive figures in VSCode, but it won't reload thhe figures after closing the file.
+
+Logo utn, distintas versiones:
+- el logo grande, circulo blanco de fondo, y sobre fondo transparente.
+- sin fondo blanco, con fondo transparente.
+
+HTML:
+* Escribir presentación.
+* Hacer las figuras de los temas: termo, óptica, em
+* ¿Texto en las tarjetas de cada tema? (card body en index.html)
+* íconos en el título
+- ícono en el título
+- Agregar CSS: estilo de los links tag a.
+- force refresh
+
+- entropia.html: agregar figura dq/T
+falta "esto no es entropía"
+
+github:
+- Cambiar nombre al repositorio (EPF2)
+- nombre de los usuarios
+
+Referencias:
+- Agregar un html con referencias y un link en el Readme.
+- Notación de vectores y math:
+https://en.wikipedia.org/wiki/Vector_notation#cite_note-3
+https://www.iso.org/standard/64973.html  (how to cite?)
+- em02: calculo de integrales sumando porciones pequeñas.
+
+plotly:
+- cambiar background color
+- ajustar distancia del título en eje y
+
+liboptics:
+-op_plot_04:
+    y=0 hardcoded para haz 1, hay que agregar un parámetro para la altura de
+    esa curva, o usar dos ejes.

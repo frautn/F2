@@ -1,0 +1,194 @@
+\twocolumn[\colorsection{Capacitores}]
+\setcounter{figure}{0}
+%
+\begin{Exercise}
+  Las placas de un capacitor de placas paralelas están separadas $\SI{2.5}{\milli\metre}$ y cada una tiene una carga de magnitud igual a $\SI{80}{\nano\coulomb}$. Las placas están en el vacío y el campo eléctrico entre las placas tiene un módulo de $\SI{4.0E6}{\volt/\metre}$.\par
+  \textit{a}) ¿Cuál es la diferencia de potencial entre las placas?\par
+  \textit{b}) ¿Cuál es la densidad superficial de carga en las placas?\par
+  \textit{c}) ¿Cuál es el área de cada placa?\par
+  \textit{d}) ¿Cuál es la capacidad de este capacitor?\par
+  \textit{e}) ¿Cuánta energía hay almacenada en este capacitor?\par
+  \textit{f}) ¿Cambian las respuestas anteriores si en lugar de vacío hubiera aire en su interior?\par
+  \textit{g}) En el caso del aire, la ruptura del dieléctrico ocurre con una intensidad de campo eléctrico de $\SI{3E6}{\volt/\metre}$. Si este capacitor tuviera aire en su interior, ¿cuál es el voltaje máximo que puede aplicarse sin que haya ruptura del dieléctrico?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      \textit{a}) $\Delta V = \SI{10}{\kilo\volt}$\\ \textit{b}) $|\sigma| = \SI{35.4}{\micro\coulomb/\metre\squared}$\\ \textit{c}) $A = \SI{22.6}{\centi\metre^2}$\\ \textit{d}) $C = \SI{8.0}{\pico F}$\\ \textit{e}) $U = \SI{4.0}{\milli\joule}$\\ \textit{f}) No cambian si se mantienen las mismas cifras singificativas.\\ \textit{g}) $V_\text{ruptura} = \SI{7.5}{\kilo\volt}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}\label{p:capacitores01}
+  Una esfera conductora de radio igual a $\SI{2.7}{\centi\metre}$ se mantiene a un potencial constante mediante una batería, como se muestra en la figura \ref{f:capacitores01}.\par
+  \textit{a}) Calcular la capacidad de esta esfera.\par
+  \textit{b}) ¿Cuánta energía electrostática almacena esta esfera si el voltaje de la batería es $\varepsilon = \SI{120}{\volt}$?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      \textit{a}) $C = \SI{3.0}{\pico\farad}$\\ \textit{b}) $U = \SI{21.6}{\nano\joule}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    % \draw (5,3) node[draw,circle(2) node[](a){};
+    \node[circle,draw, blue, minimum size = 2cm] (c) at (2,1){};
+    \draw (c.200) -| (-1,0);
+    \draw (-1,0) to[battery2, l_=$\varepsilon$] (-1,-1) node[tlground] {};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:capacitores01}\label{f:capacitores01}}
+\end{center}
+%
+\begin{Exercise}
+  Dos placas paralelas tienen cargas de igual magnitud y signo contrario. Cuando se evacúa el espacio entre las placas, el módulo del campo eléctrico entre las placas es $\SI{3.2E5}{\volt/\metre}$. Cuando el espacio se llena con un dieléctrico, el módulo del campo eléctrico es $\SI{2.5E5}{\volt/\metre}$.\par
+  \textit{a}) ¿Cuál es la densidad de carga en cada superficie del dieléctrico?\par
+  \textit{b}) ¿Cuál es su constante dieléctrica?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      \textit{a}) $\SI{0.62}{\micro\coulomb/\squared\metre}$\\ \textit{b}) $1.28$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  Se conecta un capacitor de $\SI{12.5}{\micro\farad}$ a una fuente que mantiene una diferencia de potencial constante de $\SI{24.0}{\volt}$ a través de las placas. Entre las placas se coloca un trozo de material cuya constante dieléctrica es $3.75$, llenando por completo el espacio que hay entre ellas. ¿Cuánto cambia la energía acumulada en el capacitor durante la inserción? ¿Aumenta o disminuye?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      Aumenta $\SI{9.9}{\milli\joule}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  Un capacitor ($A$) de capacidad igual a $\SI{20.0}{\micro\farad}$, se carga conectándolo a una diferencia de potencial de $\SI{800}{\volt}$. Luego los terminales del capacitor cargado se desconectan de la fuente y se conectan entonces a los de un capacitor ($B$) descargado de capacidad igual a $\SI{10.0}{\micro\farad}$. Calcular la carga en cada capacitor una vez alcanzado el equilibrio.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      $Q_A = \SI{10.7}{\micro\coulomb}$ y $Q_B = \SI{5.3}{\micro\coulomb}$.
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}\label{p:capacitores02}
+  En la figura \ref{f:capacitores02}, cada capacitor tiene una capacidad de $\SI{4.00}{\micro\farad}$ y la diferencia de potencial entre los puntos $a$ y $b$ es $V_b - V_a = \SI{28.0}{\volt}$. Calcular:\par
+  \textit{a}) La carga en cada capacitor.\par
+  \textit{b}) La diferencia de potencial a través de cada capacitor.\par
+  \textit{c}) La diferencia de potencial $V_b - V_c$.\par
+  \textit{d}) La diferencia de potencial $V_a - V_c$.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      \textit{a}) $Q_1 = Q_2 = \SI{22.4}{\micro\coulomb}$, $Q_3 = \SI{44.8}{\micro\coulomb}$, $Q_4 = \SI{67.2}{\micro\coulomb}$\\ \textit{b}) $V_1 = V_2 = \SI{5.6}{\volt}$, $V_3 = \SI{11.2}{\volt}$, $V_4 = \SI{16.8}{\volt}$\\ \textit{c}) $V_b-V_c = \SI{16.8}{\volt}$\\ \textit{d}) $V_a - V_c = \SI{-11.2}{\volt}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (-1,-0.5) -- (0,-0.5)
+    (0,0) to[C, l=$C_1$] (2,0) to[C, l=$C_2$] (4,0) -- (4,-1) to[C, l=$C_3$] (0,-1) -- (0,0)
+    (4,-0.5) -- (4.5,-0.5) -- (4.5,-2.5) to[C, l=$C_4$] (-1,-2.5);
+    \draw (-1,-0.5) node[circ]{};
+    \draw (4.5,-1.5) node[circ]{};
+    \draw (-1,-2.5) node[circ]{};
+    \draw (-1,-0.5) node[above]{$a$};
+    \draw (-1,-2.5) node[above]{$b$};
+    \draw (4.5,-1.5) node[right]{$c$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:capacitores02}\label{f:capacitores02}}
+\end{center}
+%
+\begin{Exercise}\label{p:capacitores03}
+  Para la red de capacitores que se ilustra en la figura \ref{f:capacitores03}, la diferencia de potencial entre los puntos $a$ y $b$ es de $\SI{12.0}{\volt}$. Calcular:\par
+  \textit{a}) La energía total almacenada en la red.\par
+  \textit{b}) La energía almacenada en el capacitor de $\SI{4.80}{\micro\farad}$.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      \textit{a}) $\SI{158}{\micro\joule}$\\ \textit{b}) $\SI{71.9}{\micro\joule}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,0) to[C, l=$\SI{8.60}{\micro\farad}$] (1,0) to[C, l_=$\SI{4.80}{\micro\farad}$] (2,0)
+    (2,0) -- (3,1) to[C, l=$\SI{6.20}{\micro\farad}$] (4.5,1) to[C, l_=$\SI{11.80}{\micro\farad}$] (6,1) -- (7,0) -- (6,-1) to[C, l_=$\SI{3.50}{\micro\farad}$] (3,-1) -- (2,0)
+    (7,0) -- (7.5,0) ;
+    \draw (0,0) node[circ]{};
+    \draw (7.5,0) node[circ]{};
+    \draw (0,0) node[below]{$a$};
+    \draw (7.5,0) node[below]{$b$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:capacitores03}\label{f:capacitores03}}
+\end{center}
+%
+\begin{Exercise}\label{p:capacitores04}
+  Para el circuito mostrado en la figura \ref{f:capacitores04} se sabe que  $C_1= \SI{3.0}{\milli\farad}$, $\varepsilon = \SI{150}{\volt}$, la carga en el capacitor $C_1$ es $\SI{150}{\milli\coulomb}$ y la carga en $C_3$ es $\SI{450}{\milli\coulomb}$. ¿Cuáles son los valores de las capacidades $C_2$ y $C_3$?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      $C_2= \SI{6.0}{\milli\farad}$ y $C_3= \SI{4.5}{\milli\farad}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (1,0) -- (0,0) to[battery1, l=$\varepsilon$] (0,-2) to[C, l_=$C_3$] (3,-2) -- (3,0) -- (2.5,0)
+    (1,0.5) to[C, l=$C_1$] (2.5,0.5) -- (2.5,-0.5) to[C, l=$C_2$] (1,-0.5) -- (1,0.5);
+    % \draw (0,0) node[below]{$a$};
+    % \draw (7.5,0) node[below]{$b$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:capacitores04}\label{f:capacitores04}}
+\end{center}
+%
+\begin{Exercise}\label{p:capacitores05}
+  Un capacitor horizontal de placas paralelas separadas una distancia $D$, vacío entre sus placas, tiene una capacidad de $\SI{25.0}{\milli\farad}$. Un líquido no conductor, de constante dieléctrica igual a $6.50$, se vierte en el espacio entre las placas, que llena una fracción del volumen de altura $d$, modificando de esta forma la capacidad de este dispositivo, como se muestra en la figura \ref{f:capacitores05}. ¿Qué fracción del volumen entre las placas hay que llenar con este líquido para que la capacidad resultante sea $\SI{50.0}{\milli\farad}$? Es decir, calcular la proporción $d/D$ para obtener la capacidad mencionada.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      $C = \SI{25.0}{\milli\farad}/(1 - 0.8462d/D)$. Por lo tanto: $d/D = 0.59$.
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+  \def\L{10};
+  \def\w{0.3};
+  \def\D{3};
+  \def\d{1};
+  \fill[pattern=north west lines] (0,0) rectangle (\L,\w);
+  \draw (0,0) -- (\L,0);
+  \draw (0,\w) -- (\L, \w);
+  \fill[pattern=north west lines] (0,-\D) rectangle (\L,-\D-\w);
+  \draw (0,-\D) -- (\L,-\D);
+  \draw (0,-\D-\w) -- (\L,-\D-\w);
+  \fill[fill=yellow!50!green!60] (0,-\D+\d) rectangle (\L,-\D);
+  \draw[green!60!black!90, thick] (0,-\D+\d) -- (\L, -\D+\d);
+  \draw (0.2,-\D+0.5) node[right] {Líquido};
+  \draw (0.2,-\D+\d+0.1) node[above right] {Vacío};
+  \draw[latex-latex] (\L+0.2,-\D) -- (\L+0.2, -\D+\d) node[pos=0.5,right] {$d$};
+  \draw[latex-latex] (\L+1.2,-\D) -- (\L+1.2, 0) node[pos=0.5,right] {$D$};
+  \end{tikzpicture}
+  \captionof{figure}{Problema \ref{p:capacitores05}\label{f:capacitores05}}
+\end{center}
+%
+\begin{Exercise}
+  Un capacitor está hecho de dos cilindros coaxiales huecos de cobre, de longitud igual a $\SI{36.0}{\centi\metre}$, y el espacio entre ellos está vacío. El radio del cilindro interior vale $\SI{2.50}{\milli\metre}$ y $\SI{3.10}{\milli\metre}$ el radio del cilindro exterior. Si la diferencia de potencial entre las superficies de los dos cilindros es $\SI{80.0}{\volt}$:\par
+  \textit{a}) ¿Cuál es la capacidad de este capacitor?\par
+  \textit{b}) ¿Cuál es la carga almacenada?\par
+  \textit{c}) ¿Cuánto vale el módulo del campo eléctrico en un punto entre los dos cilindros que se encuentra a $\SI{2.80}{\milli\metre}$ de su eje común y en el punto medio entre los extremos de los cilindros?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      \textit{a}) $\SI{93.0}{\pico\farad}$\\ \textit{b}) $\SI{7.44}{\nano\coulomb}$\\ \textit{c}) $\SI{133}{\kilo\volt/\metre}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  Un capacitor está construido con dos cilindros coaxiales huecos, de hierro, uno dentro del otro. El cilindro interior tiene carga negativa y el exterior tiene carga positiva; y la magnitud de la carga en cada uno es $\SI{10.0}{\pico\coulomb}$. El cilindro  interior tiene un radio de $\SI{0.50}{\milli\metre}$ y el exterior de $\SI{5.00}{\milli\metre}$, y la longitud de cada cilindro es $\SI{18.0}{\centi\metre}$.\par
+  \textit{a}) ¿Cuál es su capacidad?\par
+  \textit{b}) ¿Qué diferencia de potencial es necesario aplicar para tener tales cargas en los cilindros?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+      \textit{a}) $\SI{4.35}{\pico\farad}$\\ \textit{b}) $\SI{2.30}{\volt}$
+    \end{minipage}
+\end{Answer}
+%

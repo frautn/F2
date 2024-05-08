@@ -1,0 +1,98 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage[a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+%%
+% Con espacio para anotar:
+% \usepackage[a4paper,paperwidth=847pt, textheight=650pt, textwidth=418pt,top=2.5cm,bottom=2.5cm]{geometry}
+% \setlength{\oddsidemargin}{17pt}
+% \setlength{\marginparwidth}{250pt}
+%%
+
+% \usepackage{ucs}
+% \usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{mathrsfs}
+\usepackage{amssymb,amsmath}
+\usepackage{enumerate}
+% \usepackage{capt-of}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage[stable]{footmisc} %para footnote dentro de pma
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+% \usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{tikz-3dplot}
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+\usepackage{subfigure}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{3d}  %babinet
+
+\pgfplotsset{compat=newest}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PORTADA 1ER O 2DO PARCIAL
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Esto lo dejo por las dudas, cuando analice si se usa lo podré eliminar.
+% \newcommand{\parcial1}{true}
+% \newcommand{\primerparcial}{true}
+\newcommand{\primerparcial}{false}
+
+% Para generar un documento independiente con la unidad 2
+% en lugar de incluirlo a continuacion dentro de parcial 1.
+% Para compartir con la cátedra.
+\newcommand{\unidaddos}{true}
+
+\input{./guias_newcommands.code.tex}
+\graphicspath{{./img/}}
+
+% \includeonly{termo_portada.code, termo_dilatacion.code, termo_calorimetria.code,
+%   termo_preguntas_calorimetria.code, termo_transmision.code,
+%   termo_preguntas_transmision.code, termo_primerppio.code,
+%   termo_segundoppio.code, termo_preguntas_principios.code,
+%   termo_adicionales.code}
+
+\begin{document}
+
+  \input{./guias_newcommands-tikz.code.tex}
+
+  \setcounter{section}{5}
+
+  % \include{optica/optica_portada.code}
+  % \include{optica/optica_ondas.code}
+  % \include{optica/optica_interferencia.code}
+  % \include{optica/optica_young.code}
+  % \include{optica/optica_difraccion.code}
+  % \include{optica/optica_polarizacion.code}
+  % \include{optica/optica_preguntas.code}
+
+  \input{optica/optica_portada.code}
+  \input{optica/optica_ondas.code}
+  \input{optica/optica_interferencia.code}
+  \input{optica/optica_young.code}
+  \input{optica/optica_difraccion.code}
+  % \input{optica/optica_polarizacion.code}
+  \input{optica/optica_preguntas.code}
+
+
+  \end{document}
