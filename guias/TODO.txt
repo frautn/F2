@@ -1,5 +1,7 @@
 
 
+- Modificar color de la línea de separación de columnas a gris.
+
 ----------------------------------
 
 Termodinamica:

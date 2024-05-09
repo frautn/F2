@@ -1,7 +1,7 @@
 \documentclass[a4paper,11pt,dvipsnames,twocolumn]{article}
 \usepackage[a4paper,left=2cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 
-\setlength{\columnseprule}{0.4pt}
+\setlength{\columnseprule}{0.5pt}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
@@ -25,6 +25,11 @@
 \usepackage{tikz-3dplot}
 \usetikzlibrary{babel}  % Solves the problems produced by changes to category codes made by some babel modules.
 \usetikzlibrary{decorations, decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows, arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+% \usetikzlibrary{3d}  % Babinet.
 
 % Tikzset needed for the two loops graph in preguntas.
 \usetikzlibrary{decorations.markings}
@@ -47,13 +52,6 @@
     },
 }
 
-
-
-\usetikzlibrary{shapes.geometric}
-\usetikzlibrary{arrows, arrows.meta}
-\usetikzlibrary{calc}
-\usetikzlibrary{patterns}
-\usetikzlibrary{3d}  % Babinet.
 
 \input{./guias_newcommands.code}
 
@@ -90,9 +88,7 @@
   % \include{termodinamica/termo_segundoppio.code}
   % \include{termodinamica/termo_preguntas.code}
 
-  \twocolumn[\colorsection{Respuestas de la unidad I}]
-  %   \begin{multicols*}{2}
+  \twocolumn[\colorsectionnonumber{Respuestas de la unidad I}]
       \shipoutAnswer
-  %   \end{multicols*}
 
 \end{document}

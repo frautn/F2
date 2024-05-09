@@ -38,6 +38,19 @@
     \addcontentsline{toc}{section}{\thesection\hspace{5pt}#1}
 }
 
+\newcommand{\colorsectionnonumber}[1]{
+    \tcbset{on line,
+        boxsep=5pt, left=0pt,right=0pt,top=0pt,bottom=0pt,
+        colframe=white, colback=\colorofsection, sharp corners=southwest,
+        leftrule=0pt, highlight math style={enhanced}
+        }
+
+    \bigskip\bigskip
+    {\noindent\def\stackalignment{l}%
+    \stackunder[-2pt]{\tcbox{\textcolor{white}{\textbf{\Large #1}}}}{\textcolor{\colorofsection}{\rule{\linewidth}{1pt}}}\medskip}
+    \addcontentsline{toc}{section}{#1}
+}
+
 %---------------------------
 %
 % Exercises and answers.
