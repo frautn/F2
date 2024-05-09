@@ -64,17 +64,13 @@ Dos cargas puntuales se localizan en el eje $+x$ de un sistema de coordenadas. L
   \end{minipage}
 \end{Answer}
 %
-\begin{minipage}[t]{.6\textwidth}
 \begin{Exercise}\label{p:puntuales02}
   Dos pequeñas esferas igualmente cargadas y de la misma masa están suspendidas de un mismo punto por dos hilos no conductores de igual longitud $l = \SI{15}{\centi\metre}$, como se muestra en la figura \ref{f:puntuales02}. Debido a la repulsión, el equilibrio se establece cuando las dos esferas están separadas una distancia $d = \SI{10}{\centi\metre}$. Calcular la carga $q$ de cada esfera si la masa de cada esfera es $m = \SI{0.5}{\gram}$.
 \end{Exercise}
 \begin{Answer}
   $|q| = \SI{44}{\nano\coulomb}$
 \end{Answer}
-\end{minipage}
 %
-\begin{minipage}[t]{.4\textwidth}
-\strut\vspace*{-\baselineskip}
 \begin{center}
   \begin{tikzpicture}[scale=0.2]
     \draw [blue] (0,0)--(6,0);
@@ -98,7 +94,6 @@ Dos cargas puntuales se localizan en el eje $+x$ de un sistema de coordenadas. L
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:puntuales02}\label{f:puntuales02}}
 \end{center}
-\end{minipage}
 %
 \begin{Exercise}\label{p:puntuales03}
 Las cargas $q_1 = \SI{2}{\micro\coulomb}$, $q_2 = \SI{-8}{\micro\coulomb}$ y $q_3 = \SI{12}{\micro\coulomb}$ se colocan en los vértices de un triángulo equilátero, cuyos lados miden $\SI{10}{\centi\metre}$, como se muestra en la figura \ref{f:puntuales03}. \textit{a}) Hallar el campo eléctrico en el punto $P$. \textit{b}) Hallar la fuerza sobre una carga de $\SI{-1}{\micro\coulomb}$ si es colocada en $P$.
@@ -109,8 +104,6 @@ Las cargas $q_1 = \SI{2}{\micro\coulomb}$, $q_2 = \SI{-8}{\micro\coulomb}$ y $q_
   \end{minipage}
 \end{Answer}
 %
-\begin{minipage}[t]{.5\textwidth}
-% \strut\vspace*{-\baselineskip}
 \begin{center}
   \begin{tikzpicture}[scale=0.3]
     \draw [blue, dashed] (0,0)--(-5,-8.66);
@@ -124,9 +117,14 @@ Las cargas $q_1 = \SI{2}{\micro\coulomb}$, $q_2 = \SI{-8}{\micro\coulomb}$ y $q_
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:puntuales03}\label{f:puntuales03}}
 \end{center}
-\end{minipage}
 %
-\begin{minipage}[t]{.5\textwidth}
+\begin{Exercise}\label{p:puntuales04}
+  Calcule el módulo del campo eléctrico resultante en el centro de un cuadrado de lado $b$, en cuyos vértices se sitúan las cargas $q$, $2q$, $-4q$ y $2q$, como se muestra en la figura \ref{f:puntuales04}.
+\end{Exercise}
+\begin{Answer}
+  $|\va*{E}| = 10kq/b^2$
+\end{Answer}
+%
 \begin{center}
   \begin{tikzpicture}[scale=0.6]
     \draw [blue, dashed] (0,0)--(4,0);
@@ -140,14 +138,6 @@ Las cargas $q_1 = \SI{2}{\micro\coulomb}$, $q_2 = \SI{-8}{\micro\coulomb}$ y $q_
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:puntuales04}\label{f:puntuales04}}
 \end{center}
-\end{minipage}
-%
-\begin{Exercise}\label{p:puntuales04}
-  Calcule el módulo del campo eléctrico resultante en el centro de un cuadrado de lado $b$, en cuyos vértices se sitúan las cargas $q$, $2q$, $-4q$ y $2q$, como se muestra en la figura \ref{f:puntuales04}.
-\end{Exercise}
-\begin{Answer}
-  $|\va*{E}| = 10kq/b^2$
-\end{Answer}
 %
 \begin{Exercise}\label{p:puntuales05}
   Dos cargas se colocan como se muestra en la figura \ref{f:puntuales05}. La carga $q_1$ vale $\SI{3.00}{\milli\coulomb}$ y se desconocen el signo y el valor de la carga $q_2$. El campo eléctrico neto en el punto $P$ está por completo en la dirección horizontal hacia la derecha, como se observa en la figura. Calcular el módulo del vector campo eléctrico en el punto $P$.
@@ -155,6 +145,19 @@ Las cargas $q_1 = \SI{2}{\micro\coulomb}$, $q_2 = \SI{-8}{\micro\coulomb}$ y $q_
 \begin{Answer}
   $|\va*{E}| = \SI{2.8E10}{\newton/\coulomb}$
 \end{Answer}
+%
+\begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw [blue, dashed] (0,0)--(13,0) node[black, midway,below] {$\SI{13}{\centi\metre}$};
+    \draw [blue, dashed] (0,0)--(1.923,4.615) node[black, midway,above left] {$\SI{5}{\centi\metre}$};
+    \draw [blue, dashed] (13,0)--(1.923,4.615) node[black, midway,above right] {$\SI{12}{\centi\metre}$};
+    \fill [black](0,0) circle(6pt) node[left] {$q_1$};
+    \fill [black](13,0) circle(6pt) node[right] {$q_2$};
+    \fill [red](1.923,4.615) circle(6pt) node[black, above left] {$P$};
+    \draw [red,-{Stealth}, thick] (1.923,4.615)--(8,4.615) node[black, midway,above] {$\va*{E}$};
+  \end{tikzpicture}
+  \captionof{figure}{Problema \ref{p:puntuales05}\label{f:puntuales05}}
+\end{center}
 %
 \begin{Exercise}\label{p:puntuales06}
   Sobre el eje $x$ se ubican una carga positiva $q$ en la posición $x = d/2$ y una carga negativa $-q$ en la posición $x = -d/2$, como se observa en la figura \ref{f:puntuales06}. De esta forma se tiene un dipolo eléctrico de separación $d$, cuyo momento dipolar es $\va*{p}=qd\vu{x}$, paralelo al eje $x$. Este dipolo se encuentra en una región donde existe un campo eléctrico uniforme que forma un ángulo de $30^\circ$ con el eje $x$. \textit{a}) ¿Cuál es la fuerza neta que ejerce el campo externo sobre el dipolo? \textit{b}) Calcular el torque que siente este dipolo ($\va*{\tau} = \va*{p} \times \va*{E}$) si $q = \SI{12}{\nano\coulomb}$, $d = \SI{5}{\centi\metre}$ y $|\va*{E}| = \SI{5E6}{\newton/\coulomb}$.
@@ -165,23 +168,6 @@ Las cargas $q_1 = \SI{2}{\micro\coulomb}$, $q_2 = \SI{-8}{\micro\coulomb}$ y $q_
   \end{minipage}
 \end{Answer}
 %
-\begin{minipage}[t]{.5\textwidth}
-  \begin{center}
-    \begin{tikzpicture}[scale=0.5]
-      \draw [blue, dashed] (0,0)--(13,0) node[black, midway,below] {$\SI{13}{\centi\metre}$};
-      \draw [blue, dashed] (0,0)--(1.923,4.615) node[black, midway,above left] {$\SI{5}{\centi\metre}$};
-      \draw [blue, dashed] (13,0)--(1.923,4.615) node[black, midway,above right] {$\SI{12}{\centi\metre}$};
-      \fill [black](0,0) circle(6pt) node[left] {$q_1$};
-      \fill [black](13,0) circle(6pt) node[right] {$q_2$};
-      \fill [red](1.923,4.615) circle(6pt) node[black, above left] {$P$};
-      \draw [red,-{Stealth}, thick] (1.923,4.615)--(8,4.615) node[black, midway,above] {$\va*{E}$};
-    \end{tikzpicture}
-    \captionof{figure}{Problema \ref{p:puntuales05}\label{f:puntuales05}}
-  \end{center}
-\end{minipage}
-%
-\begin{minipage}[t]{.5\textwidth}
-% \strut\vspace*{-\baselineskip}
 \begin{center}
   \begin{tikzpicture}[scale=0.5]
     \draw [blue, -{Stealth}] (-6,0)--(6,0) node[black,right,right] {$x$};
@@ -196,5 +182,4 @@ Las cargas $q_1 = \SI{2}{\micro\coulomb}$, $q_2 = \SI{-8}{\micro\coulomb}$ y $q_
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:puntuales06}\label{f:puntuales06}}
 \end{center}
-\end{minipage}
 %

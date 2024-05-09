@@ -19,6 +19,17 @@ Preguntas:
 
 ---------------------
 
+Campos estáticos:
+
+*)
+Problema: Una carga de $\SI{-12.0}{\nano\coulomb}$ está distribuida de manera uniforme en un cuarto de círculo de radio $a = \SI{25.0}{\centi\metre}$ que se encuentra en el primer cuadrante,
+
+Tratar de reubicar las figuras, quizás dentro de cada ítem.
+
+Intentar lo mismo en otros problemas con varias figuras.
+
+---------------------
+
 Unidades 1,2 y 4:
 
 1. Cambiar \hat por \vu y cambiar \vec por \va*.

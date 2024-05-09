@@ -1,4 +1,4 @@
-\twocolumn[\colorsection{Distribuciones de cargas contínuas}]
+\twocolumn[\colorsection{Distribuciones de carga contínuas}]
 \setcounter{figure}{0}
 
 \begin{Exercise}
@@ -77,7 +77,6 @@
   \captionof{figure}{Problema \ref{p:continuas02}\label{f:continuas02}}
 \end{center}
 %
-\begin{minipage}[t]{.65\textwidth}
 \begin{Exercise}\label{p:continuas03}
 Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados como muestra la figura \ref{f:continuas03}. Uno de los hilos se prolonga a lo largo del eje $y$ ($x=0$) y tiene densidad de carga $\lambda_1 = \SI{-30}{\micro\coulomb/\metre}$, y el otro hilo se encuentra a una distancia $b = \SI{20}{\centi\metre}$ medida sobre el eje $x$, y su densidad de carga es $\lambda_2 = \SI{10}{\micro\coulomb/\metre}$. ¿En qué posiciones sobre el eje $x$ se puede ubicar una carga puntual positiva si se desea que la fuerza neta sobre dicha carga esté dirigida hacia el sentido positivo de $x$?
 \end{Exercise}
@@ -86,10 +85,7 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
   La carga puede estar en $ x < \SI{0}{\centi\metre}$, en $\SI{15}{\centi\metre} < x < \SI{20}{\centi\metre}$,\\ o en $\SI{20}{\centi\metre} < x < \SI{30}{\centi\metre}$
   \end{minipage}
 \end{Answer}
-\end{minipage}
 %
-\begin{minipage}[t]{.3\textwidth}
-\strut\vspace*{-\baselineskip}
 \begin{center}
   \begin{tikzpicture}[scale=0.5]
     \draw (0,3.5) ellipse (0.2 and 0.1);
@@ -109,7 +105,6 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:continuas03}\label{f:continuas03}}
 \end{center}
-\end{minipage}
 %
 \begin{Exercise}
   Calcular la energía cinética de un electrón que gira en una trayectoria circular alrededor de un hilo infinito con densidad de carga $\lambda = \SI{3E-8}{\coulomb/\metre}$.
@@ -131,16 +126,7 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
   \end{minipage}
 \end{Answer}
 %
-\begin{Exercise}\label{p:continuas05}
-  El anillo mostrado en la figura \ref{f:continuas05} tiene un radio de $\SI{2.50}{\centi\metre}$ y una carga total igual $\SI{0.125}{\nano\coulomb}$ distribuida uniformemente. El centro del anillo está en el origen de coordenadas. Una carga puntual $q = \SI{-2.50}{\micro\coulomb}$ se coloca sobre el eje $k$ a una altura $b = \SI{40.0}{\centi\metre}$. ¿Cuál es la fuerza ejercida sobre el anillo debida a la carga $q$?
-\end{Exercise}
-\begin{Answer}
-  $\va*{F} = \SI{1.74E-5}{\newton}\vu{k}$
-\end{Answer}
-%
 \begin{center}
-\begin{minipage}[t]{.4\textwidth}
-  \begin{center}
   \tdplotsetmaincoords{70}{110}
   \begin{tikzpicture}[tdplot_main_coords, scale=0.5]
     %Axis
@@ -151,11 +137,16 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
     \fill [black](0,0,4) circle(3pt) node[left] {$P = (0,0,z)$};
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:continuas04}\label{f:continuas04}}
-  \end{center}
-\end{minipage}
+\end{center}
 %
-\begin{minipage}[t]{.4\textwidth}
-  \begin{center}
+\begin{Exercise}\label{p:continuas05}
+  El anillo mostrado en la figura \ref{f:continuas05} tiene un radio de $\SI{2.50}{\centi\metre}$ y una carga total igual $\SI{0.125}{\nano\coulomb}$ distribuida uniformemente. El centro del anillo está en el origen de coordenadas. Una carga puntual $q = \SI{-2.50}{\micro\coulomb}$ se coloca sobre el eje $k$ a una altura $b = \SI{40.0}{\centi\metre}$. ¿Cuál es la fuerza ejercida sobre el anillo debida a la carga $q$?
+\end{Exercise}
+\begin{Answer}
+  $\va*{F} = \SI{1.74E-5}{\newton}\vu{k}$
+\end{Answer}
+%
+\begin{center}
   \tdplotsetmaincoords{70}{110}
   \begin{tikzpicture}[tdplot_main_coords, scale=0.5]
     %Axis
@@ -167,8 +158,6 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
     \draw[blue, {Stealth}-{Stealth}] (0.5,-0.5,0) -- (0.5,-0.5,4) node[midway, left] {$b$};
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:continuas05}\label{f:continuas05}}
-  \end{center}
-\end{minipage}
 \end{center}
 %
 \begin{Exercise}\label{p:continuas06}
@@ -180,8 +169,6 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
   \end{minipage}
 \end{Answer}
 %
-% \begin{center}
-\begin{minipage}[t]{.5\textwidth}
 \begin{center}
   \begin{tikzpicture}[scale=0.6]
     \draw [very thick] (3,0) arc (0:90:3);
@@ -191,8 +178,7 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:continuas06} (\textit{a})\label{f:continuas06}}
 \end{center}
-\end{minipage}
-\begin{minipage}[t]{.5\textwidth}
+%
 \begin{center}
   \begin{tikzpicture}[scale=0.5]
     \draw [very thick] (0,3) arc (90:270:3) node[midway, above left] {$\lambda$};
@@ -202,10 +188,7 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:continuas06} (\textit{b})\label{f:continuas07}}
 \end{center}
-\end{minipage}
-% \end{center}
 %
-\begin{minipage}[t]{.6\textwidth}
 \begin{Exercise}\label{p:continuas08}
   Sean dos planos paralelos al plano $yz$, cargados con igual densidad de carga uniforme $\sigma$ y separados por una distancia $a$ como se muestra en la figura \ref{f:continuas08}. Obtener el campo eléctrico en las regiones $x<0$, $0<x<a$ y $a<x$, para puntos alejados de los bordes y cuya distancia al plano sea pequeña comparada con las dimensiones de los planos.
 \end{Exercise}
@@ -214,10 +197,7 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
     $\va*{E}_{x<0} = -\dfrac{\sigma}{\varepsilon_o} \vu{x}$\\ $\va*{E}_{0<x<a} = 0$\\ $\va*{E}_{x>a} = \dfrac{\sigma}{\varepsilon_o} \vu{x}$
   \end{minipage}
 \end{Answer}
-\end{minipage}
 %
-\begin{minipage}[t]{.3\textwidth}
-\strut\vspace*{-\baselineskip}
 \begin{center}
 \tdplotsetmaincoords{70}{110}
 \begin{tikzpicture}[tdplot_main_coords, scale=0.5]
@@ -234,7 +214,6 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
 \end{tikzpicture}
 \captionof{figure}{Problema \ref{p:continuas08}\label{f:continuas08}}
 \end{center}
-\end{minipage}
 %
 \begin{Exercise}
   Dos grandes placas metálicas de $\SI{3}{\metre\squared}$ están colocadas frente a frente, separadas $\SI{5}{\centi\metre}$, y tienen cargas iguales y de signo contrario en sus superficies interiores. Si el módulo del campo eléctrico entre esas placas es $\SI{55E3}{\newton/\coulomb}$, ¿cuál es la carga en cada superficie? (Despreciar efectos de borde.)
@@ -281,7 +260,6 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
   \textit{c}) Verificar que esa expresión del campo eléctrico es equivalente al campo eléctrico que se produciría si toda la carga estuviera distribuida sobre el eje del cilindro.
 \end{Exercise}
 %
-\begin{minipage}[t]{.6\textwidth}
 \begin{Exercise}\label{p:continuas09}
   La figura \ref{f:continuas09} muestra la sección transversal de un alambre metálico coaxial con un casco cilíndrico, ambos de longitud infinita. Los campos eléctricos en las posiciones $\va*{r}_a$ y $\va*{r}_b$ son $\va*{E}_a = \SI{2000}{\newton/\coulomb}\vu{r}$ y $\va*{E}_b = \SI{-1000}{\newton/\coulomb}\vu{r}$ respectivamente, y las distancias al centro son $r_a = \SI{10}{\centi\metre}$ y $r_b = \SI{30}{\centi\metre}$. Encontrar las cargas por unidad de longitud tanto del alambre ($\lambda_1$) como del casco cilíndrico ($\lambda_2$).
 \end{Exercise}
@@ -290,10 +268,7 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
     $\lambda_1 = \SI{11.1}{\nano\coulomb/\metre}$\\ $\lambda_2 = \SI{-27.8}{\nano\coulomb/\metre}$
   \end{minipage}
 \end{Answer}
-\end{minipage}
 %
-\begin{minipage}[t]{.3\textwidth}
-\strut\vspace*{-\baselineskip}
 \begin{center}
   \begin{tikzpicture}[scale=0.5]
     \fill [red, opacity=0.3](0,0) circle(1);
@@ -305,4 +280,3 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:continuas09}\label{f:continuas09}}
 \end{center}
-\end{minipage}
