@@ -10,7 +10,7 @@
 %
 \begin{center}
 	\tdplotsetmaincoords{70}{110}
-	\begin{tikzpicture}[tdplot_main_coords, scale=0.5]
+	\begin{tikzpicture}[tdplot_main_coords, scale=0.4]
 		%Axis
 		\filldraw[fill=green, opacity=0.2,tdplot_main_coords] (4,0,0) arc (0:360:4);
 
@@ -36,6 +36,25 @@
 	\captionof{figure}{Problema \ref{p:gauss01}\label{f:gauss01}}
 \end{center}
 %
+\begin{Exercise}\label{p:gauss02a}
+	¿Cuánto vale el flujo de campo eléctrico sobre la superficie esférica $S$ que encierra al dipolo eléctrico mostrado en la figura \ref{f:gauss02a}?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+		$\Phi = 0$
+	\end{minipage}
+\end{Answer}
+%
+\begin{center}
+	\begin{tikzpicture}[scale=0.5]
+		\fill [blue!50](-1,0) circle(6pt) node[black, above left] {$-q$};
+		\fill [red!50](1,0) circle(6pt) node[black, below right] {$q$};
+		\draw [dashed](0,0) circle(70pt);
+		\draw [] (1.2,-1.8) node[black, below right] {$S$};
+	\end{tikzpicture}
+	\captionof{figure}{Problema \ref{p:gauss02a}\label{f:gauss02a}}
+\end{center}
+%
 \begin{Exercise}\label{p:gauss02}
 	Las tres esferas pequeñas que se ilustran en la figura \ref{f:gauss02} tienen cargas $q_1 = \SI{4.0}{\nano\coulomb}$, $q_2 = \SI{-7.8}{\nano\coulomb}$ y $q_3 = \SI{2.4}{\nano\coulomb}$. Calcular el flujo eléctrico neto a través de cada una de las siguientes superficies cerradas que se ilustran en sección transversal en la figura: \textit{a}) $S_1$; \textit{b}) $S_2$; \textit{c}) $S_3$; \textit{d}) $S_4$; \textit{e}) $S_5$. \textit{f}) Las respuestas para los incisos anteriores, ¿dependen de la manera en que está distribuida la carga en cada esfera pequeña? ¿Por qué?
 \end{Exercise}
@@ -46,7 +65,7 @@
 \end{Answer}
 %
 \begin{center}
-	\begin{tikzpicture}[scale=0.6]
+	\begin{tikzpicture}[scale=0.5]
 		\draw [red] plot [smooth cycle, tension=1] coordinates {(0,0) (1,1.5) (2,0) (1,-1)} node [above] {$S_1$};
 
 		\draw [violet] plot [smooth cycle, tension=0.5] coordinates {(-0.5,-1) (-0.3,.5) (0,2) (2,1.5) (2.7,-0.7) (4,-1.5) (4,-2.5) (2.5,-2) (1,-2.5)} node [below right] {$S_4$};
@@ -74,7 +93,7 @@
 %
 \begin{center}
 \tdplotsetmaincoords{70}{130}
-\begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+\begin{tikzpicture}[tdplot_main_coords, scale=0.6]
 
 	\draw[axis] (0,0,0) -- (6,0,0) node [pos=1.1] {$i$};
 	\draw[axis] (0,0,0) -- (0,4,0) node [pos=1.05] {$j$};
@@ -109,7 +128,7 @@
 %
 \begin{center}
 	\tdplotsetmaincoords{70}{130}
-	\begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+	\begin{tikzpicture}[tdplot_main_coords, scale=0.6]
 	
 		\draw[axis] (0,0,0) -- (6,0,0) node [pos=1.1] {$i$};
 		\draw[axis] (0,0,0) -- (0,4,0) node [pos=1.05] {$j$};
@@ -125,31 +144,4 @@
 	\end{tikzpicture}
 	\captionof{figure}{Problema \ref{p:gauss04}\label{f:gauss04}}
 \end{center}
-%
-\begin{Exercise}
-	Una esfera de plástico cuyo diámetro es de $\SI{12}{\centi\metre}$, tiene una carga superficial uniforme de $\SI{-35}{\micro\coulomb}$. Encontrar el campo eléctrico en estos puntos: \textit{a}) apenas adentro de la capa de plástico; \textit{b}) inmediatamente afuera de la capa de plástico; \textit{c}) $\SI{5.00}{\centi\metre}$ afuera de la superficie de la capa de plástico.
-\end{Exercise}
-\begin{Answer}
-	\begin{minipage}[t]{.4\textwidth}
-		\textit{a}) 0\\ \textit{b}) $\va*{E} = \SI{8.75E7}{\newton/\coulomb}\vu{r}$\\ \textit{c}) $\va*{E} = \SI{2.60E7}{\newton/\coulomb}\vu{r}$
-	\end{minipage}
-\end{Answer}
-%
-\begin{Exercise}
-	Una esfera hueca, conductora, con radio interior $a$ y radio exterior $b$, tiene una carga neta igual a $\SI{6}{\micro\coulomb}$. \textit{a}) ¿Cuál es el valor de la carga neta distribuida sobre la superficie interior, de radio $a$? \textit{b}) ¿Cuál es el valor de la carga neta distribuida sobre la superficie exterior, de radio $b$? \textit{c}) Si se introduce una carga de $\SI{-2}{\micro\coulomb}$ en la cavidad interna de la esfera, ¿cuál es el nuevo valor de la carga distribuida sobre la superficie externa de la esfera?
-\end{Exercise}
-\begin{Answer}
-	\begin{minipage}[t]{.4\textwidth}
-		\textit{a}) 0\\ \textit{b}) $\SI{6}{\micro\coulomb}$\\ \textit{c}) $\SI{4}{\micro\coulomb}$
-	\end{minipage}
-\end{Answer}
-%
-\begin{Exercise}
-	Un cable coaxial largo consiste en un conductor cilíndrico macizo central y un cilindro hueco que rodea al hilo central, con radio interior $a$ y radio exterior $b$. El cilindro exterior está montado en apoyos aislantes y no tiene carga neta, mientras que el cilindro central tiene una carga uniforme por unidad de longitud $\lambda$. Determinar la carga por unidad de longitud en las superficies interna y externa del cilindro exterior.
-\end{Exercise}
-\begin{Answer}
-	\begin{minipage}[t]{.4\textwidth}
-		En la superficie interior es $-\lambda$ y en la exterior es $\lambda$.
-	\end{minipage}
-\end{Answer}
 %

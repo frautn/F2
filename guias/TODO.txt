@@ -6,6 +6,7 @@
 
 Termodinamica:
 
+*) Mover la pregunta 5.10 más atrás, y reemplazarla por otra de las preguntas cortitas sin figuras.
 
 Agregar algo de entropia referido a transmision.
 
@@ -21,6 +22,9 @@ Preguntas:
 
 Campos estáticos:
 
+Puntuales: listo
+Gauss: listo
+
 *)
 Problema: Una carga de $\SI{-12.0}{\nano\coulomb}$ está distribuida de manera uniforme en un cuarto de círculo de radio $a = \SI{25.0}{\centi\metre}$ que se encuentra en el primer cuadrante,
 
@@ -28,14 +32,8 @@ Tratar de reubicar las figuras, quizás dentro de cada ítem.
 
 Intentar lo mismo en otros problemas con varias figuras.
 
----------------------
 
-Unidades 1,2 y 4:
-
-1. Cambiar \hat por \vu y cambiar \vec por \va*.
-2. Eliminar espacios antes de vectores unitarios: \, o ~
-
-Unidad 3:
+1. Sección potencial (2): faltan ejercicios con E = -DV. ¿Agregar más problemas después de haber movido los de distribuciones contínuas?
 
 1. Mejorar las figuras:
 Hacer más lindas las cargas puntuales
@@ -48,11 +46,9 @@ Hacer más lindas las cargas puntuales
 
 5. Agregar algún/os problemas numéricos de potencial con aro, disco y segmento.
 
-6. Revisar los \vspace{1cm} después de las figuras, ya eliminé uno. Quizás sea mejor quitarlos todos.
+6. Contínuas: ejercicio de buscar cargas en esferas, agregar "usando la ley de Gauss".
 
-
-8. Las primeras dos respuestas aparecen mal ubicadas, revisar porqué.
-
+---------------------
 
 Unidad 4
 

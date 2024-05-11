@@ -280,3 +280,208 @@ Se tienen dos hilos infinitos con densidad lineal de carga uniforme, ubicados co
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:continuas09}\label{f:continuas09}}
 \end{center}
+%
+% A partir de aquí son los ejercicios movidos desde la guía de potencial.
+%
+\begin{Exercise}\label{p:potencial03}
+  Se tiene un plano infinito, coincidente con el plano $yz$, con una densidad de carga superficial uniforme $\sigma = \SI{50}{\micro\coulomb/\metre\squared}$, como se muestra en la figura \ref{f:potencial03}. Las distancias mostradas en la figura son $a = \SI{30}{\centi\metre}$ y $b = \SI{25}{\centi\metre}$. Calcule la variación de energía potencial de un electrón cuando es desplazado: \textit{a}) desde $A$ hasta $B$, \textit{b}) desde $A$ hasta $C$, \textit{c}) desde $A$ hasta $D$.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{1.13E-13}{\joule}$\\ \textit{b}) 0\\ \textit{c}) $\SI{1.13E-13}{\joule}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \tdplotsetmaincoords{35}{140}
+  \begin{tikzpicture}[tdplot_main_coords, scale=0.5]
+    \filldraw[fill=red!30, tdplot_main_coords] (0,-3,3) -- (0,4,3) -- (0,4,-3) -- (0,-3,-3) -- cycle;
+    \draw[blue, -{latex}] (0,0,0) -- (7,0,0) node [below, pos=1] {$x$};
+    \draw[blue, -{latex}] (0,0,0) -- (0,5,0) node [below, pos=1.05] {$y$};
+    \draw[blue, dotted] (0,-3,0) -- (0,0,0) ;
+    \draw[blue, -{latex}] (0,0,0) -- (0,0,4)  node [right] {$z$};
+    \draw[blue, dotted] (0,0,-3) -- (0,0,0) ;
+    \draw[black, dotted] (2.5,0,0) -- (2.5,3,0) ;
+    \draw[black, dotted] (5,0,0) -- (5,3,0) ;
+    \draw[black, dotted] (0,3,0) -- (5,3,0) ;
+    \fill [black](2.5,0,0) circle(5pt) node[above] {$A$};
+    \fill [black](5,0,0) circle(5pt) node[above] {$B$};
+    \fill [black](2.5,3,0) circle(5pt) node[above] {$C$};
+    \fill [black](5,3,0) circle(5pt) node[above] {$D$};
+    \draw[black, {latex}-{latex}] (6,0,0) -- (6,3,0)  node [pos=0.5, below left] {$a$};
+    \draw[black, {latex}-{latex}] (5,4,0) -- (2.5,4,0)  node [pos=0.5, below right] {$b$};
+  \end{tikzpicture}
+  \captionof{figure}{Problema \ref{p:potencial03}\label{f:potencial03}}
+\end{center}
+%
+\begin{Exercise}
+  Cuando se conectan dos placas conductoras, grandes y paralelas, a los terminales de una batería, las cargas resultantes en las placas originan un campo eléctrico en la región entre ellas que puede ser considerado uniforme. Considere dos placas metálicas, grandes y paralelas, separadas por una distancia de $\SI{45.0}{\milli\metre}$, conectadas a una batería que establece una diferencia de potencial de $\SI{36.0}{\volt}$ entre ellas. \textit{a}) ¿Cuál es la magnitud del campo eléctrico en la región entre las placas? \text{b}) ¿Cuál es la densidad superficial de carga en las placas? \textit{c}) Si un electrón en reposo se libera desde la placa con carga negativa, ¿cuánto tiempo tarda en llegar hasta la otra placa?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{800}{\volt/\metre}$\\ \textit{b}) $\SI{7.08}{\nano\coulomb/\metre\squared}$\\ \textit{c}) $\SI{25.3}{\nano\second}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  Un cascarón esférico metálico con radio interior de $\SI{25.0}{\centi\metre}$ y radio exterior de $\SI{30.0}{\centi\metre}$ tiene una carga neta de $\SI{15.0}{\micro\coulomb}$. El punto $A$ está a $\SI{5.0}{\centi\metre}$ del centro del cascarón, el punto $B$ se encuentra sobre la superficie interna, y el punto $C$ se localiza a una distancia de $\SI{35.0}{\centi\metre}$ del centro del cascarón. \textit{a}) Calcule las diferencias de potencial $V_A-V_B$ y $V_A-V_C$. \textit{b}) Grafique el potencial eléctrico como una función del radio, $V(r)$. \textit{c}) Repita los cálculos de las diferencias de potencial si ahora se coloca una carga puntual de $\SI{7.0}{\micro\coulomb}$ en el centro. \textit{d}) Grafique $V(r)$ en esta nueva situación.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $V_A-V_B = 0$ y $V_A-V_C = \SI{6.4E4}{\volt}$\\ \textit{c}) $V_A-V_B = \SI{1.0E6}{\volt}$ y $V_A-V_C = \SI{1.1E6}{\volt}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  Un cascarón esférico delgado de radio igual a $\SI{3.0}{\centi\metre}$ tiene una carga de $\SI{6.0}{\nano\coulomb}$ distribuida de manera uniforme sobre su superficie y está colocado concéntricamente con otro cascarón esférico delgado radio igual a $\SI{5.0}{\centi\metre}$ que tiene una carga de $\SI{-9.0}{\nano\coulomb}$, también distribuida uniformemente sobre su superficie. Ambos cascarones están hechos con material aislante. ¿Cuál es la diferencia de potencial eléctrico entre los cascarones? ¿Cuál cascarón se encuentra a mayor potencial?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    $|\Delta V| = \SI{720}{\volt}$, el cascarón interior es el de mayor potencial.
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}\label{p:potencial04}
+  Un conductor esférico de radio $r_a = \SI{10}{\centi\metre}$ tiene una carga de $\SI{2.1}{\nano\coulomb}$. Se encuentra en el interior de una esfera conductora hueca de radio interno $r_b = \SI{15}{\centi\metre}$ y espesor $\SI{1}{\centi\metre}$, como se muestra en la figura \ref{f:potencial04}. La esfera exterior se mantiene a un potencial de $\SI{270}{\volt}$ mediante una batería. \textit{a}) ¿Cuál es la carga total sobre la superficie exterior de la esfera hueca? \textit{b}) ¿Cuál es la carga total sobre la superficie interior de la misma? \textit{c}) Grafique $E(r)$ y $V(r)$.
+\end{Exercise}
+\begin{Answer}
+  \begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{4.8}{\nano\coulomb}$\\ \textit{b}) $\SI{-2.1}{\nano\coulomb}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \node[circle,draw, blue, minimum width = 3cm] (c) at (2,1){};
+    \node[circle,draw, blue, minimum size = 2cm] (d) at (2,1){};
+    \draw[blue, pattern=north east lines,even odd rule]  (2,1) circle (1.5cm) (2,1) circle (1.6cm);
+    \draw [-{latex}] (2,1) -- (d.45) node[pos=0.7, left] {$r_a$};
+    \draw [-{latex}] (2,1) -- (c.315) node[pos=0.2, right] {$r_b$};
+    \draw (c.200) -| (-1,0);
+    \draw (-1,0) to[battery2, l_=\SI{270}{V}] (-1,-1) node[tlground] {};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:potencial04}\label{f:potencial04}}
+\end{center}
+%
+\begin{Exercise}
+  Verifique que la diferencia de potencial eléctrico entre dos puntos situados a distancias $a$ y $b$ de un hilo infinito, con densidad de carga uniforme $\lambda$, es:
+  \begin{flalign*}
+    V_b - V_a &= \dfrac{\lambda}{2\pi \varepsilon_0} \ln{\dfrac{a}{b}}
+  \end{flalign*}
+\end{Exercise}
+%
+\begin{Exercise}\label{p:potencial05}
+  La figura \ref{f:potencial05} muestra un hilo infinito que se prolonga a lo largo del eje $y$ ($x=0$), con densidad de carga $\lambda_1 = \SI{-300}{\nano\coulomb/\metre}$, y otro hilo paralelo al primero que pasa por $x = \SI{20}{\centi\metre}$, con densidad de carga $\lambda_2 = \SI{100}{\nano\coulomb/\metre}$. Los puntos $A$, $B$ y $C$ están en las posiciones $x_A = \SI{-10}{\centi\metre}$, $x_B = \SI{10}{\centi\metre}$ y $x_C = \SI{30}{\centi\metre}$. Calcule las siguientes diferencias de potencial eléctrico: \textit{a}) $V_B-V_A$, \textit{b}) $V_C-V_B$, \textit{c}) $V_C-V_A$.
+\end{Exercise}
+\begin{Answer}
+  \begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{1980}{\volt}$\\ \textit{b}) $\SI{5930}{\volt}$\\ \textit{c}) $\SI{7910}{\volt}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw (0,3.5) ellipse (0.2 and 0.1);
+    \draw (0,-1.5) +(180:0.2 and 0.1) arc (180:360:0.2 and 0.1);
+    \draw [black] (-0.2,-1.5)--(-0.2,3.5) node[midway, left] {$\lambda_1$};
+    \draw [black] (0.2,-1.5)--(0.2,3.5);
+    \draw (2,3.5) ellipse (0.2 and 0.1);
+    \draw (2,-1.5) +(180:0.2 and 0.1) arc (180:360:0.2 and 0.1);
+    \draw [black] (1.8,-1.5)--(1.8,3.5);
+    \draw [black] (2.2,-1.5)--(2.2,3.5) node[midway, right] {$\lambda_2$};
+    \draw [blue, -{latex}] (2.2,0)--(5,0) node[below] {$x$};
+    \draw [blue] (0.2,0)--(1.8,0);
+    \draw [blue] (-2,0)--(-0.2,0);
+    \draw [blue, -{latex}] (0,3.5)--(0,4.5) node[left] {$y$};
+    \draw [blue] (0,-2.5)--(0,-1.6);
+    \fill [red!50!black](-1,0) circle(5pt) node[below] {$A$};
+    \fill [red!50!black](1,0) circle(5pt) node[below] {$B$};
+    \fill [red!50!black](3,0) circle(5pt) node[below] {$C$};
+  \end{tikzpicture}
+  \captionof{figure}{Problema \ref{p:potencial05}\label{f:potencial05}}
+\end{center}
+%
+\begin{Exercise}
+  Se tiene un cilindro conductor muy largo de radio $a = \SI{1}{\centi\metre}$, con densidad superficial de carga uniforme $\sigma = \SI{1}{\micro\coulomb/\metre\squared}$, rodeado por un cilindro conductor hueco de radio interior $b = \SI{2}{\centi\metre}$ y radio exterior $c = \SI{2.5}{\centi\metre}$, con carga neta cero. \textit{a}) Determine la densidad superficial de carga en las superficies del cilindro exterior. \textit{b}) Calcule la diferencia de potencial entre la superficie exterior del cilindro hueco y un punto afuera del cilindro, a una distancia de $\SI{4}{\centi\metre}$ de su superficie. \textit{c}) Repita los cálculos pero ahora considerando que el cilindro hueco tiene una densidad de carga neta $\lambda = \SI{0.3}{\micro\coulomb/\metre}$.
+\end{Exercise}
+\begin{Answer}
+  \begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{-0.5}{\micro\coulomb/\metre\squared}$ en la superficie interior y $\SI{0.4}{\micro\coulomb/\metre\squared}$ en la superficie exterior\\ \textit{b}) $|\Delta V| = \SI{1080}{\volt}$\\ \textit{c}) $\SI{-0.5}{\micro\coulomb/\metre\squared}$ en la superficie interior, $\SI{12.4}{\micro\coulomb/\metre\squared}$ en la superficie exterior y $|\Delta V| = \SI{33540}{\volt}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  Considere una espira circular de radio $R$, cargada con densidad lineal de carga uniforme $\lambda$. \textit{a}) Verifique que el potencial eléctrico en un punto $P$ situado a una altura $z$ del eje de la espira es:
+  \begin{flalign*}
+    V_P &= \dfrac{R\lambda}{2\varepsilon_o\sqrt{R^2+z^2}}
+  \end{flalign*}
+  \textit{b}) Verifique el resultado del campo eléctrico en ese punto obteniendo el gradiente del potencial.
+\end{Exercise}
+%
+\begin{Exercise}
+  Verifique que el potencial en un punto $P$ sobre el eje de un disco plano, a una distancia $z$ del centro del mismo, si el radio del disco es $R$ y la densidad superficial de carga es $\sigma$ es:
+  \begin{flalign*}
+    V_P &= \dfrac{\sigma}{2\varepsilon_o} \left ( \sqrt{R^2+Z^2} - Z \right )
+  \end{flalign*}
+\end{Exercise}
+%
+\begin{Exercise}\label{p:potencial06}
+  Para la barra mostrada en la figura \ref{f:potencial06}, con densidad lineal de carga $\lambda$: \textit{a}) Verifique que el potencial eléctrico en el punto $P$ es:
+  \begin{flalign*}
+    V_P &= \frac{\lambda}{4 \pi \varepsilon_o} \ln \left ( \frac{a-L/2}{a+L/2} \right )
+  \end{flalign*}
+  b) Compruebe que en el caso $a \gg L$ se puede aproximar por:
+  \begin{flalign*}
+    V_P &\approx \frac{\lambda}{4 \pi \varepsilon_o} \frac{L}{a}
+  \end{flalign*}
+\end{Exercise}
+%
+\begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw (0,0) ellipse (0.1 and 0.2);
+    \draw (-5,0) +(90:0.1 and 0.2) arc (90:270:0.1 and 0.2);
+    \draw [black] (-5,0.2)--(0,0.2);
+    \draw [black] (-5,-0.2)--(0,-0.2);
+    \draw [blue, dotted] (0,0)--(5,0);
+    \draw [blue, dotted] (-7,0)--(-5.1,0);
+    % \draw [blue, dotted] (-2.5,0.2)--(-2.5,4);
+    \draw [blue, dotted] (-2.5,-0.2)--(-2.5,-2);
+    % \draw [black, -{Stealth}] (-12,0)--(-8,0) node[below] {$x$};
+    % \draw [black, -{Stealth}] (-11,-1)--(-11,3.5) node[left] {$y$};
+    \draw [blue, {Stealth}-{Stealth}] (-5,1)--(0,1) node[midway, above] {$L$};
+    \draw [blue, {Stealth}-{Stealth}] (-2.5,-1)--(3,-1) node[midway, below] {$a$};
+    \fill [blue](3,0) circle(5pt) node[above right] {$P$};
+    % \fill [blue](-2.5,3) circle(5pt) node[above right] {$S$};
+  \end{tikzpicture}
+  \captionof{figure}{Problema \ref{p:potencial06}\label{f:potencial06}}
+\end{center}
+%
+% A partir de aquí son ejercicios movidos desde la sección de Gauss.
+%
+\begin{Exercise}
+	Una esfera de plástico cuyo diámetro es de $\SI{12}{\centi\metre}$, tiene una carga superficial uniforme de $\SI{-35}{\micro\coulomb}$. Encontrar el campo eléctrico en estos puntos: \textit{a}) apenas adentro de la capa de plástico; \textit{b}) inmediatamente afuera de la capa de plástico; \textit{c}) $\SI{5.00}{\centi\metre}$ afuera de la superficie de la capa de plástico.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+		\textit{a}) 0\\ \textit{b}) $\va*{E} = \SI{8.75E7}{\newton/\coulomb}\vu{r}$\\ \textit{c}) $\va*{E} = \SI{2.60E7}{\newton/\coulomb}\vu{r}$
+	\end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+	Una esfera hueca, conductora, con radio interior $a$ y radio exterior $b$, tiene una carga neta igual a $\SI{6}{\micro\coulomb}$. \textit{a}) ¿Cuál es el valor de la carga neta distribuida sobre la superficie interior, de radio $a$? \textit{b}) ¿Cuál es el valor de la carga neta distribuida sobre la superficie exterior, de radio $b$? \textit{c}) Si se introduce una carga de $\SI{-2}{\micro\coulomb}$ en la cavidad interna de la esfera, ¿cuál es el nuevo valor de la carga distribuida sobre la superficie externa de la esfera?
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+		\textit{a}) 0\\ \textit{b}) $\SI{6}{\micro\coulomb}$\\ \textit{c}) $\SI{4}{\micro\coulomb}$
+	\end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+	Un cable coaxial largo consiste en un conductor cilíndrico macizo central y un cilindro hueco que rodea al hilo central, con radio interior $a$ y radio exterior $b$. El cilindro exterior está montado en apoyos aislantes y no tiene carga neta, mientras que el cilindro central tiene una carga uniforme por unidad de longitud $\lambda$. Determinar la carga por unidad de longitud en las superficies interna y externa del cilindro exterior.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+		En la superficie interior es $-\lambda$ y en la exterior es $\lambda$.
+	\end{minipage}
+\end{Answer}
+%
