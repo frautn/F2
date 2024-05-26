@@ -2,6 +2,8 @@
 
 - Modificar color de la línea de separación de columnas a gris.
 
+- mover los archivos auxiliares de los seleccionados a otro directorio, y no incluir en git.
+
 ----------------------------------
 
 Termodinamica:
@@ -25,6 +27,7 @@ Campos estáticos:
 Puntuales: listo
 Gauss: listo
 
+
 *)
 Problema: Una carga de $\SI{-12.0}{\nano\coulomb}$ está distribuida de manera uniforme en un cuarto de círculo de radio $a = \SI{25.0}{\centi\metre}$ que se encuentra en el primer cuadrante,
 
@@ -32,8 +35,11 @@ Tratar de reubicar las figuras, quizás dentro de cada ítem.
 
 Intentar lo mismo en otros problemas con varias figuras.
 
+Sección potencial (2):
+1. faltan ejercicios con E = -DV. ¿Agregar más problemas después de haber movido los de distribuciones contínuas?
+1. problema 2: energía potencial del sistema, ¿está bien esa pregunta?
+1. Alguno como la práctica, con equipotenciales. Poner opciones de vectores y preguntar cuáles no pueden corresponder. Calcular E en un par de posiciones.
 
-1. Sección potencial (2): faltan ejercicios con E = -DV. ¿Agregar más problemas después de haber movido los de distribuciones contínuas?
 
 1. Mejorar las figuras:
 Hacer más lindas las cargas puntuales
