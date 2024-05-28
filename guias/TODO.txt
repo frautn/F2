@@ -1,4 +1,5 @@
-
+- IMPORTANTE: agregado \setlength{\columnsep}{20pt} en termodinamica, falta
+revisar si se movieron las figuras, falata una revisión completa.
 
 - Modificar color de la línea de separación de columnas a gris.
 
@@ -36,10 +37,9 @@ Tratar de reubicar las figuras, quizás dentro de cada ítem.
 Intentar lo mismo en otros problemas con varias figuras.
 
 Sección potencial (2):
-1. faltan ejercicios con E = -DV. ¿Agregar más problemas después de haber movido los de distribuciones contínuas?
 1. problema 2: energía potencial del sistema, ¿está bien esa pregunta?
 1. Alguno como la práctica, con equipotenciales. Poner opciones de vectores y preguntar cuáles no pueden corresponder. Calcular E en un par de posiciones.
-
+1. Figura de equipotenciales: arreglar la ubicación del caption, centrarlo.
 
 1. Mejorar las figuras:
 Hacer más lindas las cargas puntuales

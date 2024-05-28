@@ -99,12 +99,48 @@
   \captionof{figure}{Problema \ref{p:potencial02}\label{f:potencial02}}
 \end{center}
 %
-\begin{Exercise}
-  Suponga que el potencial eléctrico debido a una cierta distribución de cargas está dado por la siguiente función: \[V(x,y,z) = Ax^2y^2 + Bxyz~,\] donde $A$ y $B$ son constantes. \textit{a}) ¿Cuál es el campo eléctrico asociado a esta distribución de cargas? \textit{b}) Si $A = $ y $B = $, ¿cuánto vale el módulo del campo eléctrico en la posición $\va*{r}_0 =\SI{1}{\metre}\vu{i} + \SI{1}{\metre}\vu{j} + \SI{1}{\metre}\vu{k}$?
+% Agregar lo siguiente en las opciones de axis del objeto tikzpicture:
+% width=\textwidth, height=0.85\axisdefaultheight,
+\begin {figure*}%[!hbtp]
+  \centering
+  \begin{adjustbox}{width=\textwidth}
+    \input{campos/img/em_fig_equipotenciales_buscar_E.code.tex}
+  \end{adjustbox}
+  \caption{Problema \ref{p:potencial03}\label{f:potencial03}}
+\end{figure*}
+%
+\begin{Exercise}\label{p:potencial03}
+  En la figura \ref{f:potencial03} se muestra una representación en 2D de curvas equipotenciales de una cierta distribución de cargas. A partir de dicho gráfico responda las siguientes preguntas:\\
+  \textit{a}) ¿Cuál es la diferencia de potencial eléctrico entre las posiciones $\va*{r}_a = \SI{14}{cm}\vu{j}$ y $\va*{r}_b = \SI{100}{cm}\vu{i} + \SI{32}{cm}\vu{j}$?\\
+  \textit{b}) ¿Qué trabajo debe realizar una fuerza externa sobre una partícula con una carga de $\SI{2.5}{\micro\coulomb}$, si la partícula se desplaza desde $\va*{r}_a$ hasta $\va*{r}_b$? ¿La partícula gana o pierde energía potencial?\\
+  \textit{c}) Compruebe que la diferencia de potencial eléctrico entre las posiciones $\va*{r}_a = \SI{14}{cm}\vu{j}$ y $\va*{r}_c = \SI{80}{cm}\vu{i} + \SI{8}{cm}\vu{j}$ es $\SI{0}{V}$. Si no hay diferencia de potencial eléctrico entre esas dos posiciones, ¿el trabajo neto para desplazar una carga desde $\va*{r}_a$ hasta $\va*{r}_c$ es también igual a $0$? Y entonces, si el trabajo neto es nulo, ¿quiere decir que no es necesario ejercer una fuerza para desplazar esa partícula cargada?\\
+  \textit{d}) Encuentre posiciones donde el ángulo del vector campo eléctrico sea aproximadamente: \textit{i}) $0^\circ$; \textit{ii}) $90^\circ$; \textit{iii}) $180^\circ$; \textit{iv}) $45^\circ$.\\
+  \textit{e}) Determine aproximadamente el vector campo eléctrico en las siguientes posiciones: \textit{i}) $\SI{94}{cm}\vu{i} + \SI{28}{cm}\vu{j}$; \textit{ii}) $\SI{6}{cm}\vu{i} + \SI{30}{cm}\vu{j}$.
 \end{Exercise}
 \begin{Answer}
 	\begin{minipage}[t]{.4\textwidth}
-    $\va*{E} = $
+    \textit{a}) $V_b-V_a = \SI{8.0}{V}$\\
+    \textit{b}) $\SI{20}{\micro\joule}$, la partícula gana energía potencial.\\
+    \textit{c}) $0$\\
+    \textit{d}) Estas son alguna respuestas posibles:\\
+    \textit{i}) $\SI{16}{cm}\vu{i} + \SI{0}{cm}\vu{j}$;\\
+    \textit{ii}) $\SI{23}{cm}\vu{i} + \SI{42}{cm}\vu{j}$;\\
+    \textit{iii}) $\SI{90}{cm}\vu{i} + \SI{20}{cm}\vu{j}$;\\
+    \textit{iv}) $\SI{14}{cm}\vu{i} + \SI{12}{cm}\vu{j}$.\\
+    \textit{e}) Las respuestas deben aproximarse a los siguientes vectores:\\
+    \textit{i}) $\va*{E} = \SI{-56}{V/m}\vu{i} +\SI{18}{V/m}\vu{j}$;\\
+    \textit{ii}) $\va*{E} = \SI{6}{V/m}\vu{i} +\SI{11}{V/m}\vu{j}$.
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  Suponga que el potencial eléctrico debido a una cierta distribución de cargas está dado por la siguiente función: \[V(x,y,z) = Ax^2y^2 + Bxyz~,\] donde $A$ y $B$ son constantes. \textit{a}) ¿Cuál es el campo eléctrico asociado a esta distribución de cargas? \textit{b}) Si $A = \SI{1.0}{Vm^{-4}}$ y $B = \SI{3.0}{Vm^{-3}}$, ¿cuál es la diferencia de potencial entre una posición en el origen de coordenadas y la posición $\va*{r}_1 =\SI{1}{\metre}\vu{i} + \SI{1}{\metre}\vu{j} + \SI{1}{\metre}\vu{k}$? \textit{c}) Para los mismos valores de $A$ y $B$,  ¿cuánto vale el módulo del campo eléctrico en la posición $\va*{r}_1$?
+\end{Exercise}
+\begin{Answer}
+  \begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\va*{E} = -(2Axy^2+Byz)\vu{i} -(2Ax^2y+Bxz)\vu{j}-Bxy\vu{k}$\\
+    \textit{b}) $\SI{4}{V}$\\
+    \textit{c}) $\SI{7.68}{Vm^{-1}}$
   \end{minipage}
 \end{Answer}
 %

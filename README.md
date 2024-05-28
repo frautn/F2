@@ -37,6 +37,18 @@ Potencial Eléctrico con conductores
 
 ## Entorno
 
+Por ahora, esto instalé en FW:
+Instalar miniconda y crear el entorno:
+
+```bash
+conda create -n utn -c conda-forge
+conda install -n utn -c conda-forge ipykernel matplotlib numpy pandas scikit-image sympy
+```
+
+tikzplotlib: ver equipotentials ipynb
+
+Anterior:
+
 Instalar miniconda y crear el entorno:
 ```bash
 conda create -n utn -c conda-forge python=3.11
@@ -52,7 +64,7 @@ conda install -n utn -c conda-forge ipympl
 ```
 
 ```bash
-conda install -n utn -c conda-forge matplotlib numpy pandas scikit-image tikzplotlib sympy
+conda install -n utn -c conda-forge ipykernel matplotlib numpy pandas scikit-image tikzplotlib sympy
 ```
 
 No instalado aun:
