@@ -36,10 +36,10 @@ Tratar de reubicar las figuras, quizás dentro de cada ítem.
 
 Intentar lo mismo en otros problemas con varias figuras.
 
+
 Sección potencial (2):
 1. problema 2: energía potencial del sistema, ¿está bien esa pregunta?
-1. Alguno como la práctica, con equipotenciales. Poner opciones de vectores y preguntar cuáles no pueden corresponder. Calcular E en un par de posiciones.
-1. Figura de equipotenciales: arreglar la ubicación del caption, centrarlo.
+1. Figura de equipotenciales: disminuir el tamaño de la fuente en los ejes.
 
 1. Mejorar las figuras:
 Hacer más lindas las cargas puntuales
@@ -48,11 +48,17 @@ Hacer más lindas las cargas puntuales
 
 3. problema 3.16 (cilindros coaxiales) mover un poco el label r_a.
 
-4. Figura 2.1 (gauss sobre un disco). Agregar arco con el ángulo de E.
-
 5. Agregar algún/os problemas numéricos de potencial con aro, disco y segmento.
 
-6. Contínuas: ejercicio de buscar cargas en esferas, agregar "usando la ley de Gauss".
+
+Contínuas: 
+1. ejercicio de buscar cargas en esferas, agregar "usando la ley de Gauss".
+
+
+Gauss:
+1. Figura 2.1 (gauss sobre un disco). Agregar arco con el ángulo de E.
+
+
 
 ---------------------
 
