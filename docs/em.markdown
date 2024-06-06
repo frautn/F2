@@ -13,10 +13,11 @@ layout: page
 
 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"><image src="https://raw.githubusercontent.com/frautn/F2/main/docs/assets/by-nc-sa2.svg" width="70" /></a> 2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
 
-<table style="border:none;">
-<tr style="align:left; border:none;">
-<td style="align:left; border:none;"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"><image src="https://raw.githubusercontent.com/frautn/F2/main/docs/assets/by-nc-sa2.svg" width="70" /></a></td>
-<td style="align:left; border:none;">2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
+<table align="left" style="border:none;">
+<!-- <tr style="border:none;"> -->
+<tr>
+<td><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"><image src="https://raw.githubusercontent.com/frautn/F2/main/docs/assets/by-nc-sa2.svg" width="70" /></a></td>
+<td>2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
 </td>
 </tr>
 </table>
