@@ -7,8 +7,9 @@ layout: page
 
 # Física 2
 
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"><image src="https://raw.githubusercontent.com/frautn/F2/main/docs/assets/by-nc-sa2.svg" width="70" /></a> 2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
 
-<table>
+<table style="border:none;">
 <tr style="border:none;">
 <td style="border:none;"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"><image src="https://raw.githubusercontent.com/frautn/F2/main/docs/assets/by-nc-sa2.svg" width="70" /></a></td>
 <td style="border:none;">2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
