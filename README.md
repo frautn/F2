@@ -88,7 +88,8 @@ Puede ser necesario agregar esto en settings.json:
 
 [https://github.com/sfarrens/jekyll_tutorial](https://github.com/sfarrens/jekyll_tutorial)
 
-
+Hice git clone de ese sitio, y copié el contenido de /docs a mi directorio docs. Borrar los arhivos de gem. No es necesario instalar Jekyll localmente (no me anduvo en Arch).  
+Modificar _config.yml, y github hace el deployment.
 
 ## Useful links
 

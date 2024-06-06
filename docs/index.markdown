@@ -5,4 +5,11 @@
 layout: page
 ---
 
-<img src="https://upload.wikimedia.org/wikipedia/en/9/9b/Yoda_Empire_Strikes_Back.png">
+# Física 2
+
+El módulo de electromagnetismo para trabajar en clase se puede acceder desde:  
+https://frautn.github.io/F2/electromagnetismo/em.html
+
+Invitación - presentación.
+
+Disclaimer:
