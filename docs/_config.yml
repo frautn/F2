@@ -1,0 +1,12 @@
+title: Física 2
+email: epalazzo@fra.utn.edu.ar
+description: >-
+  UTN FRA
+baseurl: /F2
+url: https://frautn.github.io/
+github_username:  frautn
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
