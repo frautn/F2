@@ -10,9 +10,8 @@
 
 # Física 2
 
-
-Acceso al material a través del sitio web:
-https://frautn.github.io/F2/
+El módulo de electromagnetismo para trabajar en clase se puede acceder desde:  
+https://frautn.github.io/F2/electromagnetismo/em.html
 
 Invitación - presentación.
 
