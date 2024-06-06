@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: course
 author: edgui
 # title: Blogging Like a Hacke
 ---

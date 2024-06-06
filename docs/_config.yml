@@ -4,13 +4,14 @@ description: >-
   UTN FRA
 baseurl: /F2
 url: https://frautn.github.io/
-github_username:  frautn
+github_username: frautn
 
 # Build settings
 theme: minima
-plugins:
-  - jekyll-feed
 
-header_pages:
+# plugins:
+  # - jekyll-feed
+
+# header_pages:
   # - about.md
   # - portfolio.md
