@@ -9,6 +9,9 @@ github_username: frautn
 # Build settings
 theme: minima
 
+minima:
+  skin: solarized-light
+
 # plugins:
   # - jekyll-feed
 
