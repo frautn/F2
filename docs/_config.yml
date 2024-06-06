@@ -1,4 +1,4 @@
-# title: Física 2
+title: Física 2
 email: epalazzo@fra.utn.edu.ar
 description: >-
   UTN FRA
@@ -10,3 +10,7 @@ github_username:  frautn
 theme: minima
 plugins:
   - jekyll-feed
+
+header_pages:
+  # - about.md
+  # - portfolio.md
