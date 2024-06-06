@@ -84,6 +84,12 @@ Puede ser necesario agregar esto en settings.json:
 "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
 ```
 
+## Pages using Jekyll
+
+[https://github.com/sfarrens/jekyll_tutorial](https://github.com/sfarrens/jekyll_tutorial)
+
+
+
 ## Useful links
 
 
