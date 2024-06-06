@@ -91,6 +91,10 @@ Puede ser necesario agregar esto en settings.json:
 Hice git clone de ese sitio, y copié el contenido de /docs a mi directorio docs. Borrar los arhivos de gem. No es necesario instalar Jekyll localmente (no me anduvo en Arch).  
 Modificar _config.yml, y github hace el deployment.
 
+Customization:  
+https://github.com/jekyll/minima/tree/v2.5.1#Customization
+
+
 Para ver los resultados localmente antes de hacer push:
 
 Avoid installing RubyGems packages (called gems) as the root user. Instead, set up a gem installation directory for your user account. The following commands will add environment variables to your ~/.bashrc file to configure the gem installation path:  
