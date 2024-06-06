@@ -7,10 +7,12 @@ layout: page
 
 # Física 2
 
-<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"><image src="https://raw.githubusercontent.com/frautn/F2/main/docs/assets/by-nc-sa2.svg" width="70" /></a> 2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"><image src="https://raw.githubusercontent.com/frautn/F2/main/docs/assets/by-nc-sa.svg" width="70" /></a> 2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
 
-<a href="https://colab.research.google.com/github/frautn/F2/blob/main/electromagnetismo/em01_campo_electrico.ipynb">
-<image src="https://raw.githubusercontent.com/frautn/F2/main/docs/assets/Google_Colaboratory_SVG_Logo.svg" height="25"/>Cuaderno 01: Campo eléctrico</a> 
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es"><image src="assets/by-nc-sa.svg" width="70" /></a> 2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
+
+
+<!-- <a href="https://colab.research.google.com/github/frautn/F2/blob/main/electromagnetismo/em01_campo_electrico.ipynb"><p><image src="https://raw.githubusercontent.com/frautn/F2/main/docs/assets/Google_Colaboratory_SVG_Logo.svg" height="25"/>Cuaderno 01: Campo eléctrico</p></a>  -->
 
 
 <!--  -->

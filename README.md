@@ -91,6 +91,20 @@ Puede ser necesario agregar esto en settings.json:
 Hice git clone de ese sitio, y copié el contenido de /docs a mi directorio docs. Borrar los arhivos de gem. No es necesario instalar Jekyll localmente (no me anduvo en Arch).  
 Modificar _config.yml, y github hace el deployment.
 
+Para ver los resultados localmente antes de hacer push:
+
+Avoid installing RubyGems packages (called gems) as the root user. Instead, set up a gem installation directory for your user account. The following commands will add environment variables to your ~/.bashrc file to configure the gem installation path:  
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc  
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc  
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc  
+source ~/.bashrc  
+
+gem install jekyll bundler
+
+Si hay un warning sobre el PATH:  
+echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc  
+
+
 ## Useful links
 
 
