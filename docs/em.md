@@ -2,12 +2,12 @@
 layout: course
 author: edgui
 
-# title: Blogging Like a Hacke
+title: F2 - Electromagnetismo
 ---
 
 
 
-# Data-Driven Chemistry
+# Electromagnetismo usando Python
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![License: CC-BY 4.0](https://img.shields.io/badge/License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Github All Releases](https://img.shields.io/github/downloads/Edinburgh-Chemistry-Teaching/Data-driven-chemistry/total)]()
