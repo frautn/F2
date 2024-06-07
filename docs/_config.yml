@@ -4,6 +4,8 @@ author:
   email: "epalazzo@fra.utn.edu.ar"
 logopath: assets/img/logoUTN-sm.png
 logowidth: 100
+logoalt: Logo UTNFRA
+logolink: https://fra.utn.edu.ar/
 # author: edgui
 # email: epalazzo@fra.utn.edu.ar
 description: >-
