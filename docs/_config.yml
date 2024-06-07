@@ -1,6 +1,9 @@
 title: Física 2
-author: edgui
-email: epalazzo@fra.utn.edu.ar
+author:
+  name: Edgardo Palazzo
+  email: "epalazzo@fra.utn.edu.ar"
+# author: edgui
+# email: epalazzo@fra.utn.edu.ar
 description: >-
   UTN FRA
 baseurl: /F2
