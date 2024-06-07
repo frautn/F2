@@ -1,6 +1,9 @@
 ---
 layout: course
 author: edgui
+minima:
+  skin: solarized-light
+
 # title: Blogging Like a Hacke
 ---
 
