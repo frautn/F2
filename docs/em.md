@@ -22,6 +22,9 @@ Data-Driven Chemistry is a collection of learning material for an introductory P
 | 1    |  Campo eléctrico de cargas puntuales | [![modulo_1](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/frautn/F2/blob/main/electromagnetismo/em01_campo_electrico.ipynb) |
 | 2    | Potencial eléctrico |[![modulo_2](https://colab.research.google.com/assets/colab-badge.svg)]()|
 | 3    | Campo eléctrico de distribuciones de cargas contínuas - parte 1: cálculos numéricos sumando cargas puntuales |[![modulo_3](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/frautn/F2/blob/main/electromagnetismo/em02_distribuciones_continuas.ipynb)|
+| 4    | Campo eléctrico de distribuciones de cargas contínuas - parte 2: cálculos simbólicos |[![modulo_4](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/frautn/F2/blob/main/electromagnetismo/em02_distribuciones_continuas.ipynb)|
+|     | Ejercicios del módulo 4 (alguna descripción) |[![modulo_4]()|
+| 5   | Conductores |[![modulo_5](https://colab.research.google.com/assets/colab-badge.svg)]()|
 
 
 <!-- ## Dependencies and Installation
