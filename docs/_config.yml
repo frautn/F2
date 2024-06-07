@@ -2,7 +2,9 @@ title: Física 2
 author:
   name: Edgardo Palazzo
   email: "epalazzo@fra.utn.edu.ar"
-logowidth: 100
+logo:
+  path: assets/img/logoUTN-sm.png
+  width: 100
 # author: edgui
 # email: epalazzo@fra.utn.edu.ar
 description: >-
