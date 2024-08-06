@@ -1,115 +1,19 @@
 <table>
 <tr style="border:none;">
 <td style="border:none;"><a href="https://fra.utn.edu.ar/">
-<image src="https://raw.githubusercontent.com/frautn/F2/main/assets/img/logoUTN-500.svg"  width="100">
+<!-- <image src="https://raw.githubusercontent.com/frautn/F2/main/logoUTN-500.svg"  width="100"> -->
+<image src="logoUTN-500.svg"  width="100">
 </a></td>
 <td style="border:none;">Universidad Tecnológica Nacional<br>Facultad Regional Avellaneda<br>Argentina
 </td>
 </tr>
 </table>
 
+[![License: CC-BY 4.0](https://img.shields.io/badge/License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) 2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
+
 # Física 2
 
-El módulo de electromagnetismo para trabajar en clase se puede acceder desde:  
-https://frautn.github.io/F2/electromagnetismo/em.html
 
-Invitación - presentación.
-
-Disclaimer:
-
-<!--
-
-Optica con matplotlib:
-[![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/optica/matplotlib-optica_diferencia-de-CO.ipynb)
-
-Optica con plotly:
-[![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/optica/op_diferencia-de-CO.ipynb)
-
-
-
-Potencial Eléctrico de cargas puntuales
-[![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/electromagnetismo/em_potencial.ipynb)
-
-Potencial Eléctrico con conductores
-[![colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/epplugins/UTN/blob/main/electromagnetismo/em_poisson_solver.ipynb)
- -->
-
-## Entorno
-
-Por ahora, esto instalé en FW:
-Instalar miniconda y crear el entorno:
-
-```bash
-conda create -n utn -c conda-forge
-conda install -n utn -c conda-forge ipykernel matplotlib numpy pandas scikit-image sympy
-```
-
-tikzplotlib: ver equipotentials ipynb
-
-Anterior:
-
-Instalar miniconda y crear el entorno:
-```bash
-conda create -n utn -c conda-forge python=3.11
-```
-
-```bash
-conda install -n utn -c conda-forge jupyter
-```
-
-Para crear gráficos interactivos dentro de VS Code:
-```bash
-conda install -n utn -c conda-forge ipympl
-```
-
-```bash
-conda install -n utn -c conda-forge ipykernel matplotlib numpy pandas scikit-image tikzplotlib sympy
-```
-
-No instalado aun:
-Animations:
-```bash
-conda install -n utn -c conda-forge manim
-```
-
-
-No instalado:
-```bash
-conda install -n utn -c plotly plotly
-```
-
-Puede ser necesario agregar esto en settings.json:
-[(https://github.com/microsoft/vscode-jupyter/wiki/IPyWidget-Support-in-VS-Code-Python)](https://github.com/microsoft/vscode-jupyter/wiki/IPyWidget-Support-in-VS-Code-Python)
-```bash
-"jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
-```
-
-## Pages using Jekyll
-
-[https://github.com/sfarrens/jekyll_tutorial](https://github.com/sfarrens/jekyll_tutorial)
-
-Hice git clone de ese sitio, y copié el contenido de /docs a mi directorio docs. Borrar los arhivos de gem. No es necesario instalar Jekyll localmente (no me anduvo en Arch).  
-Modificar _config.yml, y github hace el deployment.
-
-Customization:  
-https://github.com/jekyll/minima/tree/v2.5.1#Customization
-
-
-Para ver los resultados localmente antes de hacer push:
-
-Avoid installing RubyGems packages (called gems) as the root user. Instead, set up a gem installation directory for your user account. The following commands will add environment variables to your ~/.bashrc file to configure the gem installation path:  
-echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc  
-echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc  
-echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc  
-source ~/.bashrc  
-
-gem install jekyll bundler
-
-Si hay un warning sobre el PATH:  
-echo 'export PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"' >> ~/.bashrc  
-
-
-## Useful links
 
 
 
