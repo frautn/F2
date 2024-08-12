@@ -13,7 +13,7 @@
 
 # Física 2
 
-
+[Forzado](https://colab.research.google.com/github/frautn/F2/blob/main/itba/forzadas.ipynb)
 
 
 
