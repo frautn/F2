@@ -146,29 +146,6 @@
   \captionof{figure}{Problema \ref{p:circuitos04}\label{f:circuitos04}}
 \end{center}
 %
-\begin{Exercise}\label{p:circuitos05}
-  Para el circuito de la figura \ref{f:circuitos05}, calcular:\par
-  \textit{a}) La corriente en la resistencia de $\SI{2.0}{\ohm}$.\par
-  \textit{b}) La diferencia de potencial entre los puntos $a$ y $b$, calculada como $V_a$ - $V_b$.
-\end{Exercise}
-\begin{Answer}
-	\begin{minipage}[t]{.4\textwidth}
-    \textit{a}) $\SI{0.90}{\ampere}$\\ \textit{b}) $\SI{1.80}{\volt}$
-  \end{minipage}
-\end{Answer}
-%
-\begin{center}
-  \begin{circuitikz}[scale=1]
-    \draw (3.5,1.2) -- (3.5,0) to[R=$\SI{6.0}{\ohm}$, color=red] (1.5,0) to[battery2, l=$\SI{8.0}{\volt}$, color=cyan] (0,0) -- (0,1.7) -- (1,1.7)
-    (1,2.2) to[battery2, l=$\SI{12.0}{\volt}$, color=cyan] (2.5,2.2) to[R=$\SI{4.0}{\ohm}$, color=red] (4,2.2) -- (4, 1.2) to[R=$\SI{2.0}{\ohm}$, color=red] (1, 1.2) -- (1,2.2);
-    \draw (0,0.75) node[left]{$a$};
-    \draw (4,1.7) node[right]{$b$};
-    \fill (0,0.75) circle (3pt);
-    \fill (4,1.7) circle (3pt);
-  \end{circuitikz}
-  \captionof{figure}{Problema \ref{p:circuitos05}\label{f:circuitos05}}
-\end{center}
-%
 \begin{Exercise}\label{p:circuitos06}
   La figura \ref{f:circuitos06} emplea una convención utilizada con frecuencia en diagramas de circuitos, donde la batería no se muestra de manera explícita. Se entiende que el punto superior, con la leyenda $\SI{36}{\volt}$, está conectado a la terminal positiva de una batería de $\SI{36}{\volt}$, que tiene resistencia despreciable y que el símbolo tierra en la parte inferior está conectado a la terminal negativa de la batería. El circuito se completa a través de la batería, aún cuando esta no aparezca en el diagrama.\par
   \textit{a}) ¿Cuánto vale la diferencia de potencial $V_a - V_b$ cuando el interruptor $S$ se encuentra abierto?\par
@@ -195,6 +172,29 @@
     \fill (1.5,4.4) circle (3pt);
   \end{circuitikz}
   \captionof{figure}{Problema \ref{p:circuitos06}\label{f:circuitos06}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos05}
+  Para el circuito de la figura \ref{f:circuitos05}, calcular:\par
+  \textit{a}) La corriente en la resistencia de $\SI{2.0}{\ohm}$.\par
+  \textit{b}) La diferencia de potencial entre los puntos $a$ y $b$, calculada como $V_a$ - $V_b$.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{0.90}{\ampere}$\\ \textit{b}) $\SI{1.80}{\volt}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (3.5,1.2) -- (3.5,0) to[R=$\SI{6.0}{\ohm}$, color=red] (1.5,0) to[battery2, l=$\SI{8.0}{\volt}$, color=cyan] (0,0) -- (0,1.7) -- (1,1.7)
+    (1,2.2) to[battery2, l=$\SI{12.0}{\volt}$, color=cyan] (2.5,2.2) to[R=$\SI{4.0}{\ohm}$, color=red] (4,2.2) -- (4, 1.2) to[R=$\SI{2.0}{\ohm}$, color=red] (1, 1.2) -- (1,2.2);
+    \draw (0,0.75) node[left]{$a$};
+    \draw (4,1.7) node[right]{$b$};
+    \fill (0,0.75) circle (3pt);
+    \fill (4,1.7) circle (3pt);
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos05}\label{f:circuitos05}}
 \end{center}
 %
 \begin{Exercise}\label{p:circuitos07}
@@ -274,7 +274,7 @@
 %
 \begin{Exercise}\label{p:circuitos10}
   Como se muestra en la figura \ref{f:circuitos10}, una red de resistores de  resistencias $R_1$ y $R_2$ se extiende infinitamente hacia la derecha. Demuestre que la resistencia total $R_T$ de la red infinita es igual a
-  \[ R_T = R_1 + \sqrt{R_1^2+2R_1R_2}
+  \[ R_T = R_1 + \sqrt{R_1^2+2R_1R_2}\,.
     \]
 \end{Exercise}
 %
@@ -291,6 +291,34 @@
     \fill (0,2) circle (3pt);
   \end{circuitikz}
   \captionof{figure}{Problema \ref{p:circuitos10}\label{f:circuitos10}}
+\end{center}
+%
+\begin{Exercise}\label{p:circuitos11}
+  Considerando el circuito mostrado en la figura \ref{f:circuitos11}:\\
+  \textit{a}) Calcular la diferencia de potencial $V_b-V_a$.\\
+  \textit{b}) Calcular la potencia disipada la resistencia de $\SI{2.25}{\kilo\ohm}$.
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $V_b - V_a = \frac{1068}{25}\,\text{V}$\\ \textit{b}) $P = \frac{392}{125}\,\text{W}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{center}
+  \begin{circuitikz}[scale=0.75]
+    \draw (0,0) to[battery2, invert, l=$\SI{20.0}{\volt}$, color=cyan] (0,6)
+    (8,0) -- (8,6) to[R=$\SI{3.55}{\kilo\ohm}$, color=red] (0,6)
+    (0,0) to[R=$\SI{3.00}{\kilo\ohm}$, color=red] (8,0)
+    (3,1.75) to[battery2, invert, l=$\SI{84.0}{\volt}$, color=cyan] (3,4.25) -- (5,4.25) to[R=$\SI{2.25}{\kilo\ohm}$, color=red] (5,1.75) -- (3,1.75)
+    (0,0) to[R=$\SI{1.00}{\kilo\ohm}$, color=red] (3,1.75)
+    (8,6) to[R=$\SI{1.00}{\kilo\ohm}$, color=red] (5,4.25);
+    % (5,1.5) to[battery2, l=$\SI{60}{\volt}$]  (5,0)
+    % (0,5) -- (5,5)
+    % (2.5,1.5) to[R=$\SI{0.65}{\kilo\ohm}$] (5,1.5);
+    \fill [black](8,6) circle(4pt) node[right] {$\,b$};
+    \fill [black](0,0) circle(4pt) node[left] {$a\, $};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:circuitos11}\label{f:circuitos11}}
 \end{center}
 %
 \begin{Exercise}

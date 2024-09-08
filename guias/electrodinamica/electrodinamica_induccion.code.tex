@@ -58,7 +58,7 @@
     \end{minipage}
 \end{Answer}
 %
-\begin{center}
+\begin{centering}
     \begin{tikzpicture}[scale=0.5]
         \draw (10,0) ellipse (0.2 and 0.1);
         \draw [] (-0.2+10,0) -- (-.2+10,7);
@@ -86,7 +86,7 @@
         \draw [|-|] (-2,5) -- (-2,6) node [midway, left] {$\SI{10}{\centi\metre}$};
     \end{tikzpicture}
     \captionof{figure}{Problema \ref{p:induccion01}\label{f:induccion01}}
-\end{center}
+\end{centering}
 %
 \begin{Exercise}\label{p:induccion02}
     \textbf{Fem de movimiento:} Una varilla conductora, de $\SI{20}{\centi\metre}$ de longitud y $\SI{100}{\ohm}$ de resistencia eléctrica, se desplaza paralelamente a si misma y sin rozamiento, con una velocidad de $v = \SI{5}{\centi\metre/\second}$, sobre un conductor en forma de U de resistencia despreciable. El sistema se encuentra en el interior de un campo magnético cuyo módulo es $\SI{0.1}{\tesla}$, en el sentido que se muestra en la figura \ref{f:induccion02}.\par
@@ -200,12 +200,10 @@
     Una espira rectangular se encuentra sumergida en un campo magnético uniforme que puede variar con el tiempo de tres formas distintas, como se indican en las gráficos de las figuras \ref{f:induccion05a}, \ref{f:induccion05b} y \ref{f:induccion05c}. Para cada una las tres situaciones, grafique la \textit{fem} inducida en la espira en función del tiempo y analice el sentido de circulación de la corriente.
 \end{Exercise}
 %
-% \begin{figure}[!h]
-% \centering
 \begin{center}
 %         % \subfigure[]{
     \newcommand\gauss[2]{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))} % Gauss function, parameters mu and sigma
-    \begin{tikzpicture}[scale=0.6]
+    \begin{tikzpicture}[scale=0.8]
         \begin{axis}[
             every axis plot post/.append style={ mark=none,samples=50,smooth},
             ticks=none,
@@ -222,7 +220,7 @@
 \end{center}
 \begin{center}
 % % \subfigure[]{
-    \begin{tikzpicture}[scale=0.6]
+    \begin{tikzpicture}[scale=0.8]
         \begin{axis}[
             every axis plot post/.append style={ mark=none,samples=50,smooth},
             ticks=none,
@@ -241,7 +239,7 @@
 \end{center}
 \begin{center}
 %     % \subfigure[]{
-    \begin{tikzpicture}[scale=0.6]
+    \begin{tikzpicture}[scale=0.8]
         \begin{axis}[
             every axis plot post/.append style={ mark=none,samples=50,smooth},
             ticks=none,
@@ -273,7 +271,7 @@
 \end{Answer}
 %
 \begin{center}
-    \begin{tikzpicture}[scale=0.6]
+    \begin{tikzpicture}[scale=0.5]
         \draw (10,0) ellipse (0.2 and 0.1);
         \draw [] (-0.2+10,0) -- (-.2+10,7);
         \draw [] (0.2+10,0) -- (.2+10,7);
@@ -301,7 +299,7 @@
 %
 \begin{center}
     \tdplotsetmaincoords{50}{110}
-    \begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+    \begin{tikzpicture}[tdplot_main_coords, scale=0.8]
     %   \draw[axis] (0,0,0) -- (4.5,0,0) node [pos=1.1] {$z$};
     %   \draw[axis] (0,0,0) -- (0,7,0) node [pos=1.05] {$x$};
     %   \draw[axis] (0,0,0) -- (0,0,3)  node [left] {$y$};
