@@ -1,6 +1,8 @@
 - IMPORTANTE: agregado \setlength{\columnsep}{20pt} en termodinamica, falta
 revisar si se movieron las figuras, falata una revisión completa.
 
+- Agregado \setlength{\parindent}{0pt} en todas las guías, revisar como quedaron después de esto, solo se revisó electrodinámica.
+
 - Modificar color de la línea de separación de columnas a gris.
 
 - mover los archivos auxiliares de los seleccionados a otro directorio, y no incluir en git.
