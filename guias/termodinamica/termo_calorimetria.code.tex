@@ -56,7 +56,7 @@
 \end{Answer}
 %
 \begin{center}
-  \begin{tikzpicture}[scale=1]
+  \begin{tikzpicture}[scale=0.8]
       \begin{axis}[
                    every major x tick/.append style={thick,blue},
                    clip=false,
@@ -68,8 +68,8 @@
                    %axis y line=center,        %alinea el eje al centro de la figura
                    %axis x line=middle,        %sino pone 2 ejes x
                    xtick  align=center,
-                   xlabel={$t$~[min]},
-                   ylabel={$T$~[C]}
+                   xlabel={tiempo~[min]},
+                   ylabel={temperatura~[$^\circ\text{C}$]}
                   ];
       \addplot [color=red, very thick] [id=s,samples= 180, domain=0:1]  {-5+15*x};
       \addplot [color=red, very thick] [id=s,samples= 180, domain=1:2.5]  {10};

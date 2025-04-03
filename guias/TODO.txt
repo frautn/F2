@@ -1,5 +1,3 @@
-- IMPORTANTE: agregado \setlength{\columnsep}{20pt} en termodinamica, falta
-revisar si se movieron las figuras, falata una revisión completa.
 
 - Agregado \setlength{\parindent}{0pt} en todas las guías, revisar como quedaron después de esto, solo se revisó electrodinámica.
 
@@ -11,7 +9,8 @@ revisar si se movieron las figuras, falata una revisión completa.
 
 Termodinamica:
 
-*) Mover la pregunta 5.10 más atrás, y reemplazarla por otra de las preguntas cortitas sin figuras.
+Agregar problema metal fundido que se tira sobre agua fría.
+
 
 Agregar algo de entropia referido a transmision.
 
