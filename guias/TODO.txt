@@ -9,7 +9,6 @@
 
 Termodinamica:
 
-Agregar problema metal fundido que se tira sobre agua fría.
 
 
 Agregar algo de entropia referido a transmision.
