@@ -25,6 +25,15 @@ HTML:
 - entropia.html: agregar figura dq/T
 falta "esto no es entropía"
 
+
+=============================
+News:
+
+
+
+
+=============================
+
 github:
 - Cambiar nombre al repositorio (EPF2)
 - nombre de los usuarios
