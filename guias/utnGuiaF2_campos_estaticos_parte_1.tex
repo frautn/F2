@@ -10,6 +10,7 @@
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{enumitem}  % For numbering lists using roman numbers. 
 
 \usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
 \usepackage{physics}
@@ -36,6 +37,16 @@
 \input{./guias_newcommands.code}
 
 \graphicspath{{./campos/img/}}
+
+\pgfplotsset{every axis/.append style={
+            % axis x line=middle,    % put the x axis in the middle
+            % axis y line=middle,    % put the y axis in the middle
+            % axis line style={<->}, % arrows on the axis
+            % xlabel={$x$},          % default put x on x-axis
+            % ylabel={$y$},          % default put y on y-axis
+            label style={font=\tiny},
+            tick label style={font=\tiny}  
+            }}
 
 %-----------
 % Necesario para incluir figuras generadas con tikzplotlib:
@@ -83,16 +94,16 @@
   \input{campos/campos_electrico_continuas.code}
   % \input{campos/campos_extra_electrico.code}
   \input{campos/campos_capacitores.code}
-  \input{campos/campos_preguntas_parte_1.code}
+  % \input{campos/campos_preguntas_parte_1.code}
   
+  % \refstepcounter{section}%
+  % \addcontentsline{toc}{section}{\thesection\hspace{5pt}Ley de Gauss}
   % \refstepcounter{section}%
   % \addcontentsline{toc}{section}{\thesection\hspace{5pt}Distribuciones de carga contínuas}
   % \refstepcounter{section}%
-  % \addcontentsline{toc}{section}{\thesection\hspace{5pt}Ejercicios adicionales sobre campo eléctrico}
-  % \refstepcounter{section}%
   % \addcontentsline{toc}{section}{\thesection\hspace{5pt}Capacitores}
-  % \refstepcounter{section}%
-  % \addcontentsline{toc}{section}{\thesection\hspace{5pt}Preguntas sobre electrostática para el análisis}
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\thesection\hspace{5pt}Preguntas sobre electrostática para el análisis}
 
 
   \twocolumn[\colorsectionnonumber{Respuestas de la unidad II - primera parte}]
