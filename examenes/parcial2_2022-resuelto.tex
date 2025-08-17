@@ -1,0 +1,292 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+% \usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage{array}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{6}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+\usepackage{adjustbox, tikz}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+
+\begin{document}
+
+{\Large Resoluciones 2do parcial - 2022}
+
+\begin{enumerate}[leftmargin=*]
+  \item Dos cargas puntuales, $q_1 = Q$ y $q_2 = -2Q$, siendo $Q>0$, están ubicadas sobre el eje $x$ como se muestra en la figura. Marcar todas las opciones sugeridas donde la fuerza resultante sobre una carga positiva ubicada sobre el eje $x$, esté dirigida hacia la derecha.
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+      \draw [{latex}-{latex}] (-5,0)--(8,0) node[below] {$x$~(m)};
+      \fill [black](0,0) circle(4pt) node[above] {$q_1$};
+      \fill [black](3,0) circle(4pt) node[above] {$q_2$};
+      % \draw [] (-4.5,0.2) -- (-4.5,-0.2);
+      \draw [] (-3,0.2) -- (-3,-0.2) node[below] {$-2$};
+      \draw [] (-1.5,0.2) -- (-1.5,-0.2) node[below] {};
+      \draw [] (0,0) -- (0,-0.2) node[below] {$0$};
+      \draw [] (1.5,0.2) -- (1.5,-0.2) node[below] {};
+      \draw [] (3,0) -- (3,-0.2) node[below] {$2$};
+      \draw [] (4.5,0.2) -- (4.5,-0.2) node[below] {};
+      \draw [] (6,0.2) -- (6,-0.2) node[below] {$4$};
+      % \draw [] (-1,0.2) -- (-1,-0.2);
+      % \fill [black](5,0) circle(4pt) node[above] {$q_3$};
+    \end{tikzpicture}
+    % \captionof{figure}{Problema \ref{p:P101}\label{f:P101}}
+  \end{center}
+  % \\[5pt]
+  \begin{tabularx}{\textwidth}{XXXXX}
+  $\square$ $x < \SI{-6}{\metre}$ & $\square$ $\SI{-2}{\metre} < x < 0$ & $\square$ $0 < x < \SI{1}{\metre}$ & $\square$ $\SI{1}{\metre} < x < \SI{2}{\metre}$ & $\square$ $ x > \SI{6}{\metre}$ \\
+  \end{tabularx}
+
+\
+
+\textit{Resolución:}
+
+Llamemos $q$ a la carga positiva que se agrega sobre el eje en la posición $x$. Si $0 < x < \SI{2}{\metre}$, la fuerza ejercida por $q_1$ será de repulsión hacia la derecha y la fuerza ejercida por $q_2$ será de atracción también hacia la derecha. Entonces la fuerza neta es hacia la derecha en cualquier posición entre las dos cargas.
+
+\
+
+Si $ x > \SI{2}{\metre}$ (a  la derecha de $q_2$), la fuerza que ejerce $q_2$ será de mayor módulo que la fuerza ejercida por $q_1$ porque $|q_2| > |q_1|$ y $q_2$ se encuentra más cerca de la tercera carga. Entonces no hay ninguna posición a la derecha de $q_2$ donde la fuerza neta sea hacia la derecha.
+
+\ 
+
+Si $x < 0$:
+\begin{flalign*}
+  \vec{F}_1 + \vec{F}_2 &= -\frac{kq_1q}{x^2} \hat{i} + \frac{kq_2q}{(\SI{2}{\metre}-x)^2}\hat{i}
+\end{flalign*}
+Por lo tanto, si buscamos cuando ese resultado es mayor a cero:
+\begin{flalign*}
+  kQq \left ( -\frac{1}{x^2} + \frac{2}{(\SI{2}{\metre}-x)^2} \right ) &> 0 
+\end{flalign*}
+La solución es $x < \SI{-4.83}{\metre}$. Entonces en $x < \SI{-6}{\metre}$ también se tiene una fuerza neta hacia la derecha.
+
+\item
+\begin{minipage}[t]{.6\textwidth}
+    La figura muestra un hilo infinito con densidad de carga $\lambda = \SI{300}{\micro\coulomb/\metre}$, una carga puntual $q = \SI{20}{\micro\coulomb}$, y los puntos $A$ y $B$, todos sobre el mismo plano. Las distancias mostradas son $a = \SI{1}{\centi\metre}$ y $b = \SI{1.5}{\centi\metre}$. \textit{a}) Calcular el módulo del campo eléctrico total en el punto $A$. \textit{b}) Calcular la diferencia de potencial eléctrico entre los puntos $A$ y $B$.
+   \end{minipage}
+  %
+  \begin{minipage}[t]{.4\textwidth}
+  \strut\vspace*{-\baselineskip}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.5]
+      \draw (0,3.5) ellipse (0.2 and 0.1);
+      \draw (0,-1.5) +(180:0.2 and 0.1) arc (180:360:0.2 and 0.1);
+      \draw [black] (-0.2,-1.5)--(-0.2,3.5) node[pos=0.75, left] {$\lambda$};
+      \draw [black] (0.2,-1.5)--(0.2,3.5);
+      \fill [](-2,0) circle(5pt) node[left] {$q$};
+      \draw [](2,2) circle(4pt) node[below] {$A$};
+      \draw [](4,2) circle(4pt) node[below] {$B$};
+      \draw [{latex}-{latex}] (-2,-0.4)--(0,-0.4) node[midway,below] {$a$};
+      \draw [{latex}-{latex}] (0,2.4)--(2,2.4) node[midway,above] {$a$};
+      \draw [{latex}-{latex}] (2,2.4)--(4,2.4) node[midway,above] {$a$};
+      \draw [{latex}-{latex}] (4.6,2)--(4.6,0) node[midway,right] {$b$};
+      \draw [dotted] (-1.8,0)--(4.6,0);
+    \end{tikzpicture}
+    % \captionof{figure}{\label{hilo}}
+  \end{center}
+  \end{minipage}
+
+  \
+
+\textit{Resolución:}
+\textit{a}) El campo en $A$ es la suma del campo producido por el hilo y el del producido por la carga puntual.
+
+\
+
+Asumiendo eje $x$ positivo hacia la derecha y eje $y$ positivo hacia arriba, el campo del hilo en $A$ es:
+\begin{flalign*}
+  \vec{E}_h &= \frac{2k\lambda}{a}\hat{x}
+\end{flalign*}
+\begin{minipage}[t]{.5\textwidth}
+El módulo del campo eléctrico de la carga puntual en $A$ es:
+\begin{flalign*}
+  |\vec{E}_q| &= \frac{kq}{d^2}
+\end{flalign*}
+El campo resultante es:
+\begin{flalign*}
+  \vec{E} &= (|\vec{E}_h|+|\vec{E}_q|\cos(\theta))\hat{x} + |\vec{E}_q|\sin(\theta)\hat{y} 
+\end{flalign*}
+Y el módulo simplemente se calcula como:
+\begin{flalign*}
+  |\vec{E}| &= \sqrt{E_x^2+E_y^2} 
+\end{flalign*}
+
+\end{minipage}
+\begin{minipage}[t]{.5\textwidth}
+  \strut\vspace*{-\baselineskip}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.75]
+      \draw (0,3.5) ellipse (0.2 and 0.1);
+      \draw (0,-1.5) +(180:0.2 and 0.1) arc (180:360:0.2 and 0.1);
+      \draw [black] (-0.2,-1.5)--(-0.2,3.5) node[pos=0.75, left] {$\lambda$};
+      \draw [black] (0.2,-1.5)--(0.2,3.5);
+      \fill [](-2,0) circle(5pt) node[left] {$q$};
+      \draw [](2,2) circle(4pt) node[below] {$A$};
+      \draw [](4,2) circle(4pt) node[below] {$B$};
+      \draw [{latex}-{latex}] (-2,-0.4)--(0,-0.4) node[midway,below] {$a$};
+      \draw [{latex}-{latex}] (0,2.4)--(2,2.4) node[midway,above] {$a$};
+      \draw [{latex}-{latex}] (2,2.4)--(4,2.4) node[midway,above] {$a$};
+      \draw [{latex}-{latex}] (4.6,2)--(4.6,0) node[midway,right] {$b$};
+      \draw [dotted] (-1.8,0)--(4.6,0);
+      \draw [blue, {latex}-{latex}, thick] (-2,0)--(2,2) node[pos=0.25,above] {$d$};
+      \draw [blue, -{latex}, thick] (2,2)--(6,4) node[pos=0.75,above] {$\vec{E}_q$};
+      \draw [blue, -{latex}, thick] (2,2)--(6,2) node[pos=0.75,above] {$\vec{E}_h$};
+    \end{tikzpicture}
+    % \captionof{figure}{\label{hilo}}
+  \end{center}
+\end{minipage}
+
+\textit{b})
+La diferencia de potencial entre $A$ y $B$ total es la suma de la diferencia de potencial producida por el campo del hilo más la producida por el campo de la carga puntual:
+\begin{flalign*}
+  V_B - V_A &= \left ( 2k\lambda\ln(r_a/r_b) \right ) + \left ( \frac{kq}{r_{qB}^2} - \frac{kq}{r_{qA}^2} \right )  
+\end{flalign*}
+
+
+\item Sabiendo que el potencial en un punto $P$ sobre el eje de simetría perpendicular a un disco plano, a una distancia $z$ del centro, si el radio del disco es $R = \SI{5.0}{\centi\metre}$ y la densidad superficial de carga es $\sigma = \SI{1.0}{\nano\coulomb/\metre}$, es:
+\begin{flalign*}
+  V_P &= \frac{\sigma}{2\varepsilon_o} \left ( \sqrt{R^2+z^2} - z \right )
+\end{flalign*}
+Elegir un valor de una carga puntual y encuentre una posición donde hay que ubicarla para que el potencial eléctrico total en $z = \SI{2.0}{\centi\metre}$ sea cero.
+
+  \
+
+\textit{Resolución:}\\
+Si se agrega una carga puntual $q$, el potencial neto en el $z$ indicado es cero:
+\begin{flalign*}
+  V_\text{disco} + V_q &= 0\\
+  \frac{\sigma}{2\varepsilon_o} \left ( \sqrt{R^2+z^2} - z \right ) + \frac{kq}{r_{qP}} &= 0\\
+  \SI{1.91}{\volt} + \frac{kq}{r_{qP}} &= 0\\
+  \frac{q}{r_{qP}} &= \frac{\SI{-1.91}{\volt}}{k} 
+\end{flalign*}
+
+Por supuesto que la carga $q$ debe ser negativa para que se cumpla lo pedido. Elegir un valor de $q$ y buscar la distancia al punto $P$ donde hay que ubicarla para que se cumpla $q/r_{qP} = \SI{-1.91}{\volt}/k$.
+
+\item Cuando una resistencia de $\SI{12}{\ohm}$ se conecta a una batería de $\SI{12}{\volt}$, la potencia que se disipa en dicha resistencia es $\SI{10.22}{\watt}$. ¿Cuánto vale la resistencia interna de la batería?
+
+\
+
+\textit{Resolución:}\\
+
+Conociendo la potencia disipada en la resistencia $R$, podemos encontrar la corriente en el circuito:
+\begin{flalign*}
+i &= \sqrt{\frac{P}{R}} 
+\end{flalign*}
+Luego:
+\begin{flalign*}
+  \SI{12}{\volt} -ir_\text{interna} - iR &= 0
+\end{flalign*}
+y se despeja el valor de la resistencia interna.
+
+\item Para el circuito mostrado en la figura, encontrar el valor de $\varepsilon$ sabiendo que $V_B - V_A = \SI{2.00}{\volt}$.
+\begin{center}
+  \begin{circuitikz}[scale=0.8]
+    \draw (0,0) to[R=$\SI{1.23}{\kilo\ohm}$] (4,0)
+    (0,5.2) to[battery2, l=$\varepsilon$] (4,5.2)
+    (0,3.2) -- (0.5,3.2) to[battery2, l=$\SI{12}{\volt}$, invert] (1.5,3.2) to[R=$\SI{0.700}{\kilo\ohm}$] (4,3.2)
+    (0,0) -- (0,1.2) to[R=$\SI{2.25}{\kilo\ohm}$] (0,3.2) to[R=$\SI{11.5}{\kilo\ohm}$] (0,5.2)
+    (4,5.2) to[R=$\SI{4.45}{\kilo\ohm}$] (4,3.2) -- (4,0) 
+    (0,1.2) to[R=$\SI{1.23}{\kilo\ohm}$] (4,1.2)
+    (0,0) -- (0,-0.5)
+    (4,0) -- (4,-0.5);
+    \fill (4,-0.5) circle (3pt);
+    \fill (0,-0.5) circle (3pt);
+    \draw (0,-0.5) node[right]{$A$};
+    \draw (4,-0.5) node[right]{$B$};
+  \end{circuitikz}
+  % \captionof{figure}{Problema \ref{p:P6051}\label{f:P6051}}
+\end{center}
+
+\
+
+\textit{Resolución:}\\
+Las resistencias de $\SI{1.23}{\kilo\ohm}$ están conectadas en paralelo y la resistencia equivalente de ese paralelo es $R_p = \SI{615}{\ohm}$. A continuación se muestran las corrientes de mallas elegidas para los cálculos:
+
+\begin{center}
+  \begin{circuitikz}[scale=0.8]
+    \draw (4,0) to[R=$R_p$] (0,0)
+    (0,5.2) to[battery2, l=$\varepsilon$] (4,5.2)
+    (0,3.2) -- (0.5,3.2) to[battery2, l=$\SI{12}{\volt}$, invert] (1.5,3.2) to[R=$R_3$] (4,3.2)
+    (0,0) -- (0,1.2) to[R=$R_4$] (0,3.2) to[R=$R_1$] (0,5.2)
+    (4,5.2) to[R=$R_2$] (4,3.2) -- (4,0) 
+    (0,0) -- (0,-0.5)
+    (4,0) -- (4,-0.5);
+    \fill (4,-0.5) circle (3pt);
+    \fill (0,-0.5) circle (3pt);
+    \draw (0,-0.5) node[right]{$A$};
+    \draw (4,-0.5) node[right]{$B$};
+    \draw [blue, -{latex}, thick] (3,0.5)--(1,0.5) node[pos=0.5,above] {$i_2$};
+    \draw [blue, -{latex}, thick] (0.4,0.6)--(0.4,2.6) node[pos=0.5,right] {$i_2$};
+    \draw [blue, -{latex}, thick] (0.5,2.8)--(3,2.8) node[pos=0.5,below] {$i_2$};
+    \draw [blue, -{latex}, thick] (3.6,2.6)--(3.6,0.6) node[pos=0.5,left] {$i_2$};
+    \draw [blue, -{latex}, thick] (1.6,4.8)--(3.2,4.8) node[pos=0.5,below] {$i_1$};
+    \draw [blue, -{latex}, thick] (3.6,4.8)--(3.6,3.4) node[pos=0.5,left] {$i_1$};
+    \draw [blue, -{latex}, thick] (3,3.4)--(1,3.4) node[pos=0.5,above] {$i_1$};
+    \draw [blue, -{latex}, thick] (0.6,3.4)--(0.6,4.8) node[pos=0.95,right] {$i_1$};
+
+  \end{circuitikz}
+  % \captionof{figure}{Problema \ref{p:P6051}\label{f:P6051}}
+\end{center}
+
+La ecuación de la malla 1 es:
+\begin{flalign*}
+    -\varepsilon - \SI{12}{\volt} -(R_1+R_2+R_3)i_1 + R_3i_2 &= 0 
+\end{flalign*}
+Y para la malla 2 es:
+\begin{flalign*}
+  \SI{12}{\volt} +R_3i_1 -(R_3+R_4+R_p)i_2 &= 0 
+\end{flalign*}
+
+Sabiendo la diferencia de potencial entre $A$ y $B$ se puede encontrar la corriente de malla $i_2$, siendo la corriente que circula a través de $R_p$:
+\begin{flalign*}
+  i_2 &= \frac{\SI{2}{\volt}}{R_p}
+\end{flalign*}
+
+Reemplazando este valor en la ecuación de la malla 2 se puede encontrar el valor de $i_1$, y luego reemplazando ambas corrientes en la ecuación de la malla 1 se puede encontrar la respuesta.
+
+
+\end{enumerate}
+
+\end{document}

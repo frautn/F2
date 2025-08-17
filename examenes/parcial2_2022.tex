@@ -1,0 +1,194 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+% \usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage{array}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+\usepackage{adjustbox, tikz}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+
+\begin{document}
+
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}
+
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}2\textsuperscript{do} parcial}
+
+    9 septiembre 2022
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0.5pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=6, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=5,tabularheader,title={\tiny \textit{No completar}}]
+   1 \par (1,5 pt) \bigskip\bigskip\bigskip & 2.a \par (1,5 pt) & 2.b \par (1,5 pt) & 3 \par (1,5 pt) & 4 \par (1,5 pt) & 5 \par (2,5 pt) 
+  \end{tcolorbox}
+  \begin{tcolorbox}[colback=white,left=2pt,right=2pt]
+    Total
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}    
+\end{tcbraster}
+
+\end{tcolorbox}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Name and section:\enspace\hrulefill}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Instructor’s name:\enspace\hrulefill}
+
+\textit{No entregar resoluciones de los ejercicios de elección múltiple, solo marcar una opción con una cruz.}
+
+\begin{enumerate}[leftmargin=*]
+\item Dos cargas puntuales, $q_1 = Q$ y $q_2 = -2Q$, siendo $Q>0$, están ubicadas sobre el eje $x$ como se muestra en la figura. Marcar todas las opciones sugeridas donde la fuerza resultante sobre una carga positiva ubicada sobre el eje $x$, esté dirigida hacia la derecha.
+\begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \draw [{latex}-{latex}] (-5,0)--(8,0) node[below] {$x$~(m)};
+    \fill [black](0,0) circle(4pt) node[above] {$q_1$};
+    \fill [black](3,0) circle(4pt) node[above] {$q_2$};
+    % \draw [] (-4.5,0.2) -- (-4.5,-0.2);
+    \draw [] (-3,0.2) -- (-3,-0.2) node[below] {$-2$};
+    \draw [] (-1.5,0.2) -- (-1.5,-0.2) node[below] {};
+    \draw [] (0,0) -- (0,-0.2) node[below] {$0$};
+    \draw [] (1.5,0.2) -- (1.5,-0.2) node[below] {};
+    \draw [] (3,0) -- (3,-0.2) node[below] {$2$};
+    \draw [] (4.5,0.2) -- (4.5,-0.2) node[below] {};
+    \draw [] (6,0.2) -- (6,-0.2) node[below] {$4$};
+    % \draw [] (-1,0.2) -- (-1,-0.2);
+    % \fill [black](5,0) circle(4pt) node[above] {$q_3$};
+  \end{tikzpicture}
+  % \captionof{figure}{Problema \ref{p:P101}\label{f:P101}}
+\end{center}
+% \\[5pt]
+\begin{tabularx}{\textwidth}{XXXXX}
+$\square$ $x < \SI{-6}{\metre}$ & $\square$ $\SI{-2}{\metre} < x < 0$ & $\square$ $0 < x < \SI{1}{\metre}$ & $\square$ $\SI{1}{\metre} < x < \SI{2}{\metre}$ & $\square$ $ x > \SI{6}{\metre}$ \\
+\end{tabularx}
+
+% \item U?\\[5pt]
+% \begin{tabularx}{\textwidth}{XXXXX}
+% $\square$ $\SI{-2400}{cal/\kelvin}$ & $\square$ $\SI{0}{cal/\kelvin}$ & $\square$ $\SI{3.5}{cal/\kelvin}$ & $\square$ $\SI{120}{cal/\kelvin}$ & $\square$ $\SI{970}{cal/\kelvin}$\\
+% \end{tabularx}
+
+\item
+\begin{minipage}[t]{.6\textwidth}
+    La figura muestra un hilo infinito con densidad de carga $\lambda = \SI{300}{\micro\coulomb/\metre}$, una carga puntual $q = \SI{20}{\micro\coulomb}$, y los puntos $A$ y $B$, todos sobre el mismo plano. Las distancias mostradas son $a = \SI{1}{\centi\metre}$ y $b = \SI{1.5}{\centi\metre}$. \textit{a}) Calcular el módulo del campo eléctrico total en el punto $A$. \textit{b}) Calcular la diferencia de potencial eléctrico entre los puntos $A$ y $B$.
+   \end{minipage}
+  %
+  \begin{minipage}[t]{.4\textwidth}
+  \strut\vspace*{-\baselineskip}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.5]
+      \draw (0,3.5) ellipse (0.2 and 0.1);
+      \draw (0,-1.5) +(180:0.2 and 0.1) arc (180:360:0.2 and 0.1);
+      \draw [black] (-0.2,-1.5)--(-0.2,3.5) node[pos=0.75, left] {$\lambda$};
+      \draw [black] (0.2,-1.5)--(0.2,3.5);
+      \fill [](-2,0) circle(5pt) node[left] {$q$};
+      \draw [](2,2) circle(4pt) node[below] {$A$};
+      \draw [](4,2) circle(4pt) node[below] {$B$};
+      \draw [{latex}-{latex}] (-2,-0.4)--(0,-0.4) node[midway,below] {$a$};
+      \draw [{latex}-{latex}] (0,2.4)--(2,2.4) node[midway,above] {$a$};
+      \draw [{latex}-{latex}] (2,2.4)--(4,2.4) node[midway,above] {$a$};
+      \draw [{latex}-{latex}] (4.6,2)--(4.6,0) node[midway,right] {$b$};
+      \draw [dotted] (-1.8,0)--(4.6,0);
+    \end{tikzpicture}
+    % \captionof{figure}{\label{hilo}}
+  \end{center}
+  \end{minipage}
+
+\item Sabiendo que el potencial en un punto $P$ sobre el eje de simetría perpendicular a un disco plano, a una distancia $z$ del centro, si el radio del disco es $R = \SI{5.0}{\centi\metre}$ y la densidad superficial de carga es $\sigma = \SI{1.0}{\nano\coulomb/\metre}$, es:
+\begin{flalign*}
+  V_P &= \frac{\sigma}{2\varepsilon_o} \left ( \sqrt{R^2+z^2} - z \right )
+\end{flalign*}
+Elegir un valor de una carga puntual y encuentre una posición donde hay que ubicarla para que el potencial eléctrico total en $z = \SI{2.0}{\centi\metre}$ sea cero.
+
+
+\item Cuando una resistencia de $\SI{12}{\ohm}$ se conecta a una batería de $\SI{12}{\volt}$, la potencia que se disipa en dicha resistencia es $\SI{10.22}{\watt}$. ¿Cuánto vale la resistencia interna de la batería?
+
+\item Para el circuito mostrado en la figura, encontrar el valor de $\varepsilon$ sabiendo que $V_B - V_A = \SI{2.00}{\volt}$.
+\begin{center}
+  \begin{circuitikz}[scale=0.8]
+    \draw (0,0) to[R=$\SI{1.23}{\kilo\ohm}$] (4,0)
+    (0,5.2) to[battery2, l=$\varepsilon$] (4,5.2)
+    (0,3.2) -- (0.5,3.2) to[battery2, l=$\SI{12}{\volt}$, invert] (1.5,3.2) to[R=$\SI{0.700}{\kilo\ohm}$] (4,3.2)
+    (0,0) -- (0,1.2) to[R=$\SI{2.25}{\kilo\ohm}$] (0,3.2) to[R=$\SI{11.5}{\kilo\ohm}$] (0,5.2)
+    (4,5.2) to[R=$\SI{4.45}{\kilo\ohm}$] (4,3.2) -- (4,0) 
+    (0,1.2) to[R=$\SI{1.23}{\kilo\ohm}$] (4,1.2)
+    (0,0) -- (0,-0.5)
+    (4,0) -- (4,-0.5);
+    \fill (4,-0.5) circle (3pt);
+    \fill (0,-0.5) circle (3pt);
+    \draw (0,-0.5) node[right]{$A$};
+    \draw (4,-0.5) node[right]{$B$};
+  \end{circuitikz}
+  % \captionof{figure}{Problema \ref{p:P6051}\label{f:P6051}}
+\end{center}
+
+\end{enumerate}
+
+\end{document}

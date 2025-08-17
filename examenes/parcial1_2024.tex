@@ -1,0 +1,221 @@
+\documentclass[a4paper,11pt,dvipsnames, twocolumn]{article}
+\setlength{\columnseprule}{0.3pt}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{cuted}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{patterns}
+
+\def\cosa{-0.69466}
+\def\sina{-0.71934}
+% A custom arrowhead for use on x, y, z axes
+\tikzstyle{axisarrow} = [-{Latex[inset=0pt,length=5pt]}]
+
+
+\usepackage{pgffor}
+\usepackage{readarray}
+
+% --------------------------------------
+% Formatting the header.
+\def\M{30} % Number of columns in header.
+\def\N{27} % Columns for questions (can be different to actual number of questions).
+\def\P{3} % Columns reserved for Total.
+
+% Number of questions and points.
+% --------------------------------------
+
+
+% % --------------------------------------
+% % Data for questions.
+% % Don't remove the '%' after \data{
+% \def\data{%
+% A 5.0 26 520 9.77 80
+% B 2.4 26 520 6.50 70
+% C 5.0 32 592 5.55 30
+% D 6.0 32 592 4.44 30
+% }
+% \readarray\data\dataA[4,6] %read the data to \dataA
+% % --------------------------------------
+
+
+\usepackage[most]{tcolorbox}
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{8}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+% \foreach \j in {1,...,4} {
+
+% Nombres y Apellido: el Código Civil y Comercial estableció el uso de un solo
+% apellido, de cualquiera de los padres, y de manera opcional el del otro progenitor
+
+
+\begin{strip} %place some material in full-width at any place on double-column page
+  \vspace{-1.25cm}
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}\par
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}1\textsuperscript{er} parcial}\par
+    9 de agosto de 2024
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=\M, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=\N,tabularheader]
+  % \begin{tcolorbox}[raster multicolumn=\N,tabularheader,title={\footnotesize some nice title}]
+   1 (a) \par {\small ($1$ p)} \bigskip\bigskip & 1 (b) \par {\small ($1$ p)} & 2\par {\small ($1$ p)} & 3 (a) \par {\small ($1$ p)} & 3 (b) \par {\small (1 p)} & 3 (c)\par {\small (1 p)} & 4 \par {\small (1.5 p)} & 5 (a)\par {\small (1.25 p)} & 5 (b)\par {\small (1.25 p)}
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=\P, colback=white,left=2pt,right=2pt]
+    Nota
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\end{tcolorbox}
+% \textbf{Justificar todas las respuestas.} \hfill (\dataA[\j,1])
+% \textit{Para alcanzar la condición de Aprobación con Final debe sumar 4 puntos o más en los problemas 1 a 4. Para alcanzar la condición de Aprobación Directa debe sumar 6 puntos o más en los problemas 1 a 4, y responder correctamente al menos 2 de las preguntas I a III.}
+\end{strip}
+
+\begin{enumerate}[wide, labelwidth=2pt, labelindent=0pt]
+  % [leftmargin=*]
+
+
+\item Dentro de un calorímetro de equivalente en agua $\pi = \SI{40}{g}$ hay $\SI{160}{g}$ de agua y $\SI{20}{g}$ de hielo en equilibrio con el calorímetro. Se agrega cierta masa de granalla de aluminio a $\SI{90}{\celsius}$ y la temperatura final de equilibrio resulta de $\SI{15}{\celsius}$. Calcule:\\
+\textit{a}) La masa de aluminio agregada.\\
+\textit{b}) La masa de hielo con la que, bajo las mismas condiciones, la temperatura de equilibrio hubiera resultado de $\SI{10}{\celsius}$.\\
+Datos: $C_\text{aluminio} = \SI{0.217}{cal/(g \celsius)}$; $L_\text{f, hielo} = \SI{80}{cal/g}$. 
+
+\item La pared de una habitación tiene $\SI{4}{m}$ de ancho, $\SI{2}{m}$ de alto y una ventana de $\SI{1.5}{m^2}$ de superficie. La pared tiene dos capas, la interna de $\SI{10}{cm}$ de espesor y conductividad térmica igual a $\SI{0.5}{W/(m . K)}$ y la externa de $\SI{4}{cm}$ de espesor y conductividad igual a $\SI{0.2}{W/(m . K)}$. El cristal de la ventana tiene $\SI{1}{cm}$ de espesor y conductividad térmica igual a $\SI{1.05}{W/(m . K)}$.  Calcule la corriente de calor si la temperatura de la superficie exterior es $\SI{4}{\celsius}$ y la de la superficie interior es $\SI{20}{\celsius}$.
+
+
+\item Las cargas de la figura tienen los valores $q_1 = \SI{-30}{\micro C}$; $q_2 = \SI{10}{\micro C}$ y $q_3 = \SI{20}{\micro C}$. Calcule:\\
+\textit{a}) El vector campo eléctrico total en el punto $A$. (Defina explícitamente un sistema de referencia.)\\
+\textit{b}) El potencial eléctrico en el punto $A$.\\
+\textit{c}) Si en el punto $A$ se coloca una carga $Q = \SI{-5}{\micro C}$, calcule la fuerza total sobre esta carga. Grafique el vector fuerza.
+
+\begin{center}
+  \begin{tikzpicture}[scale=0.6]
+    \draw [dashed] (0,0)--(6,0)--(6,8)--(0,8) -- cycle;
+    \fill [black](0,0) circle(4pt) node[left] {$q_3$};
+    \fill [black](0,8) circle(4pt) node[left] {$q_2$};
+    \fill [black](6,8) circle(4pt) node[right] {$q_1$};
+    \draw [black](6,0) circle(4pt) node[right] {$A$};
+    \draw (0,4) node [left] {$\SI{0.8}{m}$};
+    \draw (3,0) node [below] {$\SI{0.6}{m}$};
+  \end{tikzpicture}
+\end{center}
+
+\item Suponga que un mol de gas ideal monoatómico pasa de un estado a presión $\SI{15}{kPa}$ y temperatura $\SI{300}{K}$ hasta otro a una temperatura de $\SI{250}{K}$ mediante un proceso adiabático reversible. Se sabe que en ese caso la variación de entropía es $0$. Elija otro camino para unir ambos estados y muestre realizando el cálculo que en el camino elegido por usted la variación de entropía también es nula.
+
+
+\item Una esfera diélectrica de radio $R = \SI{30}{cm}$ y densidad de carga en volumen uniforme $\rho = \SI{0.5}{\micro C/m^3}$ centrada en el origen de coordenadas, es atravesada diametralmente por un alambre infinito con densidad de carga lineal uniforme $\lambda = \SI{-1}{nC/m}$, situado sobre el eje $z$. Calcule:\\
+\textit{a}) El campo eléctrico producido por la esfera y el alambre en un punto $P$ a $\SI{50}{cm}$ de la superficie de la esfera sobre el plano $xy$.\\
+\textit{b}) La diferencia de potencial eléctrico entre el punto $P$ y un punto $A$ situado en el mismo plano pero sobre la superficie de la esfera.
+
+\begin{center}
+  \begin{tikzpicture}[scale=1]
+	% Sphere
+	\begin{scope}
+		\def\R{1.5cm}
+
+		\draw[outer color=lightgray,inner color=white] (0,0) circle (\R);
+
+		% R's
+		\draw[dashed] (\R,0) arc (0:180:{\R} and {3*\R/10});
+		\draw (-\R,0) arc (180:360:{\R} and {3*\R/10});
+		\draw (0,\R) arc (90:270:{3*\R/10} and {\R});
+		\draw[dashed] (0,-\R) arc (-90:90:{3*\R/10} and {\R});
+		% \node at ({\R/10},{1.15*\R}) {$R$};
+		% \node at ({1.15*\R},{0.15*\R}) {$R$};
+
+		% The y-axis
+		\draw[axisarrow] (0,0) -- (5,0) node [below] {$y$};
+		% The z-axis
+		\draw[axisarrow] (0,0) -- (0,2.3) node [below left] {$z$};
+		% The x-axis
+		\draw[axisarrow] (0,0) -- (0.5*4.7*\cosa,0.5*4.7*\sina)
+		node [left] {$x$};
+
+		% \fill [black](0.5*1.2*\cosa,0.5*1.2*\sina) circle(3pt);
+		% \node at (-0.7,-0.15) {$A$};
+		\fill [black](\R,0) circle(3pt);
+		\node at (1.15*\R,0.3) {$A$};
+		\fill [black](2.5*\R,0) circle(3pt);
+		\node at (2.4*\R,0.3) {$P$};
+		\draw[] (0,-2) -- (0,3);
+		\node at (-0.2,2.8) {$\lambda$};
+
+	\end{scope}
+
+  \end{tikzpicture}
+\end{center}
+
+
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,244 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+% \usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage{array}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{6}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+\usepackage{adjustbox, tikz}
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+
+\begin{document}
+
+{\Large Resoluciones 1er parcial - 2022}
+
+\begin{enumerate}[leftmargin=*]
+  \item Un cilindro de $\SI{50.0}{\centi\meter^3}$ de cobre está inicialmente a $\SI{20.0}{\celsius}$. ¿A qué temperatura su volumen aumentará $\SI{0.075}{\centi\meter^3}$? Coeficiente de expansión lineal del cobre: $\alpha = \SI{1.7E-5}{\celsius^{-1}}$.\\
+  \begin{tabularx}{\textwidth}{XXXXXX}
+    $\square$ $\SI{14.7}{\celsius}$ & $\square$ $\SI{29.4}{\celsius}$ & $\square$ $\SI{34.7}{\celsius}$ & $\square$ $\SI{49.4}{\celsius}$ & $\square$ $\SI{64.1}{\celsius}$ & $\square$ $\SI{108.2}{\celsius}$\\
+  \end{tabularx}
+
+\
+
+\textit{Resolución:}
+\begin{flalign*}
+    \Delta V &= \beta V_0 \Delta T
+\end{flalign*}
+
+El coeficiente de expansión volumétrica es: $\beta = 3\alpha$.
+\begin{flalign*}
+    \SI{0.075}{\centi\cubic\meter}  &= 3\cdot \SI{1.7E-5}{\celsius^{-1}}\cdot \SI{50.0}{\centi\cubic\meter} \cdot \Delta T\\
+    \Delta T  &=  \SI{29.4}{\celsius} = T_f - \SI{20.0}{\celsius}
+\end{flalign*}
+
+Respuesta: $T = \SI{49.4}{\celsius}$
+
+\
+
+  \item Un refrigerador tiene un rendimiento de $2.10$. Durante cada ciclo, absorbe $\SI{3.40E4}{\joule}$ de calor del depósito frío. ¿Cuánta energía mecánica se requiere en cada ciclo para operar el refrigerador?\\
+  \begin{tabularx}{\textwidth}{XXXXXX}
+    $\square$ $\SI{0.86E4}{\joule}$ & $\square$ $\SI{1.31E4}{\joule}$ & $\square$ $\SI{1.62E4}{\joule}$ & $\square$ $\SI{3.40E4}{\joule}$ & $\square$ $\SI{5.02E4}{\joule}$ & $\square$ $\SI{5.84E4}{\joule}$\\
+  \end{tabularx}
+
+  \
+
+\textit{Resolución:}
+\begin{flalign*}
+    e &= \frac{Q_f}{W}\\
+    2.10 &= \frac{\SI{3.40E4}{\joule}}{W}
+\end{flalign*}
+
+Respuesta: $W = \SI{1.62E4}{\joule}$
+
+
+  \item Un recipiente aislado térmicamente y de capacidad calorífica despreciable contiene $\SI{0.285}{\kilogram}$ de un metal en estado sólido a $\SI{530}{\celsius}$. En dicho recipiente se introduce $\SI{1.00}{\kilogram}$ de una mezcla de agua y hielo que se encontraba inicialmente en equilibrio, y el sistema alcanza el equilibrio térmico a $\SI{4.3}{\celsius}$. \textit{Datos}: calor específico del agua líquida: $\SI{4190}{\joule.\kilogram^{-1}.\kelvin^{-1}}$; calor específico del hielo: $\SI{2100}{\joule.\kilogram^{-1}.\kelvin^{-1}}$; calor específico del metal: $\SI{410}{\joule.\kilogram^{-1}.\kelvin^{-1}}$; calor de fusión del agua: $\SI{334E3}{\joule.\kilogram^{-1}}$.\\
+  a) Encontrar la masa de hielo contenida en la mezcla que se agrega al recipiente.\\
+  b) Calcular la variación de energía interna del metal.\\
+  c) Calcular la variación de entropía del metal. 
+
+  \
+
+\textit{Resolución:}\\
+\textit{a})
+\begin{flalign*}
+    m_\text{metal}C_\text{metal}(T_\text{eq}-T_\text{i,metal}) + m_\text{hielo}L_f + m_\text{agua}C_\text{agua}(T_\text{eq}-\SI{0}{\celsius}) &= 0\\
+    \SI{0.285}{\kilogram}\cdot\SI{410}{\joule.\kilogram^{-1}.\kelvin^{-1}}\cdot(\SI{4.3}{\celsius}-\SI{530}{\celsius}) + m_\text{hielo}\cdot\SI{334E3}{\joule.\kilogram^{-1}}&\\
+     + \SI{1.00}{\kilogram}\cdot\SI{4190}{\joule.\kilogram^{-1}.\kelvin^{-1}}\cdot(\SI{4.3}{\celsius}-\SI{0}{\celsius}) &=0
+\end{flalign*}
+
+Respuesta: $m_\text{hielo} = \SI{0.13}{\kilogram}$
+
+\
+
+\textit{b})
+\begin{flalign*}
+    \Delta U_\text{metal} &= Q_\text{metal} = \SI{0.285}{\kilogram}\cdot\SI{410}{\joule.\kilogram^{-1}.\kelvin^{-1}}\cdot(\SI{4.3}{\celsius}-\SI{530}{\celsius})
+\end{flalign*}
+
+Respuesta: $\Delta U_\text{metal} = \SI{-61.4}{\kilo\joule}$
+
+\
+
+\textit{c})
+\begin{flalign*}
+    \Delta S_\text{metal} &= mC\ln(T_f/T_i) = \SI{0.285}{\kilogram}\cdot\SI{410}{\joule.\kilogram^{-1}.\kelvin^{-1}}\cdot\ln(\SI{277.3}{\kelvin}/\SI{803}{\kelvin})
+\end{flalign*}
+
+Respuesta: $\Delta S_\text{metal} = \SI{-124.2}{\joule/\kelvin}$
+
+\
+
+  \item Una pared de $\SI{14}{\square\meter}$ que está compuesta por $\SI{1.5}{\centi\meter}$ de un material aislante y $\SI{15}{\centi\meter}$ de ladrillo, separa un ambiente con aire a $\SI{25}{\celsius}$ en contacto con el material aislante, del exterior a una temperatura de $\SI{-4}{\celsius}$. Los coeficientes de conductividad térmica del material aislante y del ladrillo son $\SI{0.04}{\watt.\meter^{-1}.\kelvin^{-1}}$ y $\SI{0.6}{\watt.\meter^{-1}.\kelvin^{-1}}$ respectivamente. Se sabe que la potencia calórica transmitida por esta pared es $\SI{550}{\watt}$ mientras las temperaturas del aire interior y exterior permanecen constantes. Asumiendo que los coeficientes de convección para el aire son iguales a ambos lados de la pared, encuentre la temperatura sobre la superficie libre del ladrillo.\\
+
+\
+
+\textit{Resolución:}\\
+Primero es necesario encontrar el valor del coeficiente de convección.
+\begin{flalign*}
+    H &= \frac{1}{\frac{2}{h}+\frac{e_1}{k_1}+\frac{e_2}{k_2}}A\Delta T\\
+    \SI{550}{\watt} &= \frac{1}{\frac{2}{h}+\frac{\SI{0.015}{\meter}}{\SI{0.04}{\watt.\meter^{-1}.\kelvin^{-1}}}+\frac{\SI{0.15}{\meter}}{\SI{0.6}{\watt.\meter^{-1}.\kelvin^{-1}}}}\SI{14}{\square\meter} \cdot (\SI{25}{\celsius}-(\SI{-4}{\celsius}))\\
+    h &= \SI{17.67}{\watt.\meter^{-2}.\kelvin^{-1}}
+\end{flalign*}
+
+Variación de temperatura desde la superficie exterior de la pared hasta la temperatura del aire exterior:
+\begin{flalign*}
+    H &= hA\Delta T\\
+    \SI{550}{\watt} &= \SI{17.67}{\watt.\meter^{-2}.\kelvin^{-1}}\cdot \SI{14}{\square\meter} \cdot (T-(\SI{-4}{\celsius}))
+\end{flalign*}
+Respuesta: $T = \SI{-1.78}{\celsius}$
+
+\
+
+  \begin{minipage}[t]{.5\textwidth}
+  \item El ciclo de la figura aproxima el funcionamiento de una máquina térmica constituida por $\SI{0.55}{\mole}$ de un gas ideal diatómico que intercambia calor con dos depósitos que mantienen sus temperaturas constantes. El gas comienza en el estado $a$ con un volumen de $\SI{2.3}{\liter}$ y a la temperatura del reservorio caliente, $\SI{520}{\kelvin}$. Se expande adiabáticamente hasta un volumen de $\SI{9.0}{\liter}$, llegando al estado $b$ cuya temperatura es la del reservorio frío, $\SI{300}{\kelvin}$. Luego se comprime isotérmicamente hasta el estado $c$ con un volumen de $\SI{1.5}{\liter}$. Por último evoluciona sobre la trayectoria rectilínea que une los estados $c$ y $a$ para completar el ciclo. Calcular la eficiencia térmica de esta máquina. 
+    \end{minipage}
+  \hspace{0.02\linewidth}
+  \begin{minipage}[t]{.4\textwidth}
+    \strut\vspace*{-\baselineskip}\newline
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \begin{axis}[
+        ticks=none,
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0, xmax=10, 
+        ymin=0, ymax=12.5, 
+        xlabel={$V$},
+        ylabel={$p$},
+        % xtick={2,9},
+        % xticklabels={1.5,9},
+        % ytick={1.5},
+        % yticklabels={1.5}
+        %yticklabels={},
+        %extra x ticks={0.04},
+        %extra y ticks={2}
+        ];
+      \addplot [-latex, color=blue, very thick] [samples= 180, domain=2.3:4.5]  {1.5*(9/x)^1.5};
+      \addplot [color=blue, very thick] [samples= 180, domain=4.5:9]  {1.5*(9/x)^1.5};
+      \addplot [latex-, color=blue, very thick] [samples= 180, domain=3:9]  {1.5*9/x};
+      \addplot [color=blue, very thick] [samples= 180, domain=1.5:3]  {1.5*9/x};
+      % \addplot[color = black, dashed, thick] coordinates {(2, 0) (2, 1.5) (0, 1.5)};
+      % \addplot[color = black, dashed, thick] coordinates {(9, 0) (9, 1.5)};
+      \draw [color=blue, very thick][-latex](1.5,9)--(2,10.63);
+      \draw [color=blue, very thick](2,10.63)--(2.3,11.61);
+      \draw (2.3,11.61) node [right] {$a$};
+      \draw (9,1.5) node [above right] {$b$};
+      \draw (1.5,9) node [left] {$c$};
+      \fill [black](2.3,11.61) circle(2pt);
+      \fill [black](9,1.5) circle(2pt);
+      \fill [black](1.5,9) circle(2pt);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{minipage}
+
+\
+
+\textit{Resolución:}\\
+Rendimiento de una máquina: $e=W/Q_\text{absorbido}$. El calor absorbido es la suma de todos los calores positivos durante el ciclo. En este caso, el único calor positivo es el intercambiado en el proceso $c\rightarrow a$. Como no tenemos una fórmula para calcular ese calor, se puede encontrar conociendo la variación de energía interna y el trabajo.
+
+\begin{flalign*}
+  \Delta U_{ca} &= nC_v(T_a-T_c) = \SI{0.55}{\mol}\cdot \frac{5}{2} \cdot\SI{8.31}{\joule\mol^{-1}\kelvin^{-1}}(\SI{520}{\kelvin}-\SI{300}{\kelvin})\\
+  \Delta U_{ca} &= \SI{2514}{\joule}
+\end{flalign*}
+
+El trabajo en el proceso $c\rightarrow a$ se puede calcular como el área debajo de la curva:
+\begin{flalign*}
+  W_{ca} &= (V_a-V_c)p_c+(V_a-V_c)(p_a-p_c)/2
+\end{flalign*}
+Las presiones en $a$ y $c$ se pueden encontrar con la ecuación de estado del gas ideal:
+\begin{flalign*}
+  p_a &= \frac{nRT_a}{V_a} = \frac{\SI{0.55}{\mol}\cdot \SI{8.31}{\joule\mol^{-1}\kelvin^{-1}}\cdot\SI{520}{\kelvin}}{\SI{0.0023}{\cubic\meter}} = \SI{1.03E6}{\pascal}\\
+  p_c &= \frac{nRT_c}{V_c} = \frac{\SI{0.55}{\mol}\cdot \SI{8.31}{\joule\mol^{-1}\kelvin^{-1}}\cdot\SI{300}{\kelvin}}{\SI{0.0015}{\cubic\meter}} = \SI{0.914E6}{\pascal}
+\end{flalign*}
+Entonces el trabajo en ese proceso es:
+\begin{flalign*}
+  W_{ca} = (\SI{0.0023}{\cubic\meter}-\SI{0.0015}{\cubic\meter})\cdot \SI{0.914E6}{\pascal}+&\\(\SI{0.0023}{\cubic\meter}-\SI{0.0015}{\cubic\meter})(\SI{1.03E6}{\pascal}-\SI{0.914E6}{\pascal})/2 = \SI{777.6}{\joule}
+\end{flalign*}
+Ahora se puede obtener el calor en $c\rightarrow a$, que es igual al calor absorbido en el ciclo:
+\begin{flalign*}
+  Q_{ca} &= \Delta U_{ca} + W_{ca} = \SI{2514}{\joule} + \SI{777.6}{\joule} = \SI{3292}{\joule}
+\end{flalign*}
+Para obtener el trabajo del ciclo se necesitan los trabajos de cada proceso, falta calcular los trabajos en $a\rightarrow b$ y $b\rightarrow c$:
+\begin{flalign*}
+  W_{ab} &= -\Delta U_{ab} = -nC_v(T_b-T_a) = \SI{2514}{\joule}\\
+  W_{bc} &= nRT_b\ln(V_c/V_b) = \SI{0.55}{\mol}\cdot \SI{8.31}{\joule\mol^{-1}\kelvin^{-1}}\cdot\SI{300}{\kelvin}\cdot\ln(\SI{0.0015}{\cubic\meter}/\SI{0.009}{\cubic\meter}) = \SI{-2457}{\joule}
+\end{flalign*}
+El trabajo del ciclo resulta:
+\begin{flalign*}
+  W &= W_{ab} + W_{bc} + W_{ca}\\
+  W &= \SI{2514}{\joule} - \SI{2457}{\joule} + \SI{777.6}{\joule}\\
+  W &= \SI{834.6}{\joule}
+\end{flalign*}
+
+Respuesta:
+\begin{flalign*}
+  e = \frac{\SI{834.6}{\joule}}{\SI{3292}{\joule}} = 0.2535
+\end{flalign*}
+
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,231 @@
+\documentclass[a4paper,11pt,dvipsnames, twocolumn]{article}
+\setlength{\columnseprule}{0.3pt}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{cuted}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+\usepackage{pgffor}
+\usepackage{readarray}
+
+% --------------------------------------
+% Formatting the header.
+\def\M{9} % Number of columns in header.
+\def\N{7} % Columns for questions (can be different to actual number of questions).
+\def\P{2} % Columns reserved for Total.
+
+% Number of questions and points.
+% --------------------------------------
+
+
+% % --------------------------------------
+% % Data for questions.
+% % Don't remove the '%' after \data{
+% \def\data{%
+% A 5.0 26 520 9.77 80
+% B 2.4 26 520 6.50 70
+% C 5.0 32 592 5.55 30
+% D 6.0 32 592 4.44 30
+% }
+% \readarray\data\dataA[4,6] %read the data to \dataA
+% % --------------------------------------
+
+\newcommand{\answer}{\rule[-5pt]{120pt}{0.4pt}}
+
+\usepackage[most]{tcolorbox}
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+% \foreach \j in {1,...,4} {
+
+% Nombres y Apellido: el Código Civil y Comercial estableció el uso de un solo
+% apellido, de cualquiera de los padres, y de manera opcional el del otro progenitor
+
+
+\begin{strip}
+  \vspace{-1.25cm}
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}\par
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}Recuperatorio 2\textsuperscript{do} parcial}\par
+    24 de noviembre de 2023
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=\M, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=\N,tabularheader]
+  % \begin{tcolorbox}[raster multicolumn=\N,tabularheader,title={\footnotesize some nice title}]
+   1 \par ($2.5$ pts) \bigskip\bigskip & 2 \par ($2$ pts) & 3\par ($1.5$ pts) & 4 \par (2 pts) & 5 \par (2 pts)
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=\P, colback=white,left=2pt,right=2pt]
+    Nota
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\end{tcolorbox}
+% \textbf{Justificar todas las respuestas.} \hfill (\dataA[\j,1])
+\end{strip}
+
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+  % [leftmargin=*]
+
+% \begin{minipage}[t]{.6\textwidth}
+\item Para el circuito de la figura calcule:\\
+\textit{a}) La potencia entregada por la batería.\\
+\textit{b}) La diferencia de potencial $V_b - V_a$.
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,0) to[R=$\SI{9.4}{\ohm}$] (0,2) to[R=$\SI{16.2}{\ohm}$] (0,4) -- (3,4) to[R=$\SI{3.5}{\ohm}$] (3,2) to[R=$\SI{8.1}{\ohm}$] (3,0) -- (0,0)
+    (0,2) -- (0.4,2) to[R=$\SI{20.0}{\ohm}$] (3,2);
+    \draw (0,2) node[left]{$a$};
+    \draw (3,2) node[right]{$b$};
+    \draw (1.5, 4) -- (1.5,4.4) -- (-2.5,4.4)
+    to [battery2, l=$\SI{18.0}{\volt}$] (-2.5,-0.4)
+     -- (1.5,-0.4) -- (1.5, 0);
+    \fill (0,2) circle (3pt);
+    \fill (3,2) circle (3pt);
+  \end{circuitikz}
+\end{center}
+
+
+\item La figura muestra tres cables infinitos, paralelos entre sí, que pasan perpendicularmente a la página por los vértices del cuadrado mostrado. Las corrientes $i_2$ e $i_3$ salen de la página y valen $\SI{32}{\ampere}$ y $\SI{20}{\ampere}$ respectivamente, y la corriente $i_1$ entra a la página y su valor es $\SI{45}{\ampere}$. Definir un sistema de referencia y determinar el vector campo magnético en el punto $P$.
+\begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw [] (-0.2828,-0.2828) -- (0.2828,0.2828);
+    \draw [] (0.2828,-0.2828) -- (-0.2828,0.2828);
+    \draw [] (5,0) circle (0.4);
+    \fill [] (5,0) circle (0.2);
+    \draw [] (0,0) circle (0.4);
+    \fill [] (0,5) circle (0.2);
+    \draw [] (0,5) circle (0.4);
+    \fill [] (5,5) circle (0.2) node [right] {$P$};
+    \draw [dotted] (0,0) -- (5,0) -- (5,5) -- (0,5) -- (0,0);
+    \draw [] (-.8,0) node [] {$i_1$};
+    \draw [] (-.8,5) node [] {$i_2$};
+    \draw [] (5.8,0) node [] {$i_3$};
+    \draw [] (-1.5,5) -- (-2.5,5);
+    \draw [] (-1.5,0) -- (-2.5,0);
+    \draw [{Stealth}-{Stealth}] (-2.2,0) -- (-2.2,5) node [midway,left] {$\SI{2}{\centi\metre}$};
+    \draw [] (0,-1) -- (0,-2);
+    \draw [] (5,-1) -- (5,-2);
+    \draw [{Stealth}-{Stealth}] (0,-1.7) -- (5,-1.7) node [midway,below] {$\SI{2}{\centi\metre}$};
+  \end{tikzpicture}
+\end{center}
+
+\item Se tienen dos esferas de radio igual a $\SI{1}{\centi\metre}$ y ambas con la misma carga eléctrica neta distribuida uniformemente en volumen, que vale $\SI{2.5}{\micro\coulomb}$. Una esfera está ubicada con su centro en la posición $\vec{r}_1 = \SI{4.0}{\centi\metre}\,\hat{j}$ y la otra tiene su centro en $\vec{r}_2 = \SI{2.0}{\centi\metre}\,\hat{i}$. Obtener el vector campo eléctrico en la posición $\vec{r} = \SI{2.0}{\centi\metre}\,\hat{i} +  \SI{4.0}{\centi\metre}\,\hat{j}$.
+
+\vspace*{2cm}
+
+\item Las dos partículas de la figura tiene la misma carga $q$, el punto $a$ es el punto medio entre ambas cargas, y el punto $b$ se ubica a la misma distancia que $a$ de la partícula ubicada a la derecha. ¿En qué posición, $a$ o $b$, el potencial eléctrico es mayor?
+\begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    %Axis
+    \draw[dotted] (-4,0) -- (4,0);
+    % \draw[-Latex] (0,-1) -- (0,5) node [left, pos=1.05] {$y$};
+    \fill [black](2.5,0) circle(5pt) node[above] {$q$};
+    \fill [black](-2.5,0) circle(5pt) node[above] {$q$};
+    \draw[dotted] (2.5,2.5) arc
+      [
+          start angle=90,
+          end angle=180,
+          x radius=2.5cm,
+          y radius =2.5cm
+      ] ;
+    \draw [black](2.5,2.5) circle(3pt) node[above] {$b$};
+    \draw [black](0,0) circle(3pt) node[below] {$a$};
+  \end{tikzpicture}
+\end{center}
+
+
+\item Una espira cuadrada gira en presencia de un campo magnético uniforme, como se muestra en la figura. Los lados del cuadrado miden $\SI{5.0}{\centi\metre}$, la resistencia eléctrica de la espira es $\SI{3.6}{\ohm}$, el campo magnético es $\vec{B} = \SI{7.2}{\tesla}\,\hat{i}$ y $\theta = 8\pi\,\text{s}^{-1}\,t$. Calcular el valor de la corriente inducida en la espira en el instante en que $\theta = \pi/2$, y realizar un esquema mostrando el sentido de circulación de la corriente.
+\begin{center}
+    \tdplotsetmaincoords{60}{100}
+    \begin{tikzpicture}[tdplot_main_coords, scale=0.8]
+      \draw[-Latex] (0,0,0) -- (0,0,5) node[left] {$\hat{k}$};
+      \draw[-Latex] (0,0,0) -- (0,5,0) node[below] {$\hat{i}$};
+      \draw[-Stealth] (0,4,2) -- (0,5,2) node[right] {$\vec{B}$};
+    \tdplotsetrotatedcoords{-40}{0}{0} %
+    \draw[tdplot_rotated_coords, -Latex] (0,0,0) -- (-4,0,0) node[below] {$\hat{j}$};
+    % \draw[tdplot_rotated_coords] (0,0,1) -- (0,-3,1) -- (0,-2,2) -- (0,-2,0) -- cycle;
+    \draw[tdplot_rotated_coords, dotted] (0,0,4) -- (-3,0,4) -- (-3,0,0) -- (0,0,0) -- cycle;
+    \draw[tdplot_rotated_coords, very thick] (0,2,3.46) -- (-3,2,3.46) -- (-3,0,0) -- (0,0,0) -- cycle;
+    % \draw[tdplot_rotated_coords, blue, dotted] (-2,0,0) -- (2,0,0);
+    % \draw[-latex] (0,0,3.5) arc (-90:170:0.5);
+    \tdplotsetthetaplanecoords{60};
+    \tdplotdrawarc[tdplot_rotated_coords, -latex] {(0,0,0)}{3}{0}{27}{anchor=south west}{$\theta$};
+    \end{tikzpicture}
+\end{center}
+
+\end{enumerate}
+
+% \newpage
+% }
+
+\end{document}

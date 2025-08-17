@@ -1,0 +1,214 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+% \usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage{array}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+
+\begin{document}
+
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}
+
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}Recuperatorio 3\textsuperscript{er} parcial}
+
+    25 de noviembre de 2022
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0.5pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=7, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=6,tabularheader,title={\tiny \textit{No completar}}]
+   1.a \par (1,5 pt) \bigskip\bigskip\bigskip & 1.b \par (1 pt) & 2.a \par (1,5 pt) & 2.b \par (1 pt) & 3 \par (2 pt) & 4.a \par (2 pt) & 4.b \par (1 pt)
+  \end{tcolorbox}
+  \begin{tcolorbox}[colback=white,left=2pt,right=2pt]
+    Total
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}    
+\end{tcbraster}
+
+\end{tcolorbox}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Name and section:\enspace\hrulefill}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Instructor’s name:\enspace\hrulefill}
+
+% \textit{No entregar resoluciones de los ejercicios de elección múltiple, solo marcar una opción con una cruz.}
+
+\begin{enumerate}[leftmargin=*]
+
+\item 
+\begin{minipage}[t]{0.5\textwidth}
+  El circuito mostrado en la figura se encuentra inicialmente funcionando en régimen estacionario con la llave cerrada, hasta que en cierto instante se abre la llave. \textit{a}) ¿Cuál es el valor de la corriente eléctrica que circula a través de la resistencia $R_2$, $\SI{7.5}{\second}$ después de abrir la llave? \textit{b}) Indicar el sentido de circulación de dicha corriente, justificando la respuesta.\\
+  Datos: $\varepsilon = \SI{28}{\volt}$; $C = \SI{3.5}{\milli\farad}$; $R_1 = \SI{2100}{\ohm}$; $R_2 = \SI{1500}{\ohm}$.
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\strut\vspace*{-\baselineskip}
+\begin{center}
+\begin{circuitikz}[scale=1]
+    \draw (0,2.5) to[opening switch] (2.5,2.5) to[R=$R_1$] (5,2.5)
+    (0,2.5) to[battery2, l=$\varepsilon$] (0,0) -- (5,0) to[C, l=$C$] (5,2.5)
+    (2.5,2.5) to[R=$R_2$] (2.5,0);
+\end{circuitikz}
+\end{center}
+\end{minipage}
+%
+
+\begin{minipage}[t]{.5\textwidth}
+\item 
+Un ion que parte del reposo en el vacío es acelerado por dos placas paralelas entre las que existe una diferencia de potencial de $\SI{10000}{\volt}$ como indica la figura. Al salir de la segunda placa, el ion se mueve bajo la acción de un campo magnético uniforme de módulo $B = \SI{1.50}{\tesla}$, normal al plano de la trayectoria y entrando a la página. El radio de curvatura de la trayectoria es $\SI{5.72}{\centi\metre}$ y el valor absoluto de la carga del ion es $\SI{1.60E-19}{\coulomb}$. \textit{a}) ¿Cuál es la masa del ion? \textit{b}) ¿Su carga es positiva o negativa? Justificar la respuesta.
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\strut\vspace*{-\baselineskip}
+\begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw [] (-7,3.4) -- (-4,3.4) arc (90:0:5) ;
+    \draw [blue!100!black!60] (-1.9,4.4) node[above right] {$\vec{B}$};
+    \filldraw [draw=black, fill=black!30] (-5,0.4) -- (-5,3.2) -- (-4.7,3.2) -- (-4.7,0.4) -- cycle;
+    \filldraw [draw=black, fill=black!30] (-5,3.6) -- (-5,6.4) -- (-4.7,6.4) -- (-4.7,3.6) -- cycle;
+    \filldraw [draw=black, fill=black!30] (-5.9,0.4) -- (-5.9,3.2) -- (-5.6,3.2) -- (-5.6,0.4) -- cycle;
+    \filldraw [draw=black, fill=black!30] (-5.9,3.6) -- (-5.9,6.4) -- (-5.6,6.4) -- (-5.6,3.6) -- cycle;
+    \def\a{-4};
+    \def\b{0.4};
+    \def\d{2};
+    % \draw (-4.3,0) \node[left] {$\vec{B}$};
+    \foreach \x in {0,...,4}
+    \foreach \y [count=\yi] in {0,...,3}
+    {
+      % \fill [blue!100!black!50] (\a+\d*\x,\b+\d*\y) circle (3pt);
+      \draw [blue!100!black!50] (\a+\d*\x-0.2828,\b+\d*\y-0.2828) -- (\a+\d*\x+0.2828,\b+\d*\y+0.2828);
+      \draw [blue!100!black!50] (\a+\d*\x+0.2828,\b+\d*\y-0.2828) -- (\a+\d*\x-0.2828,\b+\d*\y+0.2828);
+      \draw [blue!100!black!50] (\a+\d*\x,\b+\d*\y) circle (0.4);
+    }
+  \end{tikzpicture}
+\end{center}
+\end{minipage}
+%
+
+\begin{minipage}[t]{.5\textwidth}
+\item En la figura se muestran dos cables infinitos paralelos, uno transportando una corriente $i_1 = \SI{2.4}{\ampere}$ saliendo de la página y el otro transportando la corriente $i_2 = \SI{5.1}{\ampere}$ entrando en la página. Definir un sistema de referencia y calcular el vector campo magnético en el punto $P$.
+\end{minipage}
+\begin{minipage}[t]{.5\textwidth}
+\strut\vspace*{-\baselineskip}
+\begin{center}
+  \begin{tikzpicture}[scale=0.5]
+    \draw [] (5-0.2828,-0.2828) -- (5+0.2828,0.2828);
+    \draw [] (5+0.2828,-0.2828) -- (5-0.2828,0.2828);
+    \draw [] (5,0) circle (0.4);
+    \fill [] (0,0) circle (0.2);
+    \draw [] (0,0) circle (0.4);
+    \draw [] (0,3.33) circle (0.2);
+    \draw [dotted] (0,0) -- (5,0) -- (0,3.33) -- (0,0);
+    \draw [] (-.8,0) node [] {$i_1$};
+    \draw [] (-.8,3.33) node [] {$P$};
+    \draw [] (5.8,0) node [] {$i_2$};
+    \draw [] (-1.5,3.33) -- (-2.5,3.33);
+    \draw [] (-1.5,0) -- (-2.5,0);
+    \draw [{Stealth}-{Stealth}] (-2.2,0) -- (-2.2,3.33) node [midway,left] {$\SI{2.0}{\centi\metre}$};
+    \draw [] (0,-1) -- (0,-2);
+    \draw [] (5,-1) -- (5,-2);
+    \draw [{Stealth}-{Stealth}] (0,-1.7) -- (5,-1.7) node [midway,below] {$\SI{3.0}{\centi\metre}$};
+  \end{tikzpicture}
+\end{center}
+\end{minipage}
+
+
+\item
+\begin{minipage}[t]{.5\textwidth}
+  Un cable esta formado por dos segmentos infinitos y una semicircunferencia de radio $R = \SI{50}{\centi\metre}$, como se muestra en la figura. En el centro de la semicircunferencia se encuentra una espira con una superficie de $\SI{1.0}{\centi\metre\squared}$, en forma coplanar con el cable y que se mantiene estática en el lugar. Por el cable circula la corriente $i = \SI{25}{\ampere}\text{e}^{-\SI{2}{\second^{-1}}t}$, y puede considerarse que el campo magnético es uniforme sobre la superficie de la espira. \textit{a}) Calcular el valor de la fem inducida en la espira en el instante $t= \SI{0.1}{\second}$. \textit{b}) Indicar el sentido en el que circula la corriente inducida en la espira, justificando su respuesta.    
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\strut\vspace*{-\baselineskip}
+\begin{center}
+      \begin{tikzpicture}[scale=0.5]
+          \draw (7,0) ellipse (0.1 and 0.2);
+          \draw (7,7.6) ellipse (0.1 and 0.2);
+          \draw (7,-0.2) -- (0,-0.2) arc (270:90:4) -- (7,7.8);
+          \draw (7,0.2) -- (0,0.2) arc (270:90:3.6) -- (7,7.4);
+          \draw [] (0,4) circle (0.4) node[below left] {};
+          \draw [-{Stealth}] (0,4) -- (-3.7*0.71,4+3.7*0.71) node[midway, right] {$R$};
+          % \draw[-latex] (3,4) -- (6,4) node [pos=1.1] {$x$};
+          % \draw[-latex] (3.4,3.6) -- (3.4,6.6) node [left] {$y$};
+          \draw [-{Stealth}, thick] (6,7.6)--(3,7.6) node[midway,above] {$i$};
+          \draw [-{Stealth}, thick] (3,0)--(6,0) node[midway,above] {$i$};
+          \draw [-{Stealth}, thick] (-3.8,3.8) arc (180:210:3.8);
+      \end{tikzpicture}
+  \end{center}
+\end{minipage}
+%
+
+\end{enumerate}
+
+\end{document}

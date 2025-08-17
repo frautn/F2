@@ -1,0 +1,207 @@
+\documentclass[a4paper,11pt,dvipsnames, twocolumn]{article}
+\setlength{\columnseprule}{0.3pt}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{cuted}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+\usepackage{pgffor}
+\usepackage{readarray}
+
+% --------------------------------------
+% Formatting the header.
+\def\M{30} % Number of columns in header.
+\def\N{26} % Columns for questions (can be different to actual number of questions).
+\def\P{4} % Columns reserved for Total.
+
+% Number of questions and points.
+% --------------------------------------
+
+
+% % --------------------------------------
+% % Data for questions.
+% % Don't remove the '%' after \data{
+% \def\data{%
+% A 5.0 26 520 9.77 80
+% B 2.4 26 520 6.50 70
+% C 5.0 32 592 5.55 30
+% D 6.0 32 592 4.44 30
+% }
+% \readarray\data\dataA[4,6] %read the data to \dataA
+% % --------------------------------------
+
+\newcommand{\answer}{\rule[-5pt]{120pt}{0.4pt}}
+
+\usepackage[most]{tcolorbox}
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+% \foreach \j in {1,...,4} {
+
+% Nombres y Apellido: el Código Civil y Comercial estableció el uso de un solo
+% apellido, de cualquiera de los padres, y de manera opcional el del otro progenitor
+
+
+\begin{strip}
+  \vspace{-1.25cm}
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}\par
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}Recuperatorio 1\textsuperscript{er} parcial}\par
+    11 de diciembre de 2023
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=\M, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=\N,tabularheader]
+  % \begin{tcolorbox}[raster multicolumn=\N,tabularheader,title={\footnotesize some nice title}]
+   1 \par ($3$ pts) \bigskip\bigskip & 2 \par ($2$ pts) & 3\par ($2.5$ pts) & 4 \par ($2.5$ pts) & I & II & III
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=\P, colback=white,left=2pt,right=2pt]
+    Nota
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\end{tcolorbox}
+% \textbf{Justificar todas las respuestas.} \hfill (\dataA[\j,1])
+\textit{Para alcanzar la condición de Aprobación con Final debe sumar 4 puntos o más en los problemas 1 a 4. Para alcanzar la condición de Aprobación Directa debe sumar 6 puntos o más en los problemas 1 a 4, y responder correctamente al menos 2 de las preguntas I a III.}
+\end{strip}
+
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+  % [leftmargin=*]
+
+% \begin{minipage}[t]{.6\textwidth}
+
+
+
+
+\item Se tiene una máquina térmica con $\SI{5.3}{\mol}$ de un gas ideal diatómico que realiza el ciclo de la figura, siendo $ab$ una isobara, $bc$ una isoterma, $cd$ una isobara y $da$ una adiabática. Calcular el rendimiento de la máquina.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \begin{axis}[
+    %ticks=none,
+    axis x line=bottom,
+    axis y line=left,
+    xmin=6, xmax=33,
+    ymin=1, ymax=8,
+    xlabel={$V$~[$\si{\cubic\metre}$]},
+    ylabel={$p$~[Pa]},
+    xtick={8,30},
+    xticklabels={0.08,0.30},
+    ytick={65/30, 6.5},
+    yticklabels={$2.1\cdot 10^5$, $6.5\cdot 10^5$}
+    %yticklabels={},
+    %extra x ticks={0.04},
+    %extra y ticks={2}
+    ];
+    \addplot [thick] [samples= 180, domain=18:24]  {65/30};
+    \addplot [latex-, thick] [samples= 180, domain=24:30]  {65/30};
+    \addplot [thick] [samples= 180, domain=9.5:10]  {6.5};
+    \addplot [-latex, thick] [samples= 180, domain=8:9.5]  {6.5};
+    \addplot [-latex, thick] [samples= 180, domain=10:20]  {65/x};
+    \addplot [thick] [samples= 180, domain=20:30]  {65/x};
+    \addplot [latex-, thick] [samples= 180, domain=12:18]  {108.748/x^1.355};
+    \addplot [thick] [samples= 180, domain=8:12]  {108.748/x^1.355};
+
+    \fill [black](8,6.5) circle(2pt) node [above left] {$a$};
+    \fill [black](10,6.5) circle(2pt) node [above right] {$b$};
+    \fill [black](30,65/30) circle(2pt) node [right] {$c$};
+    \fill [black](18,65/30) circle(2pt) node [below left] {$d$};
+    \addplot[dotted] coordinates {(0, 6.5) (8, 6.5)};
+    \addplot[dotted] coordinates {(0, 65/30) (18, 65/30)};
+    \addplot[dotted] coordinates {(8, 0) (8, 6.5)};
+    \addplot[dotted] coordinates {(30, 0) (30, 65/30)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\item Las paredes de un horno industrial están construidas con dos capas, una interior de ladrillos de arcilla ($k = \SI{0.814}{\watt/(\metre.\kelvin)}$) de $\SI{14.0}{\centi\metre}$ de espesor, seguida de una capa de concreto celular ($k = \SI{0.220}{\watt/(\metre.\kelvin)}$) de $\SI{8.0}{\centi\metre}$ de espesor. La temperatura interior del horno es $\SI{1540}{\celsius}$, y sobre la pared exterior de concreto se miden $\SI{70.0}{\celsius}$. Despreciando los efectos de convección, calcular:\\
+\textit{a}) La temperatura en la superficie de unión entre ambos materiales.\\
+\textit{b}) La corriente de calor a través de estas paredes, por unidad de área.
+
+\item Dos ranuras muy angostas están separadas $\SI{9}{\micro\metre}$ y se colocan a $\SI{90.2}{\centi\metre}$ de una pantalla. Se ilumina con luz coherente de longitud de onda $\SI{500}{\nano\metre}$. ¿Cuál es la distancia entre la tercera y cuarta franjas brillantes del patrón de interferencia?
+
+
+\item En el interior de un calorímetro de masa despreciable hay $\SI{93.2}{\gram}$ de vapor de agua a $\SI{100}{\celsius}$. Se retira del congelador, que está a $\SI{-4}{\celsius}$, una cubetera que contiene $\SI{134.2}{\gram}$ de hielo, y se la introduce en el calorímetro. La cubetera vacía tiene una masa de $\SI{19.6}{\gram}$, y la temperatura de fusión del plástico de la cubetera (poliestireno) es de $\SI{110}{\celsius}$. ¿Cuál es la temperatura de equilibrio y la composición final del sistema?\\
+Datos: $C_\text{agua} = \SI{1}{cal/(\gram.\celsius)}$; $C_\text{hielo} = \SI{0.5}{cal/(\gram.\celsius)}$;\\ $C_\text{vapor de agua} = \SI{0.46}{cal/(\gram.\celsius)}$;\\ $C_\text{poliestireno} = \SI{0.45}{cal/(\gram.\celsius)}$; $L_\text{v,agua} = \SI{540}{cal/\gram}$; $L_\text{f, agua} = \SI{80}{cal/\gram}$.
+
+\end{enumerate}
+
+\begin{enumerate}[label=\roman*., wide, labelwidth=!, labelindent=0pt]
+\item Un objeto de oro disminuye su temperatura $\SI{10}{\celsius}$ mientras que otro del mismo material disminuye $\SI{60}{\celsius}$ liberando ambos la misma cantidad de energía. ¿Cuál es la relación entre las masas de ambos objetos?
+\item Se iluminan con luz coherente de longitud de onda $\lambda$ dos ranuras estrechas separadas por una distancia $d$. Si $d$ es menor que cierto valor mínimo, no se observan franjas oscuras. Explique lo que sucede.
+\item Se tiene una cantidad fija de un gas ideal diatómico situada a una presión $p_0$, volumen $V_0$ y temperatura $T_0$. Experimenta un proceso tal que la presión final es $5p_0$ y el volumen final es $2V_0$. ¿Cuánto varía su energía interna?
+\end{enumerate}
+
+% \newpage
+% }
+
+\end{document}

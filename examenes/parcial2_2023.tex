@@ -1,0 +1,221 @@
+\documentclass[a4paper,11pt,dvipsnames, twocolumn]{article}
+\setlength{\columnseprule}{0.3pt}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{cuted}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+\usepackage{pgffor}
+\usepackage{readarray}
+
+% --------------------------------------
+% Formatting the header.
+\def\M{9} % Number of columns in header.
+\def\N{7} % Columns for questions (can be different to actual number of questions).
+\def\P{2} % Columns reserved for Total.
+
+% Number of questions and points.
+% --------------------------------------
+
+
+% % --------------------------------------
+% % Data for questions.
+% % Don't remove the '%' after \data{
+% \def\data{%
+% A 5.0 26 520 9.77 80
+% B 2.4 26 520 6.50 70
+% C 5.0 32 592 5.55 30
+% D 6.0 32 592 4.44 30
+% }
+% \readarray\data\dataA[4,6] %read the data to \dataA
+% % --------------------------------------
+
+\newcommand{\answer}{\rule[-5pt]{120pt}{0.4pt}}
+
+\usepackage[most]{tcolorbox}
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+% \foreach \j in {1,...,4} {
+
+% Nombres y Apellido: el Código Civil y Comercial estableció el uso de un solo
+% apellido, de cualquiera de los padres, y de manera opcional el del otro progenitor
+
+
+\begin{strip}
+  \vspace{-1.25cm}
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}\par
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}2\textsuperscript{do} parcial}\par
+    10 de noviembre de 2023
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=\M, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=\N,tabularheader]
+  % \begin{tcolorbox}[raster multicolumn=\N,tabularheader,title={\footnotesize some nice title}]
+   1 \par (2 pts) \bigskip\bigskip & 2 \par (2 pts) & 3\par (2 pts) & 4 \par (2 pts) & 5 \par (2 pts)
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=\P, colback=white,left=2pt,right=2pt]
+    Nota
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\end{tcolorbox}
+% \textbf{Justificar todas las respuestas.} \hfill (\dataA[\j,1])
+\end{strip}
+
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+  % [leftmargin=*]
+
+% \begin{minipage}[t]{.6\textwidth}
+\item Una bobina, formada por 260 espiras circulares de $\SI{2.5}{\centi\metre}$ de radio, está ubicada sobre el plano $xy$. En la región donde se encuentra la espira existe el siguiente campo magnético: $\vec{B} = B_0\sin(\omega t)\,\hat{z}$, siendo $B_0=\SI{0.5}{\tesla}$ y $\omega=0.1\pi\,\text{s}^{-1}$. Si la resistencia total de la bobina es $\SI{1.6}{\ohm}$, ¿cuánto vale la corriente que circula en ella en el instante $t_1=\SI{4}{\second}$? Realizar un esquema que muestre el sentido de circulación de la corriente en ese instante.
+
+\item Dos partículas con idéntica carga eléctrica ingresan con la misma velocidad a una región donde existe un campo magnético uniforme. En la figura se muestran las trayectorias de cada partícula ($a$ y $b$) con el campo ingresando perpendicular a la hoja.
+\begin{center}
+  \begin{tikzpicture}[scale=0.4]
+    \draw [-{Latex}] (-8,3.4) -- (-6.5,3.4);
+    \draw [] (-6.5,3.4) -- (-4,3.4) arc (90:7:5) node [left] {$a$};
+    \draw [] (-4,3.4) arc (90:27:8) node [right] {$b$};
+    \draw [] (-1.9,4.4) node[above right] {$\va*{B}$};
+    \filldraw [draw=black, fill=black!30] (-5,0.4) -- (-5,3.2) -- (-4.7,3.2) -- (-4.7,0.4) -- cycle;
+    \filldraw [draw=black, fill=black!30] (-5,3.6) -- (-5,6.4) -- (-4.7,6.4) -- (-4.7,3.6) -- cycle;
+    \def\a{-4};
+    \def\b{0.4};
+    \def\d{2};
+    \foreach \x in {0,...,4}
+    \foreach \y [count=\yi] in {0,...,3}
+    {
+      \draw [black!50] (\a+\d*\x-0.2828,\b+\d*\y-0.2828) -- (\a+\d*\x+0.2828,\b+\d*\y+0.2828);
+      \draw [black!50] (\a+\d*\x+0.2828,\b+\d*\y-0.2828) -- (\a+\d*\x-0.2828,\b+\d*\y+0.2828);
+      \draw [black!50] (\a+\d*\x,\b+\d*\y) circle (0.4);
+    }
+  \end{tikzpicture}
+\end{center}
+
+¿Cuál es el signo de la carga de las partículas? ¿Cuál de las dos partículas tiene mayor masa?
+
+
+\item En el circuito mostrado en la figura, la corriente que circula por la resistencia de $\SI{3.55}{\kilo\ohm}$ es $\SI{6.40}{\milli\ampere}$, circulando en el sentido indicado.\\
+\textit{a}) Calcular la diferencia de potencial $V_b-V_a$.\\
+\textit{b}) Calcular la potencia disipada por cada una de las resistencias de $\SI{1.00}{\kilo\ohm}$.
+\begin{center}
+  \begin{circuitikz}[scale=0.8]
+    \draw (0,0) to[battery2, invert, l=$\SI{20.0}{\volt}$] (0,6)
+    (8,0) -- (8,6) to[R=$\SI{3.55}{\kilo\ohm}$] (0,6)
+    (0,0) to[R=$\SI{3.00}{\kilo\ohm}$] (8,0)
+    (3,1.75) to[battery2, invert, l=$\SI{84.0}{\volt}$] (3,4.25) -- (5,4.25) to[R=$\SI{2.25}{\kilo\ohm}$] (5,1.75) -- (3,1.75)
+    (0,0) to[R=$\SI{1.00}{\kilo\ohm}$] (3,1.75)
+    (8,6) to[R=$\SI{1.00}{\kilo\ohm}$] (5,4.25);
+    % (5,1.5) to[battery2, l=$\SI{60}{\volt}$]  (5,0)
+    % (0,5) -- (5,5)
+    % (2.5,1.5) to[R=$\SI{0.65}{\kilo\ohm}$] (5,1.5);
+    \fill [black](8,6) circle(4pt) node[right] {$\,b$};
+    \fill [black](0,0) circle(4pt) node[left] {$a\, $};
+    \draw [-{Stealth}] (2.5,5.75) -- (0.5,5.75) node[midway,below]{$\SI{6.40}{\milli\ampere}$};
+  \end{circuitikz}
+\end{center}
+
+\item Sean dos superficies planas paralelas al plano $yz$, separadas por una distancia $d=\SI{4}{\milli\metre}$ como se muestra en la figura, siendo el origen de coordenadas el punto medio entre ambos planos. La carga total en el plano 1 es $Q_1=\SI{50}{\nano\coulomb}$ y la carga total en el plano 2 es $Q_2=\SI{20}{\nano\coulomb}$. Ambas cargas están distribuidas uniformemente sobre cada plano, y el área de cada superficie es $\SI{0.01}{\metre^2}$. El campo eléctrico se puede aproximar por el campo de dos planos infinitos.\\
+\textit{a}) Obtener el vector de la fuerza total ejercida sobre una partícula de carga $q=\SI{45}{\micro\coulomb}$ ubicada en el origen de coordenadas.\\
+\textit{b}) Calcular la diferencia de potencial eléctrico sobre el eje $x$ entre las posiciones $x_a=\SI{3}{\milli\metre}$ y $x_b=\SI{10}{\milli\metre}$, e indicar en cuál de las dos posiciones el potencial es mayor.
+\begin{center}
+\tdplotsetmaincoords{70}{145}
+\begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+	\draw[-{latex}] (2,0,0) -- (6,0,0) node [pos=1.1] {$x$};
+	\draw[dotted] (0.35,0,0) -- (2,0,0);
+	\draw[] (0.6,0,0) -- (-2,0,0);
+	\draw[dotted] (-2,0,0) -- (-3.5,0,0);
+	\draw[] (-3.5,0,0) -- (-4.5,0,0);
+	\draw[-{latex}] (0,0,0) -- (0,6,0) node [pos=1.05] {$y$};
+	% \draw[dotted] (0,0,0) -- (0,1.3,0);
+	\draw[-{latex}] (0,0,0) -- (0,0,4)  node [left] {$z$};
+	% \draw[dotted] (0,0,0) -- (0,0,2.2);
+	% \draw[{latex}-{latex}] (2,-2.1,3.1) -- (-2,-2.1,3.1) node [midway, above left] {$a$};
+  \draw[] (2,-2,3.2) node[left] {plano 1};
+  \draw[] (-2,-2.1,3.4) node[right] {plano 2};
+	\draw[{latex}-{latex}] (2,2.1,-3.1) -- (-2,2.1,-3.1) node [midway, above left] {$d$};
+	% \draw[opacity=0.2, tdplot_main_coords] (-2,-2,2.25) -- (-2,-2,3) -- (-2,2,3) -- (-2,2,-3) -- (-2,1.3,-3);
+	% \fill[opacity=0.2, tdplot_main_coords] (-2,-2,2.25) -- (-2,-2,3) -- (-2,2,3) -- (-2,2,-3) -- (-2,1.3,-3) -- (-2,1.3,2.25) -- (-2,-2,2.25);
+	\filldraw[opacity=0.1, tdplot_main_coords] (-2,-2,3) -- (-2,2,3) -- (-2,2,-3) -- (-2,-2,-3) -- (-2,-2,3);
+	\filldraw[opacity=0.1, tdplot_main_coords] (2,-2,3) -- (2,2,3) -- (2,2,-3) -- (2,-2,-3) -- (2,-2,3);
+\end{tikzpicture}
+\end{center}
+
+
+\item Un rectángulo de metal está cerca de un alambre largo, recto y que conduce corriente, con dos de sus lados paralelos al alambre. Si la corriente en el alambre está aumentando, ¿el rectángulo es repelido o atraído por el alambre?
+
+\end{enumerate}
+
+% \newpage
+% }
+
+\end{document}

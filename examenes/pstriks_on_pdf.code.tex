@@ -1,0 +1,12 @@
+\usepackage{ifpdf}
+\ifpdf%
+  \usepackage{pdftricks}
+  \begin{psinputs}
+    \usepackage{pst-optic}
+%\usepackage{pstricks-add} 	
+  \end{psinputs}
+\else
+  \usepackage{pst-optic}
+  \newenvironment{pdfpic}{}{}
+\fi
+ 

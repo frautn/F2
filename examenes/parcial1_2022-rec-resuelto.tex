@@ -1,0 +1,300 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+% \usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage{array}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+\usepackage{adjustbox, tikz}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+
+\begin{document}
+{\Large Física 2 (2do31)- Resoluciones Recuperatorio 1er parcial - 2022}
+
+\begin{enumerate}[leftmargin=*]
+  \item Calcular cuánto calor neto pierde cada hora una persona en forma de radiación, cuando se encuentra en un ambiente a $\SI{15}{\celsius}$. Suponga que la superficie libre que emite el calor es de $\SI{2.5}{\metre\squared}$, su temperatura es $\SI{33}{\celsius}$, y se comporta como un cuerpo negro.\\
+  \begin{tabularx}{\textwidth}{XXXXXX}
+    $\square$ $\SI{120}{\kilo\joule}$ & $\square$ $\SI{253}{\kilo\joule}$ & $\square$ $\SI{572}{\kilo\joule}$ & $\square$ $\SI{961}{\kilo\joule}$ & $\square$ $\SI{1240}{\kilo\joule}$ & $\square$ $\SI{2530}{\kilo\joule}$\\
+  \end{tabularx}
+
+  \
+
+\textit{Resolución:}
+
+Potencia neta emitida por la persona
+\begin{flalign*}
+    H &= \varepsilon \sigma A (T_e^4 - T_i^4)\\
+    H &= 1\cdot \SI{5.67E-8}{\watt/(\metre\squared . \kelvin^4) \cdot \SI{2.5}{\metre\squared} \cdot ((\SI{306}{\kelvin})^4-(\SI{288}{\kelvin})^4)}\\
+    H &= \SI{267.6}{\watt}
+\end{flalign*}
+Calor cedido en 1 hora:
+\begin{flalign*}
+    Q &= H \Delta t\\
+    Q &= \SI{267.6}{\watt} \cdot \SI{3600}{\second}
+\end{flalign*}
+
+Respuesta: $\SI{963}{\kilo\joule}$
+
+  \item Una máquina frigorífica de eficiencia igual a $2.7$ es alimentada con $\SI{200}{\joule}$ de trabajo en cada ciclo. Aproximadamente, ¿cuántos ciclos de funcionamiento son necesarios para solidificar completamente $\SI{1}{\kilo\gram}$ de agua que se encuentra a $\SI{0}{\celsius}$? (Calor latente de fusión del agua: $L_f = \SI{334}{\kilo\joule/\kilogram}$)\\
+  \begin{tabularx}{\textwidth}{XXXXXX}
+    $\square$ 620 ciclos & $\square$ 850 ciclos & $\square$ 1040 ciclos & $\square$ 1390 ciclos & $\square$ 4310 ciclos & $\square$ 7300 ciclos\\
+  \end{tabularx}
+  
+  \
+
+\textit{Resolución:}
+
+Calor que extrae del hielo en cada ciclo:
+\begin{flalign*}
+    e &= \frac{|W|}{Q_f}\\
+    2.7 &= \frac{\SI{200}{\joule}}{Q_f}\\
+    Q_f &= \SI{540}{\joule}
+\end{flalign*}
+
+Calor que se debe extraer del agua:
+\begin{flalign*}
+    Q &= m L_f\\
+    Q &= \SI{1}{\kilogram} \cdot \SI{334}{\kilo\joule/\kilogram} = \SI{334}{\kilo\joule}
+\end{flalign*}
+
+Cantidad de ciclos:
+\begin{flalign*}
+    Q &= Q_f N\\
+    \SI{334000}{\joule} &= \SI{540}{\joule} \cdot N
+\end{flalign*}
+
+Respuesta: 620 ciclos
+
+  \item En un calorímetro se colocan $\SI{200}{\gram}$ de agua y se espera que se alcance el equilibrio térmico, que sucede a $\SI{20.0}{\celsius}$. Luego se colocan $\SI{20}{\gram}$ de hielo a $\SI{0}{\celsius}$ obteniéndose una temperatura en el sistema al llegar al equilibrio de $\SI{11.4}{\celsius}$.\\
+  \textit{a}) ¿Cuánto calor intercambia la masa que originalmente fue hielo en el proceso?\\
+  \textit{b}) ¿Cuál es el equivalente de agua del calorímetro?\\
+  \textit{Datos:} calor específico del hielo = $\SI{2100}{\joule/(\kilogram . \kelvin)}$; calor latente de fusión del hielo = $\SI{334E3}{\joule/\kilogram}$; calor específico del agua = $\SI{4190}{\joule/(\kilogram . \kelvin)}$.
+
+  \
+
+\textit{Resolución:}
+
+\textit{a}) 
+\begin{flalign*}
+    Q &= Q_\text{fusión} + Q_\text{agua desde 0 hasta 11,4}\\
+    Q &= mL_f + mC(T_f-T_i)\\
+    Q &= \SI{0.020}{\kilogram}\cdot \SI{334E3}{\joule/\kilogram} + \SI{0.020}{\kilogram}\cdot \SI{4190}{\joule/(\kilogram . \kelvin)} \cdot (\SI{11.4}{\celsius} - \SI{0}{\celsius})
+\end{flalign*}
+Respuesta: $\SI{7635}{\joule}$
+
+\textit{b}) Llamando $m_1$ a la masa de hielo y $m_2$ a la masa de agua caliente:
+\begin{flalign*}
+    m_1 L_f + m_1 C_\text{agua}(T_f - \SI{0}{\celsius}) + (m_2 + \pi) C_\text{agua}(T_f - T_i) &= 0\\
+    \SI{7635}{\joule} + (\SI{0.200}{\kilogram}+\pi)\cdot \SI{4190}{\joule/(\kilogram . \kelvin)} \cdot (\SI{11.4}{\celsius} - \SI{20}{\celsius}) &= 0
+\end{flalign*}
+
+Respuesta: $\pi = \SI{11.9}{\gram}$
+
+  \item En una casa se tiene una pared de ladrillos de $\SI{2.7}{\metre}\times \SI{4}{\metre}$, y espesor $\SI{15}{\centi\metre}$, que separa un ambiente a $\SI{25}{\celsius}$ del exterior a $\SI{5}{\celsius}$. Esta pared contiene una ventana que consiste en solo un panel de vidrio de $\SI{1.5}{\metre}\times \SI{1.5}{\metre} \times \SI{4}{\milli\metre}$.\\
+  \textit{Datos:} conductividad térmica del ladrillo = $\SI{0.6}{\watt/(\metre . \kelvin)}$; conductividad térmica del vidrio = $\SI{1}{\watt/(\metre . \kelvin)}$.\\
+  \textit{a}) Calcular la corriente de calor total a través de los ladrillos y la ventana, sin incluir efectos de convección ni radiación.\\
+  \textit{b}) Se desea disminuir el flujo calórico en un 25\% agregando una capa de un material aislante adherida al vidrio de la ventana. Si la conductividad térmica del material aislante es $\SI{0.36}{\watt/(\metre . \kelvin)}$, ¿cuál debe ser el espesor de esta capa para lograr la reducción deseada?
+
+  \
+
+\textit{Resolución:}
+
+\textit{a}) 
+\begin{flalign*}
+    H &= \frac{k_\text{ladrillo} A_\text{ladrillo} \Delta T}{e_\text{ladrillo}} + \frac{k_\text{vidrio} A_\text{vidrio} \Delta T}{e_\text{vidrio}}\\
+    H &= \frac{\SI{0.6}{\watt/(\metre . \kelvin)} \cdot (\SI{10.8}{\metre\squared} - \SI{2.25}{\metre\squared}) \cdot \SI{20}{\celsius}}{\SI{0.15}{\metre}} +\frac{\SI{1}{\watt/(\metre . \kelvin)} \cdot \SI{2.25}{\metre\squared} \cdot \SI{20}{\celsius}}{\SI{0.004}{\metre}}\\
+    H &= \SI{684}{\watt} + \SI{11250}{\watt}
+\end{flalign*}
+
+Respuesta: $\SI{11.9}{\kilo\watt}$
+
+\textit{b})
+Nueva potencia: $H' = 0.75H = \SI{8.925}{\kilo\watt}$
+
+\begin{flalign*}
+    H' &= \frac{k_\text{ladrillo} A_\text{ladrillo} \Delta T}{e_\text{ladrillo}} + \frac{1}{e_\text{vidrio}/k_\text{vidrio} + x/k_\text{aislante}} A_\text{vidrio} \Delta T\\
+    \SI{8925}{\watt} &= \SI{684}{\watt} + \frac{1}{\SI{0.004}{\metre}/\SI{1}{\watt/(\metre . \kelvin)} + x/\SI{0.36}{\watt/(\metre . \kelvin)}} \SI{2.25}{\metre\squared} \cdot \SI{20}{\celsius}
+\end{flalign*}
+
+Respuesta: $x = \SI{0.53}{\milli\metre}$
+
+  \begin{minipage}[t]{.5\textwidth}
+  \item El ciclo de la figura aproxima el funcionamiento de una máquina térmica constituida por $\SI{0.052}{\mole}$ de un gas ideal diatómico que intercambia calor con dos depósitos que mantienen sus temperaturas constantes, representadas como $T_c$ y $T_f$.\\
+  \textit{a}) Calcular la eficiencia térmica de esta máquina.\\
+  \textit{b}) ¿Cuánto varían la entropía del gas y la entropía del Universo en cada ciclo de funcionamiento de esta máquina?
+  \end{minipage}
+  % \hspace{0.02\linewidth}
+  \begin{minipage}[t]{.5\textwidth}
+  \strut\vspace*{-\baselineskip}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \begin{axis}[
+        % ticks=none,
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0.4, xmax=1.6, 
+        ymin=0, ymax=4, 
+        xlabel={$V$~[$\ell$]},
+        ylabel={$p$~[atm]},
+        xtick={0.75,1.3},
+        xticklabels={$0.75$,$1.3$},
+        ytick={0.86, 1.4, 2.8, 3.5},
+        yticklabels={$0.86$, $1.4$, $2.8$, $3.5$}
+        %yticklabels={},
+        %extra x ticks={0.04},
+        %extra y ticks={2}
+        ];
+      \addplot [dashed, color=red!50!black] [samples= 180, domain=0.75:1.5]  {2.8*1.3/x} node[pos=0.5,above, xscale=1,sloped] {$T_c$};
+      \addplot [dashed, color=green!50!black] [samples= 180, domain=0.45:1]  {1.4*0.75/x} node[pos=0.5,above, xscale=1,sloped] {$T_f$};
+      % \addplot [color=blue, very thick] [samples= 180, domain=4.5:9]  {1.5*(9/x)^1.5};
+      % \addplot [latex-, color=blue, very thick] [samples= 180, domain=3:9]  {1.5*9/x};
+      % \addplot [color=blue, very thick] [samples= 180, domain=1.5:3]  {1.5*9/x};
+      % % \addplot[color = black, dashed, thick] coordinates {(2, 0) (2, 1.5) (0, 1.5)};
+      % \addplot[color = black, dashed, thick] coordinates {(9, 0) (9, 1.5)};
+      \draw [color=blue, very thick] (0.75,1.4)--(0.75,3.5) node[currarrow, pos=0.5, xscale=1,sloped,scale=1] {};
+      \draw [color=blue, very thick] (0.75,3.5) -- (1.3,2.8) node[currarrow, pos=0.5, xscale=1,sloped,scale=1] {};
+      \draw [color=blue, very thick] (1.3,2.8) -- (1.3,0.86) node[currarrow, pos=0.5, xscale=1,sloped,scale=1] {};
+      \draw [color=blue, very thick] (1.3,0.86) -- (0.75,1.4) node[currarrow, pos=0.5, xscale=-1,sloped,scale=1] {};
+      \draw [dotted] (0,0.86) -- (1.3,0.86);
+      \draw [dotted] (0,1.4) -- (0.75,1.4);
+      \draw [dotted] (0,2.8) -- (1.3,2.8);
+      \draw [dotted] (0,3.5) -- (0.75,3.5);
+      \draw [dotted] (0.75,0) -- (0.75,1.4);
+      \draw [dotted] (1.3,0) -- (1.3,0.86);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{minipage}
+
+\textit{Resolución:}
+
+\textit{a})\\
+\begin{minipage}[t]{.4\textwidth}
+Llamemos $a$, $b$, $c$ y $d$ a los siguientes estados:
+\begin{center}
+  \begin{tikzpicture}[scale=0.9]
+    \begin{axis}[
+      % ticks=none,
+      axis x line=bottom,
+      axis y line=left,
+      xmin=0.4, xmax=1.6, 
+      ymin=0, ymax=4, 
+      xlabel={$V$~[$\ell$]},
+      ylabel={$p$~[atm]},
+      xtick={0.75,1.3},
+      xticklabels={$0.75$,$1.3$},
+      ytick={0.86, 1.4, 2.8, 3.5},
+      yticklabels={$0.86$, $1.4$, $2.8$, $3.5$}
+      ];
+    \draw [color=blue, very thick] (0.75,1.4)--(0.75,3.5) node[currarrow, pos=0.5, xscale=1,sloped,scale=1] {};
+    \draw [color=blue, very thick] (0.75,3.5) -- (1.3,2.8) node[currarrow, pos=0.5, xscale=1,sloped,scale=1] {};
+    \draw [color=blue, very thick] (1.3,2.8) -- (1.3,0.86) node[currarrow, pos=0.5, xscale=1,sloped,scale=1] {};
+    \draw [color=blue, very thick] (1.3,0.86) -- (0.75,1.4) node[currarrow, pos=0.5, xscale=-1,sloped,scale=1] {};
+    \draw [dotted] (0,0.86) -- (1.3,0.86);
+    \draw [dotted] (0,1.4) -- (0.75,1.4);
+    \draw [dotted] (0,2.8) -- (1.3,2.8);
+    \draw [dotted] (0,3.5) -- (0.75,3.5);
+    \draw [dotted] (0.75,0) -- (0.75,1.4);
+    \draw [dotted] (1.3,0) -- (1.3,0.86);
+    \fill [black](0.75,1.4) circle(2pt) node [left] {$a$};
+    \fill [black](0.75,3.5) circle(2pt) node [left] {$b$};
+    \fill [black](1.3,2.8) circle(2pt) node [right] {$c$};
+    \fill [black](1.3,0.86) circle(2pt) node [right] {$d$};
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+\end{minipage}
+\hspace{0.02\linewidth}
+\begin{minipage}[t]{.55\textwidth}
+
+Las temperaturas en esos estados son:
+\begin{flalign*}
+  T_a &= \frac{\SI{1.4}{atm}\cdot\SI{0.75}{\litre}}{\SI{0.052}{\mole}\cdot\SI{0.082}{atm . \litre/(\mole . \kelvin)}} = \SI{246.2}{\kelvin}\\
+  T_b &= \frac{\SI{3.5}{atm}\cdot\SI{0.75}{\litre}}{\SI{0.052}{\mole}\cdot\SI{0.082}{atm . \litre/(\mole . \kelvin)}} = \SI{615.6}{\kelvin}\\
+  T_c &= \frac{\SI{2.8}{atm}\cdot\SI{1.3}{\litre}}{\SI{0.052}{\mole}\cdot\SI{0.082}{atm . \litre/(\mole . \kelvin)}} = \SI{853.7}{\kelvin}\\
+  T_d &= \frac{\SI{0.86}{atm}\cdot\SI{1.3}{\litre}}{\SI{0.052}{\mole}\cdot\SI{0.082}{atm . \litre/(\mole . \kelvin)}} = \SI{262.2}{\kelvin}
+\end{flalign*}
+\end{minipage}
+
+Trabajo realizado en cada proceso y en el ciclo:
+\begin{flalign*}
+  W_{ab} &= 0\\
+  W_{bc} &= \frac{(\SI{1.3}{\litre} - \SI{0.75}{\litre})\cdot(\SI{3.5}{atm}-\SI{2.8}{atm})}{2} + (\SI{1.3}{\litre} - \SI{0.75}{\litre})\cdot\SI{2.8}{atm} = \SI{1.7325}{atm . \litre} = \SI{175.5}{\joule} \\
+  W_{cd} &= 0\\
+  W_{da} &=-(\SI{1.3}{\litre} - \SI{0.75}{\litre})\cdot\left ( \frac{(\SI{1.4}{atm}-\SI{0.86}{atm})}{2} + \SI{0.86}{atm}\right ) = \SI{-0.6215}{atm . \litre} = \SI{-62.96}{\joule} \\
+  W_\text{ciclo} &= W_{ab}+W_{bc}+W_{cd}+W_{da} =  \SI{1.11}{atm . \litre} = \SI{112.5}{\joule}
+\end{flalign*}
+
+Calor intercambiado en cada proceso:
+\begin{flalign*}
+  Q_{ab} &= nC_v(T_b-T_a) = n\frac{5}{2}R\frac{P_bV_b-P_aV_a}{nR} = \frac{5}{2}\cdot(3.5\cdot 0.75 - 1.4\cdot 0.75)\si{atm . \litre} = \SI{3.94}{atm . \litre} = \SI{398.9}{\joule} \\
+  Q_{bc} &= \Delta U_{bc} + W_{bc} = nC_v(T_c-T_b) + W_{bc} =\\
+  &= n\frac{5}{2}R\frac{P_cV_c-P_bV_b}{nR} + W_{bc} = \\
+  &= \frac{5}{2}\cdot(2.8\cdot 1.3 - 3.5\cdot 0.75)\si{atm . \litre} + \SI{1.7325}{atm . \litre} = \SI{4.27}{atm . \litre} = \SI{432.6}{\joule} \\
+  Q_{cd} &= nC_v(T_d-T_c) = n\frac{5}{2}R\frac{P_dV_d-P_cV_c}{nR} = \frac{5}{2}\cdot(0.86\cdot 1.3 - 2.8\cdot 1.3)\si{atm . \litre} = \SI{-6.305}{atm . \litre} = \SI{-638.7}{\joule} \\
+  Q_{da} &= \Delta U_{da} + W_{da} = nC_v(T_d-T_a) + W_{da} =\\
+  &= n\frac{5}{2}R\frac{P_dV_d-P_aV_a}{nR} + W_{da} = \\
+  &= \frac{5}{2}\cdot(1.4\cdot 0.75 - 0.86\cdot 1.3)\si{atm . \litre} - \SI{0.6215}{atm . \litre} = \SI{-0.792}{atm . \litre} = \SI{-80.23}{\joule}
+\end{flalign*}
+
+Eficiencia:
+\begin{flalign*}
+  e &= \frac{W_\text{ciclo}}{Q_\text{abs}} = \frac{\SI{112.5}{\joule}}{\SI{398.9}{\joule}+\SI{432.6}{\joule}}
+\end{flalign*}
+
+Respuesta: $e = 0.135$
+
+\textit{b}) 
+El gas realiza un ciclo, entonces: $\Delta S_\text{gas} = 0$\\
+
+Si llamamos $Q_f$ al calor absorbido por el depósito frío y $Q_c$ al calor cedido por el depósito caliente, la variación de entropía del Universo es:
+\begin{flalign*}
+  \Delta S_\text{U} &= \frac{Q_f}{T_f} - \frac{Q_c}{T_c}\\
+  \Delta S_\text{U} &= \frac{\SI{638.7}{\joule} + \SI{80.23}{\joule}}{\SI{246.2}{\kelvin}} - \frac{\SI{398.9}{\joule}+\SI{432.6}{\joule}}{\SI{853.7}{\kelvin}} = \SI{1.94}{\joule/\kelvin}
+\end{flalign*}
+\end{enumerate}
+
+\end{document}

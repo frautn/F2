@@ -1,0 +1,97 @@
+\documentclass[tikz,border=10pt]{standalone}
+
+\usepackage[a4paper,left=5.5cm,right=1.5cm,top=5cm,bottom=1.5cm]{geometry}
+
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{cuted}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{patterns}
+
+\def\cosa{-0.69466}
+\def\sina{-0.71934}
+% A custom arrowhead for use on x, y, z axes
+\tikzstyle{axisarrow} = [-{Latex[inset=0pt,length=5pt]}]
+
+\begin{document}
+
+
+% \begin{center}
+%     \begin{circuitikz}[scale=1]
+%       \draw (0,0) to[battery2, invert, l=$6\,\text{V}$] (0,2)
+%       to[battery2, invert, l=$4\,\text{V}$] (0,4)
+%       to[R, l_=$30\,\Omega$] (3.5,4) to (5.5,4)
+%       to[battery2, l=$6\,\text{V}$] (5.5,0)
+%       to (3.5,0)
+%       to[R, l_=$50\,\Omega$] (0,0);
+%       \draw (0,2) to[R, l=\mbox{$R_0 = 50\,\Omega$}] (3.5,2);
+%       \draw (3.5,4) to[R, l=$R_1$] (3.5,2)
+%       to[R, l=$R_2$] (3.5,0);
+
+%     %   (0,2.5) to[R=$R$, color=red] (2.5,2.5) to[R=$R$, color=red] (5,2.5)
+%     %   (5,0) -- (2.5,0) to[R=$R$, color=red] (0,0)
+%     %   (0,0) -- (1,1)
+%     %   (1.5,1.5) -- (2.5,2.5);
+%     %   \fill (1,1) circle (3pt);
+%     %   \fill (1.5,1.5) circle (3pt);
+%     %   \draw (1,1) node[right]{$A$};
+%     %   \draw (1.5,1.5) node[right]{$B$};
+%     \end{circuitikz}
+% \end{center}
+
+
+Calcular la energía almacenada en el capacitor cuando el circuito se encuentra operando en régimen estacionario.
+
+\begin{center}
+  \begin{circuitikz}[scale=1]
+      \draw (2.5,0) to[battery2, invert, l=$110\,\text{V}$] (2.5,1.5) to[R, l=$14.2\,\text{k}\Omega$] (2.5,3.5);
+      \draw (0,0) to[R, l=$10.5\,\text{k}\Omega$] (0,3.5) -- (5,3.5)
+      to[R, l_=$22.1\,\text{k}\Omega$] (5,1.5)
+      to[C, l_=$8.55\,\text{mF}$] (5,0) -- (0,0);
+  \end{circuitikz}
+\end{center}
+
+
+\end{document}
+
+
+
+

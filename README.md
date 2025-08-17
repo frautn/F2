@@ -9,9 +9,17 @@
 </tr>
 </table>
 
-[![License: CC-BY 4.0](https://img.shields.io/badge/License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) 2024 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
+[![License: CC-BY 4.0](https://img.shields.io/badge/License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) 2025 Edgardo Palazzo (epalazzo@fra.utn.edu.ar)
 
 # Física 2
+
+Una colección de material utilizado en la materia Física 2 en la Facultad Regional Avellaneda de la Universidad Tecnológica Nacional.
+
+  - \guias\ : código $\LaTeX$ de las guías de ejercitación.
+  - \examenes\ : código $\LaTeX$ de exámenes. 
+
+
+## Cuadernos
 
 [Forzado](https://colab.research.google.com/github/frautn/F2/blob/main/itba/forzadas.ipynb)
 

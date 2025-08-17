@@ -1,0 +1,171 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+\usepackage{pgffor}
+\usepackage{readarray}
+
+% --------------------------------------
+% Formatting the header.
+\def\M{7} % Number of columns in header.
+\def\N{5} % Columns for questions (can be different to actual number of qstions).
+\def\P{2} % Columns reserved for Total.
+
+% Number of questions and points.
+% --------------------------------------
+
+
+% --------------------------------------
+% Data for questions.
+% Don't remove the '%' after \data{
+\def\data{%
+A 5.0 26 520 9.77 80
+B 2.4 26 520 6.50 70
+C 5.0 32 592 5.55 30
+D 6.0 32 592 4.44 30
+}
+\readarray\data\dataA[4,6] %read the data to \dataA
+% --------------------------------------
+
+\newcommand{\answer}{\rule[-5pt]{120pt}{0.4pt}}
+
+\usepackage[most]{tcolorbox}
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\foreach \j in {1,...,4} {
+
+% Nombres y Apellido: el Código Civil y Comercial estableció el uso de un solo
+% apellido, de cualquiera de los padres, y de manera opcional el del otro progenitor
+
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}
+
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}1\textsuperscript{er} parcial}
+
+    14 de julio de 2023
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0.5pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=\M, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=\N,tabularheader]
+  % \begin{tcolorbox}[raster multicolumn=\N,tabularheader,title={\footnotesize some nice title}]
+   1 \par (1 pt) \bigskip\bigskip\bigskip & 2 \par (1 pt) & 3\par (3 pt) & 4 \par (1,5 pt) & 5 \par (3,5 pt)
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=\P, colback=white,left=2pt,right=2pt]
+    Nota
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\end{tcolorbox}
+
+\textbf{Justificar todas las respuestas.} \hfill (\dataA[\j,1])
+
+\begin{enumerate}[leftmargin=*]
+
+% \begin{minipage}[t]{.6\textwidth}
+\item Una de las paredes de una habitación tiene una superficie igual a $\SI{8.0}{\metre\squared}$ y su espesor es $\SI{15}{\centi\metre}$, y está construida con un material cuya conductividad térmica es $\SI{0.75}{\watt\metre^{-1}\kelvin^{-1}}$. Calcule la potencia (corriente de calor) transmitida a través de esta pared cuando la temperatura interior es $\SI{\dataA[\j,3]}{\celsius}$ y la exterior es $\SI{4.0}{\celsius}$, considerando que el coeficiente de convección del aire a ambos lados de la pared vale $\SI{\dataA[\j,2]}{\watt\metre^{-2}\kelvin^{-1}}$.\par\bigskip
+
+\textit{Respuesta:} \answer\par\bigskip
+
+\item
+  En un calorímetro ideal que contiene agua a $\SI{50}{\celsius}$ se introduce una pieza de metal a $\SI{\dataA[\j,6]}{\celsius}$ y se deja evolucionar el sistema aislado del entorno, hasta que alcanza el equilibrio. Marque todas las opciones correctas:\par
+  \begin{tabularx}{\textwidth}{llll}
+    $\square$ $\Delta U_\text{agua} > 0$ &  $\square$ $|\Delta U_\text{metal}| > |\Delta U_\text{agua}|$ & $\square$ $|\Delta U_\text{metal}| < |\Delta U_\text{agua}|$ & $\square$ $|\Delta U_\text{metal}| = |\Delta U_\text{agua}|$\\
+    $\square$ $\Delta S_\text{metal} > 0$ & $\square$ $|\Delta S_\text{metal}| > |\Delta S_\text{agua}|$ & $\square$ $|\Delta S_\text{metal}| < |\Delta S_\text{agua}|$ & $\square$ $|\Delta S_\text{metal}| = |\Delta S_\text{agua}|$\\
+  \end{tabularx}
+
+\item
+  Una máquina térmica funciona entre una fuente caliente a $\SI{700}{\kelvin}$ y una fuente fría a $\SI{310}{\kelvin}$ realizando el siguiente ciclo: \textit{i}) $0.064$ moles de un gas ideal monoatómico a $\SI{535}{\kelvin}$ se ponen en contacto con la fuente caliente y se deja evolucionar el sistema manteniendo su volumen constante hasta que alcance el equilibrio con la fuente. \textit{ii}) Manteniendo el gas en contacto con la fuente caliente, realiza una expansión isotérmica hasta que su volumen sea $2.3$ veces el volumen inicial. \textit{iii}) Luego se enfría en contacto con la fuente fría, manteniendo su volumen constante hasta llegar al equilibrio con la fuente. \textit{iv}) Finalmente el gas vuelve al estado inicial en una evolución adiabática irreversible.\par
+  \textit{a}) ¿Cuánto calor hay que suministrar a la máquina en cada ciclo?\par
+  \textit{b}) Calcule la eficiencia de la máquina.\par
+  \textit{c}) Calcule la variación de entropía del Universo en cada ciclo.
+
+\item Un haz de luz de longitud de onda igual a $\SI{\dataA[\j,4]}{\nano\metre}$ (valor correspondiente al medio en el que se está propagando) incide en forma perpendicular sobre una ranura angosta, y se observa el patrón generado en una pantalla ubicada a $\SI{75.0}{\centi\metre}$ de distancia de la ranura. Si el ancho de la campana principal mide $\SI{\dataA[\j,5]}{\centi\metre}$, ¿cuánto vale el ancho de la ranura?\par\bigskip
+
+\textit{Respuesta:} \answer\par\bigskip
+
+\item
+  Se hace incidir normalmente un haz de luz de longitud de onda en el vacío $\lambda_0 = \SI{590}{\nano\metre}$ sobre un plano que contiene dos rendijas. La separación entre las rendijas es de $\SI{25}{\micro\metre}$ y el ancho de cada rendija es de $\SI{5.0}{\micro\metre}$. Considere que el experimento se realiza en el vacío.\par
+  \textit{a}) ¿En qué ángulo se observa el máximo de interferencia de orden 20?\par
+  \textit{b}) Si el patrón generado en esta experiencia se observa en una pantalla ubicada a $\SI{40}{\centi\metre}$ de las ranuras, ¿cuál es la separación (en mm) entre los máximos de orden 20 y orden 21?\par
+  \textit{c}) Considerando que la intensidad de la luz que sale de cada rendija vale 1 (unidades arbitrarias), ¿cuál es la intensidad del máximo de orden 20?\par
+  \textit{d}) Si ahora el haz incide sobre las rendijas con un ángulo igual a $\SI{4.5}{\degree}$, ¿cuál es la nueva intensidad en la posición donde antes estaba el máximo de orden 20 (en el mismo ángulo calculado en el ítem \textit{a}?
+
+
+
+\end{enumerate}
+
+\newpage
+}
+
+\end{document}

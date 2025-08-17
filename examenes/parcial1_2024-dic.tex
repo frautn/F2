@@ -1,0 +1,170 @@
+\documentclass[a4paper,11pt,dvipsnames, twocolumn]{article}
+\setlength{\columnseprule}{0.3pt}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{cuted}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{patterns}
+
+\def\cosa{-0.69466}
+\def\sina{-0.71934}
+% A custom arrowhead for use on x, y, z axes
+\tikzstyle{axisarrow} = [-{Latex[inset=0pt,length=5pt]}]
+
+
+\usepackage{pgffor}
+\usepackage{readarray}
+
+% --------------------------------------
+% Formatting the header.
+\def\M{30} % Number of columns in header.
+\def\N{27} % Columns for questions (can be different to actual number of questions).
+\def\P{3} % Columns reserved for Total.
+
+% Number of questions and points.
+% --------------------------------------
+
+
+% % --------------------------------------
+% % Data for questions.
+% % Don't remove the '%' after \data{
+% \def\data{%
+% A 5.0 26 520 9.77 80
+% B 2.4 26 520 6.50 70
+% C 5.0 32 592 5.55 30
+% D 6.0 32 592 4.44 30
+% }
+% \readarray\data\dataA[4,6] %read the data to \dataA
+% % --------------------------------------
+
+
+\usepackage[most]{tcolorbox}
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{8}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+% \foreach \j in {1,...,4} {
+
+% Nombres y Apellido: el Código Civil y Comercial estableció el uso de un solo
+% apellido, de cualquiera de los padres, y de manera opcional el del otro progenitor
+
+
+\begin{strip} %place some material in full-width at any place on double-column page
+  \vspace{-1.25cm}
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}\par
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y} Recuperatorio del 1\textsuperscript{do} parcial}\par
+    13 de diciembre de 2024
+    % PARA REVISAR
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=\M, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=\N,tabularheader]
+  % \begin{tcolorbox}[raster multicolumn=\N,tabularheader,title={\footnotesize some nice title}]
+1 {\small ($2$ pts)}\par   \medskip\bigskip\bigskip & 2 {\small ($2$ pts)} & 3 {\small ($3$ pts)} & 4 {\small ($3$ pts)} & I & II & III
+  %  1 (a) \par \bigskip\bigskip & 1 (b) \par  & 2 (a) \par  & 2 (b) \par  & 3 (a) \par  & 3 (b) \par & 4 \par 
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=\P, colback=white,left=2pt,right=2pt]
+    Nota
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\end{tcolorbox}
+% \textbf{Justificar todas las respuestas.} \hfill (\dataA[\j,1])
+\textit{Para alcanzar la condición de Aprobación con Final debe sumar 4 puntos o más en los problemas 1 a 4. Para alcanzar la condición de Aprobación Directa debe sumar 6 puntos o más en los problemas 1 a 4, y responder correctamente al menos 2 de las preguntas I a III. \textbf{Justificar todas las respuestas.}}
+\end{strip}
+
+\begin{enumerate}[wide, labelwidth=2pt, labelindent=0pt]
+  
+  \item Una máquina frigorífica extrae calor de un reservorio a temperatura constante de $7^\circ\text{C}$, recibiendo $1000\,\text{J}$ de trabajo y expulsando $1350\,\text{J}$ de calor hacia un reservorio a temperatura constante de $33^\circ\text{C}$, en cada ciclo. ¿Cuál es la variación de entropía del reservorio frío en cada ciclo?
+  
+  
+  \item Dos varillas de igual longitud e igual sección transversal se unen extremo con extremo. La primera varilla tiene una conductividad térmica $k_1$ y su extremo libre se encuentra en contacto con un objeto que mantiene una temperatura constante de $\SI{150}{\celsius}$. La segunda varilla tiene una conductividad térmica $2.5k_1$ y su extremo libre está en contacto con una mezcla de agua y hielo. ¿Cuál es la temperatura en la unión de las varillas cuando la transmisión del calor se encuentra en régimen estacionario?
+
+\item Un gas ideal monoatómico se encuentra en el interior de un recipiente cerrado provisto de un pistón móvil. El gas se encuentra en el estado de equilibrio $A$ a una temperatura $T_A$. A continuación, el gas desarrolla un ciclo termodinámico entre los puntos $A\rightarrow B \rightarrow C \rightarrow A$ de la siguiente forma: $A\rightarrow B$) el gas se expande en forma isobárica y reversible, hasta que su temperatura sea $1.5T_A$. $B\rightarrow C$) se traba el pistón, se pone el gas en contacto con una fuente térmica a la misma temperatura $T_A$ del estado inicial y se deja evolucionar el sistema hasta el equilibrio térmico. $C \rightarrow A$) Se destraba el pistón y el gas evoluciona isotérmica y reversiblemente hasta el estado inicial, en contacto con la fuente a $T_A$. \textit{a}) Grafique cualitativamente el ciclo en un diagrama $p-V$, indicando los procesos reversibles e irreversibles con líneas llenas y punteadas respectivamente. \textit{b}) Calcule la eficiencia térmica de este ciclo. 
+
+\item En el origen de coordenadas se encuentra una esfera de radio $r=0.1\text{ m}$, cargada uniformemente con una carga total $Q$, y en la posición $(0;1)\text{ m}$ se encuentra una carga puntual $q$. Se sabe que el campo eléctrico producido por estas cargas en la posición $(2;0)\text{ m}$ es:\\
+$\vec{E}(2;0) = \left ( -24000\hat{i}+48300\hat{j} \right )\text{ N/C}$\\
+a) Encuentre los valores de las cargas $Q$ y $q$.\\
+b) Calcule el potencial eléctrico en la posición $(2;0)\text{ m}$.
+
+\end{enumerate}
+
+\begin{enumerate}[label=\roman*., wide, labelwidth=!, labelindent=0pt]
+
+    \item Cuando una muestra de hielo se derrite a $0^\circ\text{C}$, su volumen disminuye. ¿El cambio de energía interna de la muestra es mayor, menor o igual al calor agregado?
+    \item En las zonas muy frías, en las ventanas se utilizan dos vidrios separados algunos centímetros entre sí donde se confina una capa de aire estanco. ¿Cómo influye esta estructura en la transmisión del calor? Si la separación entre ambos vidrios se incrementa y se permite el movimiento del aire, ¿qué sucede con el aislamiento?
+    \item En cierta región del espacio, el potencial electrostático está dado por $V = A + Bx + Cy^3 + Dxy$, donde $A$, $B$, $C$ y $D$ son constantes positivas. ¿Es correcto el siguiente enunciado sobre el campo eléctrico en esa región? : ``$\vec{E}$ no tiene componente $z$".
+
+\end{enumerate}
+
+
+\end{document}

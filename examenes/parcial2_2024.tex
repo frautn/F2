@@ -1,0 +1,230 @@
+\documentclass[a4paper,11pt,dvipsnames, twocolumn]{article}
+\setlength{\columnseprule}{0.3pt}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{cuted}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{patterns}
+
+\def\cosa{-0.69466}
+\def\sina{-0.71934}
+% A custom arrowhead for use on x, y, z axes
+\tikzstyle{axisarrow} = [-{Latex[inset=0pt,length=5pt]}]
+
+
+\usepackage{pgffor}
+\usepackage{readarray}
+
+% --------------------------------------
+% Formatting the header.
+\def\M{30} % Number of columns in header.
+\def\N{27} % Columns for questions (can be different to actual number of questions).
+\def\P{3} % Columns reserved for Total.
+
+% Number of questions and points.
+% --------------------------------------
+
+
+% % --------------------------------------
+% % Data for questions.
+% % Don't remove the '%' after \data{
+% \def\data{%
+% A 5.0 26 520 9.77 80
+% B 2.4 26 520 6.50 70
+% C 5.0 32 592 5.55 30
+% D 6.0 32 592 4.44 30
+% }
+% \readarray\data\dataA[4,6] %read the data to \dataA
+% % --------------------------------------
+
+
+\usepackage[most]{tcolorbox}
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{8}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+% \foreach \j in {1,...,4} {
+
+% Nombres y Apellido: el Código Civil y Comercial estableció el uso de un solo
+% apellido, de cualquiera de los padres, y de manera opcional el del otro progenitor
+
+
+\begin{strip} %place some material in full-width at any place on double-column page
+  \vspace{-1.25cm}
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}\par
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}2\textsuperscript{do} parcial}\par
+    15 de noviembre de 2024
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=\M, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=\N,tabularheader]
+  % \begin{tcolorbox}[raster multicolumn=\N,tabularheader,title={\footnotesize some nice title}]
+   1 \par {\small ($2.5$ pts)} \bigskip\bigskip & 2 (a) \par {\small ($1.5$ pts)} & 2 (b) \par {\small ($2$ pts)} & 3 (a) \par {\small ($1$ p)} & 3 (b) \par {\small (1 p)} & 4 \par {\small (2 pts)}
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=\P, colback=white,left=2pt,right=2pt]
+    Nota
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\end{tcolorbox}
+% \textbf{Justificar todas las respuestas.} \hfill (\dataA[\j,1])
+% \textit{Para alcanzar la condición de Aprobación con Final debe sumar 4 puntos o más en los problemas 1 a 4. Para alcanzar la condición de Aprobación Directa debe sumar 6 puntos o más en los problemas 1 a 4, y responder correctamente al menos 2 de las preguntas I a III.}
+\end{strip}
+
+\begin{enumerate}[wide, labelwidth=2pt, labelindent=0pt]
+  % [leftmargin=*]
+
+
+\item Calcular los valores de $R_1$ y $R_2$ a fin de que por la resistencia $R_0$ no circule corriente sabiendo que $R_1 + R_2 = 90\,\Omega$.
+
+\begin{center}
+    \begin{circuitikz}[scale=1]
+      \draw (0,0) to[battery2, invert, l=$6\,\text{V}$] (0,2)
+      to[battery2, invert, l=$4\,\text{V}$] (0,4)
+      to[R, l_=$30\,\Omega$] (3.5,4) to (5.5,4)
+      to[battery2, l=$6\,\text{V}$] (5.5,0)
+      to (3.5,0)
+      to[R, l_=$50\,\Omega$] (0,0);
+      \draw (0,2) to[R, l=\mbox{$R_0 = 50\,\Omega$}] (3.5,2);
+      \draw (3.5,4) to[R, l=$R_1$] (3.5,2)
+      to[R, l=$R_2$] (3.5,0);
+    \end{circuitikz}
+\end{center}
+  
+
+
+
+\item Un campo magnético uniforme en la dirección indicada varía en el tiempo como $\vec{B}(t) = 1.5\,\text{T/s}^2\,t^2\,\hat{i}$. Una espira rectangular forma un ángulo $\alpha = 30^\circ$ con la dirección del campo magnético, como se muestra en la figura.\\
+\textit{a}) Escribir una función del tiempo para el flujo del campo magnético a través de la espira.\\
+\textit{b}) Calcular la corriente inducida en la espira en el instante $t = 2.0\,\text{s}$, indicando el sentido de circulación, si la resistencia eléctrica de la espira es $100\,\Omega$.
+
+\begin{center}
+  \tdplotsetmaincoords{55}{130}
+  \begin{tikzpicture}[tdplot_main_coords, scale=1]
+    \draw[-latex] (4,0,0) -- (-4,0,0) node [above, pos=1] {$i$};
+    \draw[-latex] (0,0,0) -- (0,-3,0) node [pos=1.05] {$j$};
+    \draw[-latex] (0,0,0) -- (0,0,4)  node [left] {$k$};
+    \draw[very thick] (0,0,0) -- (2,3,0) -- (2,3,3) -- (0,0,3) -- cycle;
+    % \draw[] (0.1,-0.05,0) -- (2.1,2.95,0) -- (2.1,2.95,3) -- (0.1,-0.05,3) -- cycle;
+    % \draw[] (-0.1,0.05,0) -- (1.9,3.05,0) -- (1.9,3.05,3) -- (-0.1,0.05,3) -- cycle;
+    % \draw[red, -{latex}, very thick] (0.2,0,1) -- (0.2,0,2.5) node [midway, left] {$i$};
+    \draw[{latex}-{latex}] (0.2,0.2,3.55) -- (2,3,3.55) node [midway, right] {$20\,\text{cm}$};
+    \draw[{latex}-{latex}] (2,3.35,0) -- (2,3.35,3) node [midway, right] {$30\,\text{cm}$};
+    \draw[-{latex}, thick] (0,2.5,1.5) -- (-3,2.5,1.5) node [midway, above] {$\va*{B}$};
+    % \draw[red, -{latex}, thick] (0.9,-2.5,2.5) -- (0.9,-0.5,2.5);
+    % \draw[red, -{latex}, thick] (0.9,3,2.5) -- (0.9,5,2.5);
+    % \draw[red, -{latex}, thick] (0.9,-2.5,0) -- (0.9,-0.5,0);
+    % \draw[red, -{latex}, thick] (0.9,3,0) -- (0.9,5,0);
+    \draw[-latex] (0:2.5) arc (0:53:2.5) node[black,midway,below] {$\alpha$};
+  \end{tikzpicture}
+\end{center}
+
+\vspace{3cm}
+
+\item Dos hilos infinitos paralelos situados a una distancia de $24\,\text{cm}$ uno del otro transportan corrientes $I_1 = 4\,\text{A}$ e $I_2 = 3\,\text{A}$, en sentidos opuestos.\\
+\textit{a}) Definir un sistema de referencia y calcular el vector de la fuerza por unidad de longitud que ejerce el hilo 1 sobre el 2.\\
+\textit{b}) En un instante dado, una carga puntual $q$ de $8\,\mu\text{C}$ pasa por un punto ubicado a una distancia de $11\,\text{cm}$ del hilo 2, con una velocidad paralela a los hilos de módulo $5\times 10^5\,\text{m/s}$, como muestra la figura. Determinar el vector de la fuerza neta ejercida sobre la carga.
+
+\begin{center}
+  \begin{tikzpicture}[scale=0.5]
+      \draw (6,0) ellipse (0.1 and 0.2);
+      \draw (-5,0) +(90:0.1 and 0.2) arc (90:270:0.1 and 0.2);
+      \draw [black] (-5,0.2)--(6,0.2);
+      \draw [black] (-5,-0.2)--(6,-0.2);
+      \draw [{Stealth}-, thick] (-4,0)--(-1,0) node[midway,above] {$\SI{3}{\ampere}$};
+      \draw (6,3) ellipse (0.1 and 0.2);
+      \draw (-5,3) +(90:0.1 and 0.2) arc (90:270:0.1 and 0.2);
+      \draw [black] (-5,3.2)--(6,3.2);
+      \draw [black] (-5,2.8)--(6,2.8);
+      \draw [-{Stealth}, thick] (-4,3)--(-1,3) node[midway,above] {$\SI{4}{\ampere}$};
+      \fill [] (0,-1.4) circle (0.15) node[left] {$q$};
+      \draw [-{Stealth}] (0,-1.4)--(2,-1.4) node[midway,above] {$v$};
+      \draw [{Stealth}-{Stealth}] (-5.5,0) -- (-5.5,3) node[midway, left] {$\SI{24}{\centi\metre}$};
+  \end{tikzpicture}
+\end{center}
+
+
+\item Calcular la energía almacenada en el capacitor cuando el circuito se encuentra operando en régimen estacionario.
+
+\begin{center}
+  \begin{circuitikz}[scale=1]
+      \draw (2.5,0) to[battery2, invert, l=$110\,\text{V}$] (2.5,1.5) to[R, l=$14.2\,\text{k}\Omega$] (2.5,3.5);
+      \draw (0,0) to[R, l=$10.5\,\text{k}\Omega$] (0,3.5) -- (5,3.5)
+      to[R, l_=$22.1\,\text{k}\Omega$] (5,1.5)
+      to[C, l_=$8.55\,\text{mF}$] (5,0) -- (0,0);
+  \end{circuitikz}
+\end{center}
+
+\end{enumerate}
+
+
+\end{document}

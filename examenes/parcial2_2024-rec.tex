@@ -1,0 +1,213 @@
+\documentclass[a4paper,11pt,dvipsnames, twocolumn]{article}
+\setlength{\columnseprule}{0.3pt}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{cuted}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{patterns}
+
+\def\cosa{-0.69466}
+\def\sina{-0.71934}
+% A custom arrowhead for use on x, y, z axes
+\tikzstyle{axisarrow} = [-{Latex[inset=0pt,length=5pt]}]
+
+
+\usepackage{pgffor}
+\usepackage{readarray}
+
+% --------------------------------------
+% Formatting the header.
+\def\M{30} % Number of columns in header.
+\def\N{27} % Columns for questions (can be different to actual number of questions).
+\def\P{3} % Columns reserved for Total.
+
+% Number of questions and points.
+% --------------------------------------
+
+
+% % --------------------------------------
+% % Data for questions.
+% % Don't remove the '%' after \data{
+% \def\data{%
+% A 5.0 26 520 9.77 80
+% B 2.4 26 520 6.50 70
+% C 5.0 32 592 5.55 30
+% D 6.0 32 592 4.44 30
+% }
+% \readarray\data\dataA[4,6] %read the data to \dataA
+% % --------------------------------------
+
+
+\usepackage[most]{tcolorbox}
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{8}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+% \foreach \j in {1,...,4} {
+
+% Nombres y Apellido: el Código Civil y Comercial estableció el uso de un solo
+% apellido, de cualquiera de los padres, y de manera opcional el del otro progenitor
+
+
+\begin{strip} %place some material in full-width at any place on double-column page
+  \vspace{-1.25cm}
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}\par
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y} Recuperatorio del 2\textsuperscript{do} parcial}\par
+    6 de diciembre de 2024
+    % PARA REVISAR
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=\M, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=\N,tabularheader]
+  % \begin{tcolorbox}[raster multicolumn=\N,tabularheader,title={\footnotesize some nice title}]
+   1 (a) \par {\small ($2$ pts)} \bigskip\bigskip & 1 (b) \par {\small ($1$ pt)} & 2 (a) \par {\small ($1$ pt)} & 2 (b) \par {\small ($1$ pt)} & 3 (a) \par {\small ($2$ pts)} & 3 (b) \par {\small ($1.5$ pts)} & 4 \par {\small ($1.5$ pts)}
+  %  1 (a) \par \bigskip\bigskip & 1 (b) \par  & 2 (a) \par  & 2 (b) \par  & 3 (a) \par  & 3 (b) \par & 4 \par 
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=\P, colback=white,left=2pt,right=2pt]
+    Nota
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\end{tcolorbox}
+% \textbf{Justificar todas las respuestas.} \hfill (\dataA[\j,1])
+% \textit{Para alcanzar la condición de Aprobación con Final debe sumar 4 puntos o más en los problemas 1 a 4. Para alcanzar la condición de Aprobación Directa debe sumar 6 puntos o más en los problemas 1 a 4, y responder correctamente al menos 2 de las preguntas I a III.}
+\end{strip}
+
+\textbf{Justificar todas las respuestas.}
+\begin{enumerate}[wide, labelwidth=2pt, labelindent=0pt]
+  % [leftmargin=*]
+
+
+\item Los valores de los elementos del circuito mostrado en la figura son: $\varepsilon_1 = \SI{24.0}{\volt}$; $\varepsilon_2 = \SI{36.0}{\volt}$; $R_1 = \SI{1.60}{k\ohm}$; $R_2 = \SI{2.55}{k\ohm}$; $R_3 = \SI{0.74}{k\ohm}$; $R_4 = \SI{0.17}{k\ohm}$; $R_5 = \SI{5.30}{k\ohm}$ y $C = \SI{1}{\milli\farad}$. Considerando que el circuito se encuentra funcionando en régimen estacionario:\\
+\textit{a}) Calcular la diferencia de potencial eléctrico entre los conectores $a$ y $b$, calculada como $V_b - V_a$.\\
+\textit{b}) Calcular la carga almacenada en el capacitor, indicando cuál de las dos placas (1 o 2) se encuentra cargada positivamente.
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw (0,0) to[R, l=$R_1$] (0, 3.5) -- (1.5, 3.5)
+    to[R, l_=$R_2$] (1.5, 0);
+    \draw (1.5,3.5) to[R, l=$R_3$] (4,3.5) -- (6.5, 3.5)
+    to[battery2, l_=$\varepsilon_2$] (6.5,0)
+    to[R, l=$R_5$] (4, 0)
+    to[battery2, invert, l_=$\varepsilon_1$] (1.5,0) -- (0,0);
+    \draw (4,0) to[R, l=$R_4$] (4, 3.5);
+    \draw (4,0) -- (4,-1.5) 
+    to[C, l_=$C$] (6.5,-1.5) -- (6.5,0);
+    \draw (4,0.75) -- (4.75,0.75);
+    \draw (4,2.75) -- (4.75,2.75);
+    \node [ocirc] (A) at (4.75,2.75) {$\text{ }a$};
+    \node [ocirc] (A) at (4.75,0.75) {$\text{ }b$};
+    \node [below] at (4.9,-0.9) {$1$};
+    \node [below] at (5.6,-0.9) {$2$};
+
+  \end{circuitikz}
+\end{center}
+
+
+\item Se tiene un cable recto infinito, paralelo al eje $z$, que pasa por el punto $(\SI{0.05}{m};0;0)$, y que transporta una corriente de $\SI{62}{\ampere}$ que circula en sentido hacia $z$-positivo. Además se tiene una esfera de radio igual $\SI{0.01}{m}$, centrada en la posición $(\SI{-0.05}{m};0;0)$, con carga eléctrica total igual a $\SI{2E{-12}}{C}$, distribuida uniformemente en su volumen. En un cierto instante, una partícula puntual con una carga de $\SI{5E{-3}}{C}$, pasa por la posición $(0;\SI{0.05}{m};0)$, con velocidad $\vec{v} = \SI{2E4}{m/s}\,\hat{x}$. El cable y la esfera se mantienen fijos en sus posiciones.\\
+\textit{a}) Determinar el vector de la fuerza neta ejercida sobre la partícula en ese instante.\\
+\textit{b}) En los instantes siguientes al analizado en el ítem \textit{a}, ¿la rapidez de la partícula será mayor, menor o igual a la que tenía en la situación del ítem anterior?
+
+
+\item En la figura se muestra una bobina cuadrada de 500 vueltas, cuyos lados miden $\SI{20}{\centi\metre}$, ubicada sobre el mismo plano que un cable infinito a una distancia fija $d = \SI{2}{\centi\metre}$. La corriente que circula por el cable es $i(t) = a + bt^2$, con $a = \SI{0.5}{\ampere}$ y $b = \SI{0.1}{\ampere/\second^2}$, en el sentido indicado en la figura.\\
+\textit{a}) Calcular la f.e.m. inducida en la bobina en el instante $t=\SI{3.0}{\second}$.\\
+\textit{b}) Determinar la dirección y el sentido de la fuerza neta ejercida sobre la bobina.
+%
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+    \draw (10,0) ellipse (0.2 and 0.1);
+    \draw [] (-0.2+10,0) -- (-.2+10,7);
+    \draw [] (0.2+10,0) -- (.2+10,7);
+    \draw [-{Stealth}, thick] (10,1)--(10,4) node[midway,label={[xshift=0.6cm, yshift=0cm]$i(t)$}] {};
+
+    \draw [] (4,1) rectangle (8,5);
+    \draw [] (3.9,0.9) rectangle (7.9,4.9);
+    \draw [] (3.8,0.8) rectangle (7.8,4.8);
+
+    \draw [dotted] (8,1) -- (8,-2);
+    \draw [dotted] (10,0) -- (10,-2);
+    \draw [|-|] (8,-1) -- (10,-1) node [midway, below] {$d$};
+\end{tikzpicture}
+\end{center}
+
+\item En el circuito de la figura, los dos capacitores están inicialmente cargados y en equilibrio, con la llave abierta. La capacidad del capacitor 1 es $C_1 = \SI{20}{\micro\farad}$ y la capacidad del capacitor 2 es desconocida. La llave se cierra en el instante $t_0 = 0$, y en el instante $t_1 = \SI{5.95}{\milli\second}$ se mide que la corriente es el $22.6\%$ de la corriente máxima observada en este circuito. Calcular la capacidad $C_2$.
+%
+\begin{center}
+\begin{circuitikz}[scale=0.8]
+\draw (0,0.5) to[C, l=$C_1$] (0,2.5) -- (1.5,2.5) to[C, l=$C_2$] (1.5,0.5) -- (0,0.5)
+(0.75,2.5) -- (0.75,3) to[switch] (4,3) to[R=$\SI{50}{\ohm}$] (4,0) to[R=$\SI{30}{\ohm}$] (1.25,0) -- (0.75,0) -- (0.75,0.5);
+\end{circuitikz}
+\end{center}
+
+\end{enumerate}
+
+
+\end{document}

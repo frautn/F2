@@ -1,0 +1,144 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+% \usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage{array}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+\usepackage{adjustbox, tikz}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+
+\begin{document}
+
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}
+
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}Recuperatorio 1er parcial}
+
+    1 julio 2022
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0.5pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=8, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=7,tabularheader,title={\tiny \textit{No completar}}]
+   1 \par (1 pt) \bigskip\bigskip\bigskip & 2\par (1 pt) & 3.a \par (1,5 pt) & 3.b \par (0,5 pt) & 3.c \par (1 pt) & 4 \par (2 pt) & 5.a \par (1 pt) & 5.b \par (2 pt) 
+  \end{tcolorbox}
+  \begin{tcolorbox}[colback=white,left=2pt,right=2pt]
+    Total
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}    
+\end{tcbraster}
+
+\end{tcolorbox}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Name and section:\enspace\hrulefill}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Instructor’s name:\enspace\hrulefill}
+
+\textit{No entregar resoluciones de los ejercicios de elección múltiple, solo marcar una opción con una cruz.}
+
+\begin{enumerate}[leftmargin=*]
+  \item Un objeto con una superficie de $\SI{40}{\centi\metre\squared}$ y una emisividad de $0.85$ está emitiendo calor con una potencia de $\SI{1.67}{\watt}$. ¿Cuál es la temperatura de su superficie?\\[5pt]
+  \begin{tabularx}{\textwidth}{XXXXX}
+    $\square$ $\SI{250}{\kelvin}$ & $\square$ $\SI{273}{\kelvin}$ & $\square$ $\SI{285}{\kelvin}$ & $\square$ $\SI{305}{\kelvin}$ & $\square$ $\SI{415}{\kelvin}$ \\
+  \end{tabularx}
+  
+  \item Una máquina térmica trabaja entre dos depósitos a temperaturas $\SI{500}{\kelvin}$ y $\SI{300}{\kelvin}$, recibe $\SI{2500}{cal}$ de calor y realiza $\SI{1000}{cal}$ de trabajo en cada ciclo. ¿Cuál es la variación de entropía del Universo en cada ciclo?\\[5pt]
+  \begin{tabularx}{\textwidth}{XXXXX}
+    $\square$ $\SI{-2400}{cal/\kelvin}$ & $\square$ $\SI{0}{cal/\kelvin}$ & $\square$ $\SI{3.5}{cal/\kelvin}$ & $\square$ $\SI{120}{cal/\kelvin}$ & $\square$ $\SI{970}{cal/\kelvin}$\\
+  \end{tabularx}
+  
+  
+  \item En un calorímetro ideal que contiene agua a $\SI{20.0}{\celsius}$ se vierten $\SI{85.0}{\gram}$ de cadmio en estado líquido a su temperatura de fusión, y la mezcla alcanza el equilibrio a $\SI{32.5}{\celsius}$.
+
+  {\small
+  \begin{tabular}{lcccc}
+  \toprule
+  &Calor específico sólido&Calor específico líquido&Calor de fusión&Temperatura\\
+  &(J/(kg K))&(J/(kg K))&(J/kg)&de fusión (K)\\
+  \midrule
+  Agua&2100&4190&$334\times 10^3$&273\\
+  Cadmio&232&260&$56\times 10^3$&594\\
+  \bottomrule
+  \end{tabular}
+  }
+
+  \textit{a}) ¿Cuánto calor intercambia el cadmio?\\
+  \textit{b}) ¿Qué masa de agua contiene el recipiente?\\
+  \textit{c}) ¿Cuál es la variación de entropía del cadmio?
+
+
+  \item Dos varillas de igual longitud e igual sección transversal se unen extremo con extremo. La primera varilla tiene una conductividad térmica $k_1$ y su extremo libre se encuentra en contacto con un objeto que mantiene una temperatura constante de $\SI{150}{\celsius}$. La segunda varilla tiene una conductividad térmica $2.5k_1$ y su extremo libre está en contacto con una mezcla de agua y hielo. ¿Cuál es la temperatura en la unión de las varillas?
+
+\item Un gas ideal monoatómico se encuentra en el interior de un recipiente cerrado provisto de un pistón móvil. El gas se encuentra en el estado de equilibrio $A$ a una temperatura $T_A$. A continuación, el gas desarrolla un ciclo termodinámico entre los puntos $A-B-C-A$ de la siguiente forma: $A-B$) el gas se expande en forma isobárica y reversible, hasta que su temperatura sea $1.5T_A$. $B-C$) se traba el pistón, se pone el gas en contacto con una fuente térmica a la misma temperatura $T_A$ del estado inicial y se deja evolucionar el sistema hasta el equilibrio térmico. $C-A$) Se destraba el pistón y el gas evoluciona isotérmica y reversiblemente hasta el estado inicial, en contacto con la fuente a $T_A$. \textit{a}) Grafique cualitativamente el ciclo en un diagrama $p-V$, indicando los procesos reversibles e irreversibles con líneas llenas y punteadas respectivamente. \textit{b}) Calcule la eficiencia térmica de este ciclo. 
+\end{enumerate}
+
+\end{document}

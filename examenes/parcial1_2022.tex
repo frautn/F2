@@ -1,0 +1,194 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+% \usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{6}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+\usepackage{adjustbox, tikz}
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+
+\begin{document}
+
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=3,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}
+
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}1er parcial}
+
+    3 junio 2022
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \includegraphics[scale=0.2]{logoFRA_2.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0.5pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=8, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=7,tabularheader,title={\tiny \textit{No completar}}]
+   1 \par (1 pt) \bigskip\bigskip\bigskip & 2\par (1 pt) & 3.a \par (2 pt) & 3.b \par (0,5 pt) & 3.c \par (1 pt) & 4 \par (2 pt) & 5 \par (2,5 pt) 
+  \end{tcolorbox}
+  \begin{tcolorbox}[colback=white,left=2pt,right=2pt]
+    Total
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}    
+\end{tcbraster}
+
+\end{tcolorbox}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Name and section:\enspace\hrulefill}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Instructor’s name:\enspace\hrulefill}
+
+\textit{No entregar resoluciones de los ejercicios de elección múltiple, solo marcar una opción con una cruz.}
+
+\begin{enumerate}[leftmargin=*]
+  \item Un cilindro de $\SI{50.0}{\centi\meter^3}$ de cobre está inicialmente a $\SI{20.0}{\celsius}$. ¿A qué temperatura su volumen aumentará $\SI{0.075}{\centi\meter^3}$? Coeficiente de expansión lineal del cobre: $\alpha = \SI{1.7E-5}{\celsius^{-1}}$.\\
+  \begin{tabularx}{\textwidth}{XXXXXX}
+    $\square$ $\SI{14.7}{\celsius}$ & $\square$ $\SI{29.4}{\celsius}$ & $\square$ $\SI{34.7}{\celsius}$ & $\square$ $\SI{49.4}{\celsius}$ & $\square$ $\SI{64.1}{\celsius}$ & $\square$ $\SI{108.2}{\celsius}$\\
+  \end{tabularx}
+
+  % \item Un cilindro de $\SI{100.0}{\centi\meter^3}$ cobre está inicialmente a $\SI{20.0}{\celsius}$. ¿A qué temperatura su volumen aumentará $\SI{0.075}{\centi\meter^3}$? Coeficiente de expansión lineal del cobre: $\alpha = \SI{1.7E-5}{\celsius^{-1}}$.\\
+  % \begin{tabularx}{\textwidth}{XXXXXX}
+  %   $\square$ $\SI{14.7}{\celsius}$ & $\square$ $\SI{29.4}{\celsius}$ & $\square$ $\SI{34.7}{\celsius}$ & $\square$ $\SI{49.4}{\celsius}$ & $\square$ $\SI{64.1}{\celsius}$ & $\square$ $\SI{108.2}{\celsius}$\\
+  % \end{tabularx}
+  
+  \item Un refrigerador tiene un rendimiento de $2.10$. Durante cada ciclo, absorbe $\SI{3.40E4}{\joule}$ de calor del depósito frío. ¿Cuánta energía mecánica se requiere en cada ciclo para operar el refrigerador?\\
+  \begin{tabularx}{\textwidth}{XXXXXX}
+    $\square$ $\SI{0.86E4}{\joule}$ & $\square$ $\SI{1.31E4}{\joule}$ & $\square$ $\SI{1.62E4}{\joule}$ & $\square$ $\SI{3.40E4}{\joule}$ & $\square$ $\SI{5.02E4}{\joule}$ & $\square$ $\SI{5.84E4}{\joule}$\\
+  \end{tabularx}
+  
+  
+  % \begin{minipage}{.5\textwidth}
+  %   $\square$ $q_1 = 6\text{ mC}$; $q_2 = 6\text{ mC}$; $q_3 = 6\text{ mC}$\\ 
+  %   $\square$ $q_1 = 6\text{ mC}$; $q_2 = 6\text{ mC}$; $q_3 = 2\text{ mC}$\\ 
+  %   $\square$ $q_1 = 6\text{ mC}$; $q_2 = 5\text{ mC}$; $q_3 = 1\text{ mC}$\\ 
+  %   $\square$ $q_1 = 6\text{ mC}$; $q_2 = 8\text{ mC}$; $q_3 = 8\text{ mC}$\\
+  %   \end{minipage}
+  %   \begin{minipage}{.5\textwidth}
+  %   \hspace{5pt}\includegraphics[scale=0.6]{2019_p2_II-capacitores.pdf}
+  %   \end{minipage}
+
+%   \fbox{%
+% \begin{adjustbox}{valign=T,minipage=.5\textwidth}
+%     \textsf{\fontsize{10}{6}\selectfont \lipsum[1]}
+%   \end{adjustbox}%
+%   \hspace{1em}%
+%   \begin{tikzpicture}[scale=0.5,baseline={(current bounding box.north)}]
+%     \draw [help lines] (0,0) grid (8,17);
+%   \end{tikzpicture}%
+% }
+
+
+  \item Un recipiente aislado térmicamente y de capacidad calorífica despreciable contiene $\SI{0.285}{\kilogram}$ de un metal en estado sólido a $\SI{530}{\celsius}$. En dicho recipiente se introduce $\SI{1.00}{\kilogram}$ de una mezcla de agua y hielo que se encontraba inicialmente en equilibrio, y el sistema alcanza el equilibrio térmico a $\SI{4.3}{\celsius}$. \textit{Datos}: calor específico del agua líquida: $\SI{4190}{\joule.\kilogram^{-1}.\kelvin^{-1}}$; calor específico del hielo: $\SI{2100}{\joule.\kilogram^{-1}.\kelvin^{-1}}$; calor específico del metal: $\SI{410}{\joule.\kilogram^{-1}.\kelvin^{-1}}$; calor de fusión del agua: $\SI{334E3}{\joule.\kilogram^{-1}}$.\\
+  a) Encontrar la masa de hielo contenida en la mezcla que se agrega al recipiente.\\
+  b) Calcular la variación de energía interna del metal.\\
+  c) Calcular la variación de entropía del metal. 
+
+  \item Una pared de $\SI{14}{\square\meter}$ que está compuesta por $\SI{1.5}{\centi\meter}$ de un material aislante y $\SI{15}{\centi\meter}$ de ladrillo, separa un ambiente con aire a $\SI{25}{\celsius}$ en contacto con el material aislante, del exterior a una temperatura de $\SI{-4}{\celsius}$. Los coeficientes de conductividad térmica del material aislante y del ladrillo son $\SI{0.04}{\watt.\meter^{-1}.\kelvin^{-1}}$ y $\SI{0.6}{\watt.\meter^{-1}.\kelvin^{-1}}$ respectivamente. Se sabe que la potencia calórica transmitida por esta pared es $\SI{550}{\watt}$ mientras las temperaturas del aire interior y exterior permanecen constantes. Asumiendo que los coeficientes de convección para el aire son iguales a ambos lados de la pared, encuentre la temperatura sobre la superficie libre del ladrillo.\\
+
+  \begin{minipage}[t]{.5\textwidth}
+  \item El ciclo de la figura aproxima el funcionamiento de una máquina térmica constituida por $\SI{0.55}{\mole}$ de un gas ideal diatómico que intercambia calor con dos depósitos que mantienen sus temperaturas constantes. El gas comienza en el estado $a$ con un volumen de $\SI{2.3}{\liter}$ y a la temperatura del reservorio caliente, $\SI{520}{\kelvin}$. Se expande adiabáticamente hasta un volumen de $\SI{9.0}{\liter}$, llegando al estado $b$ cuya temperatura es la del reservorio frío, $\SI{300}{\kelvin}$. Luego se comprime isotérmicamente hasta el estado $c$ con un volumen de $\SI{1.5}{\liter}$. Por último evoluciona sobre la trayectoria rectilínea que une los estados $c$ y $a$ para completar el ciclo. Calcular la eficiencia térmica de esta máquina. 
+    \end{minipage}
+  \hspace{0.02\linewidth}
+  \begin{minipage}[t]{.4\textwidth}
+    \strut\vspace*{-\baselineskip}\newline
+  \begin{center}
+    \begin{tikzpicture}[scale=0.9]
+      \begin{axis}[
+        ticks=none,
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0, xmax=10, 
+        ymin=0, ymax=12.5, 
+        xlabel={$V$},
+        ylabel={$p$},
+        % xtick={2,9},
+        % xticklabels={1.5,9},
+        % ytick={1.5},
+        % yticklabels={1.5}
+        %yticklabels={},
+        %extra x ticks={0.04},
+        %extra y ticks={2}
+        ];
+      \addplot [-latex, color=blue, very thick] [samples= 180, domain=2.3:4.5]  {1.5*(9/x)^1.5};
+      \addplot [color=blue, very thick] [samples= 180, domain=4.5:9]  {1.5*(9/x)^1.5};
+      \addplot [latex-, color=blue, very thick] [samples= 180, domain=3:9]  {1.5*9/x};
+      \addplot [color=blue, very thick] [samples= 180, domain=1.5:3]  {1.5*9/x};
+      % \addplot[color = black, dashed, thick] coordinates {(2, 0) (2, 1.5) (0, 1.5)};
+      % \addplot[color = black, dashed, thick] coordinates {(9, 0) (9, 1.5)};
+      \draw [color=blue, very thick][-latex](1.5,9)--(2,10.63);
+      \draw [color=blue, very thick](2,10.63)--(2.3,11.61);
+      \draw (2.3,11.61) node [right] {$a$};
+      \draw (9,1.5) node [above right] {$b$};
+      \draw (1.5,9) node [left] {$c$};
+      \fill [black](2.3,11.61) circle(2pt);
+      \fill [black](9,1.5) circle(2pt);
+      \fill [black](1.5,9) circle(2pt);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{minipage}
+  
+\end{enumerate}
+
+\end{document}

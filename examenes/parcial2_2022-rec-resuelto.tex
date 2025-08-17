@@ -1,0 +1,346 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+% \usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage{array}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{6}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+\usepackage{adjustbox, tikz}
+\usepackage{circuitikz}
+\usepackage{tikz-3dplot}
+
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+\tikzset{axis/.style={blue, thick,-latex}}
+
+
+\begin{document}
+
+{\Large Resoluciones Recuperatorio 2do parcial - 2022}
+
+\begin{enumerate}[leftmargin=*]
+
+\item
+\begin{minipage}[t]{.4\textwidth}
+La figura muestra dos cargas puntuales y un anillo con carga total $Q_A$ uniformemente distribuida. Las tres cargas son positivas, $Q_1>Q_A$ y $Q_A>Q_2$.
+\begin{center}
+  \begin{tikzpicture}[scale=0.8]
+    \draw [dotted] (-4,0)--(4,0);
+    \fill [black](-3,0) circle(4pt) node[above] {$Q_1$};
+    \fill [black](3,0) circle(4pt) node[above] {$Q_2$};
+    \draw [black](0,0) circle(20pt);
+    \draw [dotted] (0,-1) -- (0,1);
+    \draw (0.5,0.7) node[right] {$Q_A$};
+  \end{tikzpicture}
+  % \captionof{figure}{Problema \ref{p:P101}\label{f:P101}}
+\end{center}
+\end{minipage}
+\begin{minipage}[t]{.05\textwidth}
+~    
+\end{minipage}
+\begin{minipage}[t]{.5\textwidth}
+Seleccionar todas las opciones correctas referidas a las componentes del campo eléctrico en el centro del anillo y del potencial eléctrico en ese punto.\\
+\begin{tabularx}{\textwidth}{XXX}
+$\square$ $E_x > 0$ & $\square$ $E_x = 0$ & $\square$ $E_x < 0$ \\
+$\square$ $E_y > 0$ & $\square$ $E_y = 0$ & $\square$ $E_y < 0$\\
+$\square$ $E_z > 0$ & $\square$ $E_z = 0$ & $\square$ $E_z < 0$\\
+$\square$ $V > 0$ & $\square$ $V = 0$ & $\square$ $V < 0$
+\end{tabularx}
+\end{minipage}
+
+\
+
+\textit{Resolución:}\\
+No se muestra la resolución.
+
+
+\item La carga de un disco de $\SI{1.25}{\centi\metre}$ de radio se encuentra distribuida uniformemente por toda su superficie. Su carga total es $\SI{-6.5}{\nano\coulomb}$. Se piensa el origen de coordenadas en el centro del disco y el eje $z$ coincidente con su eje de simetría. En la posición $(0;0;\SI{10}{\centi\metre})$ se encuentra una carga puntual $q_1 = \SI{5}{\nano\coulomb}$.\\
+\textit{a}) Determinar el vector campo eléctrico en el punto $(0;0;\SI{4}{\centi\metre})$.\\
+\textit{b}) Si se toma $V=0$ en el infinito, ¿cuál es el potencial en $(0;0;\SI{4}{\centi\metre})$?\\
+\textit{c}) ¿Qué energía se necesita entregar para traer una carga puntual de $\SI{-3}{\nano\coulomb}$ desde el infinito hasta el punto $(0;0;\SI{4}{\centi\metre})$?\\
+\textit{d}) Además del anillo y la carga $q_1$, se agrega una carga puntual $q_2 = \SI{4.2}{\nano\coulomb}$ en el punto $(0;\SI{2}{\centi\metre};\SI{4}{\centi\metre})$. Encontrar el vector de la fuerza resultante sobre $q_1$.
+
+
+
+\
+
+\textit{Resolución:}\\
+\textit{a}) 
+
+\begin{center}
+  \tdplotsetmaincoords{70}{110}
+  \begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+    \filldraw[draw=black, fill=black!30, tdplot_main_coords] (2,0,0) arc (0:360:2);
+    \draw[axis] (0,0,0) -- (3,0,0) node [pos=1.1] {$x$};
+    \draw[axis] (0,0,0) -- (0,3,0) node [pos=1.05] {$y$};
+    \draw[axis] (0,0,0) -- (0,0,7)  node [left] {$z$};  
+    \draw[dotted, blue] (0,0,0) -- (-3,0,0);
+    \draw[dotted, blue] (0,0,0) -- (0,-3,0);
+    \fill (0,0,5) circle(5pt) node[left] {$q_1$};
+    \fill [red] (0,0,2) circle(5pt) node[left] {$P$};
+    \draw [red](0,0,2) node[right] {$(0;0;\SI{4}{\centi\metre})$};
+    \draw (0,0,5) node[right] {$(0;0;\SI{10}{\centi\metre})$};
+    \draw[red, {latex}-{latex}] (0.2,-0.8,2) -- (0.2,-0.8,5) node [midway, left] {$d = \SI{6}{\centi\metre}$};
+  \end{tikzpicture}
+\end{center}
+
+La densidad superficial de carga en el disco es:
+\begin{flalign*}
+  \sigma &= \frac{Q}{A} = \frac{\SI{-6.5}{\nano\coulomb}}{\pi(\SI{1.25}{\centi\metre})^2} = \SI{-1.324E-5}{\coulomb/\metre^2}
+\end{flalign*}
+
+El campo resultante en el punto $P$:
+\begin{flalign*}
+  \vec{E} &= \vec{E}_\text{disco} + \vec{E}_{q_1}\\
+  \vec{E} &= \frac{\sigma}{2\varepsilon_0} \left (1 - \frac{z_P}{\sqrt{z_P^2+R^2}}  \right )\hat{z} -\frac{kq_1}{d^2} \hat{z}\\
+  \vec{E} &= \frac{\SI{-1.324E-5}{\coulomb/\metre^2}}{2\varepsilon_0} \left (1 - \frac{\SI{0.04}{\metre}}{\sqrt{(\SI{0.04}{\metre})^2+(\SI{0.0125}{\metre})^2}}  \right )\hat{z} -\frac{k \cdot \SI{5}{\nano\coulomb}}{(\SI{0.06}{\metre})^2} \hat{z}
+\end{flalign*}
+
+Respuesta:
+\begin{flalign*}
+  \vec{E} &= \SI{-4.64E4}{\newton/\coulomb}~\hat{z}
+\end{flalign*}
+
+\ 
+
+\textit{b})\\
+\begin{flalign*}
+  V_P &= V_\text{disco} + V_{q_1}\\
+  V_P &= \frac{\sigma}{2\varepsilon_0} \left ( \sqrt{R^2+z_P^2} - z_P \right ) + \frac{kq_1}{d}\\
+  V_P &= \frac{\SI{-1.324E-5}{\coulomb/\metre^2}}{2\varepsilon_0} \left ( \sqrt{(\SI{0.0125}{\metre})^2+(\SI{0.04}{\metre})^2} - \SI{0.04}{\metre} \right ) + \frac{k \cdot \SI{5}{\nano\coulomb}}{\SI{0.06}{\metre}}\\
+  V_P &= \SI{-1427}{\volt} + \SI{750}{\volt}
+\end{flalign*}
+
+Respuesta:
+\begin{flalign*}
+  V_P &= \SI{-677}{\volt}
+\end{flalign*}
+
+\
+
+\textit{c})
+\begin{flalign*}
+  \Delta U &= q\Delta V = \SI{-3}{\nano\coulomb} \cdot \SI{-677}{\volt} = \SI{2.03E-6}{\joule}
+\end{flalign*}
+
+\
+
+\textit{d})
+\begin{center}
+  \tdplotsetmaincoords{80}{90}
+  \begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+    \filldraw[draw=black, fill=black!30, tdplot_main_coords] (2,0,0) arc (0:360:2);
+    \draw[axis] (0,0,0) -- (3,0,0) node [pos=1.1] {$x$};
+    \draw[axis] (0,0,0) -- (0,3,0) node [pos=1.05] {$y$};
+    \draw[axis] (0,0,0) -- (0,0,7)  node [left] {$z$};  
+    \draw[dotted, blue] (0,0,0) -- (-3,0,0);
+    \draw[dotted, blue] (0,0,0) -- (0,-3,0);
+    \fill (0,0,5) circle(5pt) node[left] {$q_1$};
+    \fill (0,1,2) circle(5pt) node[left] {$q_2$};
+    \draw [red, -{latex}, thick] (0,0,5) -- (0,-1,8) node[right] {$\vec{F}_{q_2}$};
+    \draw [dotted,red] (0,0,5) -- (0,1,2) node[midway, right] {$d$};
+    \draw [dotted,red] (0,0,5) -- (0,-3,5);
+    \draw [red] (0,-0.5,5.8) node[left] {$\alpha$};
+    \draw (0,0,5) node[right] {$(0;0;\SI{10}{\centi\metre})$};
+    \draw [red, -{latex}, thick] (0,0,5) -- (0,0,2) node[left] {$\vec{F}_\text{disco}$};
+  \end{tikzpicture}
+\end{center}
+
+El vector $\vec{F}_{q_2}$ (la fuerza que ejerce $q_2$ sobre $q_1$) está en el plano $yz$ y forma un ángulo $\alpha$ con el plano $xy$:
+\begin{flalign*}
+  \tan \alpha &= \frac{6}{2}\\
+  \alpha &= \SI{71.57}{\degree}
+\end{flalign*}
+
+Distancia entre $q_1$ y $q_2$:
+\begin{flalign*}
+  d &= \sqrt{(\SI{2}{\centi\metre})^2+(\SI{6}{\centi\metre})^2} = \SI{6.325}{\centi\metre}
+\end{flalign*}
+
+Módulo de la fuerza que ejerce $q_2$ sobre $q_1$:
+\begin{flalign*}
+  |\vec{F}_{q_2}| &= \frac{kq_1q_2}{d^2} = \frac{k\cdot \SI{5E-9}{\coulomb} \cdot \SI{4.2E-9}{\coulomb} }{(\SI{0.06325}{\metre})^2} = \SI{4.72E-5}{\newton}
+\end{flalign*}
+
+Fuerza que ejerce el disco sobre $q_1$:
+\begin{flalign*}
+  \vec{F}_\text{disco} &= q_1\frac{\sigma}{2\varepsilon_0} \left (1 - \frac{z}{\sqrt{z^2+R^2}}  \right )\hat{z}\\
+  \vec{F}_\text{disco} &= \SI{5E-9}{\coulomb} \frac{\SI{-1.324E-5}{\coulomb/\metre^2}}{2\varepsilon_0} \left (1 - \frac{\SI{0.10}{\metre}}{\sqrt{(\SI{0.10}{\metre})^2+(\SI{0.0125}{\metre})^2}}  \right )\hat{z}\\
+  \vec{F}_\text{disco} &= \SI{-2.89E-5}{\newton}~\hat{z}
+\end{flalign*}
+
+Fuerza resultante sobre $q_1$:
+\begin{flalign*}
+  \vec{F} &= -\SI{4.72E-5}{\newton}\cdot \cos(\SI{71.57}{\degree})~\hat{y} +  (\SI{4.72E-5}{\newton}\cdot \sin(\SI{71.57}{\degree}) - \SI{2.89E-5}{\newton})~\hat{z}
+\end{flalign*}
+
+Respuesta:
+\begin{flalign*}
+  \vec{F} &= -\SI{1.49E-5}{\newton}~\hat{y} - \SI{1.588E-5}{\newton}~\hat{z}
+\end{flalign*}
+
+
+\item
+\begin{minipage}[t]{.5\textwidth}
+En el circuito mostrado en la figura, la corriente que circula por la resistencia de $\SI{0.08}{\kilo\ohm}$ es de $\SI{66.67}{\milli\ampere}$, en el sentido indicado.\\
+\textit{a}) Calcular la corriente que circula por la resistencia de $\SI{2.0}{\kilo\ohm}$ y la que circula por la resistencia de $\SI{0.5}{\kilo\ohm}$, indicando sus sentidos de circulación.\\
+\textit{b}) Calcular la potencia que disipa la resistencia de $\SI{0.65}{\kilo\ohm}$.\\
+\textit{c}) Calcular la diferencia de potencial $V_b-V_a$.
+\end{minipage}
+\begin{minipage}[t]{.5\textwidth}
+\strut\vspace*{-\baselineskip}
+\begin{center}
+  \begin{circuitikz}[scale=0.8]
+    \draw (0,0) to[battery2, invert, l=$\SI{80}{\volt}$] (0,5)
+    (0,0) to[R=$\SI{0.08}{\kilo\ohm}$] (2.5,0) -- (5,0)
+    (2.5,0) -- (2.5,1.5) to[R=$\SI{2.0}{\kilo\ohm}$] (2.5,5)
+    (5,1.5) to[R=$\SI{0.5}{\kilo\ohm}$] (5,5)
+    (5,1.5) to[battery2, l=$\SI{60}{\volt}$]  (5,0)
+    (0,5) -- (5,5)
+    (2.5,1.5) to[R=$\SI{0.65}{\kilo\ohm}$] (5,1.5); 
+    \fill [black](5,0) circle(4pt) node[right] {$a$};
+    \fill [black](5,5) circle(4pt) node[right] {$b$};
+    \draw [-{Stealth}] (2,-0.5) -- (0.5,-0.5) node[midway,below]{$\SI{66.67}{\milli\ampere}$};
+  \end{circuitikz}
+  % \captionof{figure}{Problema \ref{p:P6051}\label{f:P6051}}
+\end{center}
+\end{minipage}
+
+\
+
+\textit{Resolución:}\\
+\textit{a}) \\
+
+Primero se resuelven las corrientes de las siguientes mallas:
+\begin{center}
+  \begin{circuitikz}[scale=0.8]
+    \draw (0,0) to[battery2, invert, l=$\SI{80}{\volt}$] (0,5)
+    (0,0) to[R=$\SI{0.08}{\kilo\ohm}$] (2.5,0) -- (5,0)
+    (2.5,0) -- (2.5,1.5) to[R=$\SI{2.0}{\kilo\ohm}$] (2.5,5)
+    (5,1.5) to[R=$\SI{0.5}{\kilo\ohm}$] (5,5)
+    (5,1.5) to[battery2, l=$\SI{60}{\volt}$]  (5,0)
+    (0,5) -- (5,5)
+    (2.5,1.5) to[R=$\SI{0.65}{\kilo\ohm}$] (5,1.5); 
+    \fill [black](5,0) circle(4pt) node[right] {$a$};
+    \fill [black](5,5) circle(4pt) node[right] {$b$};
+    \draw [-{Stealth}] (2,-0.5) -- (0.5,-0.5) node[midway,below]{$\SI{66.67}{\milli\ampere}$};
+    \draw [red, -Stealth] (0.5,1.5) -- (0.5, 4.5) -- (2.3,4.5) -- (2.3,1) -- (1.5, 1) node [above] {$i_1$};
+    \draw [red, -Stealth] (3, 4.5) -- (4.8, 4.5) -- (4.8, 1.7) -- (3, 1.7) -- (3, 4) node [right] {$i_2$};
+    \draw [red, -Stealth] (4.8, 1) -- (4.8, 0.3) -- (2.8, 0.3) -- (2.8, 1.3) -- (4,1.3) node [below] {$i_3$};
+  \end{circuitikz}
+  % \captionof{figure}{Problema \ref{p:P6051}\label{f:P6051}}
+\end{center}
+
+La corriente de la malla 1 es dato: $i_1 = \SI{66.67}{\milli\ampere}$.\\
+
+Malla 1:
+\begin{flalign*}
+  \SI{80}{\volt} - \SI{2080}{\ohm}\cdot i_1 + \SI{2000}{\ohm}\cdot i_2 &=0\\
+  i_2 &= \SI{29.43}{\milli\ampere}
+\end{flalign*}
+
+Malla 3:
+\begin{flalign*}
+  \SI{-60}{\volt} + \SI{650}{\ohm}\cdot i_2 - \SI{650}{\ohm}\cdot i_3 &=0\\
+  i_3 &= \SI{-62.97}{\milli\ampere}
+\end{flalign*}
+\end{enumerate}
+
+Sea $R_1$ la resistencia de $\SI{2.0}{\kilo\ohm}$ y $R_2$ la resistencia de $\SI{0.5}{\kilo\ohm}$, las corrientes que circulan por esas resistencias lo hacen en el sentido mostrado en la siguiente figura:
+
+\begin{center}
+  \begin{circuitikz}[scale=0.8]
+    \draw (0,0) to[battery2, invert, l] (0,5)
+    (0,0) to[R] (2.5,0) -- (5,0)
+    (2.5,0) -- (2.5,1.5) to[R] (2.5,5)
+    (5,1.5) to[R] (5,5)
+    (5,1.5) to[battery2, l]  (5,0)
+    (0,5) -- (5,5)
+    (2.5,1.5) to[R] (5,1.5); 
+    \fill [black](5,0) circle(4pt) node[right] {$a$};
+    \fill [black](5,5) circle(4pt) node[right] {$b$};
+    \draw [red, -Stealth] (2.1,4.5) -- (2.1,1.7) node [midway,left] {$i_{R_1}$};
+    \draw [red, -Stealth] (5.4,4.5) -- (5.4,1.7) node [midway,right] {$i_{R_2}$};
+    % \draw [red, -Stealth] (3, 4.5) -- (4.8, 4.5) -- (4.8, 1.7) -- (3, 1.7) -- (3, 4) node [right] {$i_2$};
+    % \draw [red, -Stealth] (4.8, 1) -- (4.8, 0.3) -- (2.8, 0.3) -- (2.8, 1.3) -- (4,1.3) node [below] {$i_3$};
+  \end{circuitikz}
+  % \captionof{figure}{Problema \ref{p:P6051}\label{f:P6051}}
+\end{center}
+
+Y sus valores son:
+\begin{flalign*}
+  i_{R_1} &= i_1 - i_2 = \SI{37.33}{\milli\ampere}\\
+  i_{R_2} &= i_2 = \SI{29.34}{\milli\ampere}
+\end{flalign*}
+
+\ 
+
+\textit{b}) \\
+
+La corriente que circula por la resistencia $R_3 = \SI{0.65}{\kilo\ohm}$ es:
+\begin{flalign*}
+  i_{R_3} &= i_2 - i_3 = \SI{92.31}{\milli\ampere}
+\end{flalign*}
+
+La potencia que disipa esa resistencia es:
+\begin{flalign*}
+  P_{R_3} &= i_{R_3}^2 R_3 = (\SI{0.09231}{\ampere})^2 \cdot \SI{650}{\ohm}
+\end{flalign*}
+
+Respuesta:
+\begin{flalign*}
+  P_{R_3} &= \SI{5.54}{\watt}
+\end{flalign*}
+\ 
+
+\textit{c}) \\
+\begin{flalign*}
+  V_a + \SI{60}{\volt} + \SI{0.5}{\kilo\ohm} \cdot i_2 &= V_b\\
+  V_b - V_a &= \SI{60}{\volt} + \SI{0.5}{\kilo\ohm} \cdot i_2
+\end{flalign*}
+
+Respuesta:
+\begin{flalign*}
+  V_b - V_a &= \SI{74.67}{\volt}
+\end{flalign*}
+\end{document}

@@ -1,0 +1,200 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+% \usepackage{array}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+\usepackage{enumitem}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+
+\usepackage{pgfplots}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+
+% \input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+\usepackage{pgffor}
+\usepackage{readarray}
+
+% --------------------------------------
+% Formatting the header.
+\def\M{7} % Number of columns in header.
+\def\N{5} % Columns for questions (can be different to actual number of questions).
+\def\P{2} % Columns reserved for Total.
+
+% Number of questions and points.
+% --------------------------------------
+
+
+% % --------------------------------------
+% % Data for questions.
+% % Don't remove the '%' after \data{
+% \def\data{%
+% A 5.0 26 520 9.77 80
+% B 2.4 26 520 6.50 70
+% C 5.0 32 592 5.55 30
+% D 6.0 32 592 4.44 30
+% }
+% \readarray\data\dataA[4,6] %read the data to \dataA
+% % --------------------------------------
+
+\newcommand{\answer}{\rule[-5pt]{120pt}{0.4pt}}
+
+\usepackage[most]{tcolorbox}
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+% \foreach \j in {1,...,4} {
+
+% Nombres y Apellido: el Código Civil y Comercial estableció el uso de un solo
+% apellido, de cualquiera de los padres, y de manera opcional el del otro progenitor
+
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}
+
+    2$^\circ$ 31
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}Recuperatorio 1\textsuperscript{er} parcial}
+
+    18 de agosto de 2023
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=\M, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=\N,tabularheader]
+  % \begin{tcolorbox}[raster multicolumn=\N,tabularheader,title={\footnotesize some nice title}]
+   1 \par (2 pts) \bigskip\bigskip & 2 \par (2,5 pts) & 3\par (2,5 pts) & 4 \par (3 pts) 
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=\P, colback=white,left=2pt,right=2pt]
+    Nota
+
+    \bigskip
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\end{tcolorbox}
+
+% \textbf{Justificar todas las respuestas.} \hfill (\dataA[\j,1])
+
+\begin{enumerate}[leftmargin=*]
+
+% \begin{minipage}[t]{.6\textwidth}
+  \item Una habitación está separada del exterior por una pared con una superficie igual $\SI{15.0}{\metre\squared}$ y que está compuesta por dos capas de diferentes materiales. El espesor de la capa interior es $\SI{3.0}{\centi\metre}$ y la conductividad térmica de ese material es $\SI{0.10}{\watt\metre^{-1}\kelvin^{-1}}$, mientras que el espesor de la capa exterior es $\SI{15.0}{\centi\metre}$ y su conductividad térmica es $\SI{0.80}{\watt\metre^{-1}\kelvin^{-1}}$. La temperatura en el seno del aire encerrado es $\SI{24.0}{\celsius}$ y su coeficiente de convección es $\SI{5.0}{\watt\metre^{-2}\kelvin^{-1}}$.\par
+  \textit{a}) Si la temperatura de la superficie de la pared del lado exterior a la habitación es $\SI{43.0}{\celsius}$, ¿cuánto vale la temperatura de la superficie en el lado interior de la habitación?\par
+  \textit{b}) Considerando un régimen estacionario, ¿cuánto calor se transmite a través de esta pared en un lapso de $\SI{6}{\hour}$?
+
+  \item En un calorímetro que se encuentra con una temperatura de $\SI{20.0}{\celsius}$, se introducen $\SI{50.0}{\milli\litre}$ de agua a $\SI{80.0}{\celsius}$ y se observa que alcanzan el equilibrio térmico a la temperatura de $\SI{66.9}{\celsius}$.\par
+  \textit{a}) Calcular el equivalente en agua del calorímetro.\par
+  \textit{b}) Calcular la variación de entropía del agua en este proceso.\par
+  \textit{c}) Respecto a la variación de entropía del recipiente, ¿cuál de las siguientes opciones es la correcta? : $|\Delta S_\text{recipiente}| > |\Delta S_\text{agua}|$; $|\Delta S_\text{recipiente}| < |\Delta S_\text{agua}|$ o $|\Delta S_\text{recipiente}| = |\Delta S_\text{agua}|$ .
+%   \begin{tabularx}{\textwidth}{llll}
+%     $\square$ $\Delta U_\text{agua} > 0$ &  $\square$ $|\Delta U_\text{metal}| > |\Delta U_\text{agua}|$ & $\square$ $|\Delta U_\text{metal}| < |\Delta U_\text{agua}|$ & $\square$ $|\Delta U_\text{metal}| = |\Delta U_\text{agua}|$\\
+%     $\square$ $\Delta S_\text{metal} > 0$ & $\square$ $|\Delta S_\text{metal}| > |\Delta S_\text{agua}|$ & $\square$ $|\Delta S_\text{metal}| < |\Delta S_\text{agua}|$ & $\square$ $|\Delta S_\text{metal}| = |\Delta S_\text{agua}|$\\
+%   \end{tabularx}
+
+\begin{minipage}[t]{.55\textwidth}
+\item
+  La figura muestra el ciclo que realizan $\SI{0.014}{\mol}$ de un gas ideal monoatómico en una máquina térmica. En el estado $a$ el gas, que se encuentra a la misma temperatura que la fuente fría, se pone en contacto con la fuente caliente y evoluciona hasta llegar al equilibrio en el estado $c$. Luego se pone en contacto con la fuente fría para volver al estado $a$, en un proceso desconocido.\par
+  \textit{a}) Si el rendimiento de la máquina es $0.31$, ¿cuánto calor cede a la fuente fría en cada ciclo?\par
+  \textit{b}) Considerando que la máquina se puede modificar para mejorar su rendimiento (el proceso desconocido puede cambiar respecto del ítem $a$), encontrar una cota superior al trabajo que puede entregar en cada ciclo.
+\end{minipage}
+\begin{minipage}[t]{.45\textwidth}
+	\strut\vspace*{-\baselineskip}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+      \begin{axis}[
+        axis x line=bottom,
+        axis y line=left,
+        xmin=0.75, xmax=2,
+        ymin=0.85, ymax=2.2, 
+        xlabel={$T~[\text{K}]$},
+        ylabel={$p~[\text{atm}]$},
+        xtick={1,1.8},
+        xticklabels={$323$,$850$},
+        ytick={1,2},
+        yticklabels={$1.0$,$3.5$}
+        ];
+      \addplot[dotted] coordinates {(0, 2) (1, 2)};
+      \addplot[dotted] coordinates {(0, 1) (1.8, 1)};
+      \addplot[dotted] coordinates {(1, 0) (1, 2)};
+      \addplot[dotted] coordinates {(1.8, 0) (1.8, 1)};
+      % \addplot[color = black, dashed, thick] coordinates {(9, 0) (9, 1.5)};
+      \draw [very thick][-latex](1,2)--(1.4,2);
+      \draw [very thick](1.4,2)--(1.8,2);
+      \draw [very thick][-latex](1.8,2)--(1.8,1.5);
+      \draw [very thick](1.8,1.5)--(1.8,1);
+      \draw [very thick, dashed] plot [smooth, tension=1] coordinates {(1.8,1) (1.2,1.5) (1,2)};
+      \fill [black](1,2) circle(2pt) node [above] {$a$};
+      \fill [black](1.8,2) circle(2pt) node [above] {$b$};
+      \fill [black](1.8,1) circle(2pt) node [right] {$c$};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+\end{minipage}
+
+\item 
+  Un haz de luz de $450$~nm de longitud de onda en el medio en que se propaga, ilumina en forma perpendicular una placa que contiene dos rendijas rectangulares, y el máximo de interferencia de orden 20 se observa en el ángulo $\SI{21.1}{\degree}$. Además, en el patrón observado faltan los máximos de interferencia de órdenes $m=\pm 6; \pm 12; \pm18; \dots$.\par
+  \textit{a}) Si se cambia la fuente de luz por otra con longitud de onda igual a $622$~nm, ¿en qué ángulo se observará el máximo de orden 20?\par
+  \textit{b}) Con la luz de $622$~nm, ¿cuánto vale el cociente entre la intensidad del orden 20 y la intensidad del máximo central?\par
+  \textit{c}) Con la luz de $622$~nm, ¿cuántos máximos de interferencia se observan dentro de la campana principal?\par
+
+\end{enumerate}
+
+% \newpage
+% }
+
+\end{document}

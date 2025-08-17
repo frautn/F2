@@ -1,0 +1,304 @@
+\documentclass[a4paper,11pt,dvipsnames]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\usepackage[a4paper,left=1.5cm,right=1.5cm,top=1cm,bottom=1.5cm]{geometry}
+% \usepackage[hmargin=1cm,vmargin=1cm]{geometry}
+\usepackage{array}
+\usepackage{setspace}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+% A style for tcolorbox without frame etc. "notcb"
+\tcbset{notcb/.style={enhanced jigsaw, colback=white, coltitle=black,sharp corners, boxrule=0pt}}
+
+% Style for the number tables
+\tcbset{tabularheader/.style={arc=2pt,notcb,boxsep=0pt,left=0pt,colbacktitle=white,rounded corners=all,enhanced jigsaw,coltitle=black,tabularx={*{7}{Y|}Y},boxrule=1pt,attach boxed title to top left, boxed title style={enhanced jigsaw,sharp corners,left=0pt,boxrule=0pt}}}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+\usepackage{enumitem}
+
+\usepackage{pgfplots}
+% \usepackage{pdfpages}
+\usepackage{adjustbox, tikz}
+\usepackage{tikz-3dplot}
+\usepackage{circuitikz}
+% \usepackage{gnuplottex}
+\usepackage{xcolor}
+\usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
+\usepackage{physics}
+
+\input{./pstriks_on_pdf.code.tex}
+\usetikzlibrary{3d}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}   %edg
+\usetikzlibrary{calc}
+\pgfplotsset{compat=newest}
+
+
+
+% isometric perspective
+\pgfmathsetmacro\xx{1/sqrt(2)}
+\pgfmathsetmacro\xy{1/sqrt(6)}
+\pgfmathsetmacro\zz{sqrt(2/3)}
+
+% layers
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers   {background,main,foreground}
+
+% coil
+\newcommand\mycoil[3] % position (center of the bottom coil), number of turns, terninals (-1/left, 1/right)
+{%
+  \begin{scope}[shift={#1},x={(-#3*\xx cm,-\xy cm)},y={(#3*\xx cm,-\xy cm)}]  
+    \foreach\i in {0,...,#2}
+    {%  
+      \begin{pgfonlayer}{background}
+        \draw plot[variable=\x,domain=0.5:1,samples=40,smooth]
+          ({0.5*sin(360*\x-45)},{0.5*cos(360*\x-45)},{0.4*(\x+\i)});
+      \end{pgfonlayer}
+      \begin{pgfonlayer}{foreground}
+        \draw[preaction={draw,white,line width=2pt}] plot[variable=\x,domain=0:0.5,samples=40,smooth]
+          ({0.5*sin(360*\x-45)},{0.5*cos(360*\x-45)},{0.4*(\x+\i)});
+      \end{pgfonlayer}
+    }
+    \pgfmathtruncatemacro\h{#2+1} % coil height
+    \begin{pgfonlayer}{foreground}
+      \foreach\i in {0,\h}
+      {%
+        \draw[line cap=round] (0,0,0.4*\i) ++ (135:0.5) --++ (135:0.5);
+        \draw[fill=white]     (0,0,0.4*\i) ++ (135:1) circle (1pt);
+      }
+    \end{pgfonlayer}
+  \end{scope}
+}
+
+\tikzset
+{% styles for arrows and borders
+  darrow/.style={% direct arrow
+    decoration={markings,mark=at position 0.5 with {\arrow{latex}}},
+    postaction={decorate}
+    },
+  rarrow/.style={% reverse arrow
+    decoration={markings,mark=at position 0.5 with {\arrow{latex reversed}}},
+    postaction={decorate}
+    },
+  wborder/.style={% white border
+    preaction={draw,white,line width=2pt}
+  }
+}
+
+
+
+\begin{document}
+
+\begin{tcolorbox}[colback=white]
+
+\begin{tcbraster}[raster columns=4,raster equal height]
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedright]
+    {\Large \vphantom{y}Física II}
+
+    
+  \end{tcolorbox}
+  \begin{tcolorbox}[raster multicolumn=2, notcb,fontupper=\bfseries\centering]
+    % \centering
+    {\Large \vphantom{y}Recuperatorio 3\textsuperscript{er} parcial}
+
+    16 de diciembre de 2022
+  \end{tcolorbox}
+  \begin{tcolorbox}[notcb,fontupper=\bfseries\raggedleft]
+    \input{logoFRA_recortado}
+    % \includegraphics[scale=0.2]{logoFRA_2022-recortado.png}
+  \end{tcolorbox}
+\end{tcbraster}
+\begin{tcbraster}[raster columns=1, raster column skip=0pt, raster equal height,colback=white,before skip=0pt]
+  \begin{tcolorbox}[coltitle=black,enhanced jigsaw,boxrule=0.5pt,boxsep=0.5pt,segmentation style={solid,black,line width=0.5pt},sidebyside,righthand width=9cm,fontupper=\tiny, fontlower=\tiny]
+    Apellido
+    \bigskip
+    \tcblower
+    Nombres
+    \bigskip
+  \end{tcolorbox}
+\end{tcbraster}
+
+\begin{tcbraster}[raster columns=6, raster equal height,colback=white,before skip=0pt, boxsep=0.5pt]
+  \begin{tcolorbox}[raster multicolumn=5,tabularheader,title={\tiny \textit{No completar}}]
+   E1 \bigskip\bigskip & E2 & E3 & P1 & P2 & P3 
+  \end{tcolorbox}
+  \begin{tcolorbox}[colback=white,left=2pt,right=2pt]
+    Total
+
+    \bigskip
+    
+  \end{tcolorbox}    
+\end{tcbraster}
+
+\end{tcolorbox}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Name and section:\enspace\hrulefill}
+
+% \vspace{5mm}
+% \makebox[0.75\textwidth]{Instructor’s name:\enspace\hrulefill}
+
+\textit{Para alcanzar una calificación total de 6 o más puntos debe obtener una calificación de 6 o más puntos en los ejercicios E1 a E3 y responder correctamente al menos 2 de las preguntas P1 a P3.}
+
+\begin{enumerate}[label=E\arabic*.,leftmargin=*]
+
+\item 
+\begin{minipage}[t]{0.5\textwidth}
+  ({\small 3 puntos}) Una barra conductora tiene $\SI{20}{\centi\metre}$ de longitud y $\SI{10}{\gram}$ de masa, y puede deslizar libremente sobre las tiras metálicas de los extremos del plano inclinado mostrado en la figura, conectadas entre sí por un segmento conductor en la base de la rampa, mientras una corriente $i = \SI{3.5}{\ampere}$ fluye a través del circuito indicado. El ángulo del plano inclinado es $\alpha = \SI{30}{\degree}$. Encuentre un posible campo magnético uniforme en el cual, al colocar este aparato, la barra pueda permanecer en reposo.
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\strut\vspace*{-\baselineskip}
+  \begin{center}
+    \tdplotsetmaincoords{50}{110}
+    \begin{tikzpicture}[tdplot_main_coords, scale=0.7]
+      \draw[-latex] (0,0,0) -- (4.5,0,0) node [pos=1.1] {$x$};
+      \draw[-latex] (0,0,0) -- (0,7,0) node [pos=1.05] {$y$};
+      \draw[-latex] (0,0,0) -- (0,0,3)  node [left] {$z$};  
+      \filldraw[draw=black,fill=black!50!green!50] (0,0,0) -- (0,6,3) -- (0.2,6,3) -- (0.2,0,0) -- cycle;
+      \filldraw[draw=black, fill=black!50!green!50] (3,0,0) -- (3,6,3) -- (3.2,6,3) -- (3.2,0,0) -- cycle;
+      \filldraw[draw=black, fill=black!50!green!50] (0,0,0) -- (3.2,0,0) -- (3.2,-0.2,0) -- (0,-0.2,0) -- cycle;
+      \filldraw[draw=black, fill=red!30] (3.2,4,2) -- (3.2,4.402,2.201) -- (3.2,4.301, 2.402) -- (3.2, 3.9, 2.201) -- cycle;
+      \filldraw[draw=black, fill=red!40] (3.2,3.9,2.201) -- (3.2,4.301,2.402) -- (0,4.301,2.403) -- (0,3.9,2.201) -- cycle;
+      \filldraw[draw=black, fill=red!60] (3.2,4.301,2.402) -- (0,4.301,2.402) -- (0,4.402,2.201,2.402) -- (3.2,4.402,2.201,2.402) -- cycle;
+      \draw[dotted] (3.1,0,0) -- (3.1,6,0);
+      \draw[dotted] (0,6,0) -- (0,6,3) -- (3.1,6,3) -- (3.1,6,0) -- cycle;
+      \draw[red, -{latex}, thick] (2.5,-0.3,0) -- (0.5,-0.3,0) node [midway, left] {$i$};
+      \draw[red, -{latex}, thick] (-0.2,1,0.5) -- (-0.2,3,1.5) node [midway, above] {$i$};
+      \draw[red, -{latex}, thick] (3.4,3,1.5) -- (3.4,1,0.5) node [midway, below] {$i$};
+      \tdplotdrawarc{(3.1,1,0)}{2.5}{90}{136}{right}{$\alpha$}
+    \end{tikzpicture}
+\end{center}
+\end{minipage}
+%
+
+\begin{minipage}[t]{.5\textwidth}
+\item ({\small 2,5 puntos}) La figura muestra tres cables infinitos, paralelos entre sí, que pasan perpendicularmente a la página por los vértices del triángulo mostrado. Las corrientes $i_1$ e $i_2$ salen de la página y valen $\SI{20}{\ampere}$ y $\SI{32}{\ampere}$ respectivamente, y la corriente $i_3$ entra a la página y vale $\SI{20}{\ampere}$. Calcule el módulo de la fuerza neta por unidad de longitud que las corrientes $i_2$ e $i_3$ ejercen sobre el conductor que transporta a $i_1$.
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \strut\vspace*{-\baselineskip}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.5]
+      \draw [blue!100!black!50] (5-0.2828,-0.2828) -- (5+0.2828,0.2828);
+      \draw [blue!100!black!50] (5+0.2828,-0.2828) -- (5-0.2828,0.2828);
+      \draw [blue!100!black!50] (5,0) circle (0.4);
+      \fill [blue!100!black!50] (0,0) circle (0.2);
+      \draw [blue!100!black!50] (0,0) circle (0.4);
+      \fill [blue!100!black!50] (0,5) circle (0.2);
+      \draw [blue!100!black!50] (0,5) circle (0.4);
+      \draw [dotted] (0,0) -- (5,0) -- (0,5) -- (0,0);
+      \draw [] (-.8,0) node [] {$i_1$};
+      \draw [] (-.8,5) node [] {$i_2$};
+      \draw [] (5.8,0) node [] {$i_3$};
+      \draw [] (-1.5,5) -- (-2.5,5);
+      \draw [] (-1.5,0) -- (-2.5,0);
+      \draw [{Stealth}-{Stealth}] (-2.2,0) -- (-2.2,5) node [midway,left] {$\SI{3}{\centi\metre}$};
+      \draw [] (0,-1) -- (0,-2);
+      \draw [] (5,-1) -- (5,-2);
+      \draw [{Stealth}-{Stealth}] (0,-1.7) -- (5,-1.7) node [midway,below] {$\SI{3}{\centi\metre}$};
+    \end{tikzpicture}
+\end{center}
+\end{minipage}
+%
+
+\begin{minipage}[t]{.6\textwidth}
+\item La figura muestra un solenoide cuyo radio es $\SI{2.0}{\centi\metre}$, que genera un campo magnético que en su interior puede considerarse uniforme, y que su módulo varía en el tiempo según la siguiente ecuación:
+\begin{align*}
+  B(t) &= B_0 \text{e}^{-\alpha t^2}
+\end{align*}
+donde $B_0 = \SI{2.0}{\tesla}$ y $\alpha = \SI{0.4}{\second^{-2}}$. Rodeando al solenoide se encuentra una espira de radio igual a $\SI{5.0}{\centi\metre}$, con su superficie perpendicular al eje del solenoide. La resistencia eléctrica de dicha espira es $\SI{30}{\ohm}$.\\
+\textit{a}) ({\small 1,5 puntos}) Calcule la corriente inducida en la espira en el instante $t = \SI{1.0}{\second}$.\\
+\textit{b}) ({\small 1,5 puntos}) Indique el sentido de circulación de la corriente calculada en el ítem \textit{a} y justifique su respuesta.\\
+\textit{c}) ({\small 1,5 puntos}) ¿Hay algún instante en el que la corriente inducida cambia de sentido?
+\end{minipage}
+\begin{minipage}[t]{.4\textwidth}
+  \strut\vspace*{-\baselineskip}
+  \begin{center}
+  \begin{tikzpicture}[line cap=butt,x={(-\xx cm,-\xy cm)},y={(\xx cm,-\xy cm)},z={(0cm,\zz cm)}]
+    % coils
+    \mycoil{(0,0,0)}{8}{ 1}
+    % \mycoil{(0,0,6)}{4}{-1}
+    \foreach\j in {0.1,0.3}
+    {%
+      \begin{scope}[rotate around z=135,canvas is xz plane at y=0]
+        \draw[red,rarrow]         ( \j,0) arc  (180:195:0.5/\j-\j);
+        \draw[red,wborder]        ( \j,0) --++ (0,4);
+        \draw[red,wborder,darrow] ( \j,4) arc  (180:165:0.5/\j-\j);
+        \draw[red,rarrow]         (-\j,0) arc  (0:-15:0.5/\j-\j);
+        \draw[red,wborder]        (-\j,0) --++ (0,4);
+        \draw[red,wborder,darrow] (-\j,4) arc  (0:15:0.5/\j-\j);
+      \end{scope}
+    }
+    % labels
+    \node[red] at (-0.4cm,-0.7cm)    {$B$};
+    % \node      at (-1cm, 1cm)    {$N_2$};
+    % \node      at ( 1cm, 5.75cm) {$N_1$};
+    \begin{pgfonlayer}{background}
+      \draw plot[variable=\x,domain=0.5:1,samples=40,smooth]
+        ({1.5*sin(360*\x-45)},{1.5*cos(360*\x-45)},{2.1});
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{foreground}
+      \draw[preaction={draw,white,line width=2pt}] plot[variable=\x,domain=0:0.5,samples=40,smooth]
+        ({1.5*sin(360*\x-45)},{1.5*cos(360*\x-45)},{2.1});
+    \end{pgfonlayer}
+  \end{tikzpicture}
+\end{center}
+\end{minipage}
+
+
+\end{enumerate}
+
+% \strut\vspace*{\fill}
+\strut\vfill
+
+{\large \textbf{Sigue atrás.}}
+
+\newpage
+
+\textit{Responda las siguientes preguntas argumentando y desarrollando sus razonamientos.}
+
+\begin{enumerate}[label=P\arabic*.,leftmargin=*]
+  % \begin{minipage}[t]{.5\textwidth}
+  \item El capacitor del circuito mostrado en la figura se carga con la llave conectada en la posición 1, y luego se cambia la llave a la posición 2. ¿En qué sentido circula la corriente cuando la llave se encuentra en la posición 2? ¿Qué demora mayor tiempo en este circuito, el proceso de carga o el de descarga del capacitor?
+  % \end{minipage}
+  % \begin{minipage}[t]{.5\textwidth}
+  % \strut\vspace*{-\baselineskip}
+  \begin{center}
+  \begin{circuitikz}[scale=0.9]
+    \draw [] (0.4,2) to[R] (2.4,2) to[C] (2.4,0) -- (-2.4,0) to[battery2, invert] (-2.4,2) to[R] (-0.4,2)
+    (0,0) -- (0,1.307);
+    \draw [thick] (0.4,2) -- (-0.32,1.65);
+    \filldraw [fill=white] (0.4,2) circle (2pt);
+    \filldraw [fill=white] (-0.4,2) circle (2pt) node [above] {1};
+    \filldraw [fill=white] (0,1.307) circle (2pt) node [right] {2};
+  \end{circuitikz}
+  \end{center}
+  % \end{minipage}
+
+  \item Un rectángulo de metal está cerca de un alambre largo, recto y que conduce corriente, con dos de sus lados paralelos al alambre. Si la corriente en el alambre está disminuyendo, ¿el rectángulo es repelido o atraído por el alambre?
+  \item Indique si el siguiente enunciado es verdadero o falso: El campo magnético inducido es siempre opuesto al campo magnético externo.
+  
+\end{enumerate}
+
+\end{document}
