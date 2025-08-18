@@ -21,7 +21,7 @@ Una colección de material utilizado en la materia Física 2 en la Facultad Regi
 
 ## Cuadernos
 
-[Forzado](https://colab.research.google.com/github/frautn/F2/blob/main/itba/forzadas.ipynb)
+[Forzado](https://colab.research.google.com/github/frautn/F2/blob/main/ondas/forzadas.ipynb)
 
 
 
