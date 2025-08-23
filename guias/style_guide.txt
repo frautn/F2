@@ -1,0 +1,7 @@
+Extracted from Physical Review Style Guide:
+
+- Use a thin space between unit parts: 1 g cm^2
+- Do not use 6 J/cm^3/s, write 6 J cm^-3 s^-1 or 6 J/(cm^3 s)
+- The number (numeral) is separated from the unit following by a FULL SPACE.
+- Vectors: no dejar espacio con el versor. Versor roman upright, bold, con \hat{}.
+- Multiplication: The center dot also should not be used to mean a simple product. 

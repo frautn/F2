@@ -424,3 +424,48 @@
 %     Un solenoide de radio $r_1 = \SI{10}{\centi\metre}$, longitud $l_1$ y $n_1$ vueltas por centímetro, se halla en el interior de otro solenoide, de radio $r_2 = 50r_1$, $n_2 = \SI{1000}{vueltas/cm}$ y longitud $l_2 = \SI{40}{\centi\metre}$ ($l_2 \gg l_1$). Los solenoides son coaxiales y por el externo circula una corriente variable de la forma $i_2(t) = 2 \sin(\SI{10}{\second^{-1}}\, t)$ \textit{a}) Calcular a primer orden el coeficiente de inducción mutua del sistema; \textit{b}) Calcular el valor máximo de la fem inducida en la bobina exterior.
 % \\ \rta{0.95}{}
 % }
+%
+\begin{Exercise}
+    Un inductor con inductancia de $\SI{2.50}{\henry}$ y resistencia de $\SI{8.00}{\ohm}$ está conectado a las terminales de una batería con una fem de $\SI{6.00}{\volt}$ y resistencia interna despreciable. Determinar:\par
+    \textit{a}) La razón inicial de incremento de la corriente en el circuito.\par
+    \textit{b}) La razón de aumento de la corriente en el instante en que esta última es igual a $\SI{0.500}{\ampere}$.\par
+    \textit{c}) La corriente $\SI{0.250}{\second}$ después de haber cerrado el circuito.\par
+    \textit{d}) La corriente en el régimen estacionario final.
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{2.4}{\ampere/\second}$\\ \textit{b}) $\SI{0.8}{\ampere/\second}$\\ \textit{c}) $\SI{0.413}{\ampere}$\\ \textit{d}) $\SI{0.75}{\ampere}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+    Una batería de $\SI{35.0}{\volt}$ con resistencia interna insignificante, un resistor de $\SI{50.0}{\ohm}$ y un inductor de $\SI{1.25}{\milli\henry}$ con resistencia despreciable están conectados en serie con un interruptor abierto, y el interruptor se cierra de forma súbita.\par
+    \textit{a}) ¿Cuánto tiempo después de cerrar el interruptor la corriente a través del inductor alcanzará la mitad de su valor máximo?\par
+    \textit{b}) ¿Cuánto tiempo después de cerrar el interruptor la energía almacenada en el inductor será la mitad de su máximo valor?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{17.3}{\micro\second}$\\ \textit{b}) $\SI{30.7}{\micro\second}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}\label{p:transitorios07}
+    En la figura \ref{f:transitorios07}, el valor de $R$ es $\SI{15.0}{\ohm}$ y la \textit{fem} de la batería es $\SI{6.30}{\volt}$. Inicialmente, el interruptor $S_1$ se encuentra cerrado y el interruptor $S_2$ abierto. Después de varios minutos se abre $S_1$ y simultáneamente se cierra $S_2$. Se observa que $\SI{2.00}{\milli\second}$ luego del cambio, la corriente ha disminuido a $\SI{0.320}{\ampere}$.\par
+    \textit{a}) Calcular la inductancia de la bobina.\par
+    \textit{b}) ¿Cuánto tiempo después del cambio la corriente se reduce en un 90\%?
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        \textit{a}) $\SI{0.110}{\henry}$\\ \textit{b}) $\SI{0.77}{\milli\second}$
+    \end{minipage}
+\end{Answer}
+%
+\begin{center}
+\begin{circuitikz}[scale=1]
+    \draw (0,0) to[switch, l=$S_2$] (4,0) -- (4,3)
+    (0,1.5) to[R=$R$, color=red] (2,1.5) to[L, l=$L$, color=green!80!black] (4,1.5)
+    (0,0) -- (0,3) to[battery2, color=cyan] (2,3) to[switch, l=$S_1$] (4,3);
+\end{circuitikz}
+\captionof{figure}{Problema \ref{p:transitorios07}\label{f:transitorios07}}
+\end{center}
+%

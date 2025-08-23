@@ -1,4 +1,7 @@
 
+- Corregir: The number (numeral) is separated from the unit fol-
+lowing by a full space.
+
 - Agregado \setlength{\parindent}{0pt} en todas las guías, revisar como quedaron después de esto, solo se revisó electrodinámica.
 
 - Modificar color de la línea de separación de columnas a gris.

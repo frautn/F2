@@ -120,47 +120,100 @@
 \captionof{figure}{Problema \ref{p:transitorios06}\label{f:transitorios06}}
 \end{center}
 %
-\begin{Exercise}
-    Un inductor con inductancia de $\SI{2.50}{\henry}$ y resistencia de $\SI{8.00}{\ohm}$ está conectado a las terminales de una batería con una fem de $\SI{6.00}{\volt}$ y resistencia interna despreciable. Determinar:\par
-    \textit{a}) La razón inicial de incremento de la corriente en el circuito.\par
-    \textit{b}) La razón de aumento de la corriente en el instante en que esta última es igual a $\SI{0.500}{\ampere}$.\par
-    \textit{c}) La corriente $\SI{0.250}{\second}$ después de haber cerrado el circuito.\par
-    \textit{d}) La corriente en el régimen estacionario final.
+\begin{Exercise}\label{p:transitorios10}El circuito de la figura \ref{f:transitorios10} se encuentra funcionando en régimen estacionario, con la llave cerrada. La capacidad del capacitor es $C = \SI{3.5}{\milli\farad}$, el valor de las resistencias es $R_1 = R_2 = R_3 = \SI{250}{\ohm}$, y la diferencia de potencial en la batería es $\varepsilon = \SI{32}{\volt}$. Si en un cierto instante se abre la llave, calcule la corriente que circulará a través de $R_3$, $\SI{1}{\second}$ después de abrir la llave, e indique el sentido de circulación de esa corriente. 
 \end{Exercise}
 \begin{Answer}
     \begin{minipage}[t]{.4\textwidth}
-        \textit{a}) $\SI{2.4}{\ampere/\second}$\\ \textit{b}) $\SI{0.8}{\ampere/\second}$\\ \textit{c}) $\SI{0.413}{\ampere}$\\ \textit{d}) $\SI{0.75}{\ampere}$
-    \end{minipage}
-\end{Answer}
-%
-\begin{Exercise}
-    Una batería de $\SI{35.0}{\volt}$ con resistencia interna insignificante, un resistor de $\SI{50.0}{\ohm}$ y un inductor de $\SI{1.25}{\milli\henry}$ con resistencia despreciable están conectados en serie con un interruptor abierto, y el interruptor se cierra de forma súbita.\par
-    \textit{a}) ¿Cuánto tiempo después de cerrar el interruptor la corriente a través del inductor alcanzará la mitad de su valor máximo?\par
-    \textit{b}) ¿Cuánto tiempo después de cerrar el interruptor la energía almacenada en el inductor será la mitad de su máximo valor?
-\end{Exercise}
-\begin{Answer}
-    \begin{minipage}[t]{.4\textwidth}
-        \textit{a}) $\SI{17.3}{\micro\second}$\\ \textit{b}) $\SI{30.7}{\micro\second}$
-    \end{minipage}
-\end{Answer}
-%
-\begin{Exercise}\label{p:transitorios07}
-    En la figura \ref{f:transitorios07}, el valor de $R$ es $\SI{15.0}{\ohm}$ y la \textit{fem} de la batería es $\SI{6.30}{\volt}$. Inicialmente, el interruptor $S_1$ se encuentra cerrado y el interruptor $S_2$ abierto. Después de varios minutos se abre $S_1$ y simultáneamente se cierra $S_2$. Se observa que $\SI{2.00}{\milli\second}$ luego del cambio, la corriente ha disminuido a $\SI{0.320}{\ampere}$.\par
-    \textit{a}) Calcular la inductancia de la bobina.\par
-    \textit{b}) ¿Cuánto tiempo después del cambio la corriente se reduce en un 90\%?
-\end{Exercise}
-\begin{Answer}
-    \begin{minipage}[t]{.4\textwidth}
-        \textit{a}) $\SI{0.110}{\henry}$\\ \textit{b}) $\SI{0.77}{\milli\second}$
+        $\SI{13.6}{\milli\ampere}$ en sentido antihorario.
     \end{minipage}
 \end{Answer}
 %
 \begin{center}
-\begin{circuitikz}[scale=1]
-    \draw (0,0) to[switch, l=$S_2$] (4,0) -- (4,3)
-    (0,1.5) to[R=$R$, color=red] (2,1.5) to[L, l=$L$, color=green!80!black] (4,1.5)
-    (0,0) -- (0,3) to[battery2, color=cyan] (2,3) to[switch, l=$S_1$] (4,3);
-\end{circuitikz}
-\captionof{figure}{Problema \ref{p:transitorios07}\label{f:transitorios07}}
+  \begin{circuitikz}[scale=1]
+      % \draw (0,0) to[switch, l=$S_2$] (4,0) -- (4,3)
+      % (0,1.5) to[R=$R$, color=red] (2,1.5) to[L, l=$L$, color=green!80!black] (4,1.5)
+      \draw (1.5,0) -- (2,0) to[battery2, l=$\varepsilon$, color=cyan] (3.5,0)
+      to[R=$R_2$, color=red] (5,0) -- (5.5,0) -- (5.5,1.5);
+      \draw (0,0.75) to[switch] (1.5,0.75);
+      \draw (5.5,0.75) -- (6,0.75);
+      \draw (0,-1.25) -- (0,2.75)
+      to[C, l=$C$] (6,2.75) -- (6,-1.25);
+      \draw (1.5,0) -- (1.5,1.5) to[R=$R_1$, color=red] (5.5,1.5); 
+      \draw (0,-1.25) to[R=$R_3$, color=red] (6,-1.25); 
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:transitorios10}\label{f:transitorios10}}
 \end{center}
+%  
+\begin{Exercise}\label{p:transitorios11} Considerando que el capacitor en el circuito mostrado en la figura se encuentra inicialmente descargado, que las resistencias son idénticas y que en el instante inicial se cierra la llave, seleccione la opción que mejor describe el valor de la corriente $i$ una vez que se alcanza el régimen estacionario, comparado con su valor inicial (inmediatamente después de cerrar la llave).\par\medskip
+% \begin{tabularx}{\textwidth}{XX}
+$\square$ 25\% menor que la corriente inicial.\\
+$\square$ 25\% mayor que la corriente inicial.\\
+$\square$ $33.3$\% menor que la corriente inicial.\\
+$\square$ $33.3$\% mayor que la corriente inicial.\\
+$\square$ $50$\% menor que la corriente inicial.\\
+$\square$ $50$\% mayor que la corriente inicial.\\
+$\square$ No circula corriente en el régimen estacionario.\\
+% \end{tabularx}  
+\end{Exercise}
+\begin{Answer}
+    \begin{minipage}[t]{.4\textwidth}
+        $33.3$\% menor que la corriente inicial.
+    \end{minipage}
+\end{Answer}
 %
+\begin{center}
+  \begin{circuitikz}[scale=1]
+    \draw [] (0,0) to[R=$R$, color=red] (0,-1.8) to[R=$R$, color=red] (2,-1.8);
+    \draw [] (0,0) to[battery2, l=$\varepsilon$, invert, color=cyan] (2,0) to[switch]  (4.5,0) -- (4.5,-1.8) -- (4,-1.8);
+    \draw [] (2,-1.3) to[R=$R$, color=red] (4,-1.3) -- (4,-2.3) to[C, l=$C$] (2,-2.3) -- (2,-1.3);
+    \draw [-Stealth] (-0.4, -1.5) -- (-0.4, -0.2) node [midway, left] {$i$};
+  \end{circuitikz}
+  \captionof{figure}{Problema \ref{p:transitorios11}\label{f:transitorios11}}
+\end{center}
+
+
+
+% \begin{Exercise}
+%     Un inductor con inductancia de $\SI{2.50}{\henry}$ y resistencia de $\SI{8.00}{\ohm}$ está conectado a las terminales de una batería con una fem de $\SI{6.00}{\volt}$ y resistencia interna despreciable. Determinar:\par
+%     \textit{a}) La razón inicial de incremento de la corriente en el circuito.\par
+%     \textit{b}) La razón de aumento de la corriente en el instante en que esta última es igual a $\SI{0.500}{\ampere}$.\par
+%     \textit{c}) La corriente $\SI{0.250}{\second}$ después de haber cerrado el circuito.\par
+%     \textit{d}) La corriente en el régimen estacionario final.
+% \end{Exercise}
+% \begin{Answer}
+%     \begin{minipage}[t]{.4\textwidth}
+%         \textit{a}) $\SI{2.4}{\ampere/\second}$\\ \textit{b}) $\SI{0.8}{\ampere/\second}$\\ \textit{c}) $\SI{0.413}{\ampere}$\\ \textit{d}) $\SI{0.75}{\ampere}$
+%     \end{minipage}
+% \end{Answer}
+% %
+% \begin{Exercise}
+%     Una batería de $\SI{35.0}{\volt}$ con resistencia interna insignificante, un resistor de $\SI{50.0}{\ohm}$ y un inductor de $\SI{1.25}{\milli\henry}$ con resistencia despreciable están conectados en serie con un interruptor abierto, y el interruptor se cierra de forma súbita.\par
+%     \textit{a}) ¿Cuánto tiempo después de cerrar el interruptor la corriente a través del inductor alcanzará la mitad de su valor máximo?\par
+%     \textit{b}) ¿Cuánto tiempo después de cerrar el interruptor la energía almacenada en el inductor será la mitad de su máximo valor?
+% \end{Exercise}
+% \begin{Answer}
+%     \begin{minipage}[t]{.4\textwidth}
+%         \textit{a}) $\SI{17.3}{\micro\second}$\\ \textit{b}) $\SI{30.7}{\micro\second}$
+%     \end{minipage}
+% \end{Answer}
+% %
+% \begin{Exercise}\label{p:transitorios07}
+%     En la figura \ref{f:transitorios07}, el valor de $R$ es $\SI{15.0}{\ohm}$ y la \textit{fem} de la batería es $\SI{6.30}{\volt}$. Inicialmente, el interruptor $S_1$ se encuentra cerrado y el interruptor $S_2$ abierto. Después de varios minutos se abre $S_1$ y simultáneamente se cierra $S_2$. Se observa que $\SI{2.00}{\milli\second}$ luego del cambio, la corriente ha disminuido a $\SI{0.320}{\ampere}$.\par
+%     \textit{a}) Calcular la inductancia de la bobina.\par
+%     \textit{b}) ¿Cuánto tiempo después del cambio la corriente se reduce en un 90\%?
+% \end{Exercise}
+% \begin{Answer}
+%     \begin{minipage}[t]{.4\textwidth}
+%         \textit{a}) $\SI{0.110}{\henry}$\\ \textit{b}) $\SI{0.77}{\milli\second}$
+%     \end{minipage}
+% \end{Answer}
+% %
+% \begin{center}
+% \begin{circuitikz}[scale=1]
+%     \draw (0,0) to[switch, l=$S_2$] (4,0) -- (4,3)
+%     (0,1.5) to[R=$R$, color=red] (2,1.5) to[L, l=$L$, color=green!80!black] (4,1.5)
+%     (0,0) -- (0,3) to[battery2, color=cyan] (2,3) to[switch, l=$S_1$] (4,3);
+% \end{circuitikz}
+% \captionof{figure}{Problema \ref{p:transitorios07}\label{f:transitorios07}}
+% \end{center}
+% %

@@ -6,11 +6,12 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage{amsmath}
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
 \usepackage{enumerate}
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{tabularx}
 
 \usepackage[locale=FR, per-mode=fraction, separate-uncertainty=true]{siunitx}
 \usepackage{physics}
@@ -65,9 +66,9 @@
   % \definecolor{topcolor}{RGB}{0,121,138}
   % \renewcommand{\colorofsection}{topcolor}
 
-  \input{electrodinamica/electrodinamica_induccion.code}
   \input{electrodinamica/electrodinamica_circuitos.code}
   \input{electrodinamica/electrodinamica_transitorios.code}
+  \input{electrodinamica/electrodinamica_induccion.code}
   \input{electrodinamica/electrodinamica_preguntas.code}
 
 \twocolumn[\colorsection{Respuestas de la unidad III}]
@@ -75,4 +76,4 @@
     \shipoutAnswer
 %   \end{multicols*}
 
-  \end{document}
+\end{document}
