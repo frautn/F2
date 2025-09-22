@@ -105,3 +105,66 @@
     algún sitio en el que sus campos magnéticos se anulen por completo? Si es así, ¿dónde? Si no, ¿por qué? ¿Cómo cambiaría la respuesta si las corrientes tuvieran el mismo sentido?
 \end{Exercise}
 %
+\begin{Exercise}\label{p:preguntas02}
+    En la figura \ref{f:preguntas02} se muestran dos circuitos ($a$ y $b$) por donde circula la misma corriente $i$. Explique si el módulo del campo magnético en el punto $P$ es igual en ambos casos, o si no lo es, en cuál de los dos casos es mayor.
+\end{Exercise}
+\begin{center}
+    \begin{tikzpicture}[scale=0.4, rotate=90]
+        \pgfmathsetmacro{\a}{9cm}
+
+        \draw (2.1,-0.2) arc (0:180:2.1);
+        \draw (6,-0.2) arc (0:180:6);
+        \draw [black] (6,-0.2)--(2.1,-0.2);
+        \draw [black] (-6,-0.2)--(-2.1,-0.2);
+        \draw [-{Stealth}, thick] (-3,0)--(-5,0) node[midway,left] {$i$};
+        \draw [-{Stealth}, thick] (5,0)--(3,0);
+        \draw [-{Stealth}, thick] (-5.8*0.71,-0.2+5.8*0.71) arc (135:110:5.8);
+        \draw [-{Stealth}, thick] (0,-0.2+2.3) arc (90:135:2.3);
+        \fill [] (0,0) circle (0.15) node[below] {$P$};
+        \draw [-{Stealth}] (0,0) -- (2*0.866,2*0.5) node[pos=0.6, right] {$a$};
+        \draw [-{Stealth}] (0,0) -- (5.8*0.71,5.8*0.71) node[pos=0.5, above] {$b$};
+
+
+        \draw[yshift=-\a] (2.1,-0.2) arc (0:-180:2.1);
+        \draw[yshift=-\a] (6,-0.2) arc (0:180:6);
+        \draw [yshift=-\a] (6,-0.2)--(2.1,-0.2);
+        \draw [yshift=-\a] (-6,-0.2)--(-2.1,-0.2);
+        \draw [yshift=-\a,-{Stealth}, thick] (-3,0)--(-5,0) node[midway,left] {$i$};
+        \draw [yshift=-\a,-{Stealth}, thick] (5,0)--(3,0);
+        \draw [yshift=-\a,-{Stealth}, thick] (-5.8*0.71,-0.2+5.8*0.71) arc (135:110:5.8);
+        \draw [yshift=-\a,-{Stealth}, thick] (0,-0.2-2.3) arc (-90:-135:2.3);
+        \fill [yshift=-\a] (0,0) circle (0.15) node[below] {$P$};
+        \draw [yshift=-\a,-{Stealth}] (0,0) -- (2*0.866,-2*0.5) node[pos=0.4, right] {$a$};
+        \draw [yshift=-\a,-{Stealth}] (0,0) -- (5.8*0.71,5.8*0.71) node[pos=0.5, above] {$b$};
+
+        \draw[] (5.5,5.5) node[] {($a$)};
+        \draw[yshift=-\a] (5.5,5.5) node[] {($b$)};
+    \end{tikzpicture}
+\captionof{figure}{Problema \ref{p:preguntas02}\label{f:preguntas02}}
+\end{center}
+%
+\begin{Exercise}\label{p:preguntas03}
+Dos partículas con idéntica carga eléctrica ingresan con la misma velocidad a una región donde existe un campo magnético uniforme. En la figura \ref{f:preguntas03} se muestran las trayectorias de cada partícula ($a$ y $b$) con el campo ingresando perpendicular a la hoja. ¿Cuál es el signo de la carga de las partículas? ¿Cuál de las dos partículas tiene mayor masa?
+\end{Exercise}
+\begin{center}
+  \begin{tikzpicture}[scale=0.4]
+    \draw [-{Latex}] (-8,3.4) -- (-6.5,3.4);
+    \draw [] (-6.5,3.4) -- (-4,3.4) arc (90:7:5) node [left] {$a$};
+    \draw [] (-4,3.4) arc (90:27:8) node [right] {$b$};
+    \draw [] (-1.9,4.4) node[above right] {$\va*{B}$};
+    \filldraw [draw=black, fill=black!30] (-5,0.4) -- (-5,3.2) -- (-4.7,3.2) -- (-4.7,0.4) -- cycle;
+    \filldraw [draw=black, fill=black!30] (-5,3.6) -- (-5,6.4) -- (-4.7,6.4) -- (-4.7,3.6) -- cycle;
+    \def\a{-4};
+    \def\b{0.4};
+    \def\d{2};
+    \foreach \x in {0,...,4}
+    \foreach \y [count=\yi] in {0,...,3}
+    {
+      \draw [black!50] (\a+\d*\x-0.2828,\b+\d*\y-0.2828) -- (\a+\d*\x+0.2828,\b+\d*\y+0.2828);
+      \draw [black!50] (\a+\d*\x+0.2828,\b+\d*\y-0.2828) -- (\a+\d*\x-0.2828,\b+\d*\y+0.2828);
+      \draw [black!50] (\a+\d*\x,\b+\d*\y) circle (0.4);
+    }
+  \end{tikzpicture}
+\captionof{figure}{Problema \ref{p:preguntas03}\label{f:preguntas03}}
+\end{center}
+
