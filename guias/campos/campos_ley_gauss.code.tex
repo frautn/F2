@@ -120,7 +120,11 @@
 \end{center}
 %
 \begin{Exercise}\label{p:gauss04}
-	Se tiene un campo eléctrico $\va*{E} = b \left [ (x+2y)\vu{i}+(2x+y)\vu{j} \right ]$, siendo $b = \SI{8E5}{\newton/(\coulomb . \metre)}$. Calcular la carga encerrada dentro del cubo de arista de $\SI{10}{\centi\metre}$ mostrado en la figura \ref{f:gauss04}.
+	Se tiene un campo eléctrico 
+  \begin{align*}
+	\va*{E} = b \left [ (x+2y)\,\vu{i}+(2x+y)\,\vu{j} \right ] \, ,
+  \end{align*}
+	siendo $b = \SI{8E5}{\newton/(\coulomb . \metre)}$. Calcular la carga encerrada dentro del cubo de arista de $\SI{10}{\centi\metre}$ mostrado en la figura \ref{f:gauss04}.
 \end{Exercise}
 \begin{Answer}
 	$\SI{14.16}{\nano\coulomb}$
@@ -128,7 +132,7 @@
 %
 \begin{center}
 	\tdplotsetmaincoords{70}{130}
-	\begin{tikzpicture}[tdplot_main_coords, scale=0.6]
+	\begin{tikzpicture}[tdplot_main_coords, scale=0.8]
 	
 		\draw[axis] (0,0,0) -- (6,0,0) node [pos=1.1] {$i$};
 		\draw[axis] (0,0,0) -- (0,4,0) node [pos=1.05] {$j$};
@@ -144,4 +148,34 @@
 	\end{tikzpicture}
 	\captionof{figure}{Problema \ref{p:gauss04}\label{f:gauss04}}
 \end{center}
+%
+\begin{Exercise}
+  El campo eléctrico a una distancia de $\SI{0.145}{\metre}$ de la superficie de una esfera sólida no conductora, con radio de $\SI{0.355}{\metre}$, es de $\SI{1750}{\newton/\coulomb}$. \textit{a}) Suponiendo que la carga se distribuye uniformemente en todo el volumen de la esfera, ¿cuál es la densidad de carga en su interior? \textit{b}) Calcular el campo eléctrico dentro de la esfera a una distancia de $\SI{0.200}{\metre}$ del centro. \textit{c}) Calcular el módulo de la fuerza que ejerce esta esfera sobre una carga puntual de $\SI{25}{\milli\coulomb}$ ubicada a una distancia de $\SI{0.55}{\metre}$ del centro de la esfera.
+\end{Exercise}
+\begin{Answer}
+  \begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\SI{260}{\nano\coulomb/\metre\cubed}$\\ \textit{b}) $\va*{E}=\SI{1960}{\newton/\coulomb}\,\vu{r}$\\ \textit{c}) $\SI{36.2}{\newton}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  \textbf{\raisebox{.5pt}{\textcircled{\raisebox{-1.2pt} {E}}}} Una esfera hueca, aislante, tiene un radio interior $a = \SI{2}{\centi\metre}$ y un radio exterior $b = \SI{10}{\centi\metre}$. Dentro del material aislante, la densidad de carga volumétrica está dada por $\rho(r) = \alpha/ r$ , donde $\alpha = \SI{36E-6}{\coulomb/\metre\squared}$. \textit{a}) Encontrar el campo eléctrico en la región $a < r < b$. \textit{b}) Si se coloca una carga puntual en el centro del hueco, ¿qué valor debe tener debe tener esa carga para que el campo eléctrico sea constante en la región $a < r < b$.
+\end{Exercise}
+\begin{Answer}
+  \begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $\va*{E} = \dfrac{\alpha}{2\varepsilon_o}\left (1 - \dfrac{a^2}{r^2} \right )\,\vu{r}$\\ \textit{b}) $\SI{90.4}{\nano\coulomb}$
+  \end{minipage}
+\end{Answer}
+%
+\begin{Exercise}
+  \textbf{\raisebox{.5pt}{\textcircled{\raisebox{-1.2pt} {E}}}} \textit{a}) Para un conductor cilíndrico de longitud infinita, de radio $R$, y densidad de carga superficial uniforme $\sigma$, verificar que su carga por unidad de longitud $\lambda$ se relaciona con $\sigma$ de la siguiente forma:
+  \begin{align*}
+    \lambda &= 2\pi\sigma R
+  \end{align*}
+  \textit{b}) Demostrar que el campo eléctrico producido por el cilindro cargado a una distancia $r > R$ desde su eje es:
+  \begin{align*}
+    \va*{E} &= \frac{\sigma R}{\varepsilon_o r}\,\vu{r}
+  \end{align*}
+  \textit{c}) Verificar que esa expresión del campo eléctrico es equivalente al campo eléctrico que se produciría si toda la carga estuviera distribuida sobre el eje del cilindro.
+\end{Exercise}
 %

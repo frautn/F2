@@ -18,7 +18,7 @@
 \end{Answer}
 %
 \begin{Exercise}
-  Una carga puntual $q_1 = \SI{2.40}{\nano\coulomb}$ se mantiene estacionaria en el origen. Una segunda carga puntual $q_2 = \SI{-4.30}{\nano\coulomb}$ se desplaza desde la posición $\va*{r}_0 =\SI{0.150}{\metre}\vu{x} + \SI{0}{\metre}\vu{y}$ hasta la posición $\va*{r}_f =\SI{0.250}{\metre}\vu{x} + \SI{0.250}{\metre}\vu{y}$. ¿Cuánto varió la energía potencial de la carga $q_2$?
+  Una carga puntual $q_1 = \SI{2.40}{\nano\coulomb}$ se mantiene estacionaria en el origen. Una segunda carga puntual $q_2 = \SI{-4.30}{\nano\coulomb}$ se desplaza desde la posición $\va*{r}_0 =\SI{0.150}{\metre}\,\vu{x} + \SI{0}{\metre}\,\vu{y}$ hasta la posición $\va*{r}_f =\SI{0.250}{\metre}\,\vu{x} + \SI{0.250}{\metre}\,\vu{y}$. ¿Cuánto varió la energía potencial de la carga $q_2$?
 \end{Exercise}
 \begin{Answer}
   $\SI{3.57E-7}{\joule}$
@@ -48,7 +48,7 @@
 \end{Answer}
 %
 \begin{Exercise}\label{p:potencial01}
-  Para la distribución de cargas mostrada en la figura \ref{f:potencial01}, donde $q_1 = \SI{3.1}{\micro\coulomb}$ y $q_2 = \SI{2.4}{\micro\coulomb}$ están sobre el plano $xy$, calcule: \textit{a}) el potencial eléctrico en el origen de coordenadas, \textit{b}) el potencial eléctrico en la posición $\va*{r} =\SI{0.25}{\metre}\vu{z}$.
+  Para la distribución de cargas mostrada en la figura \ref{f:potencial01}, donde $q_1 = \SI{3.1}{\micro\coulomb}$ y $q_2 = \SI{2.4}{\micro\coulomb}$ están sobre el plano $xy$, calcule: \textit{a}) el potencial eléctrico en el origen de coordenadas, \textit{b}) el potencial eléctrico en la posición $\va*{r} =\SI{0.25}{\metre}\,\vu{z}$.
 \end{Exercise}
 \begin{Answer}
 	\begin{minipage}[t]{.4\textwidth}
@@ -68,10 +68,12 @@
 \end{center}
 %
 \begin{Exercise}\label{p:potencial02}
-  Un dipolo de cargas $\pm q$ y separación $d$ ($p=qd$) está colocado sobre el eje $\vu{i}$ como se muestra en la figura \ref{f:potencial02}. \textit{a}) Verifique que el potencial en el punto $P$ es:
+  Un dipolo de cargas $\pm q$ y separación $d$ está colocado sobre el eje $\vu{i}$ como se muestra en la figura \ref{f:potencial02}.\par\medskip 
+  \textit{a}) Verifique que el potencial en el punto $P$ es:
   \begin{flalign*}
-    V_P &= \dfrac{1}{4\pi\varepsilon_o} \dfrac{p}{x^2-\dfrac{d^2}{4}}
+    V_P &= \dfrac{1}{4\pi\varepsilon_o} \dfrac{p}{x^2-\dfrac{d^2}{4}}\, ,
   \end{flalign*}
+  donde \mbox{$p=qd$} es el momento dipolar de este sistema de cargas.\par\medskip  
   \textit{b}) A partir de la expresión del ítem \textit{a}, verifique que el trabajo necesario para transportar una carga $Q$ muy distante hasta un punto situado sobre el eje $\vu{i}$, a una distancia $a$ del centro del dipolo es:
   \begin{flalign*}
     W = QV_a &= \dfrac{Q}{4\pi\varepsilon_o} \dfrac{p}{a^2-\dfrac{d^2}{4}}
@@ -80,9 +82,9 @@
   \begin{flalign*}
     V_P &= \dfrac{1}{4\pi\varepsilon_o} \dfrac{p}{x^2}
   \end{flalign*}
-  \textit{d}) A partir del resultado anterior y usando $\va*{E} = -\nabla V$, obtenga la siguiente expresión para el campo eléctrico en el punto $P$ cuando $x \gg d$:
+  \textit{d}) A partir del resultado anterior y usando \mbox{$\va*{E} = -\nabla V$}, obtenga la siguiente expresión para el campo eléctrico en el punto $P$ cuando $x \gg d$:
   \begin{flalign*}
-    \va*{E}_P &= \dfrac{1}{2\pi\varepsilon_o} \dfrac{p}{x^3}\vu{i}
+    \va*{E}_P &= \dfrac{1}{2\pi\varepsilon_o} \dfrac{p}{x^3}\,\vu{i}
   \end{flalign*}
 \end{Exercise}
 %
@@ -99,47 +101,12 @@
   \captionof{figure}{Problema \ref{p:potencial02}\label{f:potencial02}}
 \end{center}
 %
-% Agregar lo siguiente en las opciones de axis del objeto tikzpicture:
-% width=0.85\textwidth, height=\axisdefaultheight,
-\begin {figure*}%[!hbtp]
-  \centering
-  \begin{adjustbox}{width=\textwidth}
-    \input{campos/img/em_fig_equipotenciales_buscar_E.code.tex}
-  \end{adjustbox}
-  \caption{Problema \ref{p:potencial03}\label{f:potencial03}}
-\end{figure*}
-%
-\begin{Exercise}\label{p:potencial03}
-  En la figura \ref{f:potencial03} se muestra una representación en 2D de curvas equipotenciales de una cierta distribución de cargas. A partir de dicho gráfico responda las siguientes preguntas:\\
-  \textit{a}) ¿Cuál es la diferencia de potencial eléctrico entre las posiciones $\va*{r}_a = \SI{14}{cm}\vu{j}$ y $\va*{r}_b = \SI{100}{cm}\vu{i} + \SI{32}{cm}\vu{j}$?\\
-  \textit{b}) ¿Qué trabajo debe realizar una fuerza externa sobre una partícula con una carga de $\SI{2.5}{\micro\coulomb}$, si la partícula se encontraba en reposo en la posición $\va*{r}_a$ y se la desplaza hasta la posición $\va*{r}_b$? ¿La partícula gana o pierde energía potencial?\\
-  \textit{c}) Compruebe que la diferencia de potencial eléctrico entre las posiciones $\va*{r}_a = \SI{14}{cm}\vu{j}$ y $\va*{r}_c = \SI{80}{cm}\vu{i} + \SI{8}{cm}\vu{j}$ es $\SI{0}{V}$. Si no hay diferencia de potencial eléctrico entre esas dos posiciones, ¿el trabajo neto para desplazar una carga desde $\va*{r}_a$ hasta $\va*{r}_c$ es también igual a $0$? Y entonces, si el trabajo neto es nulo, ¿quiere decir que no es necesario ejercer una fuerza para desplazar esa partícula cargada?\\
-  \textit{d}) Encuentre posiciones donde el ángulo del vector campo eléctrico sea aproximadamente: \textit{i}. $0^\circ$; \textit{ii}. $90^\circ$; \textit{iii}. $180^\circ$; \textit{iv}. $45^\circ$.\\
-  \textit{e}) Determine aproximadamente el vector campo eléctrico en las siguientes posiciones: \textit{i}. $\SI{94}{cm}\vu{i} + \SI{28}{cm}\vu{j}$; \textit{ii}. $\SI{6}{cm}\vu{i} + \SI{30}{cm}\vu{j}$.\\
-  \textit{f}) Estime el ángulo del vector velocidad inicial para una partícula cargada positivamente que se libera desde el reposo en la posición $\va*{r} = \SI{90}{cm}\vu{i} + \SI{40}{cm}\vu{j}\,.$
-\end{Exercise}
-\begin{Answer}
-	\begin{minipage}[t]{.4\textwidth}
-    \textit{a}) $V_b-V_a = \SI{8.0}{V}$\\
-    \textit{b}) $W_\text{externo} \geq \SI{20}{\micro\joule}$, la partícula gana energía potencial.\\
-    \textit{d}) Estas son alguna respuestas posibles:\\
-    \textit{i}. $\SI{16}{cm}\vu{i} + \SI{0}{cm}\vu{j}$;\\
-    \textit{ii}. $\SI{23}{cm}\vu{i} + \SI{42}{cm}\vu{j}$;\\
-    \textit{iii}. $\SI{90}{cm}\vu{i} + \SI{20}{cm}\vu{j}$;\\
-    \textit{iv}. $\SI{14}{cm}\vu{i} + \SI{12}{cm}\vu{j}$.\\
-    \textit{e}) Las respuestas deben aproximarse a los siguientes vectores:\\
-    \textit{i}. $\va*{E} = \SI{-56}{V/m}\vu{i} +\SI{18}{V/m}\vu{j}$;\\
-    \textit{ii}. $\va*{E} = \SI{6}{V/m}\vu{i} +\SI{11}{V/m}\vu{j}$.\\
-    \textit{f}) $135^\circ\,.$ 
-  \end{minipage}
-\end{Answer}
-%
 \begin{Exercise}
-  Suponga que el potencial eléctrico debido a una cierta distribución de cargas está dado por la siguiente función: \[V(x,y,z) = Ax^2y^2 + Bxyz~,\] donde $A$ y $B$ son constantes. \textit{a}) ¿Cuál es el campo eléctrico asociado a esta distribución de cargas? \textit{b}) Si $A = \SI{1.0}{Vm^{-4}}$ y $B = \SI{3.0}{Vm^{-3}}$, ¿cuál es la diferencia de potencial entre una posición en el origen de coordenadas y la posición $\va*{r}_1 =\SI{1}{\metre}\vu{i} + \SI{1}{\metre}\vu{j} + \SI{1}{\metre}\vu{k}$? \textit{c}) Para los mismos valores de $A$ y $B$,  ¿cuánto vale el módulo del campo eléctrico en la posición $\va*{r}_1$?
+  Suponga que el potencial eléctrico debido a una cierta distribución de cargas está dado por la siguiente función: \[V(x,y,z) = Ax^2y^2 + Bxyz~,\] donde $A$ y $B$ son constantes. \textit{a}) ¿Cuál es el campo eléctrico asociado a esta distribución de cargas? \textit{b}) Si $A = \SI{1.0}{Vm^{-4}}$ y $B = \SI{3.0}{Vm^{-3}}$, ¿cuál es la diferencia de potencial entre una posición en el origen de coordenadas y la posición $\va*{r}_1 =\SI{1}{\metre}\,\vu{i} + \SI{1}{\metre}\,\vu{j} + \SI{1}{\metre}\,\vu{k}$? \textit{c}) Para los mismos valores de $A$ y $B$,  ¿cuánto vale el módulo del campo eléctrico en la posición $\va*{r}_1$?
 \end{Exercise}
 \begin{Answer}
   \begin{minipage}[t]{.4\textwidth}
-    \textit{a}) $\va*{E} = -(2Axy^2+Byz)\vu{i} -(2Ax^2y+Bxz)\vu{j}-Bxy\vu{k}$\\
+    \textit{a}) $\va*{E} = -(2Axy^2+Byz)\,\vu{i} -(2Ax^2y+Bxz)\,\vu{j}-Bxy\,\vu{k}$\\
     \textit{b}) $\SI{4}{V}$\\
     \textit{c}) $\SI{7.68}{Vm^{-1}}$
   \end{minipage}
@@ -191,7 +158,8 @@
 \end{Answer}
 %
 \begin{Exercise}\label{p:potencial06}
-  \textbf{\raisebox{.5pt}{\textcircled{\raisebox{-1.2pt} {E}}}} Para la barra mostrada en la figura \ref{f:potencial06}, con densidad lineal de carga $\lambda$: \textit{a}) Verifique que el potencial eléctrico en el punto $P$ es:
+  \textbf{\raisebox{.5pt}{\textcircled{\raisebox{-1.2pt} {E}}}} Para la barra mostrada en la figura \ref{f:potencial06}, con densidad lineal de carga $\lambda$:\par\medskip 
+  \textit{a}) Verifique que el potencial eléctrico en el punto $P$ es:
   \begin{flalign*}
     V_P &= \frac{\lambda}{4 \pi \varepsilon_o} \ln \left ( \frac{a-L/2}{a+L/2} \right )
   \end{flalign*}
@@ -220,6 +188,7 @@
   \end{tikzpicture}
   \captionof{figure}{Problema \ref{p:potencial06}\label{f:potencial06}}
 \end{center}
+
 %
 \begin{Exercise}
   \textbf{\raisebox{.5pt}{\textcircled{\raisebox{-1.2pt} {E}}}} Considere una espira circular de radio $R$, cargada con densidad lineal de carga uniforme $\lambda$. \textit{a}) Verifique que el potencial eléctrico en un punto $P$ situado a una altura $z$ del eje de la espira es:
@@ -236,6 +205,43 @@
   \end{flalign*}
 \end{Exercise}
 %
+
+
+% Agregar lo siguiente en las opciones de axis del objeto tikzpicture:
+% width=0.85\textwidth, height=\axisdefaultheight,
+\begin {figure*}%[!hbtp]
+  \centering
+  \begin{adjustbox}{width=\textwidth}
+    \input{campos/img/em_fig_equipotenciales_buscar_E.code.tex}
+  \end{adjustbox}
+  \caption{Problema \ref{p:potencial03}\label{f:potencial03}}
+\end{figure*}
+%
+\begin{Exercise}\label{p:potencial03}
+  En la figura \ref{f:potencial03} se muestra una representación en 2D de curvas equipotenciales de una cierta distribución de cargas. A partir de dicho gráfico responda las siguientes preguntas:\\
+  \textit{a}) ¿Cuál es la diferencia de potencial eléctrico entre las posiciones $\va*{r}_a = \SI{14}{cm}\,\vu{j}$ y $\va*{r}_b = \SI{100}{cm}\,\vu{i} + \SI{32}{cm}\,\vu{j}$?\\
+  \textit{b}) ¿Qué trabajo debe realizar una fuerza externa sobre una partícula con una carga de $\SI{2.5}{\micro\coulomb}$, si la partícula se encontraba en reposo en la posición $\va*{r}_a$ y se la desplaza hasta la posición $\va*{r}_b$? ¿La partícula gana o pierde energía potencial?\\
+  \textit{c}) Compruebe que la diferencia de potencial eléctrico entre las posiciones $\va*{r}_a = \SI{14}{cm}\,\vu{j}$ y $\va*{r}_c = \SI{80}{cm}\,\vu{i} + \SI{8}{cm}\,\vu{j}$ es $\SI{0}{V}$. Si no hay diferencia de potencial eléctrico entre esas dos posiciones, ¿el trabajo neto para desplazar una carga desde $\va*{r}_a$ hasta $\va*{r}_c$ es también igual a $0$? Y entonces, si el trabajo neto es nulo, ¿quiere decir que no es necesario ejercer una fuerza para desplazar esa partícula cargada?\\
+  \textit{d}) Encuentre posiciones donde el ángulo del vector campo eléctrico sea aproximadamente: \textit{i}. $0^\circ$; \textit{ii}. $90^\circ$; \textit{iii}. $180^\circ$; \textit{iv}. $45^\circ$.\\
+  \textit{e}) Determine aproximadamente el vector campo eléctrico en las siguientes posiciones: \textit{i}. $\SI{94}{cm}\,\vu{i} + \SI{28}{cm}\,\vu{j}$; \textit{ii}. $\SI{6}{cm}\,\vu{i} + \SI{30}{cm}\,\vu{j}$.\\
+  \textit{f}) Estime el ángulo del vector velocidad inicial para una partícula cargada positivamente que se libera desde el reposo en la posición $\va*{r} = \SI{90}{cm}\,\vu{i} + \SI{40}{cm}\,\vu{j}\,.$
+\end{Exercise}
+\begin{Answer}
+	\begin{minipage}[t]{.4\textwidth}
+    \textit{a}) $V_b-V_a = \SI{8.0}{V}$\\
+    \textit{b}) $W_\text{externo} \geq \SI{20}{\micro\joule}$, la partícula gana energía potencial.\\
+    \textit{d}) Estas son alguna respuestas posibles:\\
+    \textit{i}. $\SI{16}{cm}\,\vu{i} + \SI{0}{cm}\,\vu{j}$;\\
+    \textit{ii}. $\SI{23}{cm}\,\vu{i} + \SI{42}{cm}\,\vu{j}$;\\
+    \textit{iii}. $\SI{90}{cm}\,\vu{i} + \SI{20}{cm}\,\vu{j}$;\\
+    \textit{iv}. $\SI{14}{cm}\,\vu{i} + \SI{12}{cm}\,\vu{j}$.\\
+    \textit{e}) Las respuestas deben aproximarse a los siguientes vectores:\\
+    \textit{i}. $\va*{E} = \SI{-56}{V/m}\,\vu{i} +\SI{18}{V/m}\,\vu{j}$;\\
+    \textit{ii}. $\va*{E} = \SI{6}{V/m}\,\vu{i} +\SI{11}{V/m}\,\vu{j}$.\\
+    \textit{f}) $135^\circ\,.$ 
+  \end{minipage}
+\end{Answer}
+%
 \begin{Exercise}
   Cuando se conectan dos placas conductoras, grandes y paralelas, a los terminales de una batería, las cargas resultantes en las placas originan un campo eléctrico en la región entre ellas que puede ser considerado uniforme. Considere dos placas metálicas, grandes y paralelas, separadas por una distancia de $\SI{45.0}{\milli\metre}$, conectadas a una batería que establece una diferencia de potencial de $\SI{36.0}{\volt}$ entre ellas. \textit{a}) ¿Cuál es la magnitud del campo eléctrico en la región entre las placas? \text{b}) ¿Cuál es la densidad superficial de carga en las placas? \textit{c}) Si un electrón en reposo se libera desde la placa con carga negativa, ¿cuánto tiempo tarda en llegar hasta la otra placa?
 \end{Exercise}
@@ -245,8 +251,8 @@
   \end{minipage}
 \end{Answer}
 %
-\begin{Exercise}\label{p:potencial03}
-  Se tiene un plano infinito, coincidente con el plano $yz$, con una densidad de carga superficial uniforme $\sigma = \SI{50}{\micro\coulomb/\metre\squared}$, como se muestra en la figura \ref{f:potencial03}. Las distancias mostradas en la figura son $a = \SI{30}{\centi\metre}$ y $b = \SI{25}{\centi\metre}$. Calcule la variación de energía potencial de un electrón cuando es desplazado: \textit{a}) desde $A$ hasta $B$, \textit{b}) desde $A$ hasta $C$, \textit{c}) desde $A$ hasta $D$.
+\begin{Exercise}\label{p:potencial13}
+  Se tiene un plano infinito, coincidente con el plano $yz$, con una densidad de carga superficial uniforme $\sigma = \SI{50}{\micro\coulomb/\metre\squared}$, como se muestra en la figura \ref{f:potencial13}. Las distancias mostradas en la figura son $a = \SI{30}{\centi\metre}$ y $b = \SI{25}{\centi\metre}$. Calcule la variación de energía potencial de un electrón cuando es desplazado: \textit{a}) desde $A$ hasta $B$, \textit{b}) desde $A$ hasta $C$, \textit{c}) desde $A$ hasta $D$.
 \end{Exercise}
 \begin{Answer}
 	\begin{minipage}[t]{.4\textwidth}
@@ -256,7 +262,7 @@
 %
 \begin{center}
   \tdplotsetmaincoords{35}{140}
-  \begin{tikzpicture}[tdplot_main_coords, scale=0.5]
+  \begin{tikzpicture}[tdplot_main_coords, scale=0.6]
     \filldraw[fill=red!30, tdplot_main_coords] (0,-3,3) -- (0,4,3) -- (0,4,-3) -- (0,-3,-3) -- cycle;
     \draw[blue, -{latex}] (0,0,0) -- (7,0,0) node [below, pos=1] {$x$};
     \draw[blue, -{latex}] (0,0,0) -- (0,5,0) node [below, pos=1.05] {$y$};
@@ -273,19 +279,19 @@
     \draw[black, {latex}-{latex}] (6,0,0) -- (6,3,0)  node [pos=0.5, below left] {$a$};
     \draw[black, {latex}-{latex}] (5,4,0) -- (2.5,4,0)  node [pos=0.5, below right] {$b$};
   \end{tikzpicture}
-  \captionof{figure}{Problema \ref{p:potencial03}\label{f:potencial03}}
+  \captionof{figure}{Problema \ref{p:potencial13}\label{f:potencial13}}
 \end{center}
 %
 \begin{Exercise}
   \textbf{\raisebox{.5pt}{\textcircled{\raisebox{-1.2pt} {E}}}} Demuestre que el campo eléctrico afuera de una esfera metálica con una carga eléctrica neta $Q$ es:
   \begin{align*}
-    \va*{E}(r) &= \frac{Q}{4\pi\varepsilon_o r^2} \vu{r}
+    \va*{E}(r) &= \frac{Q}{4\pi\varepsilon_o r^2} \,\vu{r}
   \end{align*}
   y adentro de la esfera vale $E = 0$.
 \end{Exercise}
 %
 \begin{Exercise}\label{p:continuas09}
-  La figura \ref{f:continuas09} muestra la sección transversal de un alambre metálico coaxial con un casco cilíndrico, ambos de longitud infinita. Los campos eléctricos en las posiciones $\va*{r}_a$ y $\va*{r}_b$ son $\va*{E}_a = \SI{2000}{\newton/\coulomb}\vu{r}$ y $\va*{E}_b = \SI{-1000}{\newton/\coulomb}\vu{r}$ respectivamente, y las distancias al centro son $r_a = \SI{10}{\centi\metre}$ y $r_b = \SI{30}{\centi\metre}$. Encontrar las cargas por unidad de longitud tanto del alambre ($\lambda_1$) como del casco cilíndrico ($\lambda_2$).
+  La figura \ref{f:continuas09} muestra la sección transversal de un alambre metálico coaxial con un casco cilíndrico, ambos de longitud infinita. Los campos eléctricos en las posiciones $\va*{r}_a$ y $\va*{r}_b$ son $\va*{E}_a = \SI{2000}{\newton/\coulomb}\,\vu{r}$ y $\va*{E}_b = \SI{-1000}{\newton/\coulomb}\,\vu{r}$ respectivamente, y las distancias al centro son $r_a = \SI{10}{\centi\metre}$ y $r_b = \SI{30}{\centi\metre}$. Encontrar las cargas por unidad de longitud tanto del alambre ($\lambda_1$) como del casco cilíndrico ($\lambda_2$).
 \end{Exercise}
 \begin{Answer}
   \begin{minipage}[t]{.4\textwidth}
@@ -354,38 +360,6 @@
   \end{circuitikz}
   \captionof{figure}{Problema \ref{p:potencial04}\label{f:potencial04}}
 \end{center}
-%
-\textcolor{red}{Los que siguen se pueden poner en Gauss}
-%
-\begin{Exercise}
-  El campo eléctrico a una distancia de $\SI{0.145}{\metre}$ de la superficie de una esfera sólida no conductora, con radio de $\SI{0.355}{\metre}$, es de $\SI{1750}{\newton/\coulomb}$. \textit{a}) Suponiendo que la carga se distribuye uniformemente en todo el volumen de la esfera, ¿cuál es la densidad de carga en su interior? \textit{b}) Calcular el campo eléctrico dentro de la esfera a una distancia de $\SI{0.200}{\metre}$ del centro. \textit{c}) Calcular el módulo de la fuerza que ejerce esta esfera sobre una carga puntual de $\SI{25}{\milli\coulomb}$ ubicada a una distancia de $\SI{0.55}{\metre}$ del centro de la esfera.
-\end{Exercise}
-\begin{Answer}
-  \begin{minipage}[t]{.4\textwidth}
-    \textit{a}) $\SI{260}{\nano\coulomb/\metre\cubed}$\\ \textit{b}) $\va*{E}=\SI{1960}{\newton/\coulomb}\vu{r}$\\ \textit{c}) $\SI{36.2}{\newton}$
-  \end{minipage}
-\end{Answer}
-%
-\begin{Exercise}
-  \textbf{\raisebox{.5pt}{\textcircled{\raisebox{-1.2pt} {E}}}} Una esfera hueca, aislante, tiene un radio interior $a = \SI{2}{\centi\metre}$ y un radio exterior $b = \SI{10}{\centi\metre}$. Dentro del material aislante, la densidad de carga volumétrica está dada por $\rho(r) = \alpha/ r$ , donde $\alpha = \SI{36E-6}{\coulomb/\metre\squared}$. \textit{a}) Encontrar el campo eléctrico en la región $a < r < b$. \textit{b}) Si se coloca una carga puntual en el centro del hueco, ¿qué valor debe tener debe tener esa carga para que el campo eléctrico sea constante en la región $a < r < b$.
-\end{Exercise}
-\begin{Answer}
-  \begin{minipage}[t]{.4\textwidth}
-    \textit{a}) $\va*{E} = \dfrac{\alpha}{2\varepsilon_o}\left (1 - \dfrac{a^2}{r^2} \right )\vu{r}$\\ \textit{b}) $\SI{90.4}{\nano\coulomb}$
-  \end{minipage}
-\end{Answer}
-%
-\begin{Exercise}
-  \textbf{\raisebox{.5pt}{\textcircled{\raisebox{-1.2pt} {E}}}} \textit{a}) Para un conductor cilíndrico de longitud infinita, de radio $R$, y densidad de carga superficial uniforme $\sigma$, verificar que su carga por unidad de longitud $\lambda$ se relaciona con $\sigma$ de la siguiente forma:
-  \begin{align*}
-    \lambda &= 2\pi\sigma R
-  \end{align*}
-  \textit{b}) Demostrar que el campo eléctrico producido por el cilindro cargado a una distancia $r > R$ desde su eje es:
-  \begin{align*}
-    \va*{E} &= \frac{\sigma R}{\varepsilon_o r}\vu{r}
-  \end{align*}
-  \textit{c}) Verificar que esa expresión del campo eléctrico es equivalente al campo eléctrico que se produciría si toda la carga estuviera distribuida sobre el eje del cilindro.
-\end{Exercise}
 %
 
 
